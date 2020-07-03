@@ -1,0 +1,139 @@
+[ 
+    {
+        "id": "JUSTICAR_VOSS",
+        "name": "Justicar Voss",
+        "title": "Alliance Hero",
+        "cost": 1,
+        "models": 1,
+        "damage": 3,
+        "speed": 7,
+        "meleeAttack": 5,
+        "rangeAttack": 3,
+        "defense": 4, 
+        "armor": 3,
+        "ruleIds": [
+            "COMPOUND_ARMOR",
+            "RELENTLESS",
+            "VOID_SHIFTER_CHARGE",
+            "VOID_JUMPER_SPIKE",
+            "WEAPON_EXPERT"
+        ],
+        "weaponIds": [
+            "ARC_BLADE",
+            "ARC_BLADE_X2"
+        ]
+    }, {
+        "id": "HIEROTHEOS_RAXIS",
+        "name": "Hierotheos Raxis",
+        "title": "Continuum Hero",
+        "cost": 1,
+        "models": 1,
+        "damage": 3,
+        "speed": 5,
+        "meleeAttack": 3,
+        "rangeAttack": 4,
+        "defense": 2, 
+        "armor": 4,
+        "focus": 4,
+        "ruleIds": [
+            "ARC_RELAY_13",
+            "KINETIC_FIELD_CHARGE",
+            "PATHFINDER",
+            "PSYCHO_RELAY",
+            "THANOTECH_RECLAIMER_SPIKE"
+        ],
+        "weaponIds": [
+            "SOUL_GRINDER"
+        ]
+    }, {
+        "id": "ARTEMIS_FANG",
+        "name": "Artemis Fang",
+        "title": "Marcher Worlds Hero",
+        "cost": 1,
+        "models": 1,
+        "damage": 2,
+        "speed": 7,
+        "meleeAttack": 3,
+        "rangeAttack": 6,
+        "defense": 4, 
+        "armor": 3,
+        "ruleIds": [
+            "MAELSTROM_ACTIVATOR_SPIKE",
+            "SMART_LOCK_CHARGE",
+            "WEAPON_EXPERT"
+        ],
+        "weaponIds": [
+            "ARCLOCK_PISTOL",
+            "ARCLOCK_PISTOL_X2"
+        ]
+    }, {
+        "id": "BARON_CASSIUS_MOORGRAVE",
+        "name": "Baron Cassius Mooregrave",
+        "title": "Wildcard Hero Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 3,
+        "speed": 6,
+        "meleeAttack": 5,
+        "rangeAttack": 4,
+        "defense": 3, 
+        "armor": 4,
+        "ruleIds": [
+            "LIVING_TERROR",
+            "PHASE_STALKER_SPIKE",
+            "WEAPON_EXPERT",
+            "WILD_CARD_ALLIANCE_AND_CONTINUUM"
+        ],
+        "weaponIds": [
+            "MAGNUM",
+            "OBLIVION"
+        ]
+    }, {
+        "id": "CAPTAIN_JAX_REDBLADE",
+        "name": "Captain Jax Redblade",
+        "title": "Wildcard Hero Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 3,
+        "speed": 6,
+        "meleeAttack": 5,
+        "rangeAttack": 4,
+        "defense": 5, 
+        "armor": 3,
+        "ruleIds": [
+            "FLIGHT_PACK_CHARGE",
+            "REFRACTOR_FIELD_SPIKE",
+            "RIPOSTE",
+            "WEAPON_EXPERT",
+            "WILD_CARD_CONTINUUM_AND_MARCHER_WORLDS"
+        ],
+        "weaponIds": [
+            "MAGNUM",
+            "FUSION_SWORD"
+        ]
+    }, {
+        "id": "VOITEK_SUDAL_BOUNTY_HUNTER",
+        "name": "Voitek Sudal, Bounty Hunter",
+        "title": "Wildcard Hero Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 3,
+        "speed": 6,
+        "meleeAttack": 4,
+        "rangeAttack": 5,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "GATE_JAMMER_CHARGE",
+            "PATHFINDER",
+            "STEALTH",
+            "WEAPON_EXPERT",
+            "WILD_CARD_ALLIANCE_AND_MARCHER_WORLDS"
+        ],
+        "weaponIds": [
+            "FORCE_CONSTRICTOR",
+            "NULL_DETONATOR",
+            "COMBAT_BLADE"
+        ]
+    }
+]

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!").padding()
-    }
-}
+        TabView {
+            FactionPicker().tabItem {
+                Label("Build", systemImage: "hammer")
+            }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+            Barracks().tabItem {
+                Label("Barracks", systemImage: "house")
+            }
+        }
     }
 }

@@ -1,0 +1,234 @@
+
+[
+    {
+        "id": "SCOURGE",
+        "name": "Scourge",
+        "title": "Warjack",
+        "cost": 2,
+        "models": 1,
+        "damage": 3,
+        "speed": 6,
+        "strength": 4,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3,
+        "armor": 4,
+        "weaponPoints": 5,
+        "armCount": 1,
+        "shoulderCount": 2,
+        "weaponIds": [
+            "WRECKING_CLAW"
+        ],
+        "ruleIds": [
+            "SERVO_BOOSTER_CHARGE",
+            "STUN_MODULE_SPIKE"
+        ],
+        "cortexOptionIds": [
+            "KILLER",
+            "REVENGER",
+            "SPIDER",
+            "MISANTHROPE"
+        ],
+        "armOptionIds": [
+            "FORCE_ROD",
+            "VOID_SPLITTER",
+            "REAPER",
+            "STINGER_CANNON"
+        ],
+        "shoulderOptionIds": [
+            "HOLLOWPHAGE_CANNON",
+            "ROCKET_POD",
+            "NAILER",
+            "CLOAKING_DEVICE",
+            "ENTROPHIER",
+            "HEX_CANNON"
+        ]
+    }, {
+        "id": "NEMESIS",
+        "name": "Nemesis",
+        "title": "Heavy Warjack",
+        "cost": 4,
+        "models": 1,
+        "damage": 5,
+        "speed": 6,
+        "strength": 4,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3,
+        "armor": 3,
+        "weaponPoints": 8,
+        "armCount": 2,
+        "shoulderCount": 2,
+        "ruleIds": [
+            "AFTERBURNER_SPIKE",
+            "ARC_FIELD_CHARGE",
+            "FLIGHT"
+        ],
+        "cortexOptionIds": [
+            "BATTLE_CRUISER",
+            "IMPULSE_RECIPROCATOR"
+        ],
+        "armOptionIds": [
+            "FUSION_SCYTHE",
+            "VOID_SPLITTER",
+            "DISPLACER"
+        ],
+        "shoulderOptionIds": [
+            "HOLLOWPHAGE_CANNON",
+            "ROCKET_POD",
+            "STARFALL_CANNON",
+            "ENTROPHIER",
+            "HEX_CANNON"
+        ]
+    }, {
+        "id": "FIREBRAND",
+        "name": "Firebrand",
+        "title": "Warjack",
+        "cost": 2,
+        "models": 1,
+        "damage": 3,
+        "speed": 6,
+        "strength": 4,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3,
+        "armor": 3,
+        "weaponPoints": 5,
+        "armCount": 2,
+        "shoulderCount": 1,
+        "ruleIds": [
+            "FORCE_PROJECTOR_CHARGE",
+            "REFRACTOR_FIELD_SPIKE"
+        ],
+        "cortexOptionIds": [
+            "JACK_HUNTER",
+            "REFLEX",
+            "NEURAL_WEB",
+            "RECON"
+        ],
+        "armOptionIds": [
+            "REPULSOR_SHIELD",
+            "FUSION_GLAIVE",
+            "ASSAULT_RIFLE",
+            "FORCE_HAMMER",
+            "GRENADE_LAUNCHER",
+            "SUN_PIERCER"
+        ],
+        "shoulderOptionIds": [
+            "IMMOLATOR",
+            "MAELSTROM",
+            "HARBINGER_CANNON",
+            "NULL_CANNON"
+        ]
+    }, {
+        "id": "MORNINGSTAR",
+        "name": "Morningstar",
+        "title": "Heavy Warjack",
+        "cost": 4,
+        "models": 1,
+        "damage": 4,
+        "speed": 6,
+        "strength": 5,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3,
+        "armor": 5,
+        "weaponPoints": 8,
+        "armCount": 2,
+        "shoulderCount": 2,
+        "ruleIds": [
+            "IMPULSE_REACTOR_CHARGE",
+            "REFRACTOR_FIELD_SPIKE"
+        ],
+        "cortexOptionIds": [
+            "DEADEYE",
+            "DEFENDER"
+        ],
+        "armOptionIds": [
+            "ASSAULT_SHIELD",
+            "HEAVY_FUSION_GLAIVE",
+            "SEEKER"
+        ],
+        "shoulderOptionIds": [
+            "HARBINGER_CANNON",
+            "NULL_CANNON",
+            "STARBURST_MISSILES"
+        ]
+    }, {
+        "id": "DUSK_WOLF",
+        "name": "Dusk Wolf",
+        "title": "Warjack",
+        "cost": 2,
+        "models": 1,
+        "damage": 3,
+        "speed": 5,
+        "strength": 4,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3,
+        "armor": 4,
+        "weaponPoints": 5,
+        "armCount": 2,
+        "shoulderCount": 1,
+        "ruleIds": [
+            "FORCE_PROJECTOR_CHARGE",
+            "REFRACTOR_FIELD_SPIKE"
+        ],
+        "cortexOptionIds": [
+            "NEURAL_NET",
+            "SCOUT",
+            "FIGHTER",
+            "SNIPER"
+        ],
+        "armOptionIds": [
+            "BATTLE_RIFLE",
+            "RIPPER",
+            "FLAMETHROWER",
+            "IMPALER",
+            "PARTICLE_ACCELERATOR",
+            "SLUG_GUN"
+        ],
+        "shoulderOptionIds": [
+            "TALON_ROCKET_POD",
+            "RAIL_GUN",
+            "BLAZER",
+            "WILDFLOWER"
+        ]
+    }, {
+           "id": "STRIKE_RAPTOR",
+           "name": "Strike Raptor",
+           "title": "Heavy Warjack",
+           "cost": 4,
+           "models": 1,
+           "damage": 4,
+           "speed": 5,
+           "strength": 5,
+           "meleeAttack": 4,
+           "rangeAttack": 4,
+           "defense": 2,
+           "armor": 5,
+           "weaponPoints": 8,
+           "armCount": 2,
+           "shoulderCount": 2,
+           "ruleIds": [
+               "JUMP_JETS_SPIKE",
+               "THRUSTER_CHARGE"
+           ],
+           "cortexOptionIds": [
+               "NEURAL_NET",
+               "SCOUT",
+               "FIGHTER",
+               "SNIPER"
+           ],
+           "armOptionIds": [
+               "BATTLE_RIFLE",
+               "FUSION_DRILL",
+               "FLAMETHROWER"
+           ],
+           "shoulderOptionIds": [
+               "TALON_ROCKET_POD",
+               "RAIL_GUN",
+               "PARTICLE_CANNON"
+           ]
+       }
+]

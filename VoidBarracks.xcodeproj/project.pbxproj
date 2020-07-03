@@ -7,14 +7,144 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA10D19524AE4E8C007FBCDD /* JackWeaponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19424AE4E8C007FBCDD /* JackWeaponList.swift */; };
+		BA10D19724AE4F1C007FBCDD /* JackWeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */; };
+		BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */; };
+		BA10D19B24AE6F19007FBCDD /* CustomSquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */; };
+		BA2034F024AE772400E252A3 /* CustomJackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034EF24AE772400E252A3 /* CustomJackInfo.swift */; };
+		BA2034F224AE773200E252A3 /* CustomJackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034EF24AE772400E252A3 /* CustomJackInfo.swift */; };
+		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
+		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
+		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
+		BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
+		BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F924AE929100E252A3 /* SquadBuilder.swift */; };
+		BA2034FB24AE929100E252A3 /* SquadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F924AE929100E252A3 /* SquadBuilder.swift */; };
+		BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
+		BA2034FE24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
+		BA20350124AE99B900E252A3 /* AttachmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350024AE99B900E252A3 /* AttachmentInfo.swift */; };
+		BA20350224AE99B900E252A3 /* AttachmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350024AE99B900E252A3 /* AttachmentInfo.swift */; };
+		BA20350424AE99CF00E252A3 /* AttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350324AE99CF00E252A3 /* AttachmentCell.swift */; };
+		BA20350524AE99CF00E252A3 /* AttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350324AE99CF00E252A3 /* AttachmentCell.swift */; };
+		BA20350824AEA00400E252A3 /* CustomJackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350724AEA00400E252A3 /* CustomJackList.swift */; };
+		BA20350924AEA00400E252A3 /* CustomJackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350724AEA00400E252A3 /* CustomJackList.swift */; };
+		BA20350C24AEA03400E252A3 /* CustomSquadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350B24AEA03400E252A3 /* CustomSquadInfo.swift */; };
+		BA20350D24AEA03400E252A3 /* CustomSquadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350B24AEA03400E252A3 /* CustomSquadInfo.swift */; };
+		BA20350F24AEA15400E252A3 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350E24AEA15400E252A3 /* AttachmentView.swift */; };
+		BA20351024AEA15400E252A3 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350E24AEA15400E252A3 /* AttachmentView.swift */; };
+		BA20351224AEBEB300E252A3 /* AttachmentStatsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351124AEBEB300E252A3 /* AttachmentStatsInfo.swift */; };
+		BA20351324AEBEB300E252A3 /* AttachmentStatsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351124AEBEB300E252A3 /* AttachmentStatsInfo.swift */; };
 		BA4F969224AAA5C100AB9F4C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969124AAA5C100AB9F4C /* Tests_iOS.swift */; };
 		BA4F969D24AAA5C100AB9F4C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969C24AAA5C100AB9F4C /* Tests_macOS.swift */; };
 		BA4F969F24AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */; };
 		BA4F96A024AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */; };
 		BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967724AAA5C000AB9F4C /* ContentView.swift */; };
 		BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967724AAA5C000AB9F4C /* ContentView.swift */; };
-		BA4F96A324AAA5C100AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F967824AAA5C100AB9F4C /* Assets.xcassets */; };
-		BA4F96A424AAA5C100AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F967824AAA5C100AB9F4C /* Assets.xcassets */; };
+		BA4F96B424AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */; };
+		BA4F96B524AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */; };
+		BA4F96B924AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
+		BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
+		BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
+		BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
+		BA4F980324AACBDA00AB9F4C /* units-alliance.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97F924AACBD900AB9F4C /* units-alliance.json */; };
+		BA4F980424AACBDA00AB9F4C /* units-alliance.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97F924AACBD900AB9F4C /* units-alliance.json */; };
+		BA4F980524AACBDA00AB9F4C /* jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FA24AACBD900AB9F4C /* jacks.json */; };
+		BA4F980624AACBDA00AB9F4C /* jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FA24AACBD900AB9F4C /* jacks.json */; };
+		BA4F980724AACBDA00AB9F4C /* units-marchers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FB24AACBD900AB9F4C /* units-marchers.json */; };
+		BA4F980824AACBDA00AB9F4C /* units-marchers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FB24AACBD900AB9F4C /* units-marchers.json */; };
+		BA4F980924AACBDA00AB9F4C /* heros.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FC24AACBD900AB9F4C /* heros.json */; };
+		BA4F980A24AACBDA00AB9F4C /* heros.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FC24AACBD900AB9F4C /* heros.json */; };
+		BA4F980B24AACBDA00AB9F4C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FD24AACBD900AB9F4C /* rules.json */; };
+		BA4F980C24AACBDA00AB9F4C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FD24AACBD900AB9F4C /* rules.json */; };
+		BA4F980D24AACBDA00AB9F4C /* units-continuum.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FE24AACBD900AB9F4C /* units-continuum.json */; };
+		BA4F980E24AACBDA00AB9F4C /* units-continuum.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FE24AACBD900AB9F4C /* units-continuum.json */; };
+		BA4F980F24AACBDA00AB9F4C /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FF24AACBD900AB9F4C /* weapons.json */; };
+		BA4F981024AACBDA00AB9F4C /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FF24AACBD900AB9F4C /* weapons.json */; };
+		BA4F981124AACBDA00AB9F4C /* factions.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980024AACBD900AB9F4C /* factions.json */; };
+		BA4F981224AACBDA00AB9F4C /* factions.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980024AACBD900AB9F4C /* factions.json */; };
+		BA4F981324AACBDA00AB9F4C /* cortex.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980124AACBD900AB9F4C /* cortex.json */; };
+		BA4F981424AACBDA00AB9F4C /* cortex.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980124AACBD900AB9F4C /* cortex.json */; };
+		BA4F981524AACBDA00AB9F4C /* cyphers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980224AACBDA00AB9F4C /* cyphers.json */; };
+		BA4F981624AACBDA00AB9F4C /* cyphers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980224AACBDA00AB9F4C /* cyphers.json */; };
+		BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
+		BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
+		BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
+		BA4F987F24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
+		BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987024AAD8B200AB9F4C /* ULweapon.swift */; };
+		BA4F988124AAD8B300AB9F4C /* ULweapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987024AAD8B200AB9F4C /* ULweapon.swift */; };
+		BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987224AAD8B200AB9F4C /* ULunit.swift */; };
+		BA4F988524AAD8B300AB9F4C /* ULunit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987224AAD8B200AB9F4C /* ULunit.swift */; };
+		BA4F988624AAD8B300AB9F4C /* ULCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987324AAD8B200AB9F4C /* ULCypher.swift */; };
+		BA4F988724AAD8B300AB9F4C /* ULCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987324AAD8B200AB9F4C /* ULCypher.swift */; };
+		BA4F988824AAD8B300AB9F4C /* ULCortex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987424AAD8B200AB9F4C /* ULCortex.swift */; };
+		BA4F988924AAD8B300AB9F4C /* ULCortex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987424AAD8B200AB9F4C /* ULCortex.swift */; };
+		BA4F988A24AAD8B300AB9F4C /* ULfaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987524AAD8B300AB9F4C /* ULfaction.swift */; };
+		BA4F988B24AAD8B300AB9F4C /* ULfaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987524AAD8B300AB9F4C /* ULfaction.swift */; };
+		BA4F988C24AAD8B300AB9F4C /* ULjacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987624AAD8B300AB9F4C /* ULjacks.swift */; };
+		BA4F988D24AAD8B300AB9F4C /* ULjacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987624AAD8B300AB9F4C /* ULjacks.swift */; };
+		BA4F989124AADC9F00AB9F4C /* GetJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989024AADC9F00AB9F4C /* GetJson.swift */; };
+		BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989024AADC9F00AB9F4C /* GetJson.swift */; };
+		BA4F989A24AC163100AB9F4C /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989924AC163100AB9F4C /* FactionPicker.swift */; };
+		BA4F989B24AC163100AB9F4C /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989924AC163100AB9F4C /* FactionPicker.swift */; };
+		BA4F98A424AC3FE400AB9F4C /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A324AC3FE400AB9F4C /* HeroCell.swift */; };
+		BA4F98A524AC3FE400AB9F4C /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A324AC3FE400AB9F4C /* HeroCell.swift */; };
+		BA4F98A724AC402B00AB9F4C /* HeroList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A624AC402B00AB9F4C /* HeroList.swift */; };
+		BA4F98A824AC402B00AB9F4C /* HeroList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A624AC402B00AB9F4C /* HeroList.swift */; };
+		BA4F98AA24AC474D00AB9F4C /* SoloList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A924AC474D00AB9F4C /* SoloList.swift */; };
+		BA4F98AB24AC474D00AB9F4C /* SoloList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A924AC474D00AB9F4C /* SoloList.swift */; };
+		BA4F98AD24AC476300AB9F4C /* SoloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AC24AC476300AB9F4C /* SoloCell.swift */; };
+		BA4F98AE24AC476300AB9F4C /* SoloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AC24AC476300AB9F4C /* SoloCell.swift */; };
+		BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AF24AC482700AB9F4C /* JackCell.swift */; };
+		BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AF24AC482700AB9F4C /* JackCell.swift */; };
+		BA4F98B324AC483400AB9F4C /* JackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B224AC483400AB9F4C /* JackList.swift */; };
+		BA4F98B424AC483400AB9F4C /* JackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B224AC483400AB9F4C /* JackList.swift */; };
+		BA4F98B624AC48D900AB9F4C /* SquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B524AC48D900AB9F4C /* SquadList.swift */; };
+		BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B524AC48D900AB9F4C /* SquadList.swift */; };
+		BA4F98B924AC48E600AB9F4C /* SquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B824AC48E600AB9F4C /* SquadCell.swift */; };
+		BA4F98BA24AC48E600AB9F4C /* SquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B824AC48E600AB9F4C /* SquadCell.swift */; };
+		BA4F98BC24AC49BE00AB9F4C /* HeroInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BB24AC49BE00AB9F4C /* HeroInfo.swift */; };
+		BA4F98BD24AC49BE00AB9F4C /* HeroInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BB24AC49BE00AB9F4C /* HeroInfo.swift */; };
+		BA4F98C024AC4D0E00AB9F4C /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BF24AC4D0E00AB9F4C /* StatsView.swift */; };
+		BA4F98C124AC4D0E00AB9F4C /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BF24AC4D0E00AB9F4C /* StatsView.swift */; };
+		BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C224AC543000AB9F4C /* WeaponsView.swift */; };
+		BA4F98C424AC543000AB9F4C /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C224AC543000AB9F4C /* WeaponsView.swift */; };
+		BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
+		BA4F98C724AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
+		BA4F98C924AC603600AB9F4C /* SquadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C824AC603600AB9F4C /* SquadInfo.swift */; };
+		BA4F98CA24AC603600AB9F4C /* SquadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C824AC603600AB9F4C /* SquadInfo.swift */; };
+		BA4F98CC24AC62F100AB9F4C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CB24AC62F100AB9F4C /* CounterView.swift */; };
+		BA4F98CD24AC62F100AB9F4C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CB24AC62F100AB9F4C /* CounterView.swift */; };
+		BA4F98CF24AC646600AB9F4C /* HeroCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CE24AC646600AB9F4C /* HeroCounterView.swift */; };
+		BA4F98D024AC646600AB9F4C /* HeroCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CE24AC646600AB9F4C /* HeroCounterView.swift */; };
+		BA4F98D224AC66AF00AB9F4C /* SoloInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D124AC66AF00AB9F4C /* SoloInfo.swift */; };
+		BA4F98D324AC66AF00AB9F4C /* SoloInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D124AC66AF00AB9F4C /* SoloInfo.swift */; };
+		BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
+		BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
+		BA61D5A924AD21A0002F047A /* LazyLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5A824AD21A0002F047A /* LazyLoad.swift */; };
+		BA61D5AA24AD21A0002F047A /* LazyLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5A824AD21A0002F047A /* LazyLoad.swift */; };
+		BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5AE24AD2D4E002F047A /* DataController.swift */; };
+		BA61D5B024AD2D4E002F047A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5AE24AD2D4E002F047A /* DataController.swift */; };
+		BA61D5B224AD4C04002F047A /* JackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5B124AD4C04002F047A /* JackInfo.swift */; };
+		BA61D5B324AD4C04002F047A /* JackInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5B124AD4C04002F047A /* JackInfo.swift */; };
+		BAC227DD24AD982200080E97 /* ArmyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227DC24AD982200080E97 /* ArmyBuilder.swift */; };
+		BAC227DE24AD982200080E97 /* ArmyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227DC24AD982200080E97 /* ArmyBuilder.swift */; };
+		BAC227E124ADA2FC00080E97 /* CypherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E024ADA2FC00080E97 /* CypherList.swift */; };
+		BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E024ADA2FC00080E97 /* CypherList.swift */; };
+		BAC227E424ADA30900080E97 /* CypherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E324ADA30900080E97 /* CypherCell.swift */; };
+		BAC227E524ADA30900080E97 /* CypherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E324ADA30900080E97 /* CypherCell.swift */; };
+		BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E624ADA31300080E97 /* CypherInfo.swift */; };
+		BAC227E824ADA31300080E97 /* CypherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E624ADA31300080E97 /* CypherInfo.swift */; };
+		BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E924ADA3D900080E97 /* RackBuilder.swift */; };
+		BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E924ADA3D900080E97 /* RackBuilder.swift */; };
+		BAC227F024ADB23000080E97 /* JackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227EF24ADB23000080E97 /* JackBuilder.swift */; };
+		BAC227F124ADB23000080E97 /* JackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227EF24ADB23000080E97 /* JackBuilder.swift */; };
+		BAC227F324ADB31300080E97 /* CustomJackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F224ADB31300080E97 /* CustomJackCell.swift */; };
+		BAC227F424ADB31300080E97 /* CustomJackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F224ADB31300080E97 /* CustomJackCell.swift */; };
+		BAC227F724ADB63C00080E97 /* CortexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F624ADB63C00080E97 /* CortexList.swift */; };
+		BAC227F824ADB63C00080E97 /* CortexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F624ADB63C00080E97 /* CortexList.swift */; };
+		BAC227FB24ADB6C200080E97 /* CortexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FA24ADB6C200080E97 /* CortexCell.swift */; };
+		BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FA24ADB6C200080E97 /* CortexCell.swift */; };
+		BAC227FE24ADB6FB00080E97 /* CortexInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */; };
+		BAC227FF24ADB6FB00080E97 /* CortexInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +165,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA10D19424AE4E8C007FBCDD /* JackWeaponList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponList.swift; sourceTree = "<group>"; };
+		BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponCell.swift; sourceTree = "<group>"; };
+		BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponInfo.swift; sourceTree = "<group>"; };
+		BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquadCell.swift; sourceTree = "<group>"; };
+		BA2034EF24AE772400E252A3 /* CustomJackInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomJackInfo.swift; sourceTree = "<group>"; };
+		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
+		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
+		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
+		BA2034FC24AE971E00E252A3 /* AttachmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentList.swift; sourceTree = "<group>"; };
+		BA20350024AE99B900E252A3 /* AttachmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInfo.swift; sourceTree = "<group>"; };
+		BA20350324AE99CF00E252A3 /* AttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentCell.swift; sourceTree = "<group>"; };
+		BA20350724AEA00400E252A3 /* CustomJackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJackList.swift; sourceTree = "<group>"; };
+		BA20350B24AEA03400E252A3 /* CustomSquadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquadInfo.swift; sourceTree = "<group>"; };
+		BA20350E24AEA15400E252A3 /* AttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
+		BA20351124AEBEB300E252A3 /* AttachmentStatsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentStatsInfo.swift; sourceTree = "<group>"; };
 		BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidBarracksApp.swift; sourceTree = "<group>"; };
 		BA4F967724AAA5C000AB9F4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BA4F967824AAA5C100AB9F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA4F967D24AAA5C100AB9F4C /* VoidBarracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoidBarracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4F968024AAA5C100AB9F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4F968524AAA5C100AB9F4C /* VoidBarracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoidBarracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +193,59 @@
 		BA4F969824AAA5C100AB9F4C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4F969C24AAA5C100AB9F4C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BA4F969E24AAA5C100AB9F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentCloudKitContainer.swift; sourceTree = "<group>"; };
+		BA4F96B824AAA78A00AB9F4C /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA4F97F924AACBD900AB9F4C /* units-alliance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-alliance.json"; sourceTree = "<group>"; };
+		BA4F97FA24AACBD900AB9F4C /* jacks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jacks.json; sourceTree = "<group>"; };
+		BA4F97FB24AACBD900AB9F4C /* units-marchers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-marchers.json"; sourceTree = "<group>"; };
+		BA4F97FC24AACBD900AB9F4C /* heros.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heros.json; sourceTree = "<group>"; };
+		BA4F97FD24AACBD900AB9F4C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rules.json; sourceTree = "<group>"; };
+		BA4F97FE24AACBD900AB9F4C /* units-continuum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-continuum.json"; sourceTree = "<group>"; };
+		BA4F97FF24AACBD900AB9F4C /* weapons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
+		BA4F980024AACBD900AB9F4C /* factions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = factions.json; sourceTree = "<group>"; };
+		BA4F980124AACBD900AB9F4C /* cortex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cortex.json; sourceTree = "<group>"; };
+		BA4F980224AACBDA00AB9F4C /* cyphers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cyphers.json; sourceTree = "<group>"; };
+		BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadJson.swift; sourceTree = "<group>"; };
+		BA4F986F24AAD8B200AB9F4C /* ULRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULRule.swift; sourceTree = "<group>"; };
+		BA4F987024AAD8B200AB9F4C /* ULweapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULweapon.swift; sourceTree = "<group>"; };
+		BA4F987224AAD8B200AB9F4C /* ULunit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULunit.swift; sourceTree = "<group>"; };
+		BA4F987324AAD8B200AB9F4C /* ULCypher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULCypher.swift; sourceTree = "<group>"; };
+		BA4F987424AAD8B200AB9F4C /* ULCortex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULCortex.swift; sourceTree = "<group>"; };
+		BA4F987524AAD8B300AB9F4C /* ULfaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULfaction.swift; sourceTree = "<group>"; };
+		BA4F987624AAD8B300AB9F4C /* ULjacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULjacks.swift; sourceTree = "<group>"; };
+		BA4F989024AADC9F00AB9F4C /* GetJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJson.swift; sourceTree = "<group>"; };
+		BA4F989924AC163100AB9F4C /* FactionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionPicker.swift; sourceTree = "<group>"; };
+		BA4F98A324AC3FE400AB9F4C /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		BA4F98A624AC402B00AB9F4C /* HeroList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroList.swift; sourceTree = "<group>"; };
+		BA4F98A924AC474D00AB9F4C /* SoloList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloList.swift; sourceTree = "<group>"; };
+		BA4F98AC24AC476300AB9F4C /* SoloCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloCell.swift; sourceTree = "<group>"; };
+		BA4F98AF24AC482700AB9F4C /* JackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackCell.swift; sourceTree = "<group>"; };
+		BA4F98B224AC483400AB9F4C /* JackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackList.swift; sourceTree = "<group>"; };
+		BA4F98B524AC48D900AB9F4C /* SquadList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadList.swift; sourceTree = "<group>"; };
+		BA4F98B824AC48E600AB9F4C /* SquadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadCell.swift; sourceTree = "<group>"; };
+		BA4F98BB24AC49BE00AB9F4C /* HeroInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroInfo.swift; sourceTree = "<group>"; };
+		BA4F98BF24AC4D0E00AB9F4C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		BA4F98C224AC543000AB9F4C /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
+		BA4F98C524AC585900AB9F4C /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		BA4F98C824AC603600AB9F4C /* SquadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadInfo.swift; sourceTree = "<group>"; };
+		BA4F98CB24AC62F100AB9F4C /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		BA4F98CE24AC646600AB9F4C /* HeroCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCounterView.swift; sourceTree = "<group>"; };
+		BA4F98D124AC66AF00AB9F4C /* SoloInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloInfo.swift; sourceTree = "<group>"; };
+		BA4F98D424AD0AC900AB9F4C /* Barracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barracks.swift; sourceTree = "<group>"; };
+		BA61D5A824AD21A0002F047A /* LazyLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoad.swift; sourceTree = "<group>"; };
+		BA61D5AE24AD2D4E002F047A /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BA61D5B124AD4C04002F047A /* JackInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackInfo.swift; sourceTree = "<group>"; };
+		BAC227DC24AD982200080E97 /* ArmyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmyBuilder.swift; sourceTree = "<group>"; };
+		BAC227E024ADA2FC00080E97 /* CypherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherList.swift; sourceTree = "<group>"; };
+		BAC227E324ADA30900080E97 /* CypherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherCell.swift; sourceTree = "<group>"; };
+		BAC227E624ADA31300080E97 /* CypherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherInfo.swift; sourceTree = "<group>"; };
+		BAC227E924ADA3D900080E97 /* RackBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackBuilder.swift; sourceTree = "<group>"; };
+		BAC227EF24ADB23000080E97 /* JackBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBuilder.swift; sourceTree = "<group>"; };
+		BAC227F224ADB31300080E97 /* CustomJackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJackCell.swift; sourceTree = "<group>"; };
+		BAC227F624ADB63C00080E97 /* CortexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexList.swift; sourceTree = "<group>"; };
+		BAC227FA24ADB6C200080E97 /* CortexCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexCell.swift; sourceTree = "<group>"; };
+		BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +280,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA10D19324AE4E6E007FBCDD /* JackWeaponViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA10D19424AE4E8C007FBCDD /* JackWeaponList.swift */,
+				BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */,
+				BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */,
+				BA2034F624AE889A00E252A3 /* JackWeaponView.swift */,
+			);
+			path = JackWeaponViews;
+			sourceTree = "<group>";
+		};
+		BA2034FF24AE999700E252A3 /* AttachmentViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA2034FC24AE971E00E252A3 /* AttachmentList.swift */,
+				BA20350024AE99B900E252A3 /* AttachmentInfo.swift */,
+				BA20350324AE99CF00E252A3 /* AttachmentCell.swift */,
+				BA20350E24AEA15400E252A3 /* AttachmentView.swift */,
+				BA20351124AEBEB300E252A3 /* AttachmentStatsInfo.swift */,
+			);
+			path = AttachmentViews;
+			sourceTree = "<group>";
+		};
+		BA20350624AE9FCE00E252A3 /* CustomJackViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAC227F224ADB31300080E97 /* CustomJackCell.swift */,
+				BA2034EF24AE772400E252A3 /* CustomJackInfo.swift */,
+				BA20350724AEA00400E252A3 /* CustomJackList.swift */,
+			);
+			path = CustomJackViews;
+			sourceTree = "<group>";
+		};
+		BA20350A24AEA01500E252A3 /* CustomSquadViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */,
+				BA20350B24AEA03400E252A3 /* CustomSquadInfo.swift */,
+			);
+			path = CustomSquadViews;
+			sourceTree = "<group>";
+		};
 		BA4F967024AAA5C000AB9F4C = {
 			isa = PBXGroup;
 			children = (
+				BA4F96B624AAA6BC00AB9F4C /* CoreData */,
 				BA4F967524AAA5C000AB9F4C /* Shared */,
 				BA4F967F24AAA5C100AB9F4C /* iOS */,
 				BA4F968624AAA5C100AB9F4C /* macOS */,
@@ -98,9 +338,19 @@
 		BA4F967524AAA5C000AB9F4C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */,
+				BA4F98BE24AC4CC400AB9F4C /* Common */,
+				BAC227DF24ADA2C500080E97 /* CypherViews */,
+				BA4F989F24AC166100AB9F4C /* JackViews */,
+				BA4F989E24AC165900AB9F4C /* SoloViews */,
+				BA4F989D24AC164500AB9F4C /* SquadViews */,
+				BA4F989C24AC163800AB9F4C /* HeroViews */,
+				BAC227DC24AD982200080E97 /* ArmyBuilder.swift */,
+				BA4F98D424AD0AC900AB9F4C /* Barracks.swift */,
+				BA4F989924AC163100AB9F4C /* FactionPicker.swift */,
 				BA4F967724AAA5C000AB9F4C /* ContentView.swift */,
-				BA4F967824AAA5C100AB9F4C /* Assets.xcassets */,
+				BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */,
+				BA61D5AE24AD2D4E002F047A /* DataController.swift */,
+				BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -149,6 +399,132 @@
 				BA4F969E24AAA5C100AB9F4C /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		BA4F96B624AAA6BC00AB9F4C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F986B24AAD88200AB9F4C /* jsonModels */,
+				BA4F97F824AACBC200AB9F4C /* json */,
+				BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */,
+				BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BA4F97F824AACBC200AB9F4C /* json */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F980124AACBD900AB9F4C /* cortex.json */,
+				BA4F980224AACBDA00AB9F4C /* cyphers.json */,
+				BA4F980024AACBD900AB9F4C /* factions.json */,
+				BA4F97FC24AACBD900AB9F4C /* heros.json */,
+				BA4F97FA24AACBD900AB9F4C /* jacks.json */,
+				BA4F97FD24AACBD900AB9F4C /* rules.json */,
+				BA4F97F924AACBD900AB9F4C /* units-alliance.json */,
+				BA4F97FE24AACBD900AB9F4C /* units-continuum.json */,
+				BA4F97FB24AACBD900AB9F4C /* units-marchers.json */,
+				BA4F97FF24AACBD900AB9F4C /* weapons.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		BA4F986B24AAD88200AB9F4C /* jsonModels */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */,
+				BA4F989024AADC9F00AB9F4C /* GetJson.swift */,
+				BA4F987424AAD8B200AB9F4C /* ULCortex.swift */,
+				BA4F987324AAD8B200AB9F4C /* ULCypher.swift */,
+				BA4F987524AAD8B300AB9F4C /* ULfaction.swift */,
+				BA4F987624AAD8B300AB9F4C /* ULjacks.swift */,
+				BA4F986F24AAD8B200AB9F4C /* ULRule.swift */,
+				BA4F987224AAD8B200AB9F4C /* ULunit.swift */,
+				BA4F987024AAD8B200AB9F4C /* ULweapon.swift */,
+			);
+			path = jsonModels;
+			sourceTree = "<group>";
+		};
+		BA4F989C24AC163800AB9F4C /* HeroViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F98CE24AC646600AB9F4C /* HeroCounterView.swift */,
+				BA4F98BB24AC49BE00AB9F4C /* HeroInfo.swift */,
+				BA4F98A324AC3FE400AB9F4C /* HeroCell.swift */,
+				BA4F98A624AC402B00AB9F4C /* HeroList.swift */,
+			);
+			path = HeroViews;
+			sourceTree = "<group>";
+		};
+		BA4F989D24AC164500AB9F4C /* SquadViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA20350A24AEA01500E252A3 /* CustomSquadViews */,
+				BA2034FF24AE999700E252A3 /* AttachmentViews */,
+				BA4F98C824AC603600AB9F4C /* SquadInfo.swift */,
+				BA4F98B824AC48E600AB9F4C /* SquadCell.swift */,
+				BA4F98B524AC48D900AB9F4C /* SquadList.swift */,
+				BA2034F924AE929100E252A3 /* SquadBuilder.swift */,
+			);
+			path = SquadViews;
+			sourceTree = "<group>";
+		};
+		BA4F989E24AC165900AB9F4C /* SoloViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F98D124AC66AF00AB9F4C /* SoloInfo.swift */,
+				BA4F98AC24AC476300AB9F4C /* SoloCell.swift */,
+				BA4F98A924AC474D00AB9F4C /* SoloList.swift */,
+			);
+			path = SoloViews;
+			sourceTree = "<group>";
+		};
+		BA4F989F24AC166100AB9F4C /* JackViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA20350624AE9FCE00E252A3 /* CustomJackViews */,
+				BA10D19324AE4E6E007FBCDD /* JackWeaponViews */,
+				BAC227F524ADB62000080E97 /* CortexViews */,
+				BA61D5B124AD4C04002F047A /* JackInfo.swift */,
+				BA4F98B224AC483400AB9F4C /* JackList.swift */,
+				BA4F98AF24AC482700AB9F4C /* JackCell.swift */,
+				BAC227EF24ADB23000080E97 /* JackBuilder.swift */,
+			);
+			path = JackViews;
+			sourceTree = "<group>";
+		};
+		BA4F98BE24AC4CC400AB9F4C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA4F98BF24AC4D0E00AB9F4C /* StatsView.swift */,
+				BA4F98C224AC543000AB9F4C /* WeaponsView.swift */,
+				BA4F98C524AC585900AB9F4C /* RulesView.swift */,
+				BA4F98CB24AC62F100AB9F4C /* CounterView.swift */,
+				BA61D5A824AD21A0002F047A /* LazyLoad.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BAC227DF24ADA2C500080E97 /* CypherViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAC227E624ADA31300080E97 /* CypherInfo.swift */,
+				BAC227E324ADA30900080E97 /* CypherCell.swift */,
+				BAC227E024ADA2FC00080E97 /* CypherList.swift */,
+				BAC227E924ADA3D900080E97 /* RackBuilder.swift */,
+			);
+			path = CypherViews;
+			sourceTree = "<group>";
+		};
+		BAC227F524ADB62000080E97 /* CortexViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAC227F624ADB63C00080E97 /* CortexList.swift */,
+				BAC227FA24ADB6C200080E97 /* CortexCell.swift */,
+				BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */,
+				BA2034F324AE786E00E252A3 /* CortexView.swift */,
+			);
+			path = CortexViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +651,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4F96A324AAA5C100AB9F4C /* Assets.xcassets in Resources */,
+				BA4F980724AACBDA00AB9F4C /* units-marchers.json in Resources */,
+				BA4F980F24AACBDA00AB9F4C /* weapons.json in Resources */,
+				BA4F981524AACBDA00AB9F4C /* cyphers.json in Resources */,
+				BA4F980924AACBDA00AB9F4C /* heros.json in Resources */,
+				BA4F980324AACBDA00AB9F4C /* units-alliance.json in Resources */,
+				BA4F980B24AACBDA00AB9F4C /* rules.json in Resources */,
+				BA4F980D24AACBDA00AB9F4C /* units-continuum.json in Resources */,
+				BA4F981324AACBDA00AB9F4C /* cortex.json in Resources */,
+				BA4F980524AACBDA00AB9F4C /* jacks.json in Resources */,
+				BA4F981124AACBDA00AB9F4C /* factions.json in Resources */,
+				BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +669,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4F96A424AAA5C100AB9F4C /* Assets.xcassets in Resources */,
+				BA4F980824AACBDA00AB9F4C /* units-marchers.json in Resources */,
+				BA4F981024AACBDA00AB9F4C /* weapons.json in Resources */,
+				BA4F981624AACBDA00AB9F4C /* cyphers.json in Resources */,
+				BA4F980A24AACBDA00AB9F4C /* heros.json in Resources */,
+				BA4F980424AACBDA00AB9F4C /* units-alliance.json in Resources */,
+				BA4F980C24AACBDA00AB9F4C /* rules.json in Resources */,
+				BA4F980E24AACBDA00AB9F4C /* units-continuum.json in Resources */,
+				BA4F981424AACBDA00AB9F4C /* cortex.json in Resources */,
+				BA4F980624AACBDA00AB9F4C /* jacks.json in Resources */,
+				BA4F981224AACBDA00AB9F4C /* factions.json in Resources */,
+				BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +704,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */,
+				BA61D5B224AD4C04002F047A /* JackInfo.swift in Sources */,
+				BA4F98CF24AC646600AB9F4C /* HeroCounterView.swift in Sources */,
+				BA4F98B324AC483400AB9F4C /* JackList.swift in Sources */,
+				BAC227F024ADB23000080E97 /* JackBuilder.swift in Sources */,
+				BA20350F24AEA15400E252A3 /* AttachmentView.swift in Sources */,
+				BA4F988824AAD8B300AB9F4C /* ULCortex.swift in Sources */,
+				BAC227F324ADB31300080E97 /* CustomJackCell.swift in Sources */,
+				BA4F98BC24AC49BE00AB9F4C /* HeroInfo.swift in Sources */,
+				BA4F988624AAD8B300AB9F4C /* ULCypher.swift in Sources */,
+				BA4F96B924AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */,
+				BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */,
+				BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */,
+				BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */,
+				BA4F98AA24AC474D00AB9F4C /* SoloList.swift in Sources */,
+				BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */,
+				BA4F988A24AAD8B300AB9F4C /* ULfaction.swift in Sources */,
+				BA61D5A924AD21A0002F047A /* LazyLoad.swift in Sources */,
+				BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */,
+				BA4F98A424AC3FE400AB9F4C /* HeroCell.swift in Sources */,
+				BA2034F024AE772400E252A3 /* CustomJackInfo.swift in Sources */,
+				BA4F98C924AC603600AB9F4C /* SquadInfo.swift in Sources */,
+				BAC227DD24AD982200080E97 /* ArmyBuilder.swift in Sources */,
+				BA4F98D224AC66AF00AB9F4C /* SoloInfo.swift in Sources */,
+				BA20350824AEA00400E252A3 /* CustomJackList.swift in Sources */,
+				BA20350424AE99CF00E252A3 /* AttachmentCell.swift in Sources */,
+				BA4F989124AADC9F00AB9F4C /* GetJson.swift in Sources */,
+				BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */,
+				BA4F98B624AC48D900AB9F4C /* SquadList.swift in Sources */,
+				BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */,
+				BA10D19B24AE6F19007FBCDD /* CustomSquadCell.swift in Sources */,
+				BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */,
+				BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */,
+				BA4F98C024AC4D0E00AB9F4C /* StatsView.swift in Sources */,
+				BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */,
+				BA4F98CC24AC62F100AB9F4C /* CounterView.swift in Sources */,
+				BAC227E124ADA2FC00080E97 /* CypherList.swift in Sources */,
+				BAC227FB24ADB6C200080E97 /* CortexCell.swift in Sources */,
+				BA4F98A724AC402B00AB9F4C /* HeroList.swift in Sources */,
 				BA4F969F24AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */,
+				BA10D19724AE4F1C007FBCDD /* JackWeaponCell.swift in Sources */,
+				BA4F98AD24AC476300AB9F4C /* SoloCell.swift in Sources */,
+				BA20350124AE99B900E252A3 /* AttachmentInfo.swift in Sources */,
+				BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */,
+				BAC227F724ADB63C00080E97 /* CortexList.swift in Sources */,
+				BA20351224AEBEB300E252A3 /* AttachmentStatsInfo.swift in Sources */,
+				BAC227FE24ADB6FB00080E97 /* CortexInfo.swift in Sources */,
+				BA10D19524AE4E8C007FBCDD /* JackWeaponList.swift in Sources */,
+				BA4F96B424AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */,
+				BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */,
+				BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */,
+				BA20350C24AEA03400E252A3 /* CustomSquadInfo.swift in Sources */,
+				BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */,
+				BA4F989A24AC163100AB9F4C /* FactionPicker.swift in Sources */,
+				BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */,
+				BA4F98B924AC48E600AB9F4C /* SquadCell.swift in Sources */,
+				BAC227E424ADA30900080E97 /* CypherCell.swift in Sources */,
+				BA4F988C24AAD8B300AB9F4C /* ULjacks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +770,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4F987F24AAD8B300AB9F4C /* ULRule.swift in Sources */,
+				BA61D5B324AD4C04002F047A /* JackInfo.swift in Sources */,
+				BA2034FB24AE929100E252A3 /* SquadBuilder.swift in Sources */,
+				BA4F98D024AC646600AB9F4C /* HeroCounterView.swift in Sources */,
+				BA4F98B424AC483400AB9F4C /* JackList.swift in Sources */,
+				BAC227F124ADB23000080E97 /* JackBuilder.swift in Sources */,
+				BA4F988924AAD8B300AB9F4C /* ULCortex.swift in Sources */,
+				BA2034FE24AE971E00E252A3 /* AttachmentList.swift in Sources */,
+				BA2034F224AE773200E252A3 /* CustomJackInfo.swift in Sources */,
+				BAC227F424ADB31300080E97 /* CustomJackCell.swift in Sources */,
+				BA4F98BD24AC49BE00AB9F4C /* HeroInfo.swift in Sources */,
+				BA4F988724AAD8B300AB9F4C /* ULCypher.swift in Sources */,
+				BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */,
+				BA20350D24AEA03400E252A3 /* CustomSquadInfo.swift in Sources */,
+				BA61D5B024AD2D4E002F047A /* DataController.swift in Sources */,
+				BA4F98C424AC543000AB9F4C /* WeaponsView.swift in Sources */,
+				BAC227E824ADA31300080E97 /* CypherInfo.swift in Sources */,
+				BA4F98AB24AC474D00AB9F4C /* SoloList.swift in Sources */,
+				BA4F988124AAD8B300AB9F4C /* ULweapon.swift in Sources */,
+				BA20350524AE99CF00E252A3 /* AttachmentCell.swift in Sources */,
+				BA4F988B24AAD8B300AB9F4C /* ULfaction.swift in Sources */,
+				BA61D5AA24AD21A0002F047A /* LazyLoad.swift in Sources */,
+				BA4F98A524AC3FE400AB9F4C /* HeroCell.swift in Sources */,
+				BA4F98CA24AC603600AB9F4C /* SquadInfo.swift in Sources */,
+				BAC227DE24AD982200080E97 /* ArmyBuilder.swift in Sources */,
+				BA4F98D324AC66AF00AB9F4C /* SoloInfo.swift in Sources */,
+				BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */,
+				BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */,
+				BA20350924AEA00400E252A3 /* CustomJackList.swift in Sources */,
+				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
+				BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
+				BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */,
+				BA20351324AEBEB300E252A3 /* AttachmentStatsInfo.swift in Sources */,
+				BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */,
+				BA4F98C124AC4D0E00AB9F4C /* StatsView.swift in Sources */,
+				BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */,
+				BA4F98CD24AC62F100AB9F4C /* CounterView.swift in Sources */,
+				BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */,
+				BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */,
+				BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */,
+				BA4F98A824AC402B00AB9F4C /* HeroList.swift in Sources */,
+				BA20350224AE99B900E252A3 /* AttachmentInfo.swift in Sources */,
 				BA4F96A024AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */,
+				BA4F98AE24AC476300AB9F4C /* SoloCell.swift in Sources */,
+				BAC227F824ADB63C00080E97 /* CortexList.swift in Sources */,
+				BAC227FF24ADB6FB00080E97 /* CortexInfo.swift in Sources */,
+				BA4F96B524AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */,
+				BA20351024AEA15400E252A3 /* AttachmentView.swift in Sources */,
+				BA4F988524AAD8B300AB9F4C /* ULunit.swift in Sources */,
+				BA4F98C724AC585900AB9F4C /* RulesView.swift in Sources */,
+				BA4F989B24AC163100AB9F4C /* FactionPicker.swift in Sources */,
+				BA4F98BA24AC48E600AB9F4C /* SquadCell.swift in Sources */,
+				BAC227E524ADA30900080E97 /* CypherCell.swift in Sources */,
+				BA4F988D24AAD8B300AB9F4C /* ULjacks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +1202,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA4F96B824AAA78A00AB9F4C /* User.xcdatamodel */,
+			);
+			currentVersion = BA4F96B824AAA78A00AB9F4C /* User.xcdatamodel */;
+			path = AppModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA4F967124AAA5C000AB9F4C /* Project object */;
 }

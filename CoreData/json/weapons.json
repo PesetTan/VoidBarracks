@@ -1,0 +1,926 @@
+[
+    {
+        "id": "FORCE_ROD",
+        "name": "Force Rod",
+        "cost": 2,
+        "elements": [
+            "FORCE"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "REPULSOR"
+        ]
+    }, {
+        "id": "VOID_SPLITTER",
+        "name": "Void Splitter",
+        "cost": 1,
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "melee weapon",
+        "range": 8,
+        "power": 4,
+        "ruleIds": [
+            "SHOCKWAVE_SPIKE"
+        ]
+    }, {
+        "id": "HOLLOWPHAGE_CANNON",
+        "name": "Hollowphage Cannon",
+        "cost": 3,
+        "elements": [
+            "CORROSION"
+        ],
+        "type": "ranged weapon",
+        "range": 14,
+        "power": 4,
+        "ruleIds": [
+            "CORROSION"
+        ]
+    }, {
+        "id": "ROCKET_POD",
+        "name": "Rocket Pod",
+        "cost": 2,
+        "elements": [
+            "BALLISTIC",
+            "EXPLOSIVE"
+        ],
+        "type": "ranged weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "BLAST_WEAPON"
+        ]
+    }, {
+        "id": "NAILER",
+        "name": "Nailer",
+        "cost": 1,
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 3,
+        "ruleIds": []
+    }, {
+        "id": "NULL_CANNON",
+        "name": "Null Cannon",
+        "cost": 3,
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 14,
+        "power": 5,
+        "ruleIds": [
+            "NULL_STRIKE"
+        ]
+    }, {
+        "id": "FORCE_HAMMER",
+        "name": "Force Hammer",
+        "cost": 1,
+        "elements": [
+            "FORCE"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "REPULSOR"
+        ]
+    }, {
+        "id": "GRENADE_LAUNCHER",
+        "name": "Grenade Launcher",
+        "cost": 1,
+        "elements": [
+            "BALLISTIC",
+            "EXPLOSION"
+        ],
+        "type": "ranged weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "BLAST_WEAPON"
+        ]
+    }, {
+        "id": "SUN_PIERCER",
+        "name": "Sun Piercer",
+        "cost": 2,
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 1,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE"
+        ]
+    }, {
+        "id": "IMMOLATOR",
+        "name": "Immolator",
+        "cost": 3,
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 16,
+        "power": 5,
+        "ruleIds": [
+            "FIRE"
+        ]
+    }, {
+        "id": "MAELSTROM",
+        "name": "Maelstrom",
+        "cost": 2,
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 4,
+        "ruleIds": [
+            "DEFENSE_MATRIX_CHARGE",
+            "SPRAY"
+        ]
+    }, {
+        "id": "REPULSOR_SHIELD",
+        "name": "Repulsor Shield",
+        "cost": 1,
+        "elements": [
+            "FORCE"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 2,
+        "ruleIds": [
+            "REPULSOR_RAM_SPIKE",
+            "SHIELD"
+        ]
+    }, {
+        "id": "FUSION_GLAIVE",
+        "name": "Fusion Glaive",
+        "cost": 2,
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 5,
+        "ruleIds": [
+            "POWER_ATTACK_SPIKE"
+        ]
+    }, {
+        "id": "ASSAULT_RIFLE",
+        "name": "Assault Rifle",
+        "cost": 1,
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [],
+        "multiWeaponIds": [
+            "BAYONET"
+        ]
+    }, {
+        "id": "BAYONET",
+        "name": "Bayonet",
+        "cost": 1,
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": []
+    }, {
+        "id": "HARBINGER_CANNON",
+        "name": "Harbinger Cannon",
+        "cost": 2,
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "HUNTER_KILLER_ROUNDS_SPIKE",
+            "STRAFE"
+        ]
+    }, {
+        "id": "NULL_CANNON",
+        "name": "Null Cannon",
+        "cost": 3,
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 14,
+        "power": 5,
+        "ruleIds": [
+            "NULL_STRIKE"
+        ]
+    }, {
+        "id": "FORCE_HAMMER",
+        "name": "Force Hammer",
+        "cost": 1,
+        "elements": [
+            "FORCE"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "REPULSOR"
+        ]
+    }, {
+        "id": "GRENADE_LAUNCHER",
+        "name": "Grenade Launcher",
+        "cost": 1,
+        "elements": [
+            "BALLISTIC",
+            "EXPLOSION"
+        ],
+        "type": "ranged weapon",
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "BLAST_WEAPON"
+        ]
+    }, {
+        "id": "SUN_PIERCER",
+        "name": "Sun Piercer",
+        "cost": 2,
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 1,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE"
+        ]
+    }, {
+        "id": "IMMOLATOR",
+        "name": "Immolator",
+        "cost": 3,
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 16,
+        "power": 5,
+        "ruleIds": [
+            "FIRE"
+        ]
+    }, {
+        "id": "MAELSTROM",
+        "name": "Maelstrom",
+        "cost": 2,
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 4,
+        "ruleIds": [
+            "DEFENSE_MATRIX_CHARGE",
+            "SPRAY"
+        ]
+    }, {
+        "id": "PSYCHOKINETIC_HOOD",
+        "name": "Psychokinetic Hood",
+        "elements": [
+            "FORCE"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 4,
+        "ruleIds": [
+            "SPRAY"
+        ]
+    }, {
+        "id": "SHREDDER",
+        "name": "Shredder",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "STRAFE"
+        ]
+    }, {
+        "id": "MANGLER",
+        "name": "Mangler",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4,
+        "ruleIds": [
+            "POWER_ATTACK_SPIKE"
+        ]
+    }, {
+        "id": "BATTLE_RIFLE",
+        "name": "Battle Rifle",
+        "cost": 1,
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "MECHANIKAL_OPTICS_CHARGE"
+        ]
+    }, {
+        "id": "RIPPER",
+        "name": "Ripper",
+        "cost": 1,
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4,
+        "ruleIds": []
+    }, {
+        "id": "FLAMETHROWER",
+        "name": "Flamethrower",
+        "cost": 2,
+        "elements": [
+            "FIRE"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "FIRE",
+            "SPRAY"
+        ]
+    }, {
+        "id": "TALON_ROCKET_POD",
+        "name": "Talon Rocket Pod",
+        "cost": 2,
+        "elements": [
+            "BALLISTIC",
+            "EXPLOSION"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "BLAST_WEAPON"
+        ]
+    }, {
+        "id": "RAIL_GUN",
+        "name": "Rail Gun",
+        "cost": 3,
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 18,
+        "power": 5,
+        "ruleIds": [
+            "ARC_BOOSTER_SPIKE"
+        ]
+    }, {
+        "id": "NULL_DETONATOR",
+        "name": "Null Detonator",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 6,
+        "ruleIds": [
+            "NULLIFIER"
+        ]
+    }, {
+        "id": "FUSION_BLADE",
+        "name": "Fusion Blade",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3
+    }, {
+        "id": "HAND_GUN",
+        "name": "Hand Gun",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 3
+    }, {
+        "id": "BATTLE_STAFF",
+        "name": "Battle Staff",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4,
+        "ruleIds": [
+            "REPULSOR"
+        ]
+    }, {
+        "id": "SNIPER_RIFLE",
+        "name": "Sniper Rifle",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 15,
+        "power": 4,
+        "ruleIds": [
+            "ARC_BOOSTER_SPIKE"
+        ]
+    }, {
+        "id": "COMBAT_BLADE",
+        "name": "Combat Blade",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3
+    }, {
+        "id": "NULL_HAMMER",
+        "name": "Null Hammer",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4,
+        "ruleIds": [
+            "NULL_STRIKE"
+        ]
+    }, {
+        "id": "PULSE_CANNON",
+        "name": "Pulse Cannon",
+        "elements": [
+            "EXPLOSION",
+            "FORCE"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "BLAST_WEAPON"
+        ]
+    }, {
+        "id": "FUSION_SWORD",
+        "name": "Fusion Sword",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4
+    }, {
+        "id": "IMMOLATOR",
+        "name": "Immolator",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "cost": 3,
+        "range": 16,
+        "power": 5,
+        "ruleIds": [
+            "FIRE"
+        ]
+    }, {
+        "id": "REAPER",
+        "name": "Reaper",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "cost": 2,
+        "range": 8,
+        "power": 4,
+        "ruleIds": [
+            "WINCH"
+        ]
+    }, {
+        "id": "STINGER_CANNON",
+        "name": "Stinger Cannon",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "cost": 1,
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "TARGETER_CHARGE"
+        ]
+    }, {
+        "id": "CLOAKING_DEVICE",
+        "name": "Cloaking Device",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "cost": 1,
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "MIMETIC_CLOAK_CHARGE"
+        ]
+    }, {
+        "id": "ENTROPHIER",
+        "name": "Entrophier",
+        "elements": [
+            "COLD"
+        ],
+        "type": "ranged weapon",
+        "cost": 3,
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "LOCK_DOWN",
+            "STUN_MODULE_SPIKE"
+        ]
+    }, {
+        "id": "HEX_CANNON",
+        "name": "Hex Cannon",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "cost": 3,
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "MALEFACTOR"
+        ]
+    }, {
+        "id": "IMPALER",
+        "name": "Impaler",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "cost": 1,
+        "range": 1,
+        "power": 2,
+        "ruleIds": [
+            "ARMOR_PIERCING"
+        ]
+    }, {
+        "id": "PARTICLE_ACCELERATOR",
+        "name": "Particle Accelerator",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "cost": 2,
+        "range": 8,
+        "power": 1,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE"
+        ]
+    }, {
+        "id": "SLUG_GUN",
+        "name": "Slug Gun",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "melee weapon",
+        "cost": 1,
+        "range": 1,
+        "power": 3,
+        "ruleIds": [
+            "REPULSOR"
+        ]
+    }, {
+        "id": "BLAZER",
+        "name": "Blazer",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "cost": 3,
+        "range": 14,
+        "power": 4,
+        "ruleIds": [
+            "FIRE",
+            "STRAFE"
+        ]
+    }, {
+        "id": "WILDFLOWER",
+        "name": "Wildflower",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "cost": 2,
+        "ruleIds": [
+            "ERUPTION"
+        ]
+    }, {
+        "id": "ARC_BLADE",
+        "name": "Arc Blade",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 5,
+        "ruleIds": [
+            "ARMOR_PIERCING",
+            "MALEFACTOR",
+            "REPULSOR"
+        ]
+    }, {
+        "id": "ARC_BLADE_X2",
+        "name": "Arc Blade",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 5,
+        "ruleIds": [
+            "ARMOR_PIERCING",
+            "MALEFACTOR",
+            "REPULSOR"
+        ]
+    }, {
+        "id": "SOUL_GRINDER",
+        "name": "Soul Grinder",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 4,
+        "ruleIds": [
+            "SPRAY"
+        ]
+    }, {
+        "id": "TALON_ROCKET_LAUNCHER",
+        "name": "Talon Rocker Launcher",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 4,
+        "ruleIds": [
+            "BLAST_WEAPON",
+            "TARGETER_CHARGE"
+        ]
+    }, {
+        "id": "ARCLOCK_PISTOL",
+        "name": "Arclock Pistol",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "BLAST_WEAPON",
+            "FIRE",
+            "REVELATOR"
+        ]
+    }, {
+           "id": "ARCLOCK_PISTOL_X2",
+           "name": "Arclock Pistol",
+           "elements": [
+               "BALLISTIC"
+           ],
+           "type": "ranged weapon",
+           "range": 10,
+           "power": 3,
+           "ruleIds": [
+               "BLAST_WEAPON",
+               "FIRE",
+               "REVELATOR"
+           ]
+    }, {
+        "id": "ASSAULT_SHIELD",
+        "name": "Assault Shield",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "cost": 1,
+        "range": 1,
+        "power": 4,
+        "ruleIds": [
+            "SHIELD"
+        ]
+    }, {
+        "id": "HEAVY_FUSION_GLAIVE",
+        "name": "Heavy Fusion Glaive",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "cost": 2,
+        "range": 1,
+        "power": 6,
+        "ruleIds": [
+            "POWER_ATTACK_SPIKE"
+        ]
+    }, {
+        "id": "SEEKER",
+        "name": "Seeker",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "cost": 1,
+        "range": 12,
+        "power": 3,
+        "ruleIds": [
+            "TARGETER_CHARGE"
+        ]
+    }, {
+        "id": "STARBURST_MISSILES",
+        "name": "Starburst Missiles",
+        "elements": [
+            "BALLISTIC",
+            "EXPLOSIVE"
+        ],
+        "type": "ranged weapon",
+        "cost": 1,
+        "range": 14,
+        "power": 4,
+        "ruleIds": [
+            "BLAST_WEAPON",
+            "TARGETER_CHARGE"
+        ]
+    }, {
+        "id": "FORCE_GENERATOR",
+        "name": "Force Generator",
+        "elements": [
+            "FORCE"
+        ],
+        "type": "ranged weapon",
+        "range": 12,
+        "power": 3,
+        "ruleIds": [
+            "FORCE_RAM_SPIKE",
+            "LOCK_DOWN"
+        ]
+    }, {
+        "id": "FUSION_SCYTHE",
+        "name": "Fusion Scythe",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "cost": 1,
+        "range": 1,
+        "power": 4
+    }, {
+        "id": "DISPLACER",
+        "name": "Displacer",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "cost": 2,
+        "range": 13,
+        "power": 4,
+        "ruleIds": [
+            "DISLOCATOR_SPIKE"
+        ]
+    }, {
+        "id": "STARFALL_CANNON",
+        "name": "Starfall Cannon",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "cost": 3,
+        "range": 10,
+        "power": 2,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE"
+        ]
+    }, {
+        "id": "BONE_SAW",
+        "name": "Bone Saw",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 3
+    }, {
+        "id": "FUSION_DRILL",
+        "name": "Fusion Drill",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "cost": 1,
+        "range": 1,
+        "power": 5
+    }, {
+        "id": "PARTICLE_CANNON",
+        "name": "Particle Cannon",
+        "elements": [
+            "ENERGY"
+        ],
+        "type": "melee weapon",
+        "cost": 3,
+        "range": 12,
+        "power": 6,
+        "ruleIds": [
+            "EXPLOSIVE_COLLAPSE"
+        ]
+    }, {
+        "id": "FUSION_TORCH",
+        "name": "Fusion Torch",
+        "elements": [
+            "BEAM"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 3,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE"
+        ]
+    }, {
+        "id": "WRENCH",
+        "name": "Wrench",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 4
+    }, {
+        "id": "MAGNUM",
+        "name": "Magnum",
+        "elements": [
+            "BALLISTIC"
+        ],
+        "type": "ranged weapon",
+        "range": 8,
+        "power": 4
+    }, {
+        "id": "OBLIVION",
+        "name": "Oblivion",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 5,
+        "ruleIds": [
+            "HIGH_INTENSITY_CHARGE",
+            "GORGE",
+            "SIPHON_POWER"
+        ]
+    }, {
+        "id": "FORCE_CONSTRICTOR",
+        "name": "Force Constrictor",
+        "elements": [
+            "FORCE"
+        ],
+        "type": "ranged weapon",
+        "range": 10,
+        "power": 3,
+        "ruleIds": [
+            "STUN_MODULE_SPIKE"
+        ]
+    }, {
+        "id": "FUSION_SAW",
+        "name": "Fusion Saw",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 1,
+        "power": 5
+    }, {
+        "id": "WRECKING_CLAW",
+        "name": "Wrecking Claw",
+        "elements": [
+            "KINETIC"
+        ],
+        "type": "melee weapon",
+        "range": 2,
+        "power": 4,
+        "ruleIds": [
+            "STUN_MODULE_SPIKE"
+        ]
+    }
+]

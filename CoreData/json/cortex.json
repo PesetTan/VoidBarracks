@@ -1,0 +1,116 @@
+[
+    {
+        "id": "NEURAL_NET",
+        "name": "Neural Net",
+        "ruleIds": [
+            "NEURAL_NET"
+        ]
+    }, {
+        "id": "SCOUT",
+        "name": "Scout",
+        "ruleIds": [
+            "PATHFINDER",
+            "SMART_LOCK_CHARGE"
+        ]
+    }, {
+        "id": "KILLER",
+        "name": "Killer",
+        "ruleIds": [
+            "RELENTLESS"
+        ]
+    }, {
+        "id": "JACK_HUNTER",
+        "name": "'Jack Hunter",
+        "ruleIds": [
+            "JACK_HUNTER_SPIKE"
+        ]
+    }, {
+        "id": "REVENGER",
+        "name": "Revenger",
+        "ruleIds": [
+            "SMART_LOCK_CHARGE"
+        ]
+    }, {
+        "id": "REFLEX",
+        "name": "Reflex",
+        "ruleIds": [
+            "HEIGHTENED_REFLEXES"
+        ]
+    }, {
+        "id": "NEURAL_WEB",
+        "name": "Neural Web",
+        "ruleIds": [
+            "NEURAL_WEB"
+        ]
+    }, {
+        "id": "RECON",
+        "name": "Recon",
+        "ruleIds": [
+            "PATHFINDER",
+            "REVELATOR"
+        ]
+    }, {
+        "id": "SPIDER",
+        "name": "Spider",
+        "ruleIds": [
+            "PATHFINDER",
+            "SPIDER"
+        ]
+    }, {
+        "id": "MISANTHROPE",
+        "name": "Misanthrope",
+        "ruleIds": [
+            "ARC_EXCHANGE",
+            "ENTROPIC_FIELD"
+        ]
+    }, {
+        "id": "FIGHTER",
+        "name": "Fighter",
+        "ruleIds": [
+            "RAPID_STRIKE"
+        ]
+    }, {
+        "id": "SNIPER",
+        "name": "Sniper",
+        "ruleIds": [
+            "ADVANCED_OPTICS"
+        ]
+    }, {
+        "id": "DEADEYE",
+        "name": "Deadeye",
+        "ruleIds": [
+            "REVELATOR"
+        ]
+    }, {
+        "id": "DEFENDER",
+        "name": "Defender",
+        "ruleIds": [
+            "INTERCEPTOR_DRIVER_SPIKE"
+        ]
+    }, {
+        "id": "BATTLE_CRUISER",
+        "name": "Battle Cruiser",
+        "ruleIds": [
+            "BATTLE_CRUISER"
+        ]
+    }, {
+        "id": "IMPULSE_RECIPROCATOR",
+        "name": "Impulse Reciprocator",
+        "ruleIds": [
+            "IMPULSE_RECIPROCATOR_SPIKE"
+        ]
+    }, {
+        "id": "ACE",
+        "name": "Ace",
+        "ruleIds": [
+            "ADVANCED_OPTICS"
+        ]
+    }, {
+        "id": "BOMBER",
+        "name": "Bomber",
+        "ruleIds": [
+            "BOMBER"
+        ]
+    }
+
+]

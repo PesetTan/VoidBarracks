@@ -1,0 +1,76 @@
+[
+    {
+        "id": "AETERNUS_CONTINUUM",
+        "name": "Aeternus Continuum",
+        "shortName": "continuum",
+        "unitIds": [
+            "VASSAL_REAVER",
+            "VASSAL_WITCH_HUNTERS"
+        ],
+        "soloIds": [
+            "IMMORTAL_WEAVER",
+            "MARAUDER",
+            "GRAFTER"
+        ],
+        "heroIds": [
+            "HIEROTHEOS_RAXIS",
+            "BARON_CASSIUS_MOORGRAVE",
+            "CAPTAIN_JAX_REDBLADE"
+        ],
+        "jackIds": [
+            "SCOURGE",
+            "NEMESIS"
+        ],
+        "attachmentIds": [
+        ]
+    }, {
+        "id": "IRON_STAR_ALLIANCE",
+        "name": "Iron Star Alliance",
+        "shortName": "alliance",
+        "unitIds": [
+            "PALADIN_ENFORCERS",
+            "PALADIN_ANNIHILATORS"
+        ],
+        "soloIds": [
+            "PALADIN_WEAVER",
+            "PALADIN_COMMANDER"
+        ],
+        "heroIds": [
+            "JUSTICAR_VOSS",
+            "BARON_CASSIUS_MOORGRAVE",
+            "VOITEK_SUDAL_BOUNTY_HUNTER"
+        ],
+        "jackIds": [
+            "FIREBRAND",
+            "MORNINGSTAR"
+        ],
+        "attachmentIds": [
+            "PALADIN_AEGIS"
+        ]
+    }, {
+        "id": "MARCHER_WORLDS",
+        "name": "Marcher Worlds",
+        "shortName": "marchers",
+        "unitIds": [
+            "RANGER_FIRE_TEAM",
+            "RANGER_HEAVY_SUPPORT"
+        ],
+        "soloIds": [
+            "COALITION_WEAVER",
+            "HUNTER",
+            "COMBAT_ENGINEER"
+        ],
+        "heroIds": [
+            "ARTEMIS_FANG",
+            "CAPTAIN_JAX_REDBLADE",
+            "VOITEK_SUDAL_BOUNTY_HUNTER"
+        ],
+        "jackIds": [
+            "DUSK_WOLF",
+            "STRIKE_RAPTOR"
+        ],
+        "attachmentIds": [
+        ]
+    }
+
+]

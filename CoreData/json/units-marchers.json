@@ -1,0 +1,107 @@
+[
+    {
+        "id": "RANGER_FIRE_TEAM",
+        "name": "Ranger Fire Team",
+        "title": "Marcher Worlds Squad",
+        "models": 3,
+        "damage": 1,
+        "cost": 2,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "SLIP_DISPLACER_SPIKE",
+            "PHASE_SEQUENCER_SPIKE"
+        ],
+        "weaponIds": [
+            "BATTLE_RIFLE",
+            "NULL_DETONATOR",
+            "FUSION_BLADE"
+        ]
+    }, {
+        "id": "COALITION_WEAVER",
+        "name": "Coalition Weaver",
+        "title": "Marcher Worlds Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 1,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 4, 
+        "armor": 3,
+        "focus": 4,
+        "ruleIds": [
+            "ARCANTRIK_AMPLIFIER_CHARGE",
+            "ARC_RELAY_10",
+            "FURY_RECIPROCATOR_SPIKE"
+        ],
+        "weaponIds": [
+            "HAND_GUN",
+            "BATTLE_STAFF"
+        ]
+    }, {
+        "id": "HUNTER",
+        "name": "Hunter",
+        "title": "Marcher Worlds Solo",
+        "models": 1,
+        "damage": 1,
+        "cost": 1,
+        "speed": 7,
+        "meleeAttack": 3,
+        "rangeAttack": 6,
+        "defense": 4, 
+        "armor": 2,
+        "ruleIds": [
+            "FIRE_AND_DISPLACE",
+            "MIMETIC_CLOAK_CHARGE"
+        ],
+        "weaponIds": [
+            "SNIPER_RIFLE",
+            "COMBAT_BLADE"
+        ]
+    }, {
+        "id": "RANGER_HEAVY_SUPPORT",
+        "name": "Ranger Heavy Support",
+        "title": "Marcher Worlds Squad",
+        "models": 3,
+        "damage": 1,
+        "cost": 2,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "SLIP_DISPLACER_SPIKE"
+        ],
+        "weaponIds": [
+            "TALON_ROCKET_LAUNCHER",
+            "FUSION_BLADE"
+        ]
+    }, {
+        "id": "COMBAT_ENGINEER",
+        "name": "Combat Engineer",
+        "title": "Marcher Worlds Solo",
+        "models": 1,
+        "damage": 2,
+        "cost": 1,
+        "speed": 5,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 2, 
+        "armor": 4,
+        "ruleIds": [
+            "JUMP_START_SPIKE",
+            "REPAIR",
+            "SPOTLIGHT_CHARGE",
+            "TUNE_UP"
+        ],
+        "weaponIds": [
+            "FUSION_TORCH",
+            "WRENCH"
+        ]
+    }
+]

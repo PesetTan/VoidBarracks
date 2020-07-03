@@ -1,0 +1,396 @@
+[
+    {
+        "id": "FORCE_PROJECTOR_CHARGE",
+        "name": "Force Projector Charge",
+        "rule": "For each Arc this model is charged with, this model's melee weapons gain +1 RNG."
+    }, {
+        "id": "REFRACTOR_FIELD_SPIKE",
+        "name": "Refractor Field Spike",
+        "rule": "This model can spike to reroll a defense roll."
+    }, {
+        "id": "JACK_HUNTER_SPIKE",
+        "name": "'Jack Hunter Spike",
+        "rule": "Once per activation, this model can spike to use 'Jack Hunter. That activation, this model gains +3 action dice on its attack rolls targeting enemy warjacks"
+    }, {
+        "id": "HEIGHTENED_REFLEXES",
+        "name": "Heightened Reflexes",
+        "rule": "When this model is targeted by an attack, after the attack is resolved, it can move up to 3\"."
+    }, {
+        "id": "REPULSOR_RAM_SPIKE",
+        "name": "Repulsor Ram Spike",
+        "rule": "When this model is hit by a melee attack, after the attack is resolved, this model can spike to use Repulser Ram. The attacking model is immediately slammed 3\" directly away from this model. Collateral damage is equal to the POW of the attacking models melee weapon."
+    }, {
+        "id": "SHIELD",
+        "name": "Shield",
+        "rule": "This model gains +1 ARM. This bonus is cumulative with additional Shield weapons."
+    }, {
+        "id": "POWER_ATTACK_SPIKE",
+        "name": "Power Attack Spike",
+        "rule": "Immediately after hitting a warjack with this weapon, this model can spike to cause the warjack to suffer the system failure continuous effect."
+    }, {
+        "id": "HUNTER_KILLER_ROUNDS_SPIKE",
+        "name": "Hunter-Killer Rounds Spike",
+        "rule": "When making an attack with this weapon, this model can spike to ignore line of sight and cover when declaring the target and resolving the attack."
+    }, {
+        "id": "STRAFE",
+        "name": "Strafe",
+        "rule": "After declaring an attack with this weapon and its target, roll one power die. For each strike rolled, you can make one additional attack against another model within 2\" of the initial target. Each attack must target a different model. Additional attacks cannot generate additional Strafe attacks."
+    }, {
+        "id": "NULL_STRIKE",
+        "name": "Null Strike",
+        "rule": "Clear 1 Arc from the unit or void gate hit by this weapon."
+    }, {
+        "id": "REPULSOR",
+        "name": "Repulsor",
+        "rule": "When this model hits a model with an equal or smaller sized-base with an attack with this weapon, before damage is rolled, the model hit is slammed 3\" directly away from this model. Collateral damage is equal to the POW of this weapon."
+    }, {
+        "id": "BLAST_WEAPON",
+        "name": "Blast Weapon",
+        "rule": "This is a blast weapon."
+    }, {
+        "id": "HIGH_INTENSITY_CHARGE",
+        "name": "High Intensity Charge",
+        "rule": "When this model makes an attack with this weapon while charged, add two power dice to the attack roll for each Arc on it instead of one."
+    }, {
+        "id": "FIRE",
+        "name": "Fire",
+        "rule": "A model hit by this weapon suffers the fire continuous effect."
+    }, {
+        "id": "DEFENSE_MATRIX_CHARGE",
+        "name": "Defense Matrix Charge",
+        "rule": "While this model is charged, it gains +3 DEF against ballistic weapons."
+    }, {
+        "id": "SPRAY",
+        "name": "Spray",
+        "rule": "This is a spray weapon"
+    }, {
+        "id": "SERVO_BOOSTER_CHARGE",
+        "name": "Servo Booster Charge",
+        "rule": "For each Arc this model is charged with, it gains +1 STR. Additionally, for each Arc this model is charged with, its melee weapon gains +1 POW."
+    }, {
+        "id": "STUN_MODULE_SPIKE",
+        "name": "Stun Module Spike",
+        "rule": "Immediately after hitting a model with this weapon, this model can spike to give the unit hit an activation token."
+    }, {
+        "id": "RELENTLESS",
+        "name": "Relentless",
+        "rule": "When this model destroys one or more enemy models with a melee attack, immediately after the attack is resolved, this model can move up to 2\"."
+    }, {
+        "id": "SMART_LOCK_CHARGE",
+        "name": "Smart Lock Charge",
+        "rule": "While charged, this model ignores cover when making a ranged attack."
+    }, {
+        "id": "SHOCKWAVE_SPIKE",
+        "name": "Shockwave Spike",
+        "rule": "When this model declares an attack with this weapon, it can spike to cause this weapon to become a spray weapon when resolving this attack."
+    }, {
+        "id": "CORROSION",
+        "name": "Corrosion",
+        "rule": " model hit by this weapon suffers the corrosion continuous effect."
+    }, {
+        "id": "MIMETIC_CLOAK_CHARGE",
+        "name": "Mimetic Cloak Charge",
+        "rule": "While this model is charged, it gains Stealth. A model with Stealth cannot be targeted by attacks made by models more than 8\" away."
+   }, {
+       "id": "PHASE_SEQUENCER_SPIKE",
+       "name": "Phase Sequencer Spike",
+       "rule": "Once per activation, this unit can spike to use Phase Sequencer. That activation, models in this squad can move through obstructions and through other models if they enough movement to move completely past them."
+   }, {
+        "id": "ARCANTRIK_AMPLIFIER_CHARGE",
+        "name": "Arcantrik Amplifier Charge",
+        "rule": "While this model is charged, Fury Cyphers channeled through it gain +5 RNG."
+    }, {
+        "id": "ARC_RELAY_13",
+        "name": "Arc Relay [13]",
+        "rule": "This model can channel Fury Cyphers. A Fury Cypher channeled through this model is RNG 13."
+    }, {
+        "id": "IMPULSE_REACTOR_CHARGE",
+        "name": "Impulse Reactor Charge",
+        "rule": "While charged, if this unit has an activation token on it at the start of your turn, you can remove the activation token from this model."
+    }, {
+        "id": "WEAPON_EXPERT",
+        "name": "Weapon Expert",
+        "rule": "When this model attacks during its activation, it can attack with all of its weapons."
+    }, {
+        "id": "POWER_ATTACK_SPIKE",
+        "name": "Power Attack Spike",
+        "rule": "Immediately after hitting a warjack with this weapon, this model can spike to cause the warjack to suffer the system failure continuous effect."
+    }, {
+        "id": "ARCANTRIK_TURBINE_CHARGE",
+        "name": "Arcantrik Turbine Charge",
+        "rule": "This model gains +1 SPD for each Arc it is currently charged with."
+    }, {
+        "id": "NEURAL_NET",
+        "name": "Neural Net",
+        "rule": "This model gains a cumulative +1 DEF bonus for each other friendly unit within 5\", up to a bonus of +3."
+    }, {
+        "id": "PATHFINDER",
+        "name": "Pathfinder",
+        "rule": "his model ignores movement penalties for rough terrain."
+    }, {
+        "id": "MECHANIKAL_OPTICS_CHARGE",
+        "name": "Mechanikal Optics Charge",
+        "rule": "While this model is charged, this weapon gain +4 RNG."
+    }, {
+        "id": "ARC_BOOSTER_SPIKE",
+        "name": "Arc Booster Spike",
+        "rule": "When attacking with this weapon, before making a damage roll, this model can spike to cause the target of the attack to suffer -1 ARM until the attack is resolved."
+    }, {
+        "id": "SLIP_DISPLACER_SPIKE",
+        "name": "Split Displacer Spike",
+        "rule": "Once per activation, this squad can spike to move up to 3\"."
+    }, {
+        "id": "NULLIFIER",
+        "name": "Nullifier",
+        "rule": "This weapon causes no damage. Instead clear 1 Arc from the unit or void gate hit by this weapon."
+    }, {
+        "id": "ARC_RELAY_10",
+        "name": "Arc Relay [10]",
+        "rule": "This model can channel Fury Cyphers. A Fury Cypher channeled through this model is RNG 10."
+    }, {
+        "id": "FURY_RECIPROCATOR_SPIKE",
+        "name": "Fury Reciprocator Spike",
+        "rule": "When you channel a Fury Cypher through this model, after the attack is resolved, this model can spike to return the Cypher card to your hand."
+    }, {
+        "id": "FIRE_AND_DISPLACE",
+        "name": "Fire and Displace",
+        "rule": "Immediately after resolving a ranged attack made by this model, this model can move up to 3 \"."
+    }, {
+        "id": "ARC_RELAY_12",
+        "name": "Arc Relay [12]",
+        "rule": "This model can channel Fury Cyphers. A Fury Cypher channeled through this model is RNG 12."
+    }, {
+        "id": "COMPOUND_ARMOR",
+        "name": "Compound Armor",
+        "rule": "This model gains +1 ARM against explosion damage."
+    }, {
+        "id": "REALIGNMENT_CODEX_SPIKE",
+        "name": "Realignment Codex Spike",
+        "rule": "Once per activation, this unit can spike to use Realignment Codex. When it does so, you can clear any amount of Arc from one friendly unit within 10\" of this model or charge one unit with any amount of Arc up to its limit."
+    }, {
+        "id": "COMMAND_INTERFACE_SPIKE_PALADINS",
+        "name": "Command Interface Spike [Paladans]",
+        "rule": "During its activation, this model can spike to remove an activation token from a friendly Paladin squad within 10\" of it."
+    }, {
+        "id": "REFLEX_ACCELERATOR_CHARGE",
+        "name": "Reflex Accelerator Charge",
+        "rule": "When this model makes its attacks during its activation while it is charged, it can attack with both its Pulse Cannon and Fusion Sword."
+    }, {
+        "id": "DIVINATION_LOCK_SPIKE",
+        "name": "Divination Lock Spike",
+        "rule": "During its activation, this squad can spike to ignore cover and stealth for the rest of its activation."
+    }, {
+        "id": "NEURAL_WEB",
+        "name": "Neural Web",
+        "rule": "This model gains a cumulative +1 MAT bonus for each other friendly unit within 5\", up to a bonus of +3."
+    }, {
+        "id": "REVELATOR",
+        "name": "Revelator",
+        "rule": "When making ranged attacks this model ignores Stealth."
+    }, {
+        "id": "SPIDER",
+        "name": "Spider",
+        "rule": "This model never suffers damage from falling."
+    }, {
+        "id": "ARC_EXCHANGE",
+        "name": "Arc Exchange",
+        "rule": "You can charge this model with up to 1 Arc at the start of its activation if it is not already charged. Additionally, you can clear any amount of Arc from this model at the end of its activation."
+    }, {
+        "id": "ENTROPIC_FIELD",
+        "name": "Entropic Field",
+        "rule": "This model gains +3 DEF against Fury attacks."
+    }, {
+        "id": "WINCH",
+        "name": "Winch",
+        "rule": "When this weapon damages an enemy model with an equal or smaller base, immediately after the attack is resolved, the damaged model can be moved directly toward this model until it contacts a model, an obstacle, or structure."
+    }, {
+        "id": "TARGETER_CHARGE",
+        "name": "Targeter Charge",
+        "rule": "While charged, this model can reroll ranged attack rolls with this weapon. A roll can be rerolled once as a result of Targeter."
+    }, {
+        "id": "LOCK_DOWN",
+        "name": "Lock Down",
+        "rule": "A model hit by this weapon suffers the Lock Down continuous effect."
+    }, {
+        "id": "MALEFACTOR",
+        "name": "Malefactor",
+        "rule": "If the attack hits, enemy Cypher cards on the unit hit expire."
+    }, {
+        "id": "RAPID_STRIKE",
+        "name": "Rapid Strike",
+        "rule": "When this model attacks during its activation, it can make one additional melee attack with each of its melee weapons."
+    }, {
+        "id": "ADVANCED_OPTICS",
+        "name": "Advanced Optics",
+        "rule": "This model’s ranged weapons gain +2 RNG."
+    }, {
+        "id": "ARMOR_PIERCING",
+        "name": "Armour-Piercing",
+        "rule": "When resolving a damage roll for an attack made with this weapon, reduce the target’s ARM by 1."
+    }, {
+        "id": "HIGH_INTENSITY_CHARGE",
+        "name": "High Intensity Charge",
+        "rule": "When this model makes an attack with this weapon while charged, add two power dice to the attack roll for each Arc on it instead of one."
+    }, {
+        "id": "ERUPTION",
+        "name": "Eruption",
+        "rule": "When this model chooses to use Eruption it makes its attacks during its activation. If it does so, all other models within 3\" of it each suffer a POW 3 explosion damage roll."
+    }, {
+        "id": "VOID_SHIFTER_CHARGE",
+        "name": "Void Shifter Charge",
+        "rule": "While this model is charged, it gains +1 ARM. When this model is hit by an enemy attack while charged, after the attack is resolved, you can reposition this model anywhere within 2 \" of its current location."
+    }, {
+        "id": "VOID_JUMPER_SPIKE",
+        "name": "Void Jumper Spike",
+        "rule": "When this model is hit by an enemy attack, before the damage roll is made, you can spike to have this model ignore the damage and effects of the attack. Reposition this model anywhere within 8 \" of its current location."
+    }, {
+        "id": "WEAPON_EXPERT",
+        "name": "Void Jumper Spike",
+        "rule": "When this model is hit by an enemy attack, before the damage roll is made, you can spike to have this model ignore the damage and effects of the attack. Reposition this model anywhere within 8 \" of its current location."
+    }, {
+        "id": "KINETIC_FIELD_CHARGE",
+        "name": "Kinetic Field Charge",
+        "rule": "While this model is charged, this model and friendly models within 5\" of it gain cover."
+    }, {
+        "id": "PSYCHO_RELAY",
+        "name": "Psycho Relay",
+        "rule": "While this unit is in play, you can have up to six Cypher cards in your hand at any time."
+    }, {
+        "id": "THANOTECH_RECLAIMER_SPIKE",
+        "name": "Thanotech Reclaimer Spike",
+        "rule": "This model can spike to use Thanotech at any time during its activation. When it does so you can return any Cypher card in your discard pile to your hand."
+    }, {
+        "id": "MAELSTROM_ACTIVATOR_SPIKE",
+        "name": "Maelstrom Activator Spike",
+        "rule": "During this unit’s activation, immediately after completing its attacks this model can spike to make one additional attack with each of its weapons."
+    }, {
+        "id": "RANGE_AMPLIFIER_CHARGE",
+        "name": "Range Amplifier Charge",
+        "rule": "For each Arc this model is charged with, this model’s ranged weapons gain +1 RNG."
+    }, {
+        "id": "INTERCEPTOR_DRIVER_SPIKE",
+        "name": "Interceptor Driver Spike",
+        "rule": "When a friendly model is targeted and hit by an enemy attack while within 5\" of this model, this model can spike to be hit instead of the model originally targeted."
+    }, {
+        "id": "ATTACHMENT",
+        "name": "Attachment",
+        "rule": "This model can be attached to Paladin squads."
+    }, {
+        "id": "FORCE_FIELD_CHARGE",
+        "name": "Force Field Charge",
+        "rule": "While charged, the models in this squad gain cover."
+    }, {
+        "id": "FORCE_RAM_SPIKE",
+        "name": "Force Ram Spike",
+        "rule": "When this model hits a target with an attack with this weapon, it can spike to cause the target to be slammed rather than suffering the effects of Paralysis. Before damage is rolled, the model hit is slammed 3\" directly away from this model. Collateral damage is equal to the POW of this weapon."
+    }, {
+        "id": "AFTERBURNER_SPIKE",
+        "name": "Afterburner Spike",
+        "rule": "This model can spike at the start of its activation to use Afterburner. During that activation, this model can advance a number of inches equal to its SPD x3 but cannot make any attacks."
+    }, {
+        "id": "ARC_FIELD_CHARGE",
+        "name": "Arc Field Charge",
+        "rule": "This model gains +1 ARM against Fury and ranged attacks for each Arc it is currently charged with."
+    }, {
+        "id": "FLIGHT",
+        "name": "Flight",
+        "rule": "This model gains Flight."
+    }, {
+        "id": "BATTLE_CRUISER",
+        "name": "Battle Cruiser",
+        "rule": "When this model makes a ranged attack, immediately after the attack is resolved, this model can move up to 1\"."
+    }, {
+        "id": "DISLOCATOR_SPIKE",
+        "name": "Dislocator Spike",
+        "rule": "When this model hits an enemy model with this weapon, after the attack is resolved, this model can spike to reposition the model hit anywhere within 3\" of its current location."
+    }, {
+        "id": "ADRENALIZER_CHARGE",
+        "name": "Adrenalizer Charge",
+        "rule": "While this model is charged, other warrior models within 5\" of it gain +1 ARM and do not suffer continuous effects."
+    }, {
+        "id": "REPAIR",
+        "name": "Repair",
+        "rule": "This model can make a special action to repair a friendly model within 1\" of it. Roll three action dice. For each strike rolled, remove 1 damage point from the model being repaired."
+    }, {
+        "id": "RESURRECTION_PROTOCOL_SPIKE",
+        "name": "Resurrection Protocol Spike",
+        "rule": "During its activation and while within 10\" of a target friendly squad, this model can spike to return up to two destroyed trooper models to the squad. Place these models within 2\" of another model in the squad. A squad can never have more than three trooper models as a result of Resurrection Protocol."
+    }, {
+        "id": "JUMP_JETS_SPIKE",
+        "name": "Jump Jets Spike",
+        "rule": "Once per activation, this model can spike to gain +3 SPD and Flight until the end of its activation."
+    }, {
+        "id": "THRUSTER_CHARGE",
+        "name": "Thruster Charge",
+        "rule": "While charged, this model ignores movement penalties for rough terrain. Additionally, for each Arc this model is charged with, it gains +1 DEF."
+    }, {
+        "id": "BOMBER",
+        "name": "Bomber",
+        "rule": "This model gains +1 action die on attack rolls with explosion weapons. Additionally, when this model makes an attack with an explosion weapon while it has Flight, immediately after the attack is resolved, this model can move up to 2̋\"."
+    }, {
+        "id": "EXPLOSIVE_COLLAPSE",
+        "name": "Explosive Collapse",
+        "rule": "If this weapon targets and destroys an enemy model, other models within 2̋\" of the model targeted suffer a POW 4 damage roll."
+    }, {
+        "id": "JUMP_START_SPIKE",
+        "name": "Jump Start Spike",
+        "rule": "During its activation, this model can spike to remove an activation token from a friendly warjack within 10\" of it."
+    }, {
+        "id": "SPOTLIGHT_CHARGE",
+        "name": "Spotlight Charge",
+        "rule": "While this model is charged, enemy models within 10\" of it lose Stealth."
+    }, {
+        "id": "TUNE_UP",
+        "name": "Tune up",
+        "rule": "This model can take a special action to tune up a friendly warjack within 1\" of it. Continuous effects on the warjack immediately expire, then the warjack gains the tune up continuous effect."
+    }, {
+        "id": "LIVING_TERROR",
+        "name": "Living Terror",
+        "rule": "This model gains +2 DEF against melee attacks made by warrior models."
+    }, {
+        "id": "PHASE_STALKER_SPIKE",
+        "name": "Phase Stalker Spike",
+        "rule": "Once per activation, this model can spike to use Phase Stalker. When it does so, it can move up to 3\" and make one additional attack."
+    }, {
+        "id": "WILD_CARD_ALLIANCE_AND_CONTINUUM",
+        "name": "Wild Card [Alliance and Continuum]",
+        "rule": "This unit can be includes in Alliance and Continuum forces."
+    }, {
+        "id": "GORGE",
+        "name": "Gorge",
+        "rule": "When this model destroys a warrior model with an attack this weapon, remove 1 damage from this model."
+    }, {
+        "id": "SIPHON_POWER",
+        "name": "Siphon Power",
+        "rule": "When an attack with this weapon destroys an enemy model that was charged, you can immediately charge this model once the attack is resolved if this model was not already charged."
+    }, {
+        "id": "FLIGHT_PACK_CHARGE",
+        "name": "Flight Pack Charge",
+        "rule": "While charged, this model gains +3 SPD and Flight."
+    }, {
+        "id": "RIPOSTE",
+        "name": "Riposte",
+        "rule": "When this model is missed by a melee attack, after the attack is resolved, this model can immediately make an attack targeting the model that missed it."
+    }, {
+        "id": "WILD_CARD_CONTINUUM_AND_MARCHER_WORLDS",
+        "name": "Wild Card [Continuum and Marcher Worlds]",
+        "rule": "This unit can be includes in Continuum and Marcher Worlds forces."
+    }, {
+        "id": "WILD_CARD_ALLIANCE_AND_MARCHER_WORLDS",
+        "name": "Wild Card [Alliance and Marcher Worlds]",
+        "rule": "This unit can be includes in Alliance and Marcher Worlds forces."
+    }, {
+        "id": "GATE_JAMMER_CHARGE",
+        "name": "Gate Jammer Charge",
+        "rule": "While this model is charged, increase the Deployment Cost of enemy units deployed from Void Gates within 10\" of this model by 1."
+    }, {
+        "id": "STEALTH",
+        "name": "Stealth",
+        "rule": "This model has Stealth. A model with Stealth cannot be targeted by attacks made by models more than 8\" away."
+    }, {
+        "id": "IMPULSE_RECIPROCATOR_SPIKE",
+        "name": "Impulse Reciprocator Spike",
+        "rule": "When this model is targeted and hit by an enemy attack, it can spike to use Impulse Reciprocator. If this model uses Impulse Reciprocator, immediately after the attack is resolved, this model can make one attack."
+    }
+    
+]

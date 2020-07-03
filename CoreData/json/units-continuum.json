@@ -1,0 +1,102 @@
+[
+    {
+        "id": "VASSAL_REAVER",
+        "name": "Vassal Reaver",
+        "title": "Continuum Squad",
+        "models": 3,
+        "damage": 1,
+        "cost": 2,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 2,
+        "ruleIds": [
+            "MIMETIC_CLOAK_CHARGE",
+            "PHASE_SEQUENCER_SPIKE"
+        ],
+        "weaponIds": [
+            "NAILER",
+            "FUSION_SAW"
+        ]
+    }, {
+        "id": "IMMORTAL_WEAVER",
+        "name": "Immortal Weaver",
+        "title": "Continuum Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 2,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 2,
+        "focus": 4,
+        "ruleIds": [
+            "ARCANTRIK_AMPLIFIER_CHARGE",
+            "PHASE_SEQUENCER_SPIKE"
+        ],
+        "weaponIds": [
+            "PSYCHOKINETIC_HOOD"
+        ]
+    }, {
+        "id": "MARAUDER",
+        "name": "Marauder",
+        "title": "Continuum Solo",
+        "models": 1,
+        "cost": 1,
+        "damage": 3,
+        "speed": 5,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 2, 
+        "armor": 4,
+        "ruleIds": [
+            "IMPULSE_REACTOR_CHARGE",
+            "WEAPON_EXPERT"
+        ],
+        "weaponIds": [
+            "SHREDDER",
+            "MANGLER"
+        ]
+    }, {
+        "id": "VASSAL_WITCH_HUNTERS",
+        "name": "Vassal Witch Hunters",
+        "title": "Continuum Squad",
+        "models": 3,
+        "damage": 1,
+        "cost": 2,
+        "speed": 4,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 2,
+        "ruleIds": [
+            "MIMETIC_CLOAK_CHARGE",
+            "PHASE_SEQUENCER_SPIKE"
+        ],
+        "weaponIds": [
+            "HEX_CANNON"
+        ]
+    }, {
+        "id": "GRAFTER",
+        "name": "Grafter",
+        "title": "Continuum Solo",
+        "models": 1,
+        "cost": 1,
+        "damage": 2,
+        "speed": 5,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "ADRENALIZER_CHARGE",
+            "REPAIR",
+            "RESURRECTION_PROTOCOL_SPIKE"
+        ],
+        "weaponIds": [
+            "BONE_SAW"
+        ]
+    }
+]

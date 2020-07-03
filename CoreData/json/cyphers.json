@@ -1,0 +1,135 @@
+[
+    {
+        "id": "INTERDICTION_PROTOCOL",
+        "name": "Interdiction Protocol",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. Friendly warrior models within 5 ̋ of this warjack gain +2 DEF. Interdiction Protocol expires at the end of the Pulse round."
+    }, {
+        "id": "MOMENTUM_CALIBRATOR",
+        "name": "Momentum Calibrator",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. When the warjack hits a model with an equal or smaller base with a melee attack, before damage is rolled, the model hit is slammed directly away from the warjack. Roll a number of action dice equal to the STR of the warjack. For every strike rolled, move the model hit 1 ̋. Collateral damage is equal to the STR of the attacking warjack. This card expires at the end of this turn."
+    }, {
+        "id": "KINETIC_ACCELERATOR",
+        "name": "Kinetic Accelerator",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. When this warjack makes a melee attack during its activation, make a melee attack roll against each enemy model within the weapon’s RNG. Models hit suffer the full effects and damage of the attack they were hit with. Kinetic Accelerator expires at the end of this turn."
+    }, {
+        "id": "ANNIHILATION_VECTOR",
+        "name": "Annihilation Vector",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. The warjack can immediately make one melee attack against an enemy model within 1\". If the attack hits, the model hit suffers a damage roll with a POW equal to the attacking warjack’s STR. This attack causes kinetic damage. Additionally, if the model hit was a warjack, it suffers the System Failure continuous effect."
+    }, {
+        "id": "IMPULSE_INDUCER",
+        "name": "Impulse Inducer",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. Remove the activation token from the warjack."
+    }, {
+        "id": "ASCENSION_CATALYST",
+        "name": "Ascension Catalyst",
+        "type": "OVERDRIVE",
+        "rule": "Target a friendly warjack. The warjack gains +2 SPD and the Flight special rule. Ascension Catalyst expires at the end of this turn."
+    },
+
+    {
+        "id": "CRYO_LOCK",
+        "name": "Cryo Lock",
+        "type": "FURY",
+        "rule": "Target an enemy unit model in range. Make a Fury attack roll against the target model. If this attack hits, it does no damage. Instead, the hit unit gains an activation token. Models that are immune to cold damage are not affected by this Fury."
+    }, {
+        "id": "VELOCITY_PROJECTOR",
+        "name": "Velocity Projector",
+        "type": "FURY",
+        "power": 4,
+        "rule": "Target an enemy model in range. Make an attack roll against the target model. If the attack hits, the model is slammed 3 ̋ directly away from the model the Fury is being channeled through before suffering a damage roll. Models with an an equal or smaller base that are contacted by the slammed model suffer a collateral damage roll equal to the POW of this card. This Fury causes force damage."
+    }, {
+        "id": "PYROKINETIC_SURGE",
+        "name": "Pyrokinetic Surge",
+        "type": "FURY",
+        "power": 3,
+        "rule": "Target an enemy model in range. Make an attack roll against the target model. If the attack hits, the model hit suffers the Fire continuous effect in addition to suffering a damage roll. This Fury causes fire damage."
+    }, {
+        "id": "NULL_COLLIDER",
+        "name": "Null Collider",
+        "type": "FURY",
+        "power": 3,
+        "rule": "Target an enemy model in range. Make an attack roll against the target model. If the attack hits, in addition to a damage roll, clear 1 Arc from the unit or void gate hit. This Fury causes energy damage."
+    }, {
+        "id": "MALEDICTION_RUBRIC",
+        "name": "Malediction Rubric",
+        "type": "FURY",
+        "power": 4,
+        "rule": "Target enemy model unit in range. Make an attack roll against the target model. If the attack hits, enemy Cypher cards on the unit hit expire and the model hit suffers a damage roll. This Fury causes energy damage."
+    }, {
+        "id": "INSTABILITY_EQUATION",
+        "name": "Instability Equation",
+        "type": "FURY",
+        "power": 4,
+        "rule": "Target enemy model unit in range. When this attack hits its target, resolve the attack against the target as normal. Additionally, when this attack hits its target, the two models closest to the target that are also within 2 ̋ of it suffer a blast damage rolls equal to the POW of this attack. If this attack misses its target, the target still suffers a blast damage roll equal to the POW of this attack. This Fury causes blast damage."
+    }, 
+    
+    {
+        "id": "FORCE_BARRIER",
+        "name": "Force Barrier",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. Affected models gain cover. Force Barrier expires at the end of the Pulse round."
+    }, {
+        "id": "TEMPORAL_CYCLE",
+        "name": "Temporal Cycle",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. Remove the activation token from this squad."
+    },  {
+        "id": "MORTALITY_DESTABILIZER",
+        "name": "Mortality Destabilizer",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. Return one destroyed non-attachment model to this squad. Place the returned model within 2\" of another model in the squad."
+    }, {
+        "id": "REITERATION_COMPLEX",
+        "name": "Reiteration Complex",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. During the squad’s activation, each model in the squad can make one additional ranged attack. Reiteration Complex expires at the end of this turn."
+    }, {
+        "id": "PLEXUS_DENSIFIER",
+        "name": "Plexus Densifier",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. The squad gains +2 ARM but suffers –1 SPD. Plexus Densifier expires at the end of the Pulse round."
+    }, {
+        "id": "DISPLACEMENT_INDEX",
+        "name": "Displacement Index",
+        "type": "GEOMETRIC",
+        "rule": "Target a friendly squad. The squad can immediately move up to 3\"."
+    },
+
+    {
+        "id": "DIVINATION_ALGORITHM",
+        "name": "Divination Algorithm",
+        "type": "HARMONIC",
+        "rule": "Target a friendly unit. This unit’s ranged weapons gain +1 RNG and POW. Divination Algorithm expires at the end of the Pulse round."
+    }, {
+        "id": "ARCANE_SYNTHESIS",
+        "name": "Arcane Synthesis",
+        "type": "HARMONIC",
+        "rule": "Target a friendly unit. You can immediately charge the unit with any amount of Arc up to its limit."
+    }, {
+        "id": "ENCRYPTED_COMMAND",
+        "name": "Encrypted Command",
+        "type": "HARMONIC",
+        "rule": "Target a friendly solo. Remove the activation token from the solo."
+    }, {
+        "id": "RECALL_INITIATIVE",
+        "name": "Recall Initiative",
+        "type": "HARMONIC",
+        "rule": "Target a friendly unit. Recall the unit."
+    }, {
+        "id": "AGGRESSION_THEOREM",
+        "name": "Aggression Theorem",
+        "type": "HARMONIC",
+        "rule": "Target friendly unit model. The target model can immediately make one melee or ranged attack."
+    }, {
+        "id": "REVELATION_MATRIX",
+        "name": "Revelation Matrix",
+        "type": "HARMONIC",
+        "rule": "Target friendly unit. The unit can ignore the Stealth special rule. Revelation Matrix expires at the end of the Pulse round."
+    }
+
+]

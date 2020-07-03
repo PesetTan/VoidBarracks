@@ -1,0 +1,114 @@
+[
+    {
+        "id": "PALADIN_ENFORCERS",
+        "name": "Paladin Enforcers",
+        "title": "Alliance Squad",
+        "cost": 2,
+        "models": 3,
+        "damage": 1,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "COMPOUND_ARMOR",
+            "DIVINATION_LOCK_SPIKE",
+            "REFLEX_ACCELERATOR_CHARGE"
+        ],
+        "weaponIds": [
+            "ASSAULT_RIFLE",
+            "BAYONET"
+        ],
+        "attachmentIds": [
+            "PALADIN_AEGIS"
+        ]
+    }, {
+        "id": "PALADIN_WEAVER",
+        "name": "Paladin Weaver",
+        "title": "Alliance Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 2,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "focus": 4,
+        "ruleIds": [
+            "ARCANTRIK_AMPLIFIER_CHARGE",
+            "ARC_RELAY_12",
+            "COMPOUND_ARMOR",
+            "REALIGNMENT_CODEX_SPIKE"
+        ],
+        "weaponIds": [
+            "HAND_GUN",
+            "NULL_HAMMER"
+        ]
+    }, {
+        "id": "PALADIN_COMMANDER",
+        "name": "Paladin Commander",
+        "title": "Alliance Solo",
+        "cost": 1,
+        "models": 1,
+        "damage": 2,
+        "speed": 6,
+        "meleeAttack": 4,
+        "rangeAttack": 4,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "COMMAND_INTERFACE_SPIKE_PALADINS",
+            "COMPOUND_ARMOR",
+            "REFLEX_ACCELERATOR_CHARGE"
+        ],
+        "weaponIds": [
+            "PULSE_CANNON",
+            "FUSION_SWORD"
+        ]
+    }, {
+        "id": "PALADIN_ANNIHILATORS",
+        "name": "Paladin Annihilators",
+        "title": "Alliance Squad",
+        "cost": 2,
+        "models": 3,
+        "damage": 1,
+        "speed": 6,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "COMPOUND_ARMOR",
+            "SMART_LOCK_CHARGE"
+        ],
+        "weaponIds": [
+            "HARBINGER_CANNON"
+        ],
+        "attachmentIds": [
+            "PALADIN_AEGIS"
+        ]
+    }, {
+        "id": "PALADIN_AEGIS",
+        "name": "Paladin Aegis",
+        "title": "Alliance Attachment",
+        "cost": 1,
+        "models": 3,
+        "damage": 1,
+        "speed": 0,
+        "meleeAttack": 3,
+        "rangeAttack": 3,
+        "defense": 3, 
+        "armor": 3,
+        "ruleIds": [
+            "ATTACHMENT",
+            "COMPOUND_ARMOR",
+            "FORCE_FIELD_CHARGE"
+        ],
+        "weaponIds": [
+            "FORCE_GENERATOR"
+        ]
+    }
+    
+]
