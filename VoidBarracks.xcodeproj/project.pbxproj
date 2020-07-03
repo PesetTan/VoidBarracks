@@ -10,7 +10,6 @@
 		BA10D19524AE4E8C007FBCDD /* JackWeaponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19424AE4E8C007FBCDD /* JackWeaponList.swift */; };
 		BA10D19724AE4F1C007FBCDD /* JackWeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */; };
 		BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */; };
-		BA10D19B24AE6F19007FBCDD /* CustomSquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
@@ -154,7 +153,6 @@
 		BA10D19424AE4E8C007FBCDD /* JackWeaponList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponList.swift; sourceTree = "<group>"; };
 		BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponCell.swift; sourceTree = "<group>"; };
 		BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponInfo.swift; sourceTree = "<group>"; };
-		BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquadCell.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -286,14 +284,6 @@
 				BA20350724AEA00400E252A3 /* CustomJackList.swift */,
 			);
 			path = CustomJackViews;
-			sourceTree = "<group>";
-		};
-		BA20350A24AEA01500E252A3 /* CustomSquadViews */ = {
-			isa = PBXGroup;
-			children = (
-				BA10D19A24AE6F19007FBCDD /* CustomSquadCell.swift */,
-			);
-			path = CustomSquadViews;
 			sourceTree = "<group>";
 		};
 		BA20352924AF05AF00E252A3 /* UnitViews */ = {
@@ -442,7 +432,6 @@
 		BA4F989D24AC164500AB9F4C /* SquadViews */ = {
 			isa = PBXGroup;
 			children = (
-				BA20350A24AEA01500E252A3 /* CustomSquadViews */,
 				BA2034FF24AE999700E252A3 /* AttachmentViews */,
 				BA4F98B524AC48D900AB9F4C /* SquadList.swift */,
 				BA4F98B824AC48E600AB9F4C /* SquadCell.swift */,
@@ -708,7 +697,6 @@
 				BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */,
 				BA4F98B624AC48D900AB9F4C /* SquadList.swift in Sources */,
 				BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */,
-				BA10D19B24AE6F19007FBCDD /* CustomSquadCell.swift in Sources */,
 				BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */,
 				BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */,

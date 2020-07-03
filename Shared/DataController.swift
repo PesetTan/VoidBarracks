@@ -316,6 +316,7 @@ extension Cypher {
         newCypher.pow = self.pow
         newCypher.rule = self.rule
         newCypher.type = self.type
+        newCypher.selected = self.selected
         return newCypher
     }
 }

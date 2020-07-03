@@ -32,7 +32,7 @@ struct CustomSquadList: View {
         let squads = customSquads.sorted{$0.lastModified! < $1.lastModified!}
         return List {
             ForEach(squads, id:\.uuid) { squad in
-                CustomSquadCell(squad: squad)
+                UnitCell(unit: squad)
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in

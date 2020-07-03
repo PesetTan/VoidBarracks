@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UnitCell: View {
     @ObservedObject var unit: Unit
-    @State var isPresented: Bool = false
+    @State private var isPresented: Bool = false
 
     var body: some View {
 
@@ -23,7 +23,7 @@ struct UnitCell: View {
                 } onDecrement: {
                     unit.count -= 1
                 } label: {
-                    Text("\(unit.name!)")
+                    Text("\(unit.name ?? "No Name")")
                 }
             }
         }

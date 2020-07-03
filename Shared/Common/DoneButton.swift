@@ -12,7 +12,7 @@ struct DoneButton: View {
 
     var body: some View {
         Button {
-            isPresented.toggle()
+            isPresented = false
         } label: {
             Image(systemName: "multiply.circle")
         }
