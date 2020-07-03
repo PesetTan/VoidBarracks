@@ -34,7 +34,7 @@ struct BarrackArmies: View {
 
                 } else {
                     ForEach(armies, id:\.self) { army in
-                        BarracksCell(armyId: army.id!, armyName: army.name!, customName: army.customName!)
+                        BarracksCell(armyId: army.id!, armyName: army.name!, customName: army.customName!, shortName: army.shortName!)
                     }
                     .onDelete { indexSet in
                         indexSet.forEach { index in
@@ -47,6 +47,7 @@ struct BarrackArmies: View {
 
             }
         }
+        .listStyle(InsetListStyle())
     }
 }
 
@@ -54,16 +55,36 @@ struct BarracksCell: View {
     var armyId: String
     var armyName: String
     var customName: String
+    var shortName: String
     @State private var isActive: Bool = false
 
     var body: some View {
-        NavigationLink(destination: LazyLoad(ArmyBuilder(armyId: armyId, isActive: $isActive)),
+        NavigationLink(destination: LazyLoad(ArmyBuilder(armyId: armyId, isActive: $isActive).accentColor(Color("color.\(shortName)"))),
                        isActive: $isActive) {
 
+            
             if customName == "" {
-                Text("\(armyName)")
+                Label {
+                    Text("\(armyName)")
+                        .padding()
+                        .font(.title2)
+                } icon: {
+                    Image("logo.\(shortName)")
+                        .resizable()
+                        .frame(width: 45, height: 45, alignment: .center)
+                        .padding(20)
+                }
             } else {
-                Text("\(customName)")
+                Label {
+                    Text("\(customName)")
+                        .padding()
+                        .font(.title2)
+                } icon: {
+                    Image("logo.\(shortName)")
+                        .resizable()
+                        .frame(width: 45, height: 45, alignment: .center)
+                        .padding(20)
+                }
             }
 
         }

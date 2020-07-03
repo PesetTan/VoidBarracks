@@ -44,7 +44,7 @@ struct FactionCell: View {
                     .frame(width: 45, height: 45, alignment: .center)
                     .padding(20)
             }
-            .navigationBarTitle(Text("Factions"))
+            .navigationBarTitle(Text("Recruit"))
         }
     }
 }

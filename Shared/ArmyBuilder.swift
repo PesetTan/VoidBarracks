@@ -85,7 +85,7 @@ struct SaveArmyButton: View {
                     isActive.toggle()
                 }
             } label: {
-                Text("Save and Copy to Clipboard")
+                Text("Recruit")
             }
             Spacer()
         }

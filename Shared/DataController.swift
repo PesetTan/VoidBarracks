@@ -13,6 +13,8 @@ extension Army {
         let newArmy = Army(context: managedObjectContext!)
         newArmy.id = UUID().uuidString
         newArmy.name = self.name
+        newArmy.customName = self.customName
+        newArmy.shortName = self.shortName
         self.heros!.allObjects.forEach { hero in
             let newHero = (hero as! Hero)
             newArmy.addToHeros(newHero.copy())
@@ -201,6 +203,7 @@ extension Jack {
         newJack.foc = self.foc
         newJack.dmg = self.dmg
         newJack.str = self.str
+        newJack.weaponPoints = self.weaponPoints
         self.optionsForCortex!.allObjects.forEach { cortex in
             let newCortex = (cortex as! Cortex)
             newJack.addToOptionsForCortex(newCortex.copy())

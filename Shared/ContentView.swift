@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             FactionPicker().tabItem {
-                Label("Build", systemImage: "hammer")
+                Label("Recruit", systemImage: "person.2")
             }
 
             Barracks().tabItem {
