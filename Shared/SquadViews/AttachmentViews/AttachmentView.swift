@@ -22,7 +22,7 @@ struct AttachmentView: View {
                 Spacer()
             }
 
-            AttachmentStatsView(squad: attachment)
+            UnitStats(unit: attachment)
 
             if let rules = (attachment.rules as! Set<Rule>) {
                 RulesView(rules: rules)

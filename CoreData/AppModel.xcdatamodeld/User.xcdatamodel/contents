@@ -17,9 +17,7 @@
     </entity>
     <entity name="Attachment" representedClassName="Attachment" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <attribute name="selected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <relationship name="rules" optional="YES" toMany="YES" maxCount="10" deletionRule="Nullify" destinationEntity="Rule" inverseName="attachment" inverseEntity="Rule"/>
         <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="attachments" inverseEntity="Squad"/>
-        <relationship name="weapons" optional="YES" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Weapon" inverseName="attachment" inverseEntity="Weapon"/>
     </entity>
     <entity name="Cortex" representedClassName="Cortex" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -54,14 +52,11 @@
     </entity>
     <entity name="Hero" representedClassName="Hero" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="heros" inverseEntity="Army"/>
-        <relationship name="rules" optional="YES" toMany="YES" maxCount="10" deletionRule="Nullify" destinationEntity="Rule" inverseName="hero" inverseEntity="Rule"/>
-        <relationship name="weapons" optional="YES" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Weapon" inverseName="hero" inverseEntity="Weapon"/>
     </entity>
     <entity name="Jack" representedClassName="Jack" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String"/>
         <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615367860" usesScalarValueType="NO"/>
         <attribute name="str" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="uuid" optional="YES" attributeType="String"/>
         <attribute name="weaponPoints" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="jacks" inverseEntity="Army"/>
         <relationship name="customJack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="customJacks" inverseEntity="Jack"/>
@@ -71,13 +66,11 @@
         <relationship name="optionsForCortex" optional="YES" toMany="YES" minCount="2" maxCount="10" deletionRule="Nullify" destinationEntity="Cortex" inverseName="cortexOptions" inverseEntity="Cortex"/>
         <relationship name="optionsForShoulder1" optional="YES" toMany="YES" minCount="2" maxCount="10" deletionRule="Nullify" destinationEntity="Weapon" inverseName="optionsForShoulder1" inverseEntity="Weapon"/>
         <relationship name="optionsForShoulder2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="optionsForShoulder2" inverseEntity="Weapon"/>
-        <relationship name="rules" optional="YES" toMany="YES" maxCount="10" deletionRule="Nullify" destinationEntity="Rule" inverseName="jack" inverseEntity="Rule"/>
         <relationship name="selectedArm1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="selectedArm1" inverseEntity="Weapon"/>
         <relationship name="selectedArm2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="selectedArm2" inverseEntity="Weapon"/>
         <relationship name="selectedCortex" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cortex" inverseName="selectedCortex" inverseEntity="Cortex"/>
         <relationship name="selectedShoulder1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="selectedShoulder1" inverseEntity="Weapon"/>
         <relationship name="selectedShoulder2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="selectedShoulder2" inverseEntity="Weapon"/>
-        <relationship name="weapons" optional="YES" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Weapon" inverseName="jack" inverseEntity="Weapon"/>
     </entity>
     <entity name="Rack" representedClassName="Rack" syncable="YES" codeGenerationType="class">
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="rack" inverseEntity="Army"/>
@@ -91,29 +84,20 @@
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="text" optional="YES" attributeType="String"/>
-        <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attachment" inverseName="rules" inverseEntity="Attachment"/>
         <relationship name="cortex" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cortex" inverseName="rules" inverseEntity="Cortex"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="rules" inverseEntity="Hero"/>
-        <relationship name="jack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="rules" inverseEntity="Jack"/>
-        <relationship name="solo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Solo" inverseName="rules" inverseEntity="Solo"/>
-        <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="rules" inverseEntity="Squad"/>
+        <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="rules" inverseEntity="Unit"/>
         <relationship name="weapon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="rules" inverseEntity="Weapon"/>
     </entity>
     <entity name="Solo" representedClassName="Solo" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="solos" inverseEntity="Army"/>
-        <relationship name="rules" optional="YES" toMany="YES" maxCount="10" deletionRule="Nullify" destinationEntity="Rule" inverseName="solo" inverseEntity="Rule"/>
-        <relationship name="weapons" optional="YES" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Weapon" inverseName="solo" inverseEntity="Weapon"/>
     </entity>
     <entity name="Squad" representedClassName="Squad" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String"/>
         <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615368100" usesScalarValueType="NO"/>
-        <attribute name="uuid" optional="YES" attributeType="String"/>
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="squads" inverseEntity="Army"/>
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="squad" inverseEntity="Attachment"/>
         <relationship name="customSquad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquads" inverseEntity="Squad"/>
         <relationship name="customSquads" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquad" inverseEntity="Squad"/>
-        <relationship name="rules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rule" inverseName="squad" inverseEntity="Rule"/>
-        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="squad" inverseEntity="Weapon"/>
     </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
@@ -133,6 +117,9 @@
         <attribute name="rat" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="spd" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="uuid" attributeType="String" defaultValueString=""/>
+        <relationship name="rules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rule" inverseName="unit" inverseEntity="Rule"/>
+        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="unit" inverseEntity="Weapon"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -149,10 +136,7 @@
         <attribute name="selected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="String"/>
-        <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attachment" inverseName="weapons" inverseEntity="Attachment"/>
         <relationship name="elements" optional="YES" toMany="YES" maxCount="5" deletionRule="Nullify" destinationEntity="Element" inverseName="weapon" inverseEntity="Element"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="weapons" inverseEntity="Hero"/>
-        <relationship name="jack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="weapons" inverseEntity="Jack"/>
         <relationship name="optionsForAm2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="optionsForArm2" inverseEntity="Jack"/>
         <relationship name="optionsForArm1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="optionsForArm1" inverseEntity="Jack"/>
         <relationship name="optionsForShoulder1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="optionsForShoulder1" inverseEntity="Jack"/>
@@ -162,26 +146,25 @@
         <relationship name="selectedArm2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="selectedArm2" inverseEntity="Jack"/>
         <relationship name="selectedShoulder1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="selectedShoulder1" inverseEntity="Jack"/>
         <relationship name="selectedShoulder2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jack" inverseName="selectedShoulder2" inverseEntity="Jack"/>
-        <relationship name="solo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Solo" inverseName="weapons" inverseEntity="Solo"/>
-        <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="weapons" inverseEntity="Squad"/>
+        <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="weapons" inverseEntity="Unit"/>
         <relationship name="weaponAttachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="weaponAttachment" inverseEntity="Weapon"/>
     </entity>
     <elements>
         <element name="Army" positionX="506.821533203125" positionY="-32.55368041992188" width="128" height="224"/>
-        <element name="Attachment" positionX="-279" positionY="135" width="128" height="89"/>
+        <element name="Attachment" positionX="-279" positionY="135" width="128" height="59"/>
         <element name="Cortex" positionX="-288" positionY="126" width="128" height="119"/>
         <element name="Cypher" positionX="-127.8965454101562" positionY="-161.9575042724609" width="128" height="193"/>
         <element name="Element" positionX="-261" positionY="153" width="128" height="59"/>
         <element name="Faction" positionX="-284.452880859375" positionY="-60.30088806152344" width="128" height="118"/>
-        <element name="Hero" positionX="-293.7706298828125" positionY="143.8809509277344" width="128" height="74"/>
-        <element name="Jack" positionX="-253.1884155273438" positionY="273.330078125" width="128" height="329"/>
+        <element name="Hero" positionX="-293.7706298828125" positionY="143.8809509277344" width="128" height="44"/>
+        <element name="Jack" positionX="-253.1884155273438" positionY="273.330078125" width="128" height="284"/>
         <element name="Rack" positionX="-288" positionY="27" width="128" height="119"/>
-        <element name="Rule" positionX="-270" positionY="144" width="128" height="179"/>
-        <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="74"/>
-        <element name="Squad" positionX="-279" positionY="36" width="128" height="164"/>
+        <element name="Rule" positionX="-270" positionY="144" width="128" height="119"/>
+        <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="44"/>
+        <element name="Squad" positionX="-279" positionY="36" width="128" height="119"/>
         <element name="Store" positionX="-297" positionY="117" width="128" height="74"/>
-        <element name="Unit" positionX="-510.518310546875" positionY="322.3273010253906" width="128" height="209"/>
+        <element name="Unit" positionX="-510.518310546875" positionY="322.3273010253906" width="128" height="254"/>
         <element name="User" positionX="-261" positionY="45" width="128" height="89"/>
-        <element name="Weapon" positionX="-363.0523681640625" positionY="766.0430297851562" width="128" height="389"/>
+        <element name="Weapon" positionX="-363.0523681640625" positionY="766.0430297851562" width="128" height="329"/>
     </elements>
 </model>

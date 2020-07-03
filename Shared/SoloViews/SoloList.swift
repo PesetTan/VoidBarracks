@@ -12,7 +12,7 @@ struct SoloList: View {
 
     var body: some View {
         ForEach(solos, id:\.id) { solo in
-            SoloCell(solo: solo)
+            UnitCell(unit: solo)
         }
     }
 }

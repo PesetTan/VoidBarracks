@@ -40,7 +40,7 @@ struct SquadBuilder: View {
             }
         }
         .navigationTitle(Text("\(squad?.name! ?? "Missing Name")"))
-        .navigationBarItems(trailing: SquadInfoButton(squad: squad, isPresented: $isPresented))
+        .navigationBarItems(trailing: UnitInfoButton(unit: squad, isPresented: $isPresented))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
     }
@@ -80,24 +80,6 @@ struct SaveSquadButton: View {
                 Text("Save")
             }
             Spacer()
-        }
-    }
-}
-
-struct SquadInfoButton: View {
-    var squad: Squad?
-    @Binding var isPresented: Bool
-
-    var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            Image(systemName: "info")
-        }
-        .sheet(isPresented: $isPresented) {
-            if squad != nil && squad!.uuid != nil {
-                SquadInfo(squad: squad!, isPresented: $isPresented)
-            }
         }
     }
 }

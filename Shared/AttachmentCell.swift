@@ -27,7 +27,7 @@ struct AttachmentCell: View {
             }
         }
         .sheet(isPresented: $isPresented) {
-            AttachmentInfo(attachment: attachment, isPresented: $isPresented)
+            UnitInfo(unit: attachment, isPresented: $isPresented)
         }
     }
 }

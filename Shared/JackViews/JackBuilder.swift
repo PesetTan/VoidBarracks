@@ -64,7 +64,7 @@ struct JackBuilder: View {
             }
         }
         .navigationTitle(Text("\(jack?.name! ?? "Missing Name") \(jack?.weaponPoints ?? 0)"))
-        .navigationBarItems(trailing: JackInfoButton(jack: jack, isPresented: $isPresented))
+        .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
     }
@@ -110,24 +110,6 @@ struct SaveJackButton: View {
                 Text("Save")
             }
             Spacer()
-        }
-    }
-}
-
-struct JackInfoButton: View {
-    var jack: Jack?
-    @Binding var isPresented: Bool
-
-    var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            Image(systemName: "info")
-        }
-        .sheet(isPresented: $isPresented) {
-            if jack != nil && jack!.uuid != nil {
-                JackInfo(jack: jack!, isPresented: $isPresented)
-            }
         }
     }
 }

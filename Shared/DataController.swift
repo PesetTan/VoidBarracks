@@ -36,19 +36,19 @@ extension Army {
         let newRack = Rack(context: managedObjectContext!)
         self.rack!.furies!.allObjects.forEach { cypher in
             let newCypher = (cypher as! Cypher)
-            newRack.addToFuries(newCypher)
+            newRack.addToFuries(newCypher.copy())
         }
         self.rack!.geometrics!.allObjects.forEach { cypher in
             let newCypher = (cypher as! Cypher)
-            newRack.addToGeometrics(newCypher)
+            newRack.addToGeometrics(newCypher.copy())
         }
         self.rack!.harmonics!.allObjects.forEach { cypher in
             let newCypher = (cypher as! Cypher)
-            newRack.addToHarmonics(newCypher)
+            newRack.addToHarmonics(newCypher.copy())
         }
         self.rack!.overdrives!.allObjects.forEach { cypher in
             let newCypher = (cypher as! Cypher)
-            newRack.addToOverdrives(newCypher)
+            newRack.addToOverdrives(newCypher.copy())
         }
 
         newArmy.rack = newRack
@@ -305,5 +305,17 @@ extension Element {
         let newElement = Element(context: managedObjectContext!)
         newElement.name = self.name
         return newElement
+    }
+}
+
+extension Cypher {
+    public func copy() -> Cypher {
+        let newCypher = Cypher(context: managedObjectContext!)
+        newCypher.name = self.name
+        newCypher.id = self.id
+        newCypher.pow = self.pow
+        newCypher.rule = self.rule
+        newCypher.type = self.type
+        return newCypher
     }
 }

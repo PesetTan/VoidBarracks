@@ -1,14 +1,14 @@
 //
-//  HeroCell.swift
+//  UnitCell.swift
 //  VoidBarracks
 //
-//  Created by Peset Tan on 6/30/20.
+//  Created by Peset Tan on 7/2/20.
 //
 
 import SwiftUI
 
-struct HeroCell: View {
-    @ObservedObject var hero: Hero
+struct UnitCell: View {
+    @ObservedObject var unit: Unit
     @State var isPresented: Bool = false
 
     var body: some View {
@@ -17,19 +17,18 @@ struct HeroCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                HeroCounterView(count: hero.count)
+                UnitCounter(unit: unit)
                 Stepper {
-                    hero.count += 1
+                    unit.count += 1
                 } onDecrement: {
-                    hero.count -= 1
+                    unit.count -= 1
                 } label: {
-                    Text("\(hero.name!)")
+                    Text("\(unit.name!)")
                 }
             }
         }
         .sheet(isPresented: $isPresented) {
-            HeroInfo(hero: hero, isPresented: $isPresented)
+            UnitInfo(unit: unit, isPresented: $isPresented)
         }
     }
 }
-

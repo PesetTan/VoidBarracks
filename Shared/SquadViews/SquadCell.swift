@@ -25,13 +25,5 @@ struct SquadCell: View {
                 .fixedSize(horizontal: true, vertical: false)
 
         }
-//        Button {
-//            isPresented.toggle()
-//        } label: {
-//            Text("\(squad.name!)")
-//        }
-//        .sheet(isPresented: $isPresented) {
-//            SquadInfo(squad: squad, isPresented: $isPresented)
-//        }
     }
 }

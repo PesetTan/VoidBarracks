@@ -12,7 +12,7 @@ struct HeroList: View {
 
     var body: some View {
         ForEach(heros, id:\.id) { hero in
-            HeroCell(hero: hero)
+            UnitCell(unit: hero)
         }
     }
 }

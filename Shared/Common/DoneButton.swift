@@ -1,0 +1,22 @@
+//
+//  DoneButton.swift
+//  VoidBarracks
+//
+//  Created by Peset Tan on 7/2/20.
+//
+
+import SwiftUI
+
+struct DoneButton: View {
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        Button {
+            isPresented.toggle()
+        } label: {
+            Image(systemName: "multiply.circle")
+        }
+
+    }
+
+}

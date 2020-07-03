@@ -13,10 +13,10 @@ struct CustomJackList: View {
     @Environment(\.managedObjectContext) private var context
 
     var body: some View {
-        let jacks = customJacks.sorted{$0.lastModified! < $1.lastModified!}
+        let jacks = customJacks.sorted{$0.lastModified! > $1.lastModified!}
         return List {
             ForEach(jacks, id:\.uuid) { jack in
-                CustomJackCell(jack: jack)
+                UnitCell(unit: jack)
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in

@@ -30,7 +30,7 @@ struct CustomSquadCell: View {
 
         }
         .sheet(isPresented: $isPresented) {
-            CustomSquadInfo(squad: squad, isPresented: $isPresented)
+            UnitInfo(unit: squad, isPresented: $isPresented)
         }
     }
 }
