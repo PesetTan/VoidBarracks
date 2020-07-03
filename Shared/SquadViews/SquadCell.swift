@@ -14,7 +14,8 @@ struct SquadCell: View {
 
     var body: some View {
         NavigationLink(
-            destination: SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh),
+            destination: SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh)
+                .accentColor(Color("color.\(squad.army!.shortName!)")),
             isActive: $isPresented) {
             Text("\(squad.name!)")
                 .fixedSize(horizontal: true, vertical: false)

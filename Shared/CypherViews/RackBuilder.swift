@@ -12,7 +12,8 @@ struct RackBuilder: View {
     @State private var isActive: Bool = false
 
     var body: some View {
-        NavigationLink(destination: CypherList(rack: rack, isActive: $isActive),
+        NavigationLink(destination: CypherList(rack: rack, isActive: $isActive)
+                        .accentColor(Color("color.\(rack.army!.shortName!)")),
                        isActive: $isActive) {
             Text("Configure Your Rack")
         }

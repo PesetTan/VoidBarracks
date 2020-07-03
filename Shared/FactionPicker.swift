@@ -16,7 +16,7 @@ struct FactionPicker: View {
                 if let factions = (store.first!.factions as! Set<Army>) {
                     ForEach(factions.sorted{$0.name! < $1.name!}, id:\.id) { army in
                         if let army = army {
-                            FactionCell(army: army)
+                            FactionCell(army: army).accentColor(Color("color.\(army.shortName!)"))
                         }
 
                     }
@@ -32,7 +32,8 @@ struct FactionCell: View {
     @State private var isActive = false
 
     var body: some View {
-        NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive),
+        NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive)
+                        .accentColor(Color("color.\(army.shortName!)")),
                        isActive: $isActive) {
             Label {
                 Text("\(army.name!)")

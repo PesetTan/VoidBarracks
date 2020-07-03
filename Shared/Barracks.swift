@@ -59,7 +59,8 @@ struct BarracksCell: View {
     @State private var isActive: Bool = false
 
     var body: some View {
-        NavigationLink(destination: LazyLoad(ArmyBuilder(armyId: armyId, isActive: $isActive).accentColor(Color("color.\(shortName)"))),
+        NavigationLink(destination: LazyLoad(ArmyBuilder(armyId: armyId, isActive: $isActive)
+                                                .accentColor(Color("color.\(shortName)"))),
                        isActive: $isActive) {
 
             

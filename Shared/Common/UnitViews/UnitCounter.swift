@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UnitCounter: View {
-    public var unit: Unit
+    @ObservedObject public var unit: Unit
     private let imageType: String = "circle"
     private let imageSize: CGFloat = 7
     private let paddingTrailing: CGFloat = 5

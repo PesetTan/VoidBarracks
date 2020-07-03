@@ -15,7 +15,8 @@ struct JackCell: View {
     var body: some View {
 
             NavigationLink(
-                destination: JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh),
+                destination: JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh)
+                    .accentColor(Color("color.\(jack.army!.shortName!)")),
                 isActive: $isPresented) {
                 Text("\(jack.name!)")
                     .fixedSize(horizontal: true, vertical: false)
