@@ -316,6 +316,7 @@ class WarcasterData {
     private func GetWeapon(_ id: String) -> Weapon {
         let raw = self.rawWeapons.first{$0.id == id}!
         let weapon = Weapon(context: self.context)
+        weapon.uuid = UUID().uuidString
         weapon.id = raw.id
         weapon.name = raw.name
 

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct CortexList: View {
     var cortexes: Set<Cortex>
+    @ObservedObject var jack: Jack
 
     var body: some View {
         ForEach(cortexes.sorted{$0.id! < $1.id!}, id:\.id) { cortex in
-            CortexCell(cortex: cortex, cortexes: cortexes)
+            CortexCell(cortex: cortex, jack: jack)
         }
     }
 }

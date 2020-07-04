@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CortexToggle: View {
     @Binding var selected: Bool
-    var group: Set<Cortex>
+    @ObservedObject var jack: Jack
 
     var body: some View {
         HStack {
@@ -20,7 +20,8 @@ struct CortexToggle: View {
             }
         }
         .onTapGesture {
-            group.forEach { item in
+            jack.optionsForCortex = jack.optionsForCortex
+            (jack.optionsForCortex as! Set<Cortex>).forEach { item in
                 item.selected = false
             }
             selected = true

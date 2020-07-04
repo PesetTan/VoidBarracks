@@ -9,9 +9,10 @@ import SwiftUI
 
 struct JackWeaponList: View {
     var weapons: Set<Weapon>
+    @ObservedObject var jack: Jack
     var body: some View {
-        ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
-            JackWeaponCell(weapon: weapon, weapons: weapons)
+        ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.uuid) { weapon in
+            JackWeaponCell(weapon: weapon, weapons: weapons, jack: jack)
         }
     }
 }

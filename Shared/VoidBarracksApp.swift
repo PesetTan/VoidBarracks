@@ -32,13 +32,6 @@ struct VoidBarracksApp: App {
             context.insert(newUser)
             try! context.save()
         }
-
-        let appearance = UINavigationBarAppearance()
-        appearance.shadowColor = .clear
-        UITableView.appearance().separatorStyle = .none
-//        UITableView.appearance().tableFooterView = UIView()
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 
     var body: some Scene {

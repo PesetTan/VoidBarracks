@@ -223,21 +223,6 @@ extension Jack {
             let newWeapon = (weapon as! Weapon)
             newJack.addToOptionsForShoulder2(newWeapon.copy())
         }
-        if let cortex = self.selectedCortex {
-            newJack.selectedCortex = cortex.copy()
-        }
-        if let arm1 = self.selectedArm1 {
-            newJack.selectedArm1 = arm1.copy()
-        }
-        if let arm2 = self.selectedArm2 {
-            newJack.selectedArm2 = arm2.copy()
-        }
-        if let shoulder1 = self.selectedShoulder1 {
-            newJack.selectedShoulder1 = shoulder1.copy()
-        }
-        if let shoulder2 = self.selectedShoulder2 {
-            newJack.selectedShoulder2 = shoulder2.copy()
-        }
         self.rules!.allObjects.forEach { rule in
             let newRule = (rule as! Rule)
             newJack.addToRules(newRule.copy())

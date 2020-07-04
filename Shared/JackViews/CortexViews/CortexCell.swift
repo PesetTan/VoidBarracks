@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CortexCell: View {
     @ObservedObject var cortex: Cortex
-    var cortexes: Set<Cortex>
+    @ObservedObject var jack: Jack
     @State private var isPresented: Bool = false
 
     var body: some View {
@@ -23,7 +23,7 @@ struct CortexCell: View {
                     get: { cortex.selected },
                     set: { cortex.selected = $0 }
                 ),
-                group: cortexes)
+                jack: jack)
             }
         }
         .sheet(isPresented: $isPresented) {

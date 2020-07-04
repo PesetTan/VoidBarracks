@@ -10,6 +10,7 @@ import SwiftUI
 struct JackWeaponCell: View {
     @ObservedObject var weapon: Weapon
     var weapons: Set<Weapon>
+    @ObservedObject var jack: Jack
     @State private var isPresented: Bool = false
 
     var body: some View {
@@ -26,7 +27,7 @@ struct JackWeaponCell: View {
                         get: { weapon.selected },
                         set: {weapon.selected = $0}
                     ),
-                    group: weapons)
+                    weapon: weapon, group: weapons, jack: jack)
                 }
             }
         }
