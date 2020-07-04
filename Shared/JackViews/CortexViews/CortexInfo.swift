@@ -22,20 +22,7 @@ struct CortexInfo: View {
                 }
             }
             .navigationBarTitle(Text("\(cortex.name!)"))
-            .navigationBarItems(trailing: CortexInfoDoneButton(isPresented: $isPresented))
+            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
         }
-    }
-}
-
-struct CortexInfoDoneButton: View {
-    @Binding var isPresented: Bool
-
-    var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            Text("Done")
-        }
-
     }
 }

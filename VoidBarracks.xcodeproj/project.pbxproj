@@ -490,8 +490,8 @@
 				BAC227E624ADA31300080E97 /* CypherInfo.swift */,
 				BAC227E324ADA30900080E97 /* CypherCell.swift */,
 				BAC227E024ADA2FC00080E97 /* CypherList.swift */,
-				BAC227E924ADA3D900080E97 /* RackBuilder.swift */,
 				BA20353C24B0073E00E252A3 /* CypherToggle.swift */,
+				BAC227E924ADA3D900080E97 /* RackBuilder.swift */,
 			);
 			path = CypherViews;
 			sourceTree = "<group>";

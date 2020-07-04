@@ -72,6 +72,10 @@
         <relationship name="selectedShoulder2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="selectedShoulder2" inverseEntity="Weapon"/>
     </entity>
     <entity name="Rack" representedClassName="Rack" syncable="YES" codeGenerationType="class">
+        <attribute name="furyCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="geometricCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="harmonicCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="overdriveCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="rack" inverseEntity="Army"/>
         <relationship name="furies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cypher" inverseName="fury" inverseEntity="Cypher"/>
         <relationship name="geometrics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cypher" inverseName="geometric" inverseEntity="Cypher"/>
@@ -157,7 +161,7 @@
         <element name="Faction" positionX="-284.452880859375" positionY="-60.30088806152344" width="128" height="118"/>
         <element name="Hero" positionX="-293.7706298828125" positionY="143.8809509277344" width="128" height="44"/>
         <element name="Jack" positionX="-253.1884155273438" positionY="273.330078125" width="128" height="284"/>
-        <element name="Rack" positionX="-288" positionY="27" width="128" height="119"/>
+        <element name="Rack" positionX="-288" positionY="27" width="128" height="179"/>
         <element name="Rule" positionX="-270" positionY="144" width="128" height="119"/>
         <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="44"/>
         <element name="Squad" positionX="-279" positionY="36" width="128" height="119"/>

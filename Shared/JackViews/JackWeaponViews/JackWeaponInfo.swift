@@ -20,22 +20,7 @@ struct JackWeaponInfo: View {
                 }
             }
             .navigationBarTitle(Text("\(weapon.name!)"))
-            .navigationBarItems(trailing: JackWeaponInfoDoneButton(isPresented: $isPresented))
+            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
         }
     }
 }
-
-struct JackWeaponInfoDoneButton: View {
-    @Binding var isPresented: Bool
-
-    var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            Image(systemName: "multiply")
-        }
-
-    }
-}
-
-

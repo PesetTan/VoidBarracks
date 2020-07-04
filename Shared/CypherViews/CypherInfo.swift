@@ -30,21 +30,8 @@ struct CypherInfo: View {
                 }
             }
             .navigationBarTitle(Text("\(cypher.name!)")) //, displayMode: .inline)
-            .navigationBarItems(trailing: CypherInfoDoneButton(isPresented: $isPresented))
+            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
 
         }
-    }
-}
-
-struct CypherInfoDoneButton: View {
-    @Binding var isPresented: Bool
-
-    var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            Image(systemName: "multiply")
-        }
-
     }
 }

@@ -12,7 +12,7 @@ struct FactionPicker: View {
 
     var body: some View {
         NavigationView {
-            List {
+            VStack{
                 if let factions = (store.first!.factions as! Set<Army>) {
                     ForEach(factions.sorted{$0.name! < $1.name!}, id:\.id) { army in
                         if let army = army {
@@ -22,7 +22,6 @@ struct FactionPicker: View {
                     }
                 }
             }
-            .listStyle(InsetListStyle())
         }
     }
 }
@@ -35,17 +34,37 @@ struct FactionCell: View {
         NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive)
                         .accentColor(Color("color.\(army.shortName!)")),
                        isActive: $isActive) {
+
+            Cell(armyName: army.name!, shortName: army.shortName!)
+        }
+        .navigationBarTitle(Text("Recruit"))
+    }
+}
+
+struct Cell: View {
+    var armyName: String
+    var shortName: String
+
+    var body: some View {
+        HStack {
             Label {
-                Text("\(army.name!)")
+                Text("\(armyName)")
                     .padding()
                     .font(.title2)
             } icon: {
-                Image("logo.\(army.shortName!)")
+                Image("logo.\(shortName)")
+                    .renderingMode(.original)
                     .resizable()
                     .frame(width: 45, height: 45, alignment: .center)
-                    .padding(20)
             }
-            .navigationBarTitle(Text("Recruit"))
         }
+        
+        .frame(maxWidth: .infinity)
+        .padding()
+
+        .background(Color.accentColor.opacity(0.2))
+        .cornerRadius(10)
+        .padding()
     }
+
 }
