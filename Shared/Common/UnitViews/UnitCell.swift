@@ -17,14 +17,19 @@ struct UnitCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                UnitCounter(unit: unit)
-                Stepper {
-                    unit.count += 1
-                } onDecrement: {
-                    unit.count -= 1
-                } label: {
-                    Text("\(unit.name ?? "No Name")")
+                Text("\(unit.name ?? "No Name")")
+
+                Spacer()
+
+                if unit is Hero {
+                    UnitCounter(unit: unit, maxCount: 1)
+                } else {
+                    UnitCounter(unit: unit, maxCount: 3)
                 }
+
+
+
+
             }
         }
         .sheet(isPresented: $isPresented) {

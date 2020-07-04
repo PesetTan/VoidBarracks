@@ -170,7 +170,6 @@ extension Attachment {
         newAttachment.arm = self.arm
         newAttachment.foc = self.foc
         newAttachment.dmg = self.dmg
-        newAttachment.selected = self.selected
         self.rules!.allObjects.forEach { rule in
             let newRule = (rule as! Rule)
             newAttachment.addToRules(newRule.copy())
@@ -319,7 +318,7 @@ extension Cypher {
         newCypher.pow = self.pow
         newCypher.rule = self.rule
         newCypher.type = self.type
-        newCypher.selected = self.selected
+        newCypher.count = self.count
         return newCypher
     }
 }

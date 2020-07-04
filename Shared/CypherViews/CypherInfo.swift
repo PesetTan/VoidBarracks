@@ -29,7 +29,7 @@ struct CypherInfo: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("\(cypher.name!)"), displayMode: .inline)
+            .navigationBarTitle(Text("\(cypher.name!)")) //, displayMode: .inline)
             .navigationBarItems(trailing: CypherInfoDoneButton(isPresented: $isPresented))
 
         }

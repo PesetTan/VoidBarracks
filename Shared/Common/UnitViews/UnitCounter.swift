@@ -8,67 +8,27 @@
 import SwiftUI
 
 struct UnitCounter: View {
-    @ObservedObject public var unit: Unit
-    private let imageType: String = "circle"
-    private let imageSize: CGFloat = 7
-    private let paddingTrailing: CGFloat = 5
-    private let paddingLeading: CGFloat = 5
-
+    @ObservedObject var unit: Unit
+    var maxCount: Int = 3
 
     var body: some View {
-        VStack(spacing:2) {
-            if let hero = unit as? Hero {
-                if hero.count > 0 {
-                    Image(systemName: "hexagon.fill")
-                        .font(Font.system(size: 15, weight: .light))
+        HStack {
+            ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
+                if index >= unit.count {
+                    Image(systemName: "circle").foregroundColor(.gray).opacity(0.35)
                 } else {
-                    Image(systemName: "hexagon")
-                        .font(Font.system(size: 15, weight: .light))
-                }
-                
-            } else {
-                if unit.count > 2 {
-                    Image(systemName: "\(imageType).fill")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
-                } else {
-                    Image(systemName: "\(imageType)")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
-                }
-                if unit.count > 1 {
-                    Image(systemName: "\(imageType).fill")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
-                } else {
-                    Image(systemName: "\(imageType)")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
-                }
-                if unit.count > 0 {
-                    Image(systemName: "\(imageType).fill")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
-                } else {
-                    Image(systemName: "\(imageType)")
-                        .resizable()
-                        .frame(width: imageSize, height: imageSize)
-                        .padding(.trailing, paddingTrailing)
-                        .padding(.leading, paddingLeading)
+                    Image(systemName: "circle.fill").foregroundColor(.accentColor)
+
                 }
             }
 
         }
-
+        .onTapGesture {
+            unit.count += 1
+            if unit.count > maxCount {
+                unit.count = 0
+            }
+        }
     }
+
 }

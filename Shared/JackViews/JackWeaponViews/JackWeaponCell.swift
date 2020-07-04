@@ -17,19 +17,17 @@ struct JackWeaponCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                Toggle(isOn: Binding<Bool>(
+                HStack{
+                    Text("\(weapon.name!)")
+                    Spacer()
+                    Text("\(weapon.cost) points")
+
+                    WeaponToggle(selected: Binding<Bool>(
                         get: { weapon.selected },
-                        set: {
-//                            weapons.forEach { $0.selected = false }
-                            weapon.selected = $0
-                        })) {
-                    HStack{
-                        Text("\(weapon.name!)")
-                        Spacer()
-                        Text("\(weapon.cost) points")
-                    }
+                        set: {weapon.selected = $0}
+                    ),
+                    group: weapons)
                 }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
             }
         }
         .sheet(isPresented: $isPresented) {

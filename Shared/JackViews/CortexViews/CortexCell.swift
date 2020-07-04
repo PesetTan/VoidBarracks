@@ -16,16 +16,14 @@ struct CortexCell: View {
         Button {
             isPresented.toggle()
         } label: {
-            HStack {
-                Toggle(isOn: Binding<Bool>(
-                        get: { cortex.selected },
-                        set: {
-                            cortexes.forEach { $0.selected = false }
-                            cortex.selected = $0
-                        })) {
-                    Text("\(cortex.name!)")
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+            HStack{
+                Text("\(cortex.name!)")
+                Spacer()
+                CortexToggle(selected: Binding<Bool>(
+                    get: { cortex.selected },
+                    set: { cortex.selected = $0 }
+                ),
+                group: cortexes)
             }
         }
         .sheet(isPresented: $isPresented) {

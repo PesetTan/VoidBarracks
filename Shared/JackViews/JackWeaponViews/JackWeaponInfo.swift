@@ -19,7 +19,7 @@ struct JackWeaponInfo: View {
                     WeaponView(weapon: weapon)
                 }
             }
-            .navigationBarTitle(Text("\(weapon.name!)"), displayMode: .inline)
+            .navigationBarTitle(Text("\(weapon.name!)"))
             .navigationBarItems(trailing: JackWeaponInfoDoneButton(isPresented: $isPresented))
         }
     }

@@ -16,14 +16,9 @@ struct AttachmentCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                Toggle(isOn: Binding<Bool>(
-                        get: { attachment.selected },
-                        set: {
-                            attachment.selected = $0
-                        })) {
-                    Text("\(attachment.name!)")
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                Text("\(attachment.name!)")
+                Spacer()
+                UnitCounter(unit: attachment, maxCount: 1)
             }
         }
         .sheet(isPresented: $isPresented) {

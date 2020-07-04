@@ -36,7 +36,7 @@ struct UnitInfo: View {
                     if let squad = unit as? Squad {
                         if let attachments = (squad.attachments as! Set<Attachment>) {
                             ForEach(attachments.sorted{$0.id! < $1.id!}, id:\.id) { attachment in
-                                if (attachment.selected) {
+                                if attachment.count > 0 {
                                     AttachmentView(attachment: attachment, headline: "Attachment:")
                                 }
                             }
@@ -46,7 +46,7 @@ struct UnitInfo: View {
                     if let jack = unit as? Jack {
                         if let cortexes = (jack.optionsForCortex as! Set<Cortex>) {
                             ForEach(cortexes.sorted{$0.id! < $1.id!}, id:\.id) { cortex in
-                                if (cortex.selected) {
+                                if cortex.selected {
                                     CortexView(cortex: cortex)
                                 }
                             }
@@ -54,28 +54,28 @@ struct UnitInfo: View {
 
                         if let weapons = (jack.optionsForArm1 as! Set<Weapon>) {
                             ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
-                                if (weapon.selected) {
+                                if weapon.selected {
                                     JackWeaponView(weapon: weapon, headline: "Arm 1")
                                 }
                             }
                         }
                         if let weapons = (jack.optionsForArm2 as! Set<Weapon>) {
                             ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
-                                if (weapon.selected) {
+                                if weapon.selected {
                                     JackWeaponView(weapon: weapon, headline: "Arm 2")
                                 }
                             }
                         }
                         if let weapons = (jack.optionsForShoulder1 as! Set<Weapon>) {
                             ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
-                                if (weapon.selected) {
+                                if weapon.selected {
                                     JackWeaponView(weapon: weapon, headline: "Shoulder 1")
                                 }
                             }
                         }
                         if let weapons = (jack.optionsForShoulder2 as! Set<Weapon>) {
                             ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
-                                if (weapon.selected) {
+                                if weapon.selected {
                                     JackWeaponView(weapon: weapon, headline: "Shoudler 2")
                                 }
                             }
@@ -85,7 +85,7 @@ struct UnitInfo: View {
 
                 }
             }
-            .navigationBarTitle(Text("\(unit.name!)"), displayMode: .inline)
+            .navigationBarTitle(Text("\(unit.name!)")) //, displayMode: .inline)
             .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
         }
     }

@@ -16,14 +16,9 @@ struct CypherCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                Toggle(isOn: Binding<Bool>(
-                        get: { cypher.selected },
-                        set: {
-                            cypher.selected = $0
-                        })) {
-                    Text("\(cypher.name!)")
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                Text("\(cypher.name!)")
+                Spacer()
+                CypherToggle(cypher: cypher)
             }
         }
         .sheet(isPresented: $isPresented) {
