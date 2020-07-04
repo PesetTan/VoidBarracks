@@ -61,10 +61,10 @@ struct Cell: View {
         
         .frame(maxWidth: .infinity)
         .padding()
-
         .background(Color.accentColor.opacity(0.2))
         .cornerRadius(10)
         .padding()
+        .shadow(color: .gray, radius: 10, x: 10, y: 10)
     }
 
 }
