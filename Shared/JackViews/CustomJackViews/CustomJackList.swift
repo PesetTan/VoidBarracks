@@ -17,6 +17,7 @@ struct CustomJackList: View {
         return List {
             ForEach(jacks, id:\.uuid) { jack in
                 UnitCell(unit: jack)
+                    .customCell()
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in

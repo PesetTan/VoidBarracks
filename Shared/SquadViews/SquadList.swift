@@ -14,6 +14,7 @@ struct SquadList: View {
     var body: some View {
         ForEach(squads, id:\.id) { squad in
             SquadCell(squad: squad, refresh: $refresh)
+                .customCell()
 
             if let customSquads = (squad.customSquads as! Set<Squad>) {
                 CustomSquadList(customSquads: customSquads, refresh: $refresh)
@@ -33,6 +34,7 @@ struct CustomSquadList: View {
         return List {
             ForEach(squads, id:\.uuid) { squad in
                 UnitCell(unit: squad)
+                    .customCell()
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in

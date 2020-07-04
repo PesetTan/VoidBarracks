@@ -64,7 +64,7 @@ struct Cell: View {
         .background(Color.accentColor.opacity(0.2))
         .cornerRadius(10)
         .padding()
-        .shadow(color: .gray, radius: 10, x: 10, y: 10)
+        .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 5, y: 5)
     }
 
 }

@@ -20,7 +20,7 @@ struct ArmyBuilder: View {
 
     var body: some View {
         let army = (armies.first{$0.id == armyId})
-        return Form {
+        return ScrollView {
             if refresh {
                 EmptyView()
             } else {
@@ -30,50 +30,96 @@ struct ArmyBuilder: View {
             if let army = army {
                 Section {
                     nameField
+                        .customCell()
+
+                    Text("")
+                    Text("")
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+
+
 
                 Section(header: heroHeader) {
                     if let heros = (army.heros as! Set<Hero>) {
                         HeroList(heros: heros.sorted{$0.name! < $1.name!})
+                            .customCell()
                     }
+
+                    Text("")
+                    Text("")
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+
+
 
                 Section(header: soloHeader) {
                     if let solos = (army.solos as! Set<Solo>) {
                         SoloList(solos: solos.sorted{$0.name! < $1.name!})
+                            .customCell()
                     }
+
+                    Text("")
+                    Text("")
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+
+
 
                 Section(header: jackHeader) {
                     if let jacks = (army.jacks as! Set<Jack>) {
                         JackList(jacks: jacks.sorted{$0.name! < $1.name!}, refresh: $refresh)
                     }
+
+                    Text("")
+                    Text("")
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+
+
 
                 Section(header: squadHeader) {
                     if let squads = (army.squads as! Set<Squad>) {
                         SquadList(squads: squads.sorted{$0.name! < $1.name!}, refresh: $refresh)
                     }
+
+                    Text("")
+                    Text("")
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+
+
 
                 Section {
                     if let rack = army.rack {
                         RackBuilder(rack: rack)
+                            .customCell()
                     }
                 }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
 
                 Section {
                     SaveArmyButton(army: army, isActive: $isActive)
+                        .customCell()
                 }
+                .padding(10)
+
                 .navigationBarTitle(Text("\(army.name!)"))
             }
         }
+        .background(SwiftUI.Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
     }
 
     var heroHeader: some View {
         HStack{
             Image(systemName: "star")
             Text("Heros")
+            Spacer()
         }
     }
 
@@ -81,6 +127,7 @@ struct ArmyBuilder: View {
         HStack{
             Image(systemName: "person")
             Text("Solos")
+            Spacer()
         }
     }
 
@@ -88,6 +135,7 @@ struct ArmyBuilder: View {
         HStack{
             Image(systemName: "wrench")
             Text("'Jacks")
+            Spacer()
         }
     }
 
@@ -95,6 +143,7 @@ struct ArmyBuilder: View {
         HStack{
             Image(systemName: "person.3")
             Text("Squads")
+            Spacer()
         }
     }
 

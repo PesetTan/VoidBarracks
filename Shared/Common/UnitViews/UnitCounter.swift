@@ -15,7 +15,7 @@ struct UnitCounter: View {
         HStack {
             ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
                 if index >= unit.count {
-                    Image(systemName: "circle").foregroundColor(.gray).opacity(0.35)
+                    Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
                 } else {
                     Image(systemName: "circle.fill").foregroundColor(.accentColor)
 

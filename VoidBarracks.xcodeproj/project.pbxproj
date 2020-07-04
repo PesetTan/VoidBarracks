@@ -40,6 +40,8 @@
 		BA20353B24B0028500E252A3 /* CortexToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353924B0028500E252A3 /* CortexToggle.swift */; };
 		BA20353D24B0073E00E252A3 /* CypherToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353C24B0073E00E252A3 /* CypherToggle.swift */; };
 		BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353C24B0073E00E252A3 /* CypherToggle.swift */; };
+		BA20354024B12C1B00E252A3 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */; };
+		BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */; };
 		BA4F969224AAA5C100AB9F4C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969124AAA5C100AB9F4C /* Tests_iOS.swift */; };
 		BA4F969D24AAA5C100AB9F4C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969C24AAA5C100AB9F4C /* Tests_macOS.swift */; };
 		BA4F969F24AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */; };
@@ -174,6 +176,7 @@
 		BA20353624AFFDF200E252A3 /* WeaponToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponToggle.swift; sourceTree = "<group>"; };
 		BA20353924B0028500E252A3 /* CortexToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexToggle.swift; sourceTree = "<group>"; };
 		BA20353C24B0073E00E252A3 /* CypherToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherToggle.swift; sourceTree = "<group>"; };
+		BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidBarracksApp.swift; sourceTree = "<group>"; };
 		BA4F967724AAA5C000AB9F4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA4F967D24AAA5C100AB9F4C /* VoidBarracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoidBarracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +338,7 @@
 				BA4F967724AAA5C000AB9F4C /* ContentView.swift */,
 				BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */,
 				BA61D5AE24AD2D4E002F047A /* DataController.swift */,
+				BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */,
 				BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -705,6 +709,7 @@
 				BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */,
 				BAC227DD24AD982200080E97 /* ArmyBuilder.swift in Sources */,
 				BA20350824AEA00400E252A3 /* CustomJackList.swift in Sources */,
+				BA20354024B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
 				BA4F989124AADC9F00AB9F4C /* GetJson.swift in Sources */,
 				BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */,
 				BA20353D24B0073E00E252A3 /* CypherToggle.swift in Sources */,
@@ -769,6 +774,7 @@
 				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
 				BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA20353224AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
+				BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
 				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
 				BA20352824AF05A100E252A3 /* UnitCell.swift in Sources */,
 				BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */,

@@ -16,7 +16,7 @@ struct JackList: View {
 
             if jack.uuid != nil {
                 JackCell(jack: jack, refresh: $refresh)
-                    .accentColor(Color("color.\(jack.army!.shortName!)"))
+                    .customCell()
 
             }
 
