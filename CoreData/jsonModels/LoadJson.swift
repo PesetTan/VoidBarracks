@@ -34,8 +34,10 @@ class WarcasterData {
         rawWeapons = GetJson.getWeapons()!
         rawRules = GetJson.getRules()!
         rawCyphers = GetJson.getCyphers()!
-
         context = persistentContainer.viewContext
+        populateRules(rawRules)
+
+
     }
 
     func setStore() {
@@ -343,6 +345,7 @@ class WarcasterData {
         }
 
         weapon.cost = Int16(raw.cost ?? 0)
+
         if let ruleIds = raw.ruleIds {
             ruleIds.forEach { id in
                 weapon.addToRules(GetRule(id))
@@ -353,6 +356,17 @@ class WarcasterData {
     }
 
     private func GetRule(_ id: String) -> Rule {
+//        let fetchRequest: NSFetchRequest<Rule> = Rule.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+//        let rules = try! context.fetch(fetchRequest)
+//
+//        if rules.count == 0 {
+//            print("MISSING \(id)")
+//        }
+//
+//        context.refreshAllObjects()
+//        return rules.first!
+
         let raw = self.rawRules.first{$0.id == id}!
         let rule = Rule(context: self.context)
         rule.id = raw.id
@@ -361,6 +375,19 @@ class WarcasterData {
 
         return rule
     }
-    
+
+    private func populateRules(_ rawRules: [ULRule]) {
+        rawRules.forEach { raw in
+            let rule = Rule(context: self.context)
+            rule.id = raw.id
+            rule.name = raw.name
+            rule.text = raw.rule
+
+            context.insert(rule)
+        }
+
+        try! context.save()
+
+    }
     
 }

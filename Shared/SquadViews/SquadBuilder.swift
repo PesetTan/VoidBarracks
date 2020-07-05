@@ -19,7 +19,7 @@ struct SquadBuilder: View {
     ) var squads: FetchedResults<Squad>
 
     var body: some View {
-        let squad = (squads.first{$0.uuid == squadId})
+        let squad = squads.first{$0.uuid == squadId}!
         return VStack {
             if let squad = squad {
                 Form {
@@ -39,7 +39,7 @@ struct SquadBuilder: View {
                 }
             }
         }
-        .navigationTitle(Text("\(squad?.name! ?? "Missing Name")"))
+        .navigationTitle(Text("\(squad.name ?? "Missing Name" )"))
         .navigationBarItems(trailing: UnitInfoButton(unit: squad, isPresented: $isPresented))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
@@ -51,16 +51,9 @@ struct SquadNameField: View{
 
     var body: some View {
         TextField("Custom Squad Name", text: Binding<String>(
-                    get: { squad.customName ?? "" },
-                    set: {
-                        squad.customName = $0
-                    })) { changed in
-            if changed {
-                print("chenged")
-            }
-        } onCommit: {
-            print("committed")
-        }
+            get: { squad.customName ?? "" },
+            set: { squad.customName = $0 }
+        ))
     }
 }
 

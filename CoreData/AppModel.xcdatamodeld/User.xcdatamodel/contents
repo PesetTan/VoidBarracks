@@ -12,14 +12,14 @@
         <attribute name="unitCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="unitMax" attributeType="Integer 16" defaultValueString="15" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
-        <relationship name="faction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Faction" inverseName="armies" inverseEntity="Faction"/>
-        <relationship name="heros" optional="YES" toMany="YES" minCount="3" deletionRule="Nullify" destinationEntity="Hero" inverseName="army" inverseEntity="Hero"/>
-        <relationship name="jacks" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Jack" inverseName="army" inverseEntity="Jack"/>
-        <relationship name="rack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rack" inverseName="army" inverseEntity="Rack"/>
-        <relationship name="solos" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Solo" inverseName="army" inverseEntity="Solo"/>
-        <relationship name="squads" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Squad" inverseName="army" inverseEntity="Squad"/>
-        <relationship name="store" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="factions" inverseEntity="Store"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
+        <relationship name="faction" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Faction" inverseName="armies" inverseEntity="Faction"/>
+        <relationship name="heros" optional="YES" toMany="YES" minCount="3" deletionRule="Cascade" destinationEntity="Hero" inverseName="army" inverseEntity="Hero"/>
+        <relationship name="jacks" optional="YES" toMany="YES" minCount="2" deletionRule="Cascade" destinationEntity="Jack" inverseName="army" inverseEntity="Jack"/>
+        <relationship name="rack" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Rack" inverseName="army" inverseEntity="Rack"/>
+        <relationship name="solos" optional="YES" toMany="YES" minCount="2" deletionRule="Cascade" destinationEntity="Solo" inverseName="army" inverseEntity="Solo"/>
+        <relationship name="squads" optional="YES" toMany="YES" minCount="2" deletionRule="Cascade" destinationEntity="Squad" inverseName="army" inverseEntity="Squad"/>
+        <relationship name="store" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Store" inverseName="factions" inverseEntity="Store"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
     </entity>
     <entity name="Attachment" representedClassName="Attachment" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="attachments" inverseEntity="Squad"/>
@@ -87,7 +87,7 @@
     <entity name="Rule" representedClassName="Rule" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="text" attributeType="String" defaultValueString=""/>
         <relationship name="cortex" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cortex" inverseName="rules" inverseEntity="Cortex"/>
         <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="rules" inverseEntity="Unit"/>
         <relationship name="weapon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="rules" inverseEntity="Weapon"/>
@@ -105,8 +105,8 @@
     </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
-        <relationship name="factions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Army" inverseName="store" inverseEntity="Army"/>
-        <relationship name="rack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rack" inverseName="store" inverseEntity="Rack"/>
+        <relationship name="factions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="store" inverseEntity="Army"/>
+        <relationship name="rack" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Rack" inverseName="store" inverseEntity="Rack"/>
     </entity>
     <entity name="Unit" representedClassName="Unit" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="arm" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -129,7 +129,7 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="armies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Army" inverseName="user" inverseEntity="Army"/>
+        <relationship name="armies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="user" inverseEntity="Army"/>
     </entity>
     <entity name="Weapon" representedClassName="Weapon" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

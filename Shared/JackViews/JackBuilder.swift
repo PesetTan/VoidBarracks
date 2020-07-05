@@ -19,13 +19,13 @@ struct JackBuilder: View {
     ) var jacks: FetchedResults<Jack>
 
     var body: some View {
-        let jack = (jacks.first{$0.uuid == jackId})
+        let jack = jacks.first{$0.uuid == jackId}!
         return VStack {
             if let jack = jack {
                 Form {
-                    Section {
-                        JackNameField(jack: jack)
-                    }
+//                    Section {
+//                        JackNameField(jack: jack)
+//                    }
 
                     Section(header: cortexHeader) {
                         if let cortexes = (jack.optionsForCortex as! Set<Cortex>) {
@@ -63,7 +63,7 @@ struct JackBuilder: View {
                 }
             }
         }
-        .navigationTitle(Text("\(jack?.name! ?? "Missing Name")"))
+        .navigationTitle(Text("\(jack.name ?? "Missing Name")"))
         .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
@@ -191,16 +191,9 @@ struct JackNameField: View{
 
     var body: some View {
         TextField("Custom Jack Name", text: Binding<String>(
-        get: { jack.customName ?? "" },
-        set: {
-            jack.customName = $0
-        })) { changed in
-            if changed {
-                print("chenged")
-            }
-        } onCommit: {
-            print("committed")
-        }
+            get: { jack.customName ?? "" },
+            set: { jack.customName = $0 }
+        ))
     }
 }
 

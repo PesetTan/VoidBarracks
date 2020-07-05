@@ -50,4 +50,15 @@ public class PersistentCloudKitContainer {
             context.delete(result)
         }
     }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteRules () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Rule>(entityName: "Rule")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
 }

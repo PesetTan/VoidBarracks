@@ -16,6 +16,7 @@ struct VoidBarracksApp: App {
 
     init() {
         PersistentCloudKitContainer.deleteContext()
+        PersistentCloudKitContainer.deleteRules()
         let warcasterData = WarcasterData(persistantContainer)
         warcasterData.setStore()
 
