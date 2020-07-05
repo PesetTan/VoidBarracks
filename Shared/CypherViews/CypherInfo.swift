@@ -15,12 +15,20 @@ struct CypherInfo: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    Text("")
 
-                    Spacer()
+                    HStack {
+                        Spacer()
+                        Text("\(cypher.name!)").font(.title)
+                        Spacer()
+                    }
 
                     HStack {
                         Spacer()
                         Text("\(cypher.type!)").font(.headline).foregroundColor(.gray)
+                        if (cypher.pow > 0) {
+                            Text("POW \(cypher.pow)").font(.headline).foregroundColor(.gray)
+                        }
                         Spacer()
                     }
 
@@ -29,7 +37,6 @@ struct CypherInfo: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("\(cypher.name!)")) //, displayMode: .inline)
             .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
 
         }
