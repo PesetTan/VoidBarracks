@@ -31,7 +31,6 @@ struct BarrackArmies: View {
                         Text("No Armies Found")
                         Spacer()
                     }
-
                 } else {
                     ForEach(armies, id:\.self) { army in
                         BarracksCell(armyId: army.id!, armyName: army.name!, customName: army.customName!, shortName: army.shortName!, lastModified: army.lastModified!)

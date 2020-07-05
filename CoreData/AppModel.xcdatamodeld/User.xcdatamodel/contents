@@ -2,10 +2,15 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17162" systemVersion="20A4299v" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Army" representedClassName="Army" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="gameType" attributeType="String" defaultValueString="Normal Game"/>
+        <attribute name="heroCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="heroMax" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="String" defaultValueString=""/>
         <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615262200" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="shortName" attributeType="String" defaultValueString=""/>
+        <attribute name="unitCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unitMax" attributeType="Integer 16" defaultValueString="15" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="faction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Faction" inverseName="armies" inverseEntity="Faction"/>
         <relationship name="heros" optional="YES" toMany="YES" minCount="3" deletionRule="Nullify" destinationEntity="Hero" inverseName="army" inverseEntity="Hero"/>
@@ -145,7 +150,7 @@
         <relationship name="weaponAttachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="weaponAttachment" inverseEntity="Weapon"/>
     </entity>
     <elements>
-        <element name="Army" positionX="506.821533203125" positionY="-32.55368041992188" width="128" height="239"/>
+        <element name="Army" positionX="506.821533203125" positionY="-32.55368041992188" width="128" height="314"/>
         <element name="Attachment" positionX="-279" positionY="135" width="128" height="44"/>
         <element name="Cortex" positionX="-288" positionY="126" width="128" height="14"/>
         <element name="Cypher" positionX="-127.8965454101562" positionY="-161.9575042724609" width="128" height="179"/>

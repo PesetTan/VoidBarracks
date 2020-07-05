@@ -112,8 +112,6 @@
 		BA4F98C424AC543000AB9F4C /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C224AC543000AB9F4C /* WeaponsView.swift */; };
 		BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
 		BA4F98C724AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
-		BA4F98CC24AC62F100AB9F4C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CB24AC62F100AB9F4C /* CounterView.swift */; };
-		BA4F98CD24AC62F100AB9F4C /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98CB24AC62F100AB9F4C /* CounterView.swift */; };
 		BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
 		BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
 		BA61D5A924AD21A0002F047A /* LazyLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5A824AD21A0002F047A /* LazyLoad.swift */; };
@@ -222,7 +220,6 @@
 		BA4F98BF24AC4D0E00AB9F4C /* UnitStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitStats.swift; sourceTree = "<group>"; };
 		BA4F98C224AC543000AB9F4C /* WeaponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsView.swift; sourceTree = "<group>"; };
 		BA4F98C524AC585900AB9F4C /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
-		BA4F98CB24AC62F100AB9F4C /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		BA4F98D424AD0AC900AB9F4C /* Barracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barracks.swift; sourceTree = "<group>"; };
 		BA61D5A824AD21A0002F047A /* LazyLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoad.swift; sourceTree = "<group>"; };
 		BA61D5AE24AD2D4E002F047A /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -472,7 +469,6 @@
 				BA4F98C224AC543000AB9F4C /* WeaponsView.swift */,
 				BA20353624AFFDF200E252A3 /* WeaponToggle.swift */,
 				BA4F98C524AC585900AB9F4C /* RulesView.swift */,
-				BA4F98CB24AC62F100AB9F4C /* CounterView.swift */,
 				BA61D5A824AD21A0002F047A /* LazyLoad.swift */,
 				BA20351424AEE34200E252A3 /* DoneButton.swift */,
 				BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */,
@@ -712,7 +708,6 @@
 				BA4F98C024AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
 				BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
 				BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */,
-				BA4F98CC24AC62F100AB9F4C /* CounterView.swift in Sources */,
 				BAC227E124ADA2FC00080E97 /* CypherList.swift in Sources */,
 				BA11D8AE24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */,
 				BAC227FB24ADB6C200080E97 /* CortexCell.swift in Sources */,
@@ -773,7 +768,6 @@
 				BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */,
 				BA4F98C124AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
 				BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */,
-				BA4F98CD24AC62F100AB9F4C /* CounterView.swift in Sources */,
 				BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */,
 				BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */,
 				BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */,

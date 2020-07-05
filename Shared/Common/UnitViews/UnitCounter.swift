@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UnitCounter: View {
     @ObservedObject var unit: Unit
+    @EnvironmentObject var army: Army
     var maxCount: Int = 3
 
     var body: some View {
@@ -27,6 +28,14 @@ struct UnitCounter: View {
             unit.count += 1
             if unit.count > maxCount {
                 unit.count = 0
+            }
+
+            if unit is Hero {
+                var heroCount: Int16 = 0
+                (army.heros as! Set<Hero>).forEach { hero in
+                    heroCount += hero.count
+                }
+                army.heroCount = heroCount
             }
         }
     }

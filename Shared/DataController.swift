@@ -16,6 +16,11 @@ extension Army {
         newArmy.customName = self.customName
         newArmy.shortName = self.shortName
         newArmy.lastModified = Date()
+        newArmy.heroCount = self.heroCount
+        newArmy.heroMax = self.heroMax
+        newArmy.unitCount = self.unitCount
+        newArmy.unitMax = self.unitMax
+        newArmy.gameType = self.gameType
         self.heros!.allObjects.forEach { hero in
             let newHero = (hero as! Hero)
             newArmy.addToHeros(newHero.copy())

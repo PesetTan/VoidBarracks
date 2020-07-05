@@ -123,10 +123,12 @@ struct ArmyBuilder: View {
     }
 
     var heroHeader: some View {
-        HStack{
+        let army = armies.first{$0.id == armyId}!
+        return HStack{
             Image(systemName: "star")
             Text("Heros")
             Spacer()
+            Text("\(army.heroCount)/\(army.heroMax) Heros")
         }
     }
 
