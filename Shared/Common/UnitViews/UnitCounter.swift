@@ -19,10 +19,8 @@ struct UnitCounter: View {
                     Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
                 } else {
                     Image(systemName: "circle.fill").foregroundColor(.accentColor)
-
                 }
             }
-
         }
         .onTapGesture {
             unit.count += 1
@@ -36,7 +34,28 @@ struct UnitCounter: View {
                     heroCount += hero.count
                 }
                 army.heroCount = heroCount
+                return
             }
+
+            var unitCount: Int16 = 0
+
+            (army.solos as! Set<Solo>).forEach { solo in
+                unitCount += solo.count
+            }
+
+            (army.jacks as! Set<Jack>).forEach { jack in
+                (jack.customJacks as! Set<Jack>).forEach { custom in
+                    unitCount += custom.count
+                }
+            }
+
+            (army.squads as! Set<Squad>).forEach { squad in
+                (squad.customSquads as! Set<Squad>).forEach { custom in
+                    unitCount += custom.count
+                }
+            }
+            army.unitCount = unitCount
+
         }
     }
 

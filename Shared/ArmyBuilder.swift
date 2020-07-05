@@ -128,31 +128,54 @@ struct ArmyBuilder: View {
             Image(systemName: "star")
             Text("Heros")
             Spacer()
-            Text("\(army.heroCount)/\(army.heroMax) Heros")
+            if army.heroCount > army.heroMax {
+                Text("\(army.heroCount - army.heroMax) Hero Points Over")
+            } else {
+                Text("\(army.heroCount)/\(army.heroMax) Heros")
+            }
+
         }
     }
 
     var soloHeader: some View {
-        HStack{
+        let army = armies.first{$0.id == armyId}!
+        return HStack{
             Image(systemName: "person")
             Text("Solos")
             Spacer()
+            if army.unitCount > army.unitMax {
+                Text("\(army.unitCount - army.unitMax) Unit Points Over")
+            } else {
+                Text("\(army.unitCount)/\(army.unitMax) Units")
+            }
         }
     }
 
     var jackHeader: some View {
-        HStack{
+        let army = armies.first{$0.id == armyId}!
+        return HStack{
             Image(systemName: "wrench")
             Text("'Jacks")
             Spacer()
+            if army.unitCount > army.unitMax {
+                Text("\(army.unitCount - army.unitMax) Unit Points Over")
+            } else {
+                Text("\(army.unitCount)/\(army.unitMax) Units")
+            }
         }
     }
 
     var squadHeader: some View {
-        HStack{
+        let army = armies.first{$0.id == armyId}!
+        return HStack{
             Image(systemName: "person.3")
             Text("Squads")
             Spacer()
+            if army.unitCount > army.unitMax {
+                Text("\(army.unitCount - army.unitMax) Unit Points Over")
+            } else {
+                Text("\(army.unitCount)/\(army.unitMax) Units")
+            }
         }
     }
 
