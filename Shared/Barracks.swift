@@ -68,7 +68,7 @@ struct BarracksCell: View {
 
                 if customName == "" {
                     Label {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text("\(armyName)")
                                 .font(.title2)
                             Text("\(dateFormatter.string(from: lastModified))")
@@ -82,7 +82,7 @@ struct BarracksCell: View {
                     }
                 } else {
                     Label {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text("\(customName)")
                                 .font(.title2)
                             Text("\(dateFormatter.string(from: lastModified))")

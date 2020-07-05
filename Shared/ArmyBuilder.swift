@@ -173,6 +173,8 @@ struct ArmyBuilder: View {
 
 struct SaveArmyButton: View {
     @FetchRequest(entity: User.entity(), sortDescriptors: []) private var users: FetchedResults<User>
+
+//    NSPredicate(format: "someField = %d", id)
     @Environment(\.managedObjectContext) var context
     //    var user: User
     var army: Army
@@ -183,7 +185,10 @@ struct SaveArmyButton: View {
             Spacer()
             Button {
                 if let user = users.first {
-                    user.addToArmies(army.copy())
+                    if (user.armies as! Set<Army>).first(where: {$0.id == army.id}) == nil {
+                        user.addToArmies(army.copy())
+                    }
+
                     try! context.save()
                     isActive.toggle()
                 }
