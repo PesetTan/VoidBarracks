@@ -85,6 +85,7 @@ class WarcasterData {
             squad.uuid = UUID().uuidString
             squad.id = raw.id
             squad.name = raw.name
+            squad.customName = ""
             squad.title = raw.title
             squad.cost = Int16(raw.cost)
             squad.spd = Int16(raw.speed!)
