@@ -17,7 +17,10 @@ struct UnitCell: View {
             isPresented.toggle()
         } label: {
             HStack {
-                Text("\(unit.name ?? "No Name")")
+
+                unitName
+
+                cortexName
 
                 Spacer()
 
@@ -34,6 +37,33 @@ struct UnitCell: View {
         }
         .sheet(isPresented: $isPresented) {
             UnitInfo(unit: unit, isPresented: $isPresented)
+        }
+    }
+
+    var unitName: some View {
+        if let jack = unit as? Jack {
+            if jack.customName! == "" {
+                return Text(jack.name!)
+            } else {
+                return Text(jack.customName!)
+            }
+        } else if let squad = unit as? Squad {
+            if squad.customName! == "" {
+                return Text(squad.name!)
+            } else {
+                return Text(squad.customName!)
+            }
+        } else {
+            return Text("\(unit.name ?? "No Name")")
+        }
+    }
+
+    var cortexName: some View {
+        if let jack = unit as? Jack {
+            let cortex = (jack.optionsForCortex as! Set<Cortex>).first{$0.selected}!
+            return Text(cortex.name!).font(.caption)
+        } else {
+            return Text("")
         }
     }
 }

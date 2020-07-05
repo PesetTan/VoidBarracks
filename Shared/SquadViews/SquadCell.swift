@@ -23,7 +23,9 @@ struct SquadCell: View {
 
                 Spacer(minLength: 5)
 
-                Text("Configure Squad").foregroundColor(.gray)
+                Text("Configure Squad")
+                    .font(.caption)
+                    .foregroundColor(.gray)
                     .fixedSize(horizontal: true, vertical: false)
 
             }

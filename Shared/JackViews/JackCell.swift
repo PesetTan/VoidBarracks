@@ -23,7 +23,9 @@ struct JackCell: View {
 
                 Spacer(minLength: 5)
 
-                Text("Configure \(jack.title!)").foregroundColor(.gray)
+                Text("Configure \(jack.title!)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
                     .fixedSize(horizontal: true, vertical: false)
 
             }.eraseToAnyView()

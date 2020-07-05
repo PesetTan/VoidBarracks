@@ -147,8 +147,13 @@ struct ArmyBuilder: View {
             Text("Heros")
             Spacer()
             if army.heroCount > army.heroMax {
-                Text("\(army.heroCount - army.heroMax) Hero Points Over")
-                    .font(.caption)
+                if army.heroCount - army.heroMax == 1 {
+                    Text("\(army.heroCount - army.heroMax) Hero Point Over")
+                        .font(.caption)
+                } else {
+                    Text("\(army.heroCount - army.heroMax) Hero Points Over")
+                        .font(.caption)
+                }
             } else {
                 Text("\(army.heroCount)/\(army.heroMax) Heros")
                     .font(.caption)
@@ -164,8 +169,13 @@ struct ArmyBuilder: View {
             Text("Solos")
             Spacer()
             if army.unitCount > army.unitMax {
-                Text("\(army.unitCount - army.unitMax) Unit Points Over")
-                    .font(.caption)
+                if army.unitCount - army.unitMax == 1 {
+                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                        .font(.caption)
+                } else {
+                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        .font(.caption)
+                }
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
                     .font(.caption)
@@ -180,8 +190,13 @@ struct ArmyBuilder: View {
             Text("'Jacks")
             Spacer()
             if army.unitCount > army.unitMax {
-                Text("\(army.unitCount - army.unitMax) Unit Points Over")
-                    .font(.caption)
+                if army.unitCount - army.unitMax == 1 {
+                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                        .font(.caption)
+                } else {
+                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        .font(.caption)
+                }
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
                     .font(.caption)
@@ -196,8 +211,13 @@ struct ArmyBuilder: View {
             Text("Squads")
             Spacer()
             if army.unitCount > army.unitMax {
-                Text("\(army.unitCount - army.unitMax) Unit Points Over")
-                    .font(.caption)
+                if army.unitCount - army.unitMax == 1 {
+                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                        .font(.caption)
+                } else {
+                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        .font(.caption)
+                }
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
                     .font(.caption)
@@ -209,10 +229,9 @@ struct ArmyBuilder: View {
         let army = (armies.first{$0.id == armyId})
 
         return TextField("Custom Army Name", text: Binding<String>(
-                            get: { army!.customName ?? "" },
-                    set: {
-                        army!.customName = $0
-                    })) { changed in
+                    get: { army!.customName ?? "" },
+                    set: { army!.customName = $0 }
+                    )) { changed in
             if changed {
                 print("chenged")
             }

@@ -157,6 +157,7 @@ class WarcasterData {
             jack.uuid = UUID().uuidString
             jack.id = raw.id
             jack.name = raw.name
+            jack.customName = ""
             jack.title = raw.title
             jack.cost = Int16(raw.cost)
             jack.str = Int16(raw.strength!)
