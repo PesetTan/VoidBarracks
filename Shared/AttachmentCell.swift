@@ -18,7 +18,7 @@ struct AttachmentCell: View {
             HStack {
                 Text("\(attachment.name!)")
                 Spacer()
-                UnitCounter(unit: attachment, maxCount: 1)
+                UnitSwitch(unit: attachment)
             }
         }
         .sheet(isPresented: $isPresented) {

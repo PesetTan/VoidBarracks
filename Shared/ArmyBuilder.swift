@@ -125,8 +125,8 @@ struct ArmyBuilder: View {
     var rackHeader: some View {
         let rack = armies.first{$0.id == armyId}!.rack!
         return HStack{
-            Image(systemName: "star")
-            Text("Heros")
+            Image(systemName: "book")
+            Text("Rack")
             Spacer()
             let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
             if totalCypherCount > 15 {

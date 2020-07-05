@@ -12,6 +12,8 @@
 		BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */; };
 		BA11D8AE24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */; };
 		BA11D8AF24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */; };
+		BA11D8B124B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
+		BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
@@ -160,6 +162,7 @@
 		BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponCell.swift; sourceTree = "<group>"; };
 		BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponInfo.swift; sourceTree = "<group>"; };
 		BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSwitch.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 				BA20352624AF05A100E252A3 /* UnitCell.swift */,
 				BA20352A24AF063B00E252A3 /* UnitCounter.swift */,
 				BA20352D24AF081A00E252A3 /* UnitInfoButton.swift */,
+				BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */,
 			);
 			path = UnitViews;
 			sourceTree = "<group>";
@@ -685,6 +689,7 @@
 				BA20352E24AF081A00E252A3 /* UnitInfoButton.swift in Sources */,
 				BA4F988824AAD8B300AB9F4C /* ULCortex.swift in Sources */,
 				BA4F988624AAD8B300AB9F4C /* ULCypher.swift in Sources */,
+				BA11D8B124B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
 				BA4F96B924AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */,
 				BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */,
 				BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */,
@@ -763,6 +768,7 @@
 				BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
 				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
 				BA20352824AF05A100E252A3 /* UnitCell.swift in Sources */,
+				BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
 				BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */,
 				BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */,
 				BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */,
