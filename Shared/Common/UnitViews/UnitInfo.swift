@@ -23,6 +23,13 @@ struct UnitInfo: View {
                         Spacer()
                     }
 
+                    HStack {
+                        Spacer()
+                        Text("Deployment Cost: \(unit.cost)")
+                        Spacer()
+                    }
+                    Text("")
+
                     UnitStats(unit: unit)
 
                     if let rules = (unit.rules as! Set<Rule>) {
