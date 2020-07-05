@@ -54,9 +54,23 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack, rack.furyCount < 3 {
-                Text("Select At Least \(3 - rack.furyCount) more")
+            if let rack = army.rack {
+                let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+
+                if rack.furyCount < 3 {
+                    Text("Select At Least \(3 - rack.furyCount) more Furies")
+                        .font(.caption)
+                } else if totalCypherCount > 15 {
+                    Text("\(totalCypherCount - 15) Cyphers Over")
+                        .font(.caption)
+                } else {
+                    Text("\(totalCypherCount)/\(15) Cyphers")
+                        .font(.caption)
+                }
             }
+
+
+
         }
     }
 
@@ -67,8 +81,19 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack, rack.geometricCount < 3 {
-                Text("Select At Least \(3 - rack.geometricCount) more")
+            if let rack = army.rack {
+                let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+
+                if rack.geometricCount < 3 {
+                    Text("Select At Least \(3 - rack.geometricCount) more Geomatrics")
+                        .font(.caption)
+                } else if totalCypherCount > 15 {
+                    Text("\(totalCypherCount - 15) Cyphers Over")
+                        .font(.caption)
+                } else {
+                    Text("\(totalCypherCount)/\(15) Cyphers")
+                        .font(.caption)
+                }
             }
         }
     }
@@ -80,8 +105,19 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack, rack.harmonicCount < 3 {
-                Text("Select At Least \(3 - rack.harmonicCount) more")
+            if let rack = army.rack {
+                let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+
+                if rack.harmonicCount < 3 {
+                    Text("Select At Least \(3 - rack.harmonicCount) more Harmonics")
+                        .font(.caption)
+                } else if totalCypherCount > 15 {
+                    Text("\(totalCypherCount - 15) Cyphers Over")
+                        .font(.caption)
+                } else {
+                    Text("\(totalCypherCount)/\(15) Cyphers")
+                        .font(.caption)
+                }
             }
         }
     }
@@ -93,8 +129,19 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack, rack.overdriveCount < 3 {
-                Text("Select At Least \(3 - rack.overdriveCount) more")
+            if let rack = army.rack {
+                let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+
+                if rack.overdriveCount < 3 {
+                    Text("Select At Least \(3 - rack.overdriveCount) more Overdrives")
+                        .font(.caption)
+                } else if totalCypherCount > 15 {
+                    Text("\(totalCypherCount - 15) Cyphers Over")
+                        .font(.caption)
+                } else {
+                    Text("\(totalCypherCount)/\(15) Cyphers")
+                        .font(.caption)
+                }
             }
         }
     }

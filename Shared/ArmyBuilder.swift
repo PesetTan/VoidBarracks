@@ -93,7 +93,7 @@ struct ArmyBuilder: View {
 
 
 
-                Section (footer: rackStats) {
+                Section (header: rackHeader, footer: rackStats) {
                     RackBuilder()
                         .environmentObject(army)
                         .customCell()
@@ -122,6 +122,24 @@ struct ArmyBuilder: View {
         }.padding()
     }
 
+    var rackHeader: some View {
+        let rack = armies.first{$0.id == armyId}!.rack!
+        return HStack{
+            Image(systemName: "star")
+            Text("Heros")
+            Spacer()
+            let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+            if totalCypherCount > 15 {
+                Text("\(totalCypherCount - 15) Cyphers Over")
+                    .font(.caption)
+            } else {
+                Text("\(totalCypherCount)/\(15) Cyphers")
+                    .font(.caption)
+            }
+
+        }
+    }
+
     var heroHeader: some View {
         let army = armies.first{$0.id == armyId}!
         return HStack{
@@ -130,8 +148,10 @@ struct ArmyBuilder: View {
             Spacer()
             if army.heroCount > army.heroMax {
                 Text("\(army.heroCount - army.heroMax) Hero Points Over")
+                    .font(.caption)
             } else {
                 Text("\(army.heroCount)/\(army.heroMax) Heros")
+                    .font(.caption)
             }
 
         }
@@ -145,8 +165,10 @@ struct ArmyBuilder: View {
             Spacer()
             if army.unitCount > army.unitMax {
                 Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    .font(.caption)
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
+                    .font(.caption)
             }
         }
     }
@@ -159,8 +181,10 @@ struct ArmyBuilder: View {
             Spacer()
             if army.unitCount > army.unitMax {
                 Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    .font(.caption)
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
+                    .font(.caption)
             }
         }
     }
@@ -173,8 +197,10 @@ struct ArmyBuilder: View {
             Spacer()
             if army.unitCount > army.unitMax {
                 Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    .font(.caption)
             } else {
                 Text("\(army.unitCount)/\(army.unitMax) Units")
+                    .font(.caption)
             }
         }
     }
