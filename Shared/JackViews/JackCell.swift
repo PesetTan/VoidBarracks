@@ -13,10 +13,10 @@ struct JackCell: View {
     @Binding var refresh: Bool
     
     var body: some View {
-
-            NavigationLink(
+        if let army = jack.army {
+            return NavigationLink(
                 destination: JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh)
-                    .accentColor(Color("color.\(jack.army!.shortName!)")),
+                    .accentColor(Color("color.\(army.shortName!)")),
                 isActive: $isPresented) {
                 Text("\(jack.name!)")
                     .fixedSize(horizontal: true, vertical: false)
@@ -26,7 +26,9 @@ struct JackCell: View {
                 Text("Configure \(jack.title!)").foregroundColor(.gray)
                     .fixedSize(horizontal: true, vertical: false)
 
-            }
-
+            }.eraseToAnyView()
+        } else {
+            return Text("").eraseToAnyView()
+        }
     }
 }

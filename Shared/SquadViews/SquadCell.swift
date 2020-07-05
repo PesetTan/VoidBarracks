@@ -13,18 +13,23 @@ struct SquadCell: View {
     @Binding var refresh: Bool
 
     var body: some View {
-        NavigationLink(
-            destination: SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh)
-                .accentColor(Color("color.\(squad.army!.shortName!)")),
-            isActive: $isPresented) {
-            Text("\(squad.name!)")
-                .fixedSize(horizontal: true, vertical: false)
+        if let army = squad.army {
+            return NavigationLink(
+                destination: SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh)
+                    .accentColor(Color("color.\(army.shortName!)")),
+                isActive: $isPresented) {
+                Text("\(squad.name!)")
+                    .fixedSize(horizontal: true, vertical: false)
 
-            Spacer(minLength: 5)
+                Spacer(minLength: 5)
 
-            Text("Configure Squad").foregroundColor(.gray)
-                .fixedSize(horizontal: true, vertical: false)
+                Text("Configure Squad").foregroundColor(.gray)
+                    .fixedSize(horizontal: true, vertical: false)
 
+            }
+            .eraseToAnyView()
+        } else {
+            return Text("").eraseToAnyView()
         }
     }
 }
