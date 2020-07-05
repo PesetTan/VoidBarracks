@@ -63,7 +63,7 @@ struct JackBuilder: View {
                 }
             }
         }
-        .navigationTitle(Text("\(jack?.name! ?? "Missing Name") \(jack?.weaponPoints ?? 0)"))
+        .navigationTitle(Text("\(jack?.name! ?? "Missing Name")"))
         .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
@@ -92,7 +92,7 @@ struct JackBuilder: View {
             if (jack.optionsForArm1 as! Set<Weapon>).filter{$0.selected}.count == 0 {
                 Text("Equipe Arm 1")
             } else if (jack.remainingPoints > 0) {
-                Text("\(jack.remainingPoints) points available")
+                Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
                 Text("\(jack.remainingPoints * -1) points over the limit")
             }
@@ -109,7 +109,7 @@ struct JackBuilder: View {
             if (jack.optionsForArm2 as! Set<Weapon>).filter{$0.selected}.count == 0 {
                 Text("Equipe Arm 2")
             } else if (jack.remainingPoints > 0) {
-                Text("\(jack.remainingPoints) points available")
+                Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
                 Text("\(jack.remainingPoints * -1) points over the limit")
             }
@@ -126,7 +126,7 @@ struct JackBuilder: View {
             if (jack.optionsForShoulder1 as! Set<Weapon>).filter{$0.selected}.count == 0 {
                 Text("Equipe Shoulder 1")
             } else if (jack.remainingPoints > 0) {
-                Text("\(jack.remainingPoints) points available")
+                Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
                 Text("\(jack.remainingPoints * -1) points over the limit")
             }
@@ -143,7 +143,7 @@ struct JackBuilder: View {
             if (jack.optionsForShoulder2 as! Set<Weapon>).filter{$0.selected}.count == 0 {
                 Text("Equipe Shoulder 2")
             } else if (jack.remainingPoints > 0) {
-                Text("\(jack.remainingPoints) points available")
+                Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
                 Text("\(jack.remainingPoints * -1) points over the limit")
             }
