@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CypherCell: View {
     @ObservedObject var cypher: Cypher
-    @ObservedObject var rack: Rack
     @State private var isPresented: Bool = false
 
     var body: some View {
@@ -19,7 +18,7 @@ struct CypherCell: View {
             HStack {
                 Text("\(cypher.name!)")
                 Spacer()
-                CypherToggle(cypher: cypher, rack: rack)
+                CypherToggle(cypher: cypher)
             }
         }
         .sheet(isPresented: $isPresented) {

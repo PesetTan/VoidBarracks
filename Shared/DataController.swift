@@ -37,6 +37,10 @@ extension Army {
         }
 
         let newRack = Rack(context: managedObjectContext!)
+        newRack.furyCount = self.rack!.furyCount
+        newRack.geometricCount = self.rack!.geometricCount
+        newRack.harmonicCount = self.rack!.harmonicCount
+        newRack.overdriveCount = self.rack!.overdriveCount
         self.rack!.furies!.allObjects.forEach { cypher in
             let newCypher = (cypher as! Cypher)
             newRack.addToFuries(newCypher.copy())

@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct RackBuilder: View {
-    @ObservedObject var rack: Rack
     @State private var isActive: Bool = false
+    @EnvironmentObject var army: Army
 
     var body: some View {
-        if let army = rack.army {
-            return NavigationLink(destination: CypherList(rack: rack)
-                            .accentColor(Color("color.\(army.shortName!)")),
-                           isActive: $isActive) {
+        if let shortName = army.shortName {
+            return NavigationLink(destination: CypherList().environmentObject(army)
+                                    .accentColor(Color("color.\(shortName)")),
+                                  isActive: $isActive) {
                 Text("Configure Your Rack")
-            }
-            .eraseToAnyView()
+            }.eraseToAnyView()
         } else {
-            return Text("")
-                .eraseToAnyView()
+            return Text("").eraseToAnyView()
         }
 
     }

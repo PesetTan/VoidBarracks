@@ -29,16 +29,12 @@ struct ArmyBuilder: View {
             
             if let army = army {
                 Section {
-                    nameField
-                        .customCell()
-
+                    nameField .customCell()
                     Text("")
                     Text("")
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
-
-
 
                 Section(header: heroHeader) {
                     if let heros = (army.heros as! Set<Hero>) {
@@ -46,7 +42,6 @@ struct ArmyBuilder: View {
                             .environmentObject(army)
                             .customCell()
                     }
-
                     Text("")
                     Text("")
                 }
@@ -98,16 +93,15 @@ struct ArmyBuilder: View {
 
 
 
-                Section {
-                    if let rack = army.rack {
-                        RackBuilder(rack: rack)
-                            .customCell()
-                    }
+                Section (footer: rackStats) {
+                    RackBuilder()
+                        .environmentObject(army)
+                        .customCell()
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
 
-                Section {
+                Section  {
                     SaveArmyButton(army: army, isActive: $isActive)
                         .customCell()
                 }
@@ -116,6 +110,16 @@ struct ArmyBuilder: View {
             }
         }
         .background(Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
+    }
+
+    var rackStats: some View {
+        let rack = armies.first{$0.id == armyId}!.rack!
+        return HStack {
+            Spacer()
+            Text("F:\(rack.furyCount)  G:\(rack.geometricCount)  H:\(rack.harmonicCount)  O:\(rack.overdriveCount)")
+                .font(.footnote)
+            Spacer()
+        }.padding()
     }
 
     var heroHeader: some View {

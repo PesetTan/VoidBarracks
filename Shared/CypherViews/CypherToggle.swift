@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CypherToggle: View {
     @ObservedObject var cypher: Cypher
-    @ObservedObject var rack: Rack
     var maxCount: Int = 1
+    @EnvironmentObject var army: Army
 
     var body: some View {
         HStack {
@@ -21,9 +21,10 @@ struct CypherToggle: View {
                     Image(systemName: "circle.fill").foregroundColor(.accentColor)
                 }
             }
-
         }
         .onTapGesture {
+            let rack = army.rack!
+
             cypher.count += 1
             if cypher.count > maxCount {
                 cypher.count = 0
@@ -45,6 +46,14 @@ struct CypherToggle: View {
                     case "OVERDRIVE": rack.overdriveCount -= 1
                     default: rack.overdriveCount -= 1
                 }
+            }
+
+            if army.store != nil {
+                army.store = army.store
+            }
+
+            if army.user != nil {
+                army.user!.armies = army.user!.armies
             }
 
         }

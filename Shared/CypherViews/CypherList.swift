@@ -8,39 +8,38 @@
 import SwiftUI
 
 struct CypherList: View {
-    @StateObject var rack: Rack
+    @EnvironmentObject var army: Army
 
     var body: some View {
         Form {
-
             Section(header: furyHeader) {
-                if let cyphers = (rack.furies as! Set<Cypher>) {
+                if let cyphers = (army.rack!.furies as! Set<Cypher>) {
                     ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher, rack: rack)
+                        CypherCell(cypher: cypher)
                     }
                 }
             }
 
             Section(header: geometricsHeader) {
-                if let cyphers = (rack.geometrics as! Set<Cypher>) {
+                if let cyphers = (army.rack!.geometrics as! Set<Cypher>) {
                     ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher, rack: rack)
+                        CypherCell(cypher: cypher)
                     }
                 }
             }
 
             Section(header: harmonicsHeader) {
-                if let cyphers = (rack.harmonics as! Set<Cypher>) {
+                if let cyphers = (army.rack!.harmonics as! Set<Cypher>) {
                     ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher, rack: rack)
+                        CypherCell(cypher: cypher)
                     }
                 }
             }
 
             Section(header: overdrivesHeader) {
-                if let cyphers = (rack.overdrives as! Set<Cypher>) {
+                if let cyphers = (army.rack!.overdrives as! Set<Cypher>) {
                     ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher, rack: rack)
+                        CypherCell(cypher: cypher)
                     }
                 }
             }
@@ -55,7 +54,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if rack.furyCount < 3 {
+            if let rack = army.rack, rack.furyCount < 3 {
                 Text("Select At Least \(3 - rack.furyCount) more")
             }
         }
@@ -68,7 +67,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if rack.geometricCount < 3 {
+            if let rack = army.rack, rack.geometricCount < 3 {
                 Text("Select At Least \(3 - rack.geometricCount) more")
             }
         }
@@ -81,7 +80,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if rack.harmonicCount < 3 {
+            if let rack = army.rack, rack.harmonicCount < 3 {
                 Text("Select At Least \(3 - rack.harmonicCount) more")
             }
         }
@@ -94,7 +93,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if rack.overdriveCount < 3 {
+            if let rack = army.rack, rack.overdriveCount < 3 {
                 Text("Select At Least \(3 - rack.overdriveCount) more")
             }
         }
