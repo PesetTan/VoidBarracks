@@ -22,6 +22,7 @@ struct WeaponToggle: View {
             }
         }
         .onTapGesture {
+            let initiallySelected = selected
             group.forEach { item in
                 if item.selected {
                     item.selected = false
@@ -29,7 +30,7 @@ struct WeaponToggle: View {
                 }
             }
 
-            selected = true
+            selected = !initiallySelected
 
             jack.remainingPoints = jack.weaponPoints
 

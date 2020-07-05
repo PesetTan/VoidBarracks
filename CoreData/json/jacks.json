@@ -30,14 +30,12 @@
             "MISANTHROPE"
         ],
         "armOptionIds": [
-            "0NONE",
             "FORCE_ROD",
             "VOID_SPLITTER",
             "REAPER",
             "STINGER_CANNON"
         ],
         "shoulderOptionIds": [
-            "0NONE",
             "HOLLOWPHAGE_CANNON",
             "ROCKET_POD",
             "NAILER",
@@ -71,13 +69,11 @@
             "IMPULSE_RECIPROCATOR"
         ],
         "armOptionIds": [
-            "0NONE",
             "FUSION_SCYTHE",
             "VOID_SPLITTER",
             "DISPLACER"
         ],
         "shoulderOptionIds": [
-            "0NONE",
             "HOLLOWPHAGE_CANNON",
             "ROCKET_POD",
             "STARFALL_CANNON",
@@ -111,7 +107,6 @@
             "RECON"
         ],
         "armOptionIds": [
-            "0NONE",
             "REPULSOR_SHIELD",
             "FUSION_GLAIVE",
             "ASSAULT_RIFLE",
@@ -120,7 +115,6 @@
             "SUN_PIERCER"
         ],
         "shoulderOptionIds": [
-            "0NONE",
             "IMMOLATOR",
             "MAELSTROM",
             "HARBINGER_CANNON",
@@ -151,13 +145,11 @@
             "DEFENDER"
         ],
         "armOptionIds": [
-            "0NONE",
             "ASSAULT_SHIELD",
             "HEAVY_FUSION_GLAIVE",
             "SEEKER"
         ],
         "shoulderOptionIds": [
-            "0NONE",
             "HARBINGER_CANNON",
             "NULL_CANNON",
             "STARBURST_MISSILES"
@@ -189,7 +181,6 @@
             "SNIPER"
         ],
         "armOptionIds": [
-            "0NONE",
             "BATTLE_RIFLE",
             "RIPPER",
             "FLAMETHROWER",
@@ -198,7 +189,6 @@
             "SLUG_GUN"
         ],
         "shoulderOptionIds": [
-            "0NONE",
             "TALON_ROCKET_POD",
             "RAIL_GUN",
             "BLAZER",
@@ -231,13 +221,11 @@
                "SNIPER"
            ],
            "armOptionIds": [
-               "0NONE",
                "BATTLE_RIFLE",
                "FUSION_DRILL",
                "FLAMETHROWER"
            ],
            "shoulderOptionIds": [
-               "0NONE",
                "TALON_ROCKET_POD",
                "RAIL_GUN",
                "PARTICLE_CANNON"
