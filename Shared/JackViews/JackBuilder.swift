@@ -94,8 +94,11 @@ struct JackBuilder: View {
             } else if (jack.remainingPoints > 0) {
                 Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
-                Text("\(jack.remainingPoints * -1) points over the limit")
-            }
+                if jack.remainingPoints * -1 == 1{
+                    Text("\(jack.remainingPoints * -1) point over the limit")
+                } else {
+                    Text("\(jack.remainingPoints * -1) points over the limit")
+                }            }
         }
     }
 
@@ -111,8 +114,11 @@ struct JackBuilder: View {
             } else if (jack.remainingPoints > 0) {
                 Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
-                Text("\(jack.remainingPoints * -1) points over the limit")
-            }
+                if jack.remainingPoints * -1 == 1{
+                    Text("\(jack.remainingPoints * -1) point over the limit")
+                } else {
+                    Text("\(jack.remainingPoints * -1) points over the limit")
+                }            }
         }
     }
 
@@ -128,7 +134,11 @@ struct JackBuilder: View {
             } else if (jack.remainingPoints > 0) {
                 Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
-                Text("\(jack.remainingPoints * -1) points over the limit")
+                if jack.remainingPoints * -1 == 1{
+                    Text("\(jack.remainingPoints * -1) point over the limit")
+                } else {
+                    Text("\(jack.remainingPoints * -1) points over the limit")
+                }
             }
         }
     }
@@ -145,7 +155,11 @@ struct JackBuilder: View {
             } else if (jack.remainingPoints > 0) {
                 Text("\(jack.remainingPoints)/\(jack.weaponPoints) points available")
             } else if (jack.remainingPoints < 0) {
-                Text("\(jack.remainingPoints * -1) points over the limit")
+                if jack.remainingPoints * -1 == 1{
+                    Text("\(jack.remainingPoints * -1) point over the limit")
+                } else {
+                    Text("\(jack.remainingPoints * -1) points over the limit")
+                }
             }
         }
     }

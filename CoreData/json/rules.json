@@ -86,7 +86,7 @@
     }, {
         "id": "CORROSION",
         "name": "Corrosion",
-        "rule": " model hit by this weapon suffers the corrosion continuous effect."
+        "rule": "A model hit by this weapon suffers the corrosion continuous effect."
     }, {
         "id": "MIMETIC_CLOAK_CHARGE",
         "name": "Mimetic Cloak Charge",
