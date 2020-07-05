@@ -43,6 +43,7 @@ struct ArmyBuilder: View {
                 Section(header: heroHeader) {
                     if let heros = (army.heros as! Set<Hero>) {
                         HeroList(heros: heros.sorted{$0.name! < $1.name!})
+                            .environmentObject(army)
                             .customCell()
                     }
 
@@ -57,6 +58,7 @@ struct ArmyBuilder: View {
                 Section(header: soloHeader) {
                     if let solos = (army.solos as! Set<Solo>) {
                         SoloList(solos: solos.sorted{$0.name! < $1.name!})
+                            .environmentObject(army)
                             .customCell()
                     }
 
@@ -71,6 +73,7 @@ struct ArmyBuilder: View {
                 Section(header: jackHeader) {
                     if let jacks = (army.jacks as! Set<Jack>) {
                         JackList(jacks: jacks.sorted{$0.name! < $1.name!}, refresh: $refresh)
+                            .environmentObject(army)
                     }
 
                     Text("")
@@ -84,6 +87,7 @@ struct ArmyBuilder: View {
                 Section(header: squadHeader) {
                     if let squads = (army.squads as! Set<Squad>) {
                         SquadList(squads: squads.sorted{$0.name! < $1.name!}, refresh: $refresh)
+                            .environmentObject(army)
                     }
 
                     Text("")
@@ -108,11 +112,10 @@ struct ArmyBuilder: View {
                         .customCell()
                 }
                 .padding(10)
-
                 .navigationBarTitle(Text("\(army.name!)"))
             }
         }
-        .background(SwiftUI.Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
+        .background(Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
     }
 
     var heroHeader: some View {

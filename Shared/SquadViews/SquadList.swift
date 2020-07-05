@@ -15,9 +15,11 @@ struct SquadList: View {
         ForEach(squads, id:\.id) { squad in
             SquadCell(squad: squad, refresh: $refresh)
                 .customCell()
+                .foregroundColor(.primary)
 
             if let customSquads = (squad.customSquads as! Set<Squad>) {
                 CustomSquadList(customSquads: customSquads, refresh: $refresh)
+                    .frame(height: 70 * CGFloat(customSquads.count)).animation(.default)
             }
         }
     }
@@ -35,6 +37,7 @@ struct CustomSquadList: View {
             ForEach(squads, id:\.uuid) { squad in
                 UnitCell(unit: squad)
                     .customCell()
+                    .foregroundColor(.accentColor)
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in
@@ -43,6 +46,7 @@ struct CustomSquadList: View {
                     refresh.toggle()
                 }
             }
+            .listRowBackground(Color.gray.opacity(0))
         }
     }
 }

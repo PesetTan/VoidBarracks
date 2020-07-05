@@ -18,8 +18,6 @@
 		BA2034FB24AE929100E252A3 /* SquadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F924AE929100E252A3 /* SquadBuilder.swift */; };
 		BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
 		BA2034FE24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
-		BA20350824AEA00400E252A3 /* CustomJackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350724AEA00400E252A3 /* CustomJackList.swift */; };
-		BA20350924AEA00400E252A3 /* CustomJackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20350724AEA00400E252A3 /* CustomJackList.swift */; };
 		BA20351524AEE34200E252A3 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351424AEE34200E252A3 /* DoneButton.swift */; };
 		BA20351624AEE34200E252A3 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351424AEE34200E252A3 /* DoneButton.swift */; };
 		BA20352424AF031E00E252A3 /* UnitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352324AF031E00E252A3 /* UnitInfo.swift */; };
@@ -165,7 +163,6 @@
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
 		BA2034FC24AE971E00E252A3 /* AttachmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentList.swift; sourceTree = "<group>"; };
-		BA20350724AEA00400E252A3 /* CustomJackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJackList.swift; sourceTree = "<group>"; };
 		BA20351424AEE34200E252A3 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		BA20352324AF031E00E252A3 /* UnitInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitInfo.swift; sourceTree = "<group>"; };
 		BA20352624AF05A100E252A3 /* UnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
@@ -288,14 +285,6 @@
 				BA2034FC24AE971E00E252A3 /* AttachmentList.swift */,
 			);
 			path = AttachmentViews;
-			sourceTree = "<group>";
-		};
-		BA20350624AE9FCE00E252A3 /* CustomJackViews */ = {
-			isa = PBXGroup;
-			children = (
-				BA20350724AEA00400E252A3 /* CustomJackList.swift */,
-			);
-			path = CustomJackViews;
 			sourceTree = "<group>";
 		};
 		BA20352924AF05AF00E252A3 /* UnitViews */ = {
@@ -464,7 +453,6 @@
 		BA4F989F24AC166100AB9F4C /* JackViews */ = {
 			isa = PBXGroup;
 			children = (
-				BA20350624AE9FCE00E252A3 /* CustomJackViews */,
 				BA10D19324AE4E6E007FBCDD /* JackWeaponViews */,
 				BAC227F524ADB62000080E97 /* CortexViews */,
 				BA4F98B224AC483400AB9F4C /* JackList.swift */,
@@ -708,7 +696,6 @@
 				BA61D5A924AD21A0002F047A /* LazyLoad.swift in Sources */,
 				BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */,
 				BAC227DD24AD982200080E97 /* ArmyBuilder.swift in Sources */,
-				BA20350824AEA00400E252A3 /* CustomJackList.swift in Sources */,
 				BA20354024B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
 				BA4F989124AADC9F00AB9F4C /* GetJson.swift in Sources */,
 				BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */,
@@ -770,7 +757,6 @@
 				BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */,
 				BA20353524AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
 				BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */,
-				BA20350924AEA00400E252A3 /* CustomJackList.swift in Sources */,
 				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
 				BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA20353224AF0A7200E252A3 /* AttachmentCell.swift in Sources */,

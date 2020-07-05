@@ -3,7 +3,7 @@
     <entity name="Army" representedClassName="Army" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="id" attributeType="String" defaultValueString=""/>
-        <attribute name="lastUpdated" attributeType="Date" defaultDateTimeInterval="615262200" usesScalarValueType="NO"/>
+        <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615262200" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="shortName" attributeType="String" defaultValueString=""/>
         <relationship name="faction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Faction" inverseName="armies" inverseEntity="Faction"/>

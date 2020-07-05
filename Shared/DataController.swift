@@ -15,6 +15,7 @@ extension Army {
         newArmy.name = self.name
         newArmy.customName = self.customName
         newArmy.shortName = self.shortName
+        newArmy.lastModified = Date()
         self.heros!.allObjects.forEach { hero in
             let newHero = (hero as! Hero)
             newArmy.addToHeros(newHero.copy())
