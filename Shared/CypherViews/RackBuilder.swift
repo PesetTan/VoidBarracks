@@ -12,10 +12,17 @@ struct RackBuilder: View {
     @State private var isActive: Bool = false
 
     var body: some View {
-        NavigationLink(destination: CypherList(rack: rack)
-                        .accentColor(Color("color.\(rack.army!.shortName!)")),
-                       isActive: $isActive) {
-            Text("Configure Your Rack")
+        if let army = rack.army {
+            return NavigationLink(destination: CypherList(rack: rack)
+                            .accentColor(Color("color.\(army.shortName!)")),
+                           isActive: $isActive) {
+                Text("Configure Your Rack")
+            }
+            .eraseToAnyView()
+        } else {
+            return Text("")
+                .eraseToAnyView()
         }
+
     }
 }
