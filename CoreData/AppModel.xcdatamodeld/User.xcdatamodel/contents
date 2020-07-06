@@ -82,7 +82,6 @@
         <relationship name="geometrics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cypher" inverseName="geometric" inverseEntity="Cypher"/>
         <relationship name="harmonics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cypher" inverseName="harmonic" inverseEntity="Cypher"/>
         <relationship name="overdrives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cypher" inverseName="overdrive" inverseEntity="Cypher"/>
-        <relationship name="store" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="rack" inverseEntity="Store"/>
     </entity>
     <entity name="Rule" representedClassName="Rule" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="String" defaultValueString=""/>
@@ -104,9 +103,9 @@
         <relationship name="customSquads" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquad" inverseEntity="Squad"/>
     </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
+        <attribute name="lastSourceUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="armies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="store" inverseEntity="Army"/>
-        <relationship name="rack" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Rack" inverseName="store" inverseEntity="Rack"/>
     </entity>
     <entity name="Unit" representedClassName="Unit" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="arm" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -159,7 +158,7 @@
         <element name="Faction" positionX="-284.452880859375" positionY="-60.30088806152344" width="128" height="118"/>
         <element name="Hero" positionX="-293.7706298828125" positionY="143.8809509277344" width="128" height="44"/>
         <element name="Jack" positionX="-253.1884155273438" positionY="273.330078125" width="128" height="224"/>
-        <element name="Rack" positionX="-288" positionY="27" width="128" height="179"/>
+        <element name="Rack" positionX="-288" positionY="27" width="128" height="164"/>
         <element name="Rule" positionX="-270" positionY="144" width="128" height="119"/>
         <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="44"/>
         <element name="Squad" positionX="-279" positionY="36" width="128" height="119"/>

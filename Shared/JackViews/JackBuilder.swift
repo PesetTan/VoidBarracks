@@ -74,7 +74,7 @@ struct JackBuilder: View {
     }
 
     var cortexHeader: some View {
-        let jack = jacks.first{$0.uuid == jackId} ?? Jack()
+//        let jack = jacks.first{$0.uuid == jackId} ?? Jack()
 
         return HStack {
             Text("Cortex")
