@@ -8,21 +8,30 @@
 import SwiftUI
 
 struct FactionPicker: View {
-    @FetchRequest(entity: Store.entity(), sortDescriptors: []) var store: FetchedResults<Store>
+    @FetchRequest(entity: Store.entity(), sortDescriptors: []) var stores: FetchedResults<Store>
 
     var body: some View {
         NavigationView {
             VStack{
-                if let factions = (store.first!.factions as! Set<Army>) {
-                    ForEach(factions.sorted{$0.name! < $1.name!}, id:\.id) { army in
-                        if let army = army {
-                            FactionCell(army: army).accentColor(Color("color.\(army.shortName!)"))
-                        }
+                if let stores = stores {
+                    if let store = stores.first {
+                        if let army = (store.armies as! Set<Army>) {
+                            ForEach(army.sorted{$0.name! < $1.name!}, id:\.id) { army in
+                                if let army = army {
+                                    LazyLoad(FactionCell(army: army).accentColor(Color("color.\(army.shortName!)")))
+                                }
 
+                            }
+                        }
                     }
                 }
+
             }
+            .frame(maxHeight: .infinity)
+//            .background(Color(UIColor.systemBackground))
+            .background(Color.gray.opacity(0.2))
         }
+
     }
 }
 
@@ -38,6 +47,8 @@ struct FactionCell: View {
             Cell(armyName: army.name!, shortName: army.shortName!)
         }
         .navigationBarTitle(Text("Recruit"))
+        .shadow(color: Color.gray.opacity(0.2), radius: 10, x: -5, y: -5)
+        .shadow(color: Color.black.opacity(0.5), radius: 10, x: 10, y: 10)
     }
 }
 
@@ -51,6 +62,7 @@ struct Cell: View {
                 Text("\(armyName)")
                     .padding()
                     .font(.title2)
+                    .foregroundColor(.white)
             } icon: {
                 Image("logo.\(shortName)")
                     .renderingMode(.original)
@@ -61,10 +73,9 @@ struct Cell: View {
         
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.accentColor.opacity(0.2))
+        .background(Color.accentColor.opacity(0.7))
         .cornerRadius(10)
         .padding()
-        .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 5, y: 5)
     }
 
 }

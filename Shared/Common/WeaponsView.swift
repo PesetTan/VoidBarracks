@@ -58,6 +58,12 @@ struct WeaponView: View {
                 RulesView(rules: rules)
             }
 
+            if let attachments = (weapon.attachments as! Set<Weapon>) {
+                WeaponsView(weapons: attachments)
+            }
+
         }
     }
 }
+
+

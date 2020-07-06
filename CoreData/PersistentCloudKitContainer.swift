@@ -61,4 +61,48 @@ public class PersistentCloudKitContainer {
             context.delete(result)
         }
     }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteArmies () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Army>(entityName: "Army")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteFactions () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Faction>(entityName: "Faction")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteWeapons () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Weapon>(entityName: "Weapon")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteCortex () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Cortex>(entityName: "Cortex")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
 }

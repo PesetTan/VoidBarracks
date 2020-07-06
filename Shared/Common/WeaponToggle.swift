@@ -37,28 +37,28 @@ struct WeaponToggle: View {
             (jack.optionsForArm1 as! Set<Weapon>).forEach { item in
                 if item.selected {
                     jack.remainingPoints -= item.cost
-                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forArm1")
+//                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forArm1")
                 }
             }
 
             (jack.optionsForArm2 as! Set<Weapon>).forEach { item in
                 if item.selected {
                     jack.remainingPoints -= item.cost
-                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forArm2")
+//                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forArm2")
                 }
             }
 
             (jack.optionsForShoulder1 as! Set<Weapon>).forEach { item in
                 if item.selected {
                     jack.remainingPoints -= item.cost
-                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forShoulder1")
+//                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forShoulder1")
                 }
             }
 
             (jack.optionsForShoulder2 as! Set<Weapon>).forEach { item in
                 if item.selected {
                     jack.remainingPoints -= item.cost
-                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forShoulder2")
+//                    print("remaining:\(jack.remainingPoints) taking:\(item.cost) forShoulder2")
                 }
             }
 

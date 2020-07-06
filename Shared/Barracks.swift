@@ -33,7 +33,7 @@ struct BarrackArmies: View {
                     }
                 } else {
                     ForEach(armies, id:\.self) { army in
-                        BarracksCell(armyId: army.id!, armyName: army.name!, customName: army.customName!, shortName: army.shortName!, lastModified: army.lastModified!)
+                        LazyLoad(BarracksCell(armyId: army.id!, armyName: army.name!, customName: army.customName!, shortName: army.shortName!, lastModified: army.lastModified!))
                     }
                     .onDelete { indexSet in
                         indexSet.forEach { index in
@@ -61,8 +61,8 @@ struct BarracksCell: View {
 
     var body: some View {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return NavigationLink(destination: LazyLoad(ArmyBuilder(armyId: armyId, isActive: $isActive)
-                                                .accentColor(Color("color.\(shortName)"))),
+        return NavigationLink(destination: ArmyBuilder(armyId: armyId, isActive: $isActive)
+                                                .accentColor(Color("color.\(shortName)")),
                        isActive: $isActive) {
 
                 if customName == "" {

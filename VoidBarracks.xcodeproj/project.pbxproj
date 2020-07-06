@@ -56,26 +56,6 @@
 		BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
 		BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
 		BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
-		BA4F980324AACBDA00AB9F4C /* units-alliance.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97F924AACBD900AB9F4C /* units-alliance.json */; };
-		BA4F980424AACBDA00AB9F4C /* units-alliance.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97F924AACBD900AB9F4C /* units-alliance.json */; };
-		BA4F980524AACBDA00AB9F4C /* jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FA24AACBD900AB9F4C /* jacks.json */; };
-		BA4F980624AACBDA00AB9F4C /* jacks.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FA24AACBD900AB9F4C /* jacks.json */; };
-		BA4F980724AACBDA00AB9F4C /* units-marchers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FB24AACBD900AB9F4C /* units-marchers.json */; };
-		BA4F980824AACBDA00AB9F4C /* units-marchers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FB24AACBD900AB9F4C /* units-marchers.json */; };
-		BA4F980924AACBDA00AB9F4C /* heros.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FC24AACBD900AB9F4C /* heros.json */; };
-		BA4F980A24AACBDA00AB9F4C /* heros.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FC24AACBD900AB9F4C /* heros.json */; };
-		BA4F980B24AACBDA00AB9F4C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FD24AACBD900AB9F4C /* rules.json */; };
-		BA4F980C24AACBDA00AB9F4C /* rules.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FD24AACBD900AB9F4C /* rules.json */; };
-		BA4F980D24AACBDA00AB9F4C /* units-continuum.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FE24AACBD900AB9F4C /* units-continuum.json */; };
-		BA4F980E24AACBDA00AB9F4C /* units-continuum.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FE24AACBD900AB9F4C /* units-continuum.json */; };
-		BA4F980F24AACBDA00AB9F4C /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FF24AACBD900AB9F4C /* weapons.json */; };
-		BA4F981024AACBDA00AB9F4C /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F97FF24AACBD900AB9F4C /* weapons.json */; };
-		BA4F981124AACBDA00AB9F4C /* factions.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980024AACBD900AB9F4C /* factions.json */; };
-		BA4F981224AACBDA00AB9F4C /* factions.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980024AACBD900AB9F4C /* factions.json */; };
-		BA4F981324AACBDA00AB9F4C /* cortex.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980124AACBD900AB9F4C /* cortex.json */; };
-		BA4F981424AACBDA00AB9F4C /* cortex.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980124AACBD900AB9F4C /* cortex.json */; };
-		BA4F981524AACBDA00AB9F4C /* cyphers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980224AACBDA00AB9F4C /* cyphers.json */; };
-		BA4F981624AACBDA00AB9F4C /* cyphers.json in Resources */ = {isa = PBXBuildFile; fileRef = BA4F980224AACBDA00AB9F4C /* cyphers.json */; };
 		BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
 		BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
 		BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
@@ -194,16 +174,6 @@
 		BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentCloudKitContainer.swift; sourceTree = "<group>"; };
 		BA4F96B824AAA78A00AB9F4C /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA4F97F924AACBD900AB9F4C /* units-alliance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-alliance.json"; sourceTree = "<group>"; };
-		BA4F97FA24AACBD900AB9F4C /* jacks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jacks.json; sourceTree = "<group>"; };
-		BA4F97FB24AACBD900AB9F4C /* units-marchers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-marchers.json"; sourceTree = "<group>"; };
-		BA4F97FC24AACBD900AB9F4C /* heros.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heros.json; sourceTree = "<group>"; };
-		BA4F97FD24AACBD900AB9F4C /* rules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rules.json; sourceTree = "<group>"; };
-		BA4F97FE24AACBD900AB9F4C /* units-continuum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "units-continuum.json"; sourceTree = "<group>"; };
-		BA4F97FF24AACBD900AB9F4C /* weapons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
-		BA4F980024AACBD900AB9F4C /* factions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = factions.json; sourceTree = "<group>"; };
-		BA4F980124AACBD900AB9F4C /* cortex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cortex.json; sourceTree = "<group>"; };
-		BA4F980224AACBDA00AB9F4C /* cyphers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cyphers.json; sourceTree = "<group>"; };
 		BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadJson.swift; sourceTree = "<group>"; };
 		BA4F986F24AAD8B200AB9F4C /* ULRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULRule.swift; sourceTree = "<group>"; };
 		BA4F987024AAD8B200AB9F4C /* ULweapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULweapon.swift; sourceTree = "<group>"; };
@@ -387,28 +357,10 @@
 			isa = PBXGroup;
 			children = (
 				BA4F986B24AAD88200AB9F4C /* jsonModels */,
-				BA4F97F824AACBC200AB9F4C /* json */,
 				BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */,
 				BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		BA4F97F824AACBC200AB9F4C /* json */ = {
-			isa = PBXGroup;
-			children = (
-				BA4F980124AACBD900AB9F4C /* cortex.json */,
-				BA4F980224AACBDA00AB9F4C /* cyphers.json */,
-				BA4F980024AACBD900AB9F4C /* factions.json */,
-				BA4F97FC24AACBD900AB9F4C /* heros.json */,
-				BA4F97FA24AACBD900AB9F4C /* jacks.json */,
-				BA4F97FD24AACBD900AB9F4C /* rules.json */,
-				BA4F97F924AACBD900AB9F4C /* units-alliance.json */,
-				BA4F97FE24AACBD900AB9F4C /* units-continuum.json */,
-				BA4F97FB24AACBD900AB9F4C /* units-marchers.json */,
-				BA4F97FF24AACBD900AB9F4C /* weapons.json */,
-			);
-			path = json;
 			sourceTree = "<group>";
 		};
 		BA4F986B24AAD88200AB9F4C /* jsonModels */ = {
@@ -628,16 +580,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4F980724AACBDA00AB9F4C /* units-marchers.json in Resources */,
-				BA4F980F24AACBDA00AB9F4C /* weapons.json in Resources */,
-				BA4F981524AACBDA00AB9F4C /* cyphers.json in Resources */,
-				BA4F980924AACBDA00AB9F4C /* heros.json in Resources */,
-				BA4F980324AACBDA00AB9F4C /* units-alliance.json in Resources */,
-				BA4F980B24AACBDA00AB9F4C /* rules.json in Resources */,
-				BA4F980D24AACBDA00AB9F4C /* units-continuum.json in Resources */,
-				BA4F981324AACBDA00AB9F4C /* cortex.json in Resources */,
-				BA4F980524AACBDA00AB9F4C /* jacks.json in Resources */,
-				BA4F981124AACBDA00AB9F4C /* factions.json in Resources */,
 				BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,16 +588,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4F980824AACBDA00AB9F4C /* units-marchers.json in Resources */,
-				BA4F981024AACBDA00AB9F4C /* weapons.json in Resources */,
-				BA4F981624AACBDA00AB9F4C /* cyphers.json in Resources */,
-				BA4F980A24AACBDA00AB9F4C /* heros.json in Resources */,
-				BA4F980424AACBDA00AB9F4C /* units-alliance.json in Resources */,
-				BA4F980C24AACBDA00AB9F4C /* rules.json in Resources */,
-				BA4F980E24AACBDA00AB9F4C /* units-continuum.json in Resources */,
-				BA4F981424AACBDA00AB9F4C /* cortex.json in Resources */,
-				BA4F980624AACBDA00AB9F4C /* jacks.json in Resources */,
-				BA4F981224AACBDA00AB9F4C /* factions.json in Resources */,
 				BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

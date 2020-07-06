@@ -12,6 +12,7 @@ struct JackBuilder: View {
     @Binding var isActive: Bool
     @Binding var refresh: Bool
     @State var isPresented: Bool = false
+    @Environment(\.managedObjectContext) var context
 
     @FetchRequest(
         entity: Jack.entity(),
@@ -19,66 +20,69 @@ struct JackBuilder: View {
     ) var jacks: FetchedResults<Jack>
 
     var body: some View {
-        let jack = jacks.first{$0.uuid == jackId}!
-        return VStack {
-            if let jack = jack {
-                Form {
-//                    Section {
-//                        JackNameField(jack: jack)
-//                    }
+        if try! context.count(for: Cortex.fetchRequest()) > 0 {
+            let jack = jacks.first{$0.uuid == jackId} ?? Jack()
+            return VStack {
 
-                    Section(header: cortexHeader) {
-                        if let cortexes = (jack.optionsForCortex as! Set<Cortex>) {
-                            CortexList(cortexes: cortexes, jack: jack)
+                    Form {
+                        Section(header: cortexHeader) {
+                            if let cortexes = (jack.optionsForCortex as! Set<Cortex>) {
+                                CortexList(cortexes: cortexes, jack: jack)
+                            }
+                        }
+
+                        if let weapons = (jack.optionsForArm1 as! Set<Weapon>), !weapons.isEmpty {
+                            Section(header:arm1Header) {
+                                JackWeaponList(weapons: weapons, jack: jack)
+                            }
+                        }
+
+                        if let weapons = (jack.optionsForArm2 as! Set<Weapon>), !weapons.isEmpty {
+                            Section(header: arm2Header) {
+                                JackWeaponList(weapons: weapons, jack: jack)
+                            }
+                        }
+
+                        if let weapons = (jack.optionsForShoulder1 as! Set<Weapon>), !weapons.isEmpty {
+                            Section(header: shoulder1Header) {
+                                JackWeaponList(weapons: weapons, jack: jack)
+                            }
+                        }
+
+                        if let weapons = (jack.optionsForShoulder2 as! Set<Weapon>), !weapons.isEmpty {
+                            Section(header: shoulder2Header) {
+                                JackWeaponList(weapons: weapons, jack: jack)
+                            }
+                        }
+
+                        Section(header: saveHeader) {
+                            SaveJackButton(jackId: jack.uuid!, isActive: $isActive)
                         }
                     }
 
-                    if let weapons = (jack.optionsForArm1 as! Set<Weapon>), !weapons.isEmpty {
-                        Section(header:arm1Header) {
-                            JackWeaponList(weapons: weapons, jack: jack)
-                        }
-                    }
-
-                    if let weapons = (jack.optionsForArm2 as! Set<Weapon>), !weapons.isEmpty {
-                        Section(header: arm2Header) {
-                            JackWeaponList(weapons: weapons, jack: jack)
-                        }
-                    }
-
-                    if let weapons = (jack.optionsForShoulder1 as! Set<Weapon>), !weapons.isEmpty {
-                        Section(header: shoulder1Header) {
-                            JackWeaponList(weapons: weapons, jack: jack)
-                        }
-                    }
-
-                    if let weapons = (jack.optionsForShoulder2 as! Set<Weapon>), !weapons.isEmpty {
-                        Section(header: shoulder2Header) {
-                            JackWeaponList(weapons: weapons, jack: jack)
-                        }
-                    }
-
-                    Section(header: saveHeader) {
-                        SaveJackButton(jackId: jack.uuid!, isActive: $isActive)
-                    }
-                }
             }
+            .navigationTitle(Text("\(jack.name ?? "Missing Name")"))
+            .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
+            .onAppear { refresh = false }
+            .onDisappear { refresh = true }
+            .eraseToAnyView()
         }
-        .navigationTitle(Text("\(jack.name ?? "Missing Name")"))
-        .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
-        .onAppear { refresh = false }
-        .onDisappear { refresh = true }
+
+         else {
+            return Text("Missing Data").eraseToAnyView()
+        }
     }
 
     var cortexHeader: some View {
-        let jack = jacks.first{$0.uuid == jackId}!
+        let jack = jacks.first{$0.uuid == jackId} ?? Jack()
 
         return HStack {
             Text("Cortex")
             Spacer()
 
-            if (jack.optionsForCortex as! Set<Cortex>).filter{$0.selected}.count == 0 {
-                Text("Select a cortex")
-            }
+//            if jack != nil && jack.optionsForCortex != nil && jack.optionsForCortex?.count ?? -1 > 0 && (jack.optionsForCortex as! Set<Cortex>).filter{$0.selected}.count == 0 {
+//                Text("Select a cortex")
+//            }
         }
     }
 

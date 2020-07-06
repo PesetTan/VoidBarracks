@@ -15,24 +15,27 @@ struct VoidBarracksApp: App {
     let persistantContainer = PersistentCloudKitContainer.persistentContainer
 
     init() {
-        PersistentCloudKitContainer.deleteContext()
-        PersistentCloudKitContainer.deleteRules()
-        let warcasterData = WarcasterData(persistantContainer)
-        warcasterData.setStore()
 
-        let context = persistantContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let results = try! context.fetch(request) as! [User]
-        if !results.isEmpty {
-            results.first!.lastModified = Date()
-            try! context.save()
-        } else {
-            let newUser: User = User(context: context)
-            newUser.id = UUID().uuidString
-            newUser.lastModified = Date()
-            context.insert(newUser)
-            try! context.save()
+        _ = Timer.scheduledTimer(withTimeInterval: 900, repeats: true) { [self] timer in
+            print("Timer fired!")
+
+            let _ = WarcasterData(persistantContainer)
+
+            let context = persistantContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            let results = try! context.fetch(request) as! [User]
+            if !results.isEmpty {
+                results.first!.lastModified = Date()
+                try! context.save()
+            } else {
+                let newUser: User = User(context: context)
+                newUser.id = UUID().uuidString
+                newUser.lastModified = Date()
+                context.insert(newUser)
+                try! context.save()
+            }
         }
+
 
         if #available(iOS 14.0, *) {
             // iOS 14 doesn't have extra separators below the list by default.

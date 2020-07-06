@@ -7,69 +7,119 @@
 
 import Foundation
 
-class GetJson {
-    static let decoder = JSONDecoder()
+class GetJson: ObservableObject {
+    let decoder = JSONDecoder()
+    @Published var cortex: [ULCortex] = []
+    @Published var cyphers: [ULCypher] = []
+    @Published var allianceUnits: [ULUnit] = []
+    @Published var continuumUnits: [ULUnit] = []
+    @Published var marcherUnits: [ULUnit] = []
+    @Published var heros: [ULUnit] = []
+    @Published var jacks: [ULJack] = []
+    @Published var weapons: [ULWeapon] = []
+    @Published var rules: [ULRule] = []
+    @Published var factions: [ULFaction] = []
 
-    static private func LoadWithFileName(fileName: String) -> Data {
-        do {
-            let path = Bundle.main.path(forResource: fileName, ofType: "json") ?? ""
-            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            return data
-        } catch {
-            print("Unexpected error: \(error).")
-        }
-
-        return Data()
+    init() {
+        loadCyphers()
+        loadAlliance()
+        loadContinuum()
+        loadMarchers()
+        loadHeros()
+        loadJacks()
+        loadWeapons()
+        loadRules()
+        loadCortex()
+        loadFactions()
     }
 
-    static func getCyphers() -> [ULCypher]? {
-        let jsonObject = LoadWithFileName(fileName: "cyphers")
-        return try? decoder.decode([ULCypher].self, from: jsonObject)
+    private func loadCyphers() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Fcyphers.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.cyphers = try! self.decoder.decode([ULCypher].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getAllianceUnits() -> [ULUnit]? {
-        let jsonObject = LoadWithFileName(fileName: "units-alliance")
-        return try? decoder.decode([ULUnit].self, from: jsonObject)
+    private func loadCortex() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Fcortex.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.cortex = try! self.decoder.decode([ULCortex].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getContinuumUnits() -> [ULUnit]? {
-        let jsonObject = LoadWithFileName(fileName: "units-continuum")
-        return try? decoder.decode([ULUnit].self, from: jsonObject)
+    private func loadAlliance() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Funits-alliance.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.allianceUnits = try! self.decoder.decode([ULUnit].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getMarchersUnits() -> [ULUnit]? {
-        let jsonObject = LoadWithFileName(fileName: "units-marchers")
-        return try? decoder.decode([ULUnit].self, from: jsonObject)
+    private func loadContinuum() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Funits-continuum.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.continuumUnits = try! self.decoder.decode([ULUnit].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getHeros() -> [ULUnit]? {
-        let jsonObject = LoadWithFileName(fileName: "heros")
-        return try? decoder.decode([ULUnit].self, from: jsonObject)
+    private func loadMarchers() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Funits-marchers.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.marcherUnits = try! self.decoder.decode([ULUnit].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getJacks() -> [ULJack]? {
-        let jsonObject = LoadWithFileName(fileName: "jacks")
-        return try? decoder.decode([ULJack].self, from: jsonObject)
+    private func loadHeros() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Fheros.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.heros = try! self.decoder.decode([ULUnit].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getWeapons() -> [ULWeapon]? {
-        let jsonObject = LoadWithFileName(fileName: "weapons")
-        return try? decoder.decode([ULWeapon].self, from: jsonObject)
+    private func loadJacks() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Fjacks.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.jacks = try! self.decoder.decode([ULJack].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getRules() -> [ULRule]? {
-        let jsonObject = LoadWithFileName(fileName: "rules")
-        return try? decoder.decode([ULRule].self, from: jsonObject)
+    private func loadWeapons() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Fweapons.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.weapons = try! self.decoder.decode([ULWeapon].self, from: data)
+            }
+        }.resume()
     }
 
-    static func getCortex() -> [ULCortex]? {
-        let jsonObject = LoadWithFileName(fileName: "cortex")
-        return try? decoder.decode([ULCortex].self, from: jsonObject)
+    private func loadRules() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Frules.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.rules = try! self.decoder.decode([ULRule].self, from: data)
+            }
+        }.resume()
     }
-
-    static func getFactions() -> [ULFaction]? {
-        let jsonObject = LoadWithFileName(fileName: "factions")
-        return try? decoder.decode([ULFaction].self, from: jsonObject)
+    private func loadFactions() {
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/wartracker-v1.appspot.com/o/current%2Ffactions.json?alt=media")
+        URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                self.factions = try! self.decoder.decode([ULFaction].self, from: data)
+            }
+        }.resume()
     }
     
 }

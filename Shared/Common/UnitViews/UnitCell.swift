@@ -12,32 +12,29 @@ struct UnitCell: View {
     @State private var isPresented: Bool = false
 
     var body: some View {
-
-        Button {
-            isPresented.toggle()
-        } label: {
-            HStack {
-
-                unitName
-
-                cortexName
-
-                Spacer()
-
-                if unit is Hero {
-                    UnitCounter(unit: unit, maxCount: 1)
-                } else {
-                    UnitCounter(unit: unit, maxCount: 3)
+        HStack {
+            Button {
+                isPresented.toggle()
+            } label: {
+                HStack {
+                    unitName
+                    cortexName
                 }
+            }
+            .sheet(isPresented: $isPresented) {
+                UnitInfo(unit: unit, isPresented: $isPresented)
+            }
 
+            Spacer()
 
-
-
+            if unit is Hero {
+                UnitCounter(unit: unit, maxCount: 1)
+            } else {
+                UnitCounter(unit: unit, maxCount: 3)
             }
         }
-        .sheet(isPresented: $isPresented) {
-            UnitInfo(unit: unit, isPresented: $isPresented)
-        }
+//        .buttonStyle(CustomButtonStyle())
+
     }
 
     var unitName: some View {
@@ -59,8 +56,8 @@ struct UnitCell: View {
     }
 
     var cortexName: some View {
-        if let jack = unit as? Jack {
-            let cortex = (jack.optionsForCortex as! Set<Cortex>).first{$0.selected}!
+        if let jack = unit as? Jack, let cortexes = (jack.optionsForCortex as! Set<Cortex>?) {
+            let cortex = cortexes.first{$0.selected}!
             return Text(cortex.name!).font(.caption)
         } else {
             return Text("")

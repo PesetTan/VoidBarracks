@@ -8,50 +8,92 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class WarcasterData {
     let context: NSManagedObjectContext
+    let json = GetJson()
+    var rawRules: [ULRule] = []
+    var rawWeapons: [ULWeapon] = []
+    var rawCortex: [ULCortex] = []
+    var rawHeros: [ULUnit] = []
+    var rawJacks: [ULJack] = []
+    var rawAlliance: [ULUnit] = []
+    var rawContinuum: [ULUnit] = []
+    var rawMarchers: [ULUnit] = []
+    var rawCyphers: [ULCypher] = []
+    var rawFactions: [ULFaction] = []
 
-    var rawRules: [ULRule]
-    var rawWeapons: [ULWeapon]
-    var rawCortex: [ULCortex]
-    var rawHeros: [ULUnit]
-    var rawJacks: [ULJack]
-    var rawAlliance: [ULUnit]
-    var rawContinuum: [ULUnit]
-    var rawMarchers: [ULUnit]
-    var rawCyphers: [ULCypher]
-    var rawFactions: [ULFaction]
+    private var cancellables = Set<AnyCancellable>()
 
     init(_ persistentContainer: NSPersistentContainer) {
-        rawFactions = GetJson.getFactions()!
-        rawHeros = GetJson.getHeros()!
-        rawJacks = GetJson.getJacks()!
-        rawAlliance = GetJson.getAllianceUnits()!
-        rawContinuum = GetJson.getContinuumUnits()!
-        rawMarchers = GetJson.getMarchersUnits()!
-        rawCortex = GetJson.getCortex()!
-        rawWeapons = GetJson.getWeapons()!
-        rawRules = GetJson.getRules()!
-        rawCyphers = GetJson.getCyphers()!
         context = persistentContainer.viewContext
-        populateRules(rawRules)
+
+        Publishers.CombineLatest3(json.$factions, json.$rules, json.$weapons)
+            .filter { (factions, rules, weapons) in
+                !factions.isEmpty && !rules.isEmpty && !weapons.isEmpty
+            }
+            .sink { (factions, rules, weapons) in
+                self.rawFactions = factions
+                self.rawRules = rules
+                self.rawWeapons = weapons
+                Publishers.CombineLatest3(self.json.$heros, self.json.$jacks, self.json.$weapons)
+                    .filter { (heros, jacks, weapons) in
+                        !heros.isEmpty && !jacks.isEmpty && !weapons.isEmpty
+                    }
+                    .sink {(heros, jacks, weapons)  in
+                        self.rawHeros = heros
+                        self.rawJacks = jacks
+                        self.rawWeapons = weapons
+
+                        Publishers.CombineLatest3(self.json.$allianceUnits, self.json.$continuumUnits, self.json.$marcherUnits)
+                            .filter { (alliance, continuum, marchers) in
+                                !alliance.isEmpty && !continuum.isEmpty && !marchers.isEmpty
+                            }
+                            .sink {(alliance, continuum, marchers) in
+                                self.rawAlliance = alliance
+                                self.rawContinuum = continuum
+                                self.rawMarchers = marchers
+
+                                Publishers.CombineLatest(self.json.$cortex, self.json.$cyphers)
+                                    .filter{ cortex, cyphers in
+                                        !cortex.isEmpty && !cyphers.isEmpty
+                                    }
+                                    .sink { cortex, cyphers in
+                                        self.rawCortex = cortex
+                                        self.rawCyphers = cyphers
+
+                                        PersistentCloudKitContainer.deleteContext()
+//                                        PersistentCloudKitContainer.deleteRules()
+//                                        PersistentCloudKitContainer.deleteArmies()
+//                                        PersistentCloudKitContainer.deleteFactions()
+//                                        PersistentCloudKitContainer.deleteWeapons()
+//                                        PersistentCloudKitContainer.deleteCortex()
+
+                                        sleep(4)
+                                        self.context.insert(self.GetStore())
+
+                                        sleep(1)
+                                        try! self.context.save()
+
+                                    }
+                                    .store(in: &self.cancellables)
+                            }
+                            .store(in: &self.cancellables)
+                    }
+                    .store(in: &self.cancellables)
 
 
-    }
-
-    func setStore() {
-        context.insert(GetStore())
-        try! context.save()
+            }
+            .store(in: &self.cancellables)
     }
 
     private func GetStore() -> Store {
         let store: Store = Store(context: self.context)
         store.uuid = UUID().uuidString
-        store.addToFactions(GetArmy(for: "IRON_STAR_ALLIANCE"))
-        store.addToFactions(GetArmy(for: "AETERNUS_CONTINUUM"))
-        store.addToFactions(GetArmy(for: "MARCHER_WORLDS"))
-
+        store.addToArmies(GetArmy(for: "IRON_STAR_ALLIANCE"))
+        store.addToArmies(GetArmy(for: "AETERNUS_CONTINUUM"))
+        store.addToArmies(GetArmy(for: "MARCHER_WORLDS"))
         return store
     }
 
@@ -61,16 +103,16 @@ class WarcasterData {
         army.id = UUID().uuidString
         army.name = raw.name
         army.shortName = raw.shortName
-        army.addToHeros(NSSet(array: GetHeros(for: factionId)))
-        army.addToSolos(NSSet(array: GetSolos(for: factionId)))
-        army.addToJacks(NSSet(array: GetJacks(for: factionId)))
-        army.addToSquads(NSSet(array: GetSquads(for: factionId)))
-        army.rack = GetRack()
 
+        army.addToHeros(GetHeros(for: factionId))
+        army.addToSolos(GetSolos(for: factionId))
+        army.addToJacks(GetJacks(for: factionId))
+        army.addToSquads(GetSquads(for: factionId))
+        army.rack = GetRack()
         return army
     }
 
-    private func GetSquads(for factionId: String) -> [Squad] {
+    private func GetSquads(for factionId: String) -> NSSet {
         var rawUnits: [ULUnit]
         switch factionId {
             case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
@@ -114,7 +156,7 @@ class WarcasterData {
             squads.append(squad)
         }
 
-        return squads
+        return NSSet(array: squads)
     }
 
     private func GetAttachment(for factionId: String, with squadId: String) -> Attachment {
@@ -151,7 +193,7 @@ class WarcasterData {
         return squad
     }
 
-    private func GetJacks(for factionId: String) -> [Jack] {
+    private func GetJacks(for factionId: String) -> NSSet {
         var jacks: [Jack] = []
         let faction = rawFactions.first{$0.id == factionId}!
         faction.jackIds.forEach { jackId in
@@ -208,10 +250,10 @@ class WarcasterData {
             jacks.append(jack)
         }
 
-        return jacks
+        return NSSet(array: jacks)
     }
 
-    private func GetSolos(for factionId: String) -> [Solo] {
+    private func GetSolos(for factionId: String) -> NSSet {
         var rawUnits: [ULUnit]
         switch factionId {
             case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
@@ -248,10 +290,10 @@ class WarcasterData {
             solos.append(solo)
         }
 
-        return solos
+        return NSSet(array: solos)
     }
 
-    private func GetHeros(for factionId: String) -> [Hero] {
+    private func GetHeros(for factionId: String) -> NSSet {
         var heros: [Hero] = []
         let faction = rawFactions.first{$0.id == factionId}!
         faction.heroIds.forEach { heroId in
@@ -280,7 +322,7 @@ class WarcasterData {
             heros.append(hero)
         }
 
-        return heros
+        return NSSet(array: heros)
     }
 
     private func GetRack() -> Rack{
@@ -336,6 +378,12 @@ class WarcasterData {
             weapon.type = "Melee Weapon"
         } else {
             weapon.type = "Ranged Weapon"
+        }
+
+        if let multiWeaponIds = raw.multiWeaponIds {
+            multiWeaponIds.forEach { weaponId in
+                weapon.addToAttachments(GetWeapon(weaponId))
+            }
         }
 
         raw.elements.forEach { elementString in

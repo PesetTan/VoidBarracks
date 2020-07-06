@@ -254,12 +254,15 @@ struct SaveArmyButton: View {
         HStack {
             Spacer()
             Button {
+                print("Save Clicked")
                 if let user = users.first {
                     if (user.armies as! Set<Army>).first(where: {$0.id == army.id}) == nil {
                         user.addToArmies(army.copy())
+                        print("adding copy to armies")
                     }
 
                     try! context.save()
+                    print("saved")
                     isActive.toggle()
                 }
             } label: {
