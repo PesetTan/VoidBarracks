@@ -101,7 +101,7 @@ struct ArmyBuilder: View {
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
 
-                Section  {
+                Section(footer: Text("Recruit will also save to clipboard.").font(.caption))  {
                     SaveArmyButton(army: army, isActive: $isActive)
                         .customCell()
                 }
@@ -243,10 +243,8 @@ struct ArmyBuilder: View {
 
 struct SaveArmyButton: View {
     @FetchRequest(entity: User.entity(), sortDescriptors: []) private var users: FetchedResults<User>
-
-//    NSPredicate(format: "someField = %d", id)
     @Environment(\.managedObjectContext) var context
-    //    var user: User
+
     var army: Army
     @Binding var isActive: Bool
 
@@ -263,11 +261,15 @@ struct SaveArmyButton: View {
 
                     try! context.save()
                     print("saved")
+                    ClipboardController.copyToClipboard(army)
                     isActive.toggle()
                 }
             } label: {
                 Text("Recruit")
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
             }
+
             Spacer()
         }
     }

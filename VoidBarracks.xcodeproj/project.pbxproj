@@ -18,6 +18,8 @@
 		BA11D8B524B3DE1500E6E8AE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B324B3DE1500E6E8AE /* Updater.swift */; };
 		BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
 		BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
+		BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
+		BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
@@ -149,6 +151,7 @@
 		BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSwitch.swift; sourceTree = "<group>"; };
 		BA11D8B324B3DE1500E6E8AE /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		BA11D8B624B400DD00E6E8AE /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		BA11D8B924B4074900E6E8AE /* ClipboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardController.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -256,6 +259,16 @@
 			path = JackWeaponViews;
 			sourceTree = "<group>";
 		};
+		BA11D8BC24B417F900E6E8AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA61D5AE24AD2D4E002F047A /* DataController.swift */,
+				BA11D8B624B400DD00E6E8AE /* StoreController.swift */,
+				BA11D8B924B4074900E6E8AE /* ClipboardController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		BA2034FF24AE999700E252A3 /* AttachmentViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +308,7 @@
 		BA4F967524AAA5C000AB9F4C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BA11D8BC24B417F900E6E8AE /* Controllers */,
 				BA4F98BE24AC4CC400AB9F4C /* Common */,
 				BAC227DF24ADA2C500080E97 /* CypherViews */,
 				BA4F989F24AC166100AB9F4C /* JackViews */,
@@ -307,8 +321,6 @@
 				BA11D8B324B3DE1500E6E8AE /* Updater.swift */,
 				BA4F967724AAA5C000AB9F4C /* ContentView.swift */,
 				BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */,
-				BA61D5AE24AD2D4E002F047A /* DataController.swift */,
-				BA11D8B624B400DD00E6E8AE /* StoreController.swift */,
 				BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */,
 				BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */,
 			);
@@ -671,6 +683,7 @@
 				BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */,
 				BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */,
 				BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */,
+				BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */,
 				BA20353724AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
 				BA20352B24AF063B00E252A3 /* UnitCounter.swift in Sources */,
 				BA4F989A24AC163100AB9F4C /* FactionPicker.swift in Sources */,
@@ -722,6 +735,7 @@
 				BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */,
 				BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */,
 				BA4F98A824AC402B00AB9F4C /* HeroList.swift in Sources */,
+				BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */,
 				BA20352C24AF063B00E252A3 /* UnitCounter.swift in Sources */,
 				BA20353824AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
 				BA20353B24B0028500E252A3 /* CortexToggle.swift in Sources */,
@@ -825,6 +839,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -878,6 +894,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

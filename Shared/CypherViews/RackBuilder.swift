@@ -17,6 +17,8 @@ struct RackBuilder: View {
                                     .accentColor(Color("color.\(shortName)")),
                                   isActive: $isActive) {
                 Text("Configure Your Rack")
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
             }.eraseToAnyView()
         } else {
             return Text("").eraseToAnyView()
