@@ -103,7 +103,8 @@
         <relationship name="customSquads" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquad" inverseEntity="Squad"/>
     </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
-        <attribute name="lastSourceUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastSourceUpdate" optional="YES" attributeType="Date" defaultDateTimeInterval="599616360" usesScalarValueType="NO"/>
+        <attribute name="updateAvailable" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="armies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="store" inverseEntity="Army"/>
     </entity>
@@ -162,7 +163,7 @@
         <element name="Rule" positionX="-270" positionY="144" width="128" height="119"/>
         <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="44"/>
         <element name="Squad" positionX="-279" positionY="36" width="128" height="119"/>
-        <element name="Store" positionX="-297" positionY="117" width="128" height="74"/>
+        <element name="Store" positionX="-297" positionY="117" width="128" height="14"/>
         <element name="Unit" positionX="-510.518310546875" positionY="322.3273010253906" width="128" height="254"/>
         <element name="User" positionX="-261" positionY="45" width="128" height="89"/>
         <element name="Weapon" positionX="-363.0523681640625" positionY="766.0430297851562" width="128" height="284"/>

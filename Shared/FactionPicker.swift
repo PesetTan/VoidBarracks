@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
+import os
 
 struct FactionPicker: View {
+    private let logger = Logger(subsystem: "VoidBarracks", category: "FactionPicker")
     @FetchRequest(entity: Store.entity(), sortDescriptors: []) var stores: FetchedResults<Store>
+    @Environment(\.managedObjectContext) private var context
 
     var body: some View {
         NavigationView {
             VStack{
                 if let stores = stores {
                     if let store = stores.first {
+                        if store.updateAvailable {
+                            Button(action: {
+                                let warcasterStore = WarcasterStore(context)
+                                warcasterStore.updateStore()
+                                logger.notice("UPDATING")
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "arrow.2.circlepath")
+                                    Text("Update Available")
+                                }.padding()
+                            })
+
+                        }
                         if let army = (store.armies as! Set<Army>) {
                             ForEach(army.sorted{$0.name! < $1.name!}, id:\.id) { army in
                                 if let army = army {
@@ -24,11 +40,17 @@ struct FactionPicker: View {
                             }
                         }
                     }
+                    else {
+                        ProgressView {
+                            Text("Updating...")
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
                 }
+
 
             }
             .frame(maxHeight: .infinity)
-//            .background(Color(UIColor.systemBackground))
             .background(Color.gray.opacity(0.2))
         }
 

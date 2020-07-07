@@ -9,8 +9,10 @@
 import Foundation
 import CoreData
 import Combine
+import os
 
-class WarcasterData {
+class WarcasterStore: ObservableObject {
+    let logger = Logger(subsystem: "VoidBarracks", category: "WarcasterStore")
     let context: NSManagedObjectContext
     let json = GetJson()
     var rawRules: [ULRule] = []
@@ -24,10 +26,16 @@ class WarcasterData {
     var rawCyphers: [ULCypher] = []
     var rawFactions: [ULFaction] = []
 
+    @Published var storeUpdated = false;
+
     private var cancellables = Set<AnyCancellable>()
 
-    init(_ persistentContainer: NSPersistentContainer) {
-        context = persistentContainer.viewContext
+    init(_ context: NSManagedObjectContext) {
+        self.context = context
+    }
+
+    func updateStore() {
+        storeUpdated = false
 
         Publishers.CombineLatest3(json.$factions, json.$rules, json.$weapons)
             .filter { (factions, rules, weapons) in
@@ -64,18 +72,19 @@ class WarcasterData {
                                         self.rawCyphers = cyphers
 
                                         PersistentCloudKitContainer.deleteContext()
-//                                        PersistentCloudKitContainer.deleteRules()
-//                                        PersistentCloudKitContainer.deleteArmies()
-//                                        PersistentCloudKitContainer.deleteFactions()
-//                                        PersistentCloudKitContainer.deleteWeapons()
-//                                        PersistentCloudKitContainer.deleteCortex()
+                                        //                                        PersistentCloudKitContainer.deleteRules()
+                                        //                                        PersistentCloudKitContainer.deleteArmies()
+                                        //                                        PersistentCloudKitContainer.deleteFactions()
+                                        //                                        PersistentCloudKitContainer.deleteWeapons()
+                                        //                                        PersistentCloudKitContainer.deleteCortex()
 
                                         sleep(4)
-                                        self.context.insert(self.GetStore())
-
+                                        let store = self.GetStore()
+                                        self.context.insert(store)
+                                        self.context.refresh(store, mergeChanges: true)
                                         sleep(1)
                                         try! self.context.save()
-
+                                        self.storeUpdated = true
                                     }
                                     .store(in: &self.cancellables)
                             }
@@ -91,6 +100,8 @@ class WarcasterData {
     private func GetStore() -> Store {
         let store: Store = Store(context: self.context)
         store.uuid = UUID().uuidString
+        store.lastSourceUpdate = Date()//.addingTimeInterval(5000)
+        store.updateAvailable = false
         store.addToArmies(GetArmy(for: "IRON_STAR_ALLIANCE"))
         store.addToArmies(GetArmy(for: "AETERNUS_CONTINUUM"))
         store.addToArmies(GetArmy(for: "MARCHER_WORLDS"))

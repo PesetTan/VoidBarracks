@@ -14,6 +14,10 @@
 		BA11D8AF24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */; };
 		BA11D8B124B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
 		BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
+		BA11D8B424B3DE1500E6E8AE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B324B3DE1500E6E8AE /* Updater.swift */; };
+		BA11D8B524B3DE1500E6E8AE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B324B3DE1500E6E8AE /* Updater.swift */; };
+		BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
+		BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
@@ -56,8 +60,8 @@
 		BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
 		BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
 		BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
-		BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
-		BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */; };
+		BA4F987824AAD8B300AB9F4C /* WarcasterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */; };
+		BA4F987924AAD8B300AB9F4C /* WarcasterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */; };
 		BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
 		BA4F987F24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
 		BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987024AAD8B200AB9F4C /* ULweapon.swift */; };
@@ -143,6 +147,8 @@
 		BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponInfo.swift; sourceTree = "<group>"; };
 		BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSwitch.swift; sourceTree = "<group>"; };
+		BA11D8B324B3DE1500E6E8AE /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		BA11D8B624B400DD00E6E8AE /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -174,7 +180,7 @@
 		BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentCloudKitContainer.swift; sourceTree = "<group>"; };
 		BA4F96B824AAA78A00AB9F4C /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadJson.swift; sourceTree = "<group>"; };
+		BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarcasterStore.swift; sourceTree = "<group>"; };
 		BA4F986F24AAD8B200AB9F4C /* ULRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULRule.swift; sourceTree = "<group>"; };
 		BA4F987024AAD8B200AB9F4C /* ULweapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULweapon.swift; sourceTree = "<group>"; };
 		BA4F987224AAD8B200AB9F4C /* ULunit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ULunit.swift; sourceTree = "<group>"; };
@@ -298,9 +304,11 @@
 				BAC227DC24AD982200080E97 /* ArmyBuilder.swift */,
 				BA4F98D424AD0AC900AB9F4C /* Barracks.swift */,
 				BA4F989924AC163100AB9F4C /* FactionPicker.swift */,
+				BA11D8B324B3DE1500E6E8AE /* Updater.swift */,
 				BA4F967724AAA5C000AB9F4C /* ContentView.swift */,
 				BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */,
 				BA61D5AE24AD2D4E002F047A /* DataController.swift */,
+				BA11D8B624B400DD00E6E8AE /* StoreController.swift */,
 				BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */,
 				BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */,
 			);
@@ -366,7 +374,7 @@
 		BA4F986B24AAD88200AB9F4C /* jsonModels */ = {
 			isa = PBXGroup;
 			children = (
-				BA4F986C24AAD8B200AB9F4C /* LoadJson.swift */,
+				BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */,
 				BA4F989024AADC9F00AB9F4C /* GetJson.swift */,
 				BA4F987424AAD8B200AB9F4C /* ULCortex.swift */,
 				BA4F987324AAD8B200AB9F4C /* ULCypher.swift */,
@@ -626,6 +634,7 @@
 				BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */,
 				BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */,
 				BA20353424AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
+				BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */,
 				BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */,
 				BA4F98AA24AC474D00AB9F4C /* SoloList.swift in Sources */,
 				BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */,
@@ -641,7 +650,7 @@
 				BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */,
 				BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */,
-				BA4F987824AAD8B300AB9F4C /* LoadJson.swift in Sources */,
+				BA4F987824AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
 				BA4F98C024AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
 				BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
 				BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */,
@@ -658,6 +667,7 @@
 				BAC227FE24ADB6FB00080E97 /* CortexInfo.swift in Sources */,
 				BA10D19524AE4E8C007FBCDD /* JackWeaponList.swift in Sources */,
 				BA4F96B424AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */,
+				BA11D8B424B3DE1500E6E8AE /* Updater.swift in Sources */,
 				BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */,
 				BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */,
 				BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */,
@@ -696,6 +706,7 @@
 				BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */,
 				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
 				BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */,
+				BA11D8B524B3DE1500E6E8AE /* Updater.swift in Sources */,
 				BA20353224AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
 				BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
 				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
@@ -703,8 +714,9 @@
 				BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
 				BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */,
 				BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */,
-				BA4F987924AAD8B300AB9F4C /* LoadJson.swift in Sources */,
+				BA4F987924AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
 				BA4F98C124AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
+				BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */,
 				BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */,
 				BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */,
 				BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */,
