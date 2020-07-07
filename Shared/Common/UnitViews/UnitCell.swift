@@ -57,8 +57,11 @@ struct UnitCell: View {
 
     var cortexName: some View {
         if let jack = unit as? Jack, let cortexes = (jack.optionsForCortex as! Set<Cortex>?) {
-            let cortex = cortexes.first{$0.selected}!
-            return Text(cortex.name!).font(.caption)
+            if let cortex = cortexes.first(where: {$0.selected}) {
+                return Text(cortex.name!).font(.caption)
+            } else {
+                return Text("")
+            }
         } else {
             return Text("")
         }

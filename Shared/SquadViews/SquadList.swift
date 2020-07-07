@@ -13,13 +13,15 @@ struct SquadList: View {
     
     var body: some View {
         ForEach(squads, id:\.id) { squad in
-            SquadCell(squad: squad, refresh: $refresh)
-                .customCell()
-                .foregroundColor(.primary)
+            if squad.uuid != nil {
+                SquadCell(squad: squad, refresh: $refresh)
+                    .customCell()
+                    .foregroundColor(.primary)
 
-            if let customSquads = (squad.customSquads as! Set<Squad>) {
-                CustomSquadList(customSquads: customSquads, refresh: $refresh)
-                    .frame(height: 70 * CGFloat(customSquads.count)).animation(.default)
+                if let customSquads = (squad.customSquads as! Set<Squad>) {
+                    CustomSquadList(customSquads: customSquads, refresh: $refresh)
+                        .frame(height: 70 * CGFloat(customSquads.count)).animation(.default)
+                }
             }
         }
     }

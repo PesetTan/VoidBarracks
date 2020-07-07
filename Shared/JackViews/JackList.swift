@@ -19,11 +19,10 @@ struct JackList: View {
                     .customCell()
                     .foregroundColor(.primary)
 
-            }
-
-            if let customJacks = (jack.customJacks as! Set<Jack>) {
-                CustomJackList(customJacks: customJacks, refresh: $refresh)
-                    .frame(height: 70 * CGFloat(customJacks.count)).animation(.default)
+                if let customJacks = (jack.customJacks as! Set<Jack>) {
+                    CustomJackList(customJacks: customJacks, refresh: $refresh)
+                        .frame(height: 70 * CGFloat(customJacks.count)).animation(.default)
+                }
             }
         }
     }

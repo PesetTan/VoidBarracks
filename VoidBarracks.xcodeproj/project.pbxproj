@@ -20,6 +20,12 @@
 		BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
 		BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
 		BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
+		BA11D8BF24B4341300E6E8AE /* GamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8BE24B4341300E6E8AE /* GamePicker.swift */; };
+		BA11D8C024B4341300E6E8AE /* GamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8BE24B4341300E6E8AE /* GamePicker.swift */; };
+		BA11D8C224B439A800E6E8AE /* SaveArmyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */; };
+		BA11D8C324B439A800E6E8AE /* SaveArmyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */; };
+		BA11D8C524B43ABA00E6E8AE /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */; };
+		BA11D8C624B43ABA00E6E8AE /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
@@ -152,6 +158,9 @@
 		BA11D8B324B3DE1500E6E8AE /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		BA11D8B624B400DD00E6E8AE /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
 		BA11D8B924B4074900E6E8AE /* ClipboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardController.swift; sourceTree = "<group>"; };
+		BA11D8BE24B4341300E6E8AE /* GamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePicker.swift; sourceTree = "<group>"; };
+		BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArmyButton.swift; sourceTree = "<group>"; };
+		BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSection.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -269,6 +278,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		BA11D8BD24B42F6000E6E8AE /* ArmyViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAC227DC24AD982200080E97 /* ArmyBuilder.swift */,
+				BA11D8BE24B4341300E6E8AE /* GamePicker.swift */,
+				BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */,
+			);
+			path = ArmyViews;
+			sourceTree = "<group>";
+		};
 		BA2034FF24AE999700E252A3 /* AttachmentViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,12 +329,12 @@
 			children = (
 				BA11D8BC24B417F900E6E8AE /* Controllers */,
 				BA4F98BE24AC4CC400AB9F4C /* Common */,
+				BA11D8BD24B42F6000E6E8AE /* ArmyViews */,
 				BAC227DF24ADA2C500080E97 /* CypherViews */,
 				BA4F989F24AC166100AB9F4C /* JackViews */,
 				BA4F989E24AC165900AB9F4C /* SoloViews */,
 				BA4F989D24AC164500AB9F4C /* SquadViews */,
 				BA4F989C24AC163800AB9F4C /* HeroViews */,
-				BAC227DC24AD982200080E97 /* ArmyBuilder.swift */,
 				BA4F98D424AD0AC900AB9F4C /* Barracks.swift */,
 				BA4F989924AC163100AB9F4C /* FactionPicker.swift */,
 				BA11D8B324B3DE1500E6E8AE /* Updater.swift */,
@@ -403,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4F98A624AC402B00AB9F4C /* HeroList.swift */,
+				BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */,
 			);
 			path = HeroViews;
 			sourceTree = "<group>";
@@ -662,6 +682,7 @@
 				BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */,
 				BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */,
 				BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */,
+				BA11D8C524B43ABA00E6E8AE /* HeroSection.swift in Sources */,
 				BA4F987824AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
 				BA4F98C024AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
 				BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
@@ -683,6 +704,7 @@
 				BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */,
 				BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */,
 				BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */,
+				BA11D8BF24B4341300E6E8AE /* GamePicker.swift in Sources */,
 				BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */,
 				BA20353724AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
 				BA20352B24AF063B00E252A3 /* UnitCounter.swift in Sources */,
@@ -691,6 +713,7 @@
 				BA4F98B924AC48E600AB9F4C /* SquadCell.swift in Sources */,
 				BAC227E424ADA30900080E97 /* CypherCell.swift in Sources */,
 				BA4F988C24AAD8B300AB9F4C /* ULjacks.swift in Sources */,
+				BA11D8C224B439A800E6E8AE /* SaveArmyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +738,7 @@
 				BA61D5AA24AD21A0002F047A /* LazyLoad.swift in Sources */,
 				BAC227DE24AD982200080E97 /* ArmyBuilder.swift in Sources */,
 				BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */,
+				BA11D8C624B43ABA00E6E8AE /* HeroSection.swift in Sources */,
 				BA20353524AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
 				BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */,
 				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
@@ -725,6 +749,7 @@
 				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
 				BA20352824AF05A100E252A3 /* UnitCell.swift in Sources */,
 				BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
+				BA11D8C024B4341300E6E8AE /* GamePicker.swift in Sources */,
 				BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */,
 				BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */,
 				BA4F987924AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
@@ -738,6 +763,7 @@
 				BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */,
 				BA20352C24AF063B00E252A3 /* UnitCounter.swift in Sources */,
 				BA20353824AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
+				BA11D8C324B439A800E6E8AE /* SaveArmyButton.swift in Sources */,
 				BA20353B24B0028500E252A3 /* CortexToggle.swift in Sources */,
 				BA4F96A024AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */,
 				BAC227F824ADB63C00080E97 /* CortexList.swift in Sources */,

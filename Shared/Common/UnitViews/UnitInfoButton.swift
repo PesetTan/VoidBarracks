@@ -16,6 +16,7 @@ struct UnitInfoButton: View {
             isPresented.toggle()
         } label: {
             Image(systemName: "info.circle")
+                .font(.system(size: 25))
         }
         .sheet(isPresented: $isPresented) {
             if unit != nil && unit!.uuid != nil {

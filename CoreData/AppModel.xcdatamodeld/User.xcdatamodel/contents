@@ -19,7 +19,7 @@
         <relationship name="solos" optional="YES" toMany="YES" minCount="2" deletionRule="Cascade" destinationEntity="Solo" inverseName="army" inverseEntity="Solo"/>
         <relationship name="squads" optional="YES" toMany="YES" minCount="2" deletionRule="Cascade" destinationEntity="Squad" inverseName="army" inverseEntity="Squad"/>
         <relationship name="store" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Store" inverseName="armies" inverseEntity="Store"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
     </entity>
     <entity name="Attachment" representedClassName="Attachment" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="attachments" inverseEntity="Squad"/>

@@ -12,33 +12,34 @@ struct CypherInfo: View {
     @Binding var isPresented: Bool
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    Text("")
 
-                    HStack {
-                        Spacer()
-                        Text("\(cypher.name!)").font(.title)
-                        Spacer()
-                    }
-
-                    HStack {
-                        Spacer()
-                        Text("\(cypher.type!)").font(.headline).foregroundColor(.gray)
-                        if (cypher.pow > 0) {
-                            Text("POW \(cypher.pow)").font(.headline).foregroundColor(.gray)
-                        }
-                        Spacer()
-                    }
-
-                    HStack {
-                        Text("\(cypher.rule!)").padding()
-                    }
+        ScrollView {
+            VStack {
+                HStack {
+                    Spacer()
+                    DoneButton(isPresented: $isPresented)
+                        .padding()
                 }
-            }
-            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
+                .padding(.bottom, 10)
 
+
+                Text("\(cypher.name!)")
+                    .font(.system(size: 25, weight: .bold, design: .default))
+
+
+                HStack {
+                    Spacer()
+                    Text("\(cypher.type!)").font(.headline).foregroundColor(.gray)
+                    if (cypher.pow > 0) {
+                        Text("POW \(cypher.pow)").font(.headline).foregroundColor(.gray)
+                    }
+                    Spacer()
+                }
+
+                Text("\(cypher.rule!)").padding()
+
+            }
         }
+
     }
 }

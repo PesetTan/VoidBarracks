@@ -12,15 +12,20 @@ struct JackWeaponInfo: View {
     @Binding var isPresented: Bool
 
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack {
-                    Text("")
+                    HStack {
+                        Spacer()
+                        DoneButton(isPresented: $isPresented)
+                            .padding()
+                    }
+                    Text("\(weapon.name!)")
+                        .font(.system(size: 25, weight: .bold, design: .default))
+                        .padding()
+
                     WeaponView(weapon: weapon)
                 }
             }
-            .navigationBarTitle(Text("\(weapon.name!)"))
-            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
         }
     }
-}
+

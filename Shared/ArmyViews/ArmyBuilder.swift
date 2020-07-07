@@ -26,86 +26,87 @@ struct ArmyBuilder: View {
             } else {
                 EmptyView()
             }
-            
+
             if let army = army {
                 Section {
                     nameField .customCell()
-                    Text("")
-                    Text("")
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
+                .padding(.bottom, 20)
 
-                Section(header: heroHeader) {
-                    if let heros = (army.heros as! Set<Hero>) {
-                        HeroList(heros: heros.sorted{$0.name! < $1.name!})
+                GamePicker(army: army)
+                    .customCell()
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 20)
+
+                VStack {
+                    if army.gameType == "Normal Game" {
+                        HeroSection(army: army)
+                    }
+                }
+                .padding(.bottom, 20)
+
+
+                VStack {
+                    Section(header: soloHeader) {
+                        if let solos = (army.solos as! Set<Solo>) {
+                            SoloList(solos: solos.sorted{$0.name! < $1.name!})
+                                .environmentObject(army)
+                                .customCell()
+                        }
+                    }
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 20)
+
+
+                VStack {
+                    Section(header: jackHeader) {
+                        if let jacks = (army.jacks as! Set<Jack>) {
+                            JackList(jacks: jacks.sorted{$0.name! < $1.name!}, refresh: $refresh)
+                                .environmentObject(army)
+                        }
+                    }
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 20)
+
+
+                VStack {
+                    Section(header: squadHeader) {
+                        if let squads = (army.squads as! Set<Squad>) {
+                            SquadList(squads: squads.sorted{$0.name! < $1.name!}, refresh: $refresh)
+                                .environmentObject(army)
+                        }
+                    }
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 20)
+
+
+                VStack {
+                    Section (header: rackHeader, footer: rackStats) {
+                        RackBuilder()
                             .environmentObject(army)
                             .customCell()
                     }
-                    Text("")
-                    Text("")
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
-
-
-
-                Section(header: soloHeader) {
-                    if let solos = (army.solos as! Set<Solo>) {
-                        SoloList(solos: solos.sorted{$0.name! < $1.name!})
-                            .environmentObject(army)
-                            .customCell()
-                    }
-
-                    Text("")
-                    Text("")
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-
-
-
-                Section(header: jackHeader) {
-                    if let jacks = (army.jacks as! Set<Jack>) {
-                        JackList(jacks: jacks.sorted{$0.name! < $1.name!}, refresh: $refresh)
-                            .environmentObject(army)
-                    }
-
-                    Text("")
-                    Text("")
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-
-
-
-                Section(header: squadHeader) {
-                    if let squads = (army.squads as! Set<Squad>) {
-                        SquadList(squads: squads.sorted{$0.name! < $1.name!}, refresh: $refresh)
-                            .environmentObject(army)
-                    }
-
-                    Text("")
-                    Text("")
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-
-
-
-                Section (header: rackHeader, footer: rackStats) {
-                    RackBuilder()
-                        .environmentObject(army)
-                        .customCell()
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
+                .padding(.bottom, 20)
 
                 Section(footer: Text("Recruit will also save to clipboard.").font(.caption))  {
                     SaveArmyButton(army: army, isActive: $isActive)
                         .customCell()
                 }
-                .padding(10)
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 5)
                 .navigationBarTitle(Text("\(army.name!)"))
             }
         }
@@ -140,27 +141,7 @@ struct ArmyBuilder: View {
         }
     }
 
-    var heroHeader: some View {
-        let army = armies.first{$0.id == armyId}!
-        return HStack{
-            Image(systemName: "star")
-            Text("Heros")
-            Spacer()
-            if army.heroCount > army.heroMax {
-                if army.heroCount - army.heroMax == 1 {
-                    Text("\(army.heroCount - army.heroMax) Hero Point Over")
-                        .font(.caption)
-                } else {
-                    Text("\(army.heroCount - army.heroMax) Hero Points Over")
-                        .font(.caption)
-                }
-            } else {
-                Text("\(army.heroCount)/\(army.heroMax) Heros")
-                    .font(.caption)
-            }
 
-        }
-    }
 
     var soloHeader: some View {
         let army = armies.first{$0.id == armyId}!
@@ -237,40 +218,6 @@ struct ArmyBuilder: View {
             }
         } onCommit: {
             print("committed")
-        }
-    }
-}
-
-struct SaveArmyButton: View {
-    @FetchRequest(entity: User.entity(), sortDescriptors: []) private var users: FetchedResults<User>
-    @Environment(\.managedObjectContext) var context
-
-    var army: Army
-    @Binding var isActive: Bool
-
-    var body: some View {
-        HStack {
-            Spacer()
-            Button {
-                print("Save Clicked")
-                if let user = users.first {
-                    if (user.armies as! Set<Army>).first(where: {$0.id == army.id}) == nil {
-                        user.addToArmies(army.copy())
-                        print("adding copy to armies")
-                    }
-
-                    try! context.save()
-                    print("saved")
-                    ClipboardController.copyToClipboard(army)
-                    isActive.toggle()
-                }
-            } label: {
-                Text("Recruit")
-                    .frame(maxWidth: .infinity)
-                    .contentShape(Rectangle())
-            }
-
-            Spacer()
         }
     }
 }
