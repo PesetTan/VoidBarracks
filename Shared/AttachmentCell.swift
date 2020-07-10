@@ -12,17 +12,23 @@ struct AttachmentCell: View {
     @State private var isPresented: Bool = false
 
     var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            HStack {
-                Text("\(attachment.name!)")
-                Spacer()
-                UnitSwitch(unit: attachment)
+        if attachment.name != nil {
+            return Button {
+                isPresented.toggle()
+            } label: {
+                HStack {
+                    Text("\(attachment.name!)")
+                    Spacer()
+                    UnitSwitch(unit: attachment)
+                }
             }
+            .sheet(isPresented: $isPresented) {
+                UnitInfo(unit: attachment, isPresented: $isPresented)
+            }
+            .eraseToAnyView()
+        } else {
+            return Text("No Attachment").eraseToAnyView()
         }
-        .sheet(isPresented: $isPresented) {
-            UnitInfo(unit: attachment, isPresented: $isPresented)
-        }
+
     }
 }

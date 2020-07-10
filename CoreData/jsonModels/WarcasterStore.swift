@@ -115,15 +115,23 @@ class WarcasterStore: ObservableObject {
         army.name = raw.name
         army.shortName = raw.shortName
 
-        army.addToHeros(GetHeros(for: factionId))
-        army.addToSolos(GetSolos(for: factionId))
-        army.addToJacks(GetJacks(for: factionId))
-        army.addToSquads(GetSquads(for: factionId))
-        army.rack = GetRack()
+        var symbol = "circle"
+        switch factionId {
+            case "IRON_STAR_ALLIANCE": symbol = "circle"
+            case "AETERNUS_CONTINUUM": symbol = "triangle"
+            case "MARCHER_WORLDS": symbol = "square"
+            default: symbol = "circle"
+        }
+
+        army.addToHeros(GetHeros(for: factionId, withSymbol: symbol))
+        army.addToSolos(GetSolos(for: factionId, withSymbol: symbol))
+        army.addToJacks(GetJacks(for: factionId, withSymbol: symbol))
+        army.addToSquads(GetSquads(for: factionId, withSymbol: symbol))
+        army.rack = GetRack(withSymbol: symbol)
         return army
     }
 
-    private func GetSquads(for factionId: String) -> NSSet {
+    private func GetSquads(for factionId: String, withSymbol symbol: String) -> NSSet {
         var rawUnits: [ULUnit]
         switch factionId {
             case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
@@ -137,6 +145,7 @@ class WarcasterStore: ObservableObject {
         faction.unitIds.forEach { squadId in
             let raw: ULUnit = rawUnits.first{$0.id == squadId}!
             let squad: Squad = Squad(context: self.context)
+            squad.symbol = symbol
             squad.uuid = UUID().uuidString
             squad.id = raw.id
             squad.name = raw.name
@@ -152,7 +161,7 @@ class WarcasterStore: ObservableObject {
             squad.dmg = Int16(raw.damage)
             if let weaponIds = raw.weaponIds {
                 weaponIds.forEach { weaponId in
-                    squad.addToWeapons(GetWeapon(weaponId))
+                    squad.addToWeapons(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             raw.ruleIds.forEach { ruleId in
@@ -160,7 +169,7 @@ class WarcasterStore: ObservableObject {
             }
             if let attachmentIds = raw.attachmentIds {
                 attachmentIds.forEach { attachmentId in
-                    squad.addToAttachments(GetAttachment(for: factionId, with: attachmentId))
+                    squad.addToAttachments(GetAttachment(for: factionId, with: attachmentId, withSymbol: symbol))
                 }
             }
 
@@ -170,7 +179,7 @@ class WarcasterStore: ObservableObject {
         return NSSet(array: squads)
     }
 
-    private func GetAttachment(for factionId: String, with squadId: String) -> Attachment {
+    private func GetAttachment(for factionId: String, with squadId: String, withSymbol symbol: String) -> Attachment {
         var rawUnits: [ULUnit]
         switch factionId {
             case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
@@ -181,6 +190,7 @@ class WarcasterStore: ObservableObject {
 
         let raw: ULUnit = rawUnits.first{$0.id == squadId}!
         let squad: Attachment = Attachment(context: self.context)
+        squad.symbol = symbol
         squad.id = raw.id
         squad.name = raw.name
         squad.title = raw.title
@@ -194,7 +204,7 @@ class WarcasterStore: ObservableObject {
         squad.dmg = Int16(raw.damage)
         if let weaponIds = raw.weaponIds {
             weaponIds.forEach { weaponId in
-                squad.addToWeapons(GetWeapon(weaponId))
+                squad.addToWeapons(GetWeapon(weaponId, withSymbol: symbol))
             }
         }
         raw.ruleIds.forEach { ruleId in
@@ -204,12 +214,13 @@ class WarcasterStore: ObservableObject {
         return squad
     }
 
-    private func GetJacks(for factionId: String) -> NSSet {
+    private func GetJacks(for factionId: String, withSymbol symbol: String) -> NSSet {
         var jacks: [Jack] = []
         let faction = rawFactions.first{$0.id == factionId}!
         faction.jackIds.forEach { jackId in
             let raw: ULJack = rawJacks.first{$0.id == jackId}!
             let jack: Jack = Jack(context: self.context)
+            jack.symbol = symbol
             jack.uuid = UUID().uuidString
             jack.id = raw.id
             jack.name = raw.name
@@ -228,33 +239,33 @@ class WarcasterStore: ObservableObject {
             jack.weaponPoints = Int16(raw.weaponPoints)
             if let weaponIds = raw.weaponIds {
                 weaponIds.forEach { weaponId in
-                    jack.addToWeapons(GetWeapon(weaponId))
+                    jack.addToWeapons(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             raw.ruleIds.forEach { ruleId in
                 jack.addToRules(GetRule(ruleId))
             }
             raw.cortexOptionIds.forEach { cortexId in
-                jack.addToOptionsForCortex(GetCortex(cortexId))
+                jack.addToOptionsForCortex(GetCortex(cortexId, withSymbol: symbol))
             }
             if raw.armCount > 0 {
                 raw.armOptionIds.forEach { weaponId in
-                    jack.addToOptionsForArm1(GetWeapon(weaponId))
+                    jack.addToOptionsForArm1(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             if raw.armCount > 1 {
                 raw.armOptionIds.forEach { weaponId in
-                    jack.addToOptionsForArm2(GetWeapon(weaponId))
+                    jack.addToOptionsForArm2(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             if raw.shoulderCount > 0 {
                 raw.shoulderOptionIds.forEach { weaponId in
-                    jack.addToOptionsForShoulder1(GetWeapon(weaponId))
+                    jack.addToOptionsForShoulder1(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             if raw.shoulderCount > 1 {
                 raw.shoulderOptionIds.forEach { weaponId in
-                    jack.addToOptionsForShoulder2(GetWeapon(weaponId))
+                    jack.addToOptionsForShoulder2(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
 
@@ -264,7 +275,7 @@ class WarcasterStore: ObservableObject {
         return NSSet(array: jacks)
     }
 
-    private func GetSolos(for factionId: String) -> NSSet {
+    private func GetSolos(for factionId: String, withSymbol symbol: String) -> NSSet {
         var rawUnits: [ULUnit]
         switch factionId {
             case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
@@ -278,6 +289,7 @@ class WarcasterStore: ObservableObject {
         faction.soloIds.forEach { soloId in
             let raw: ULUnit = rawUnits.first{$0.id == soloId}!
             let solo: Solo = Solo(context: self.context)
+            solo.symbol = symbol
             solo.id = raw.id
             solo.name = raw.name
             solo.title = raw.title
@@ -291,7 +303,7 @@ class WarcasterStore: ObservableObject {
             solo.dmg = Int16(raw.damage)
             if let weaponIds = raw.weaponIds {
                 weaponIds.forEach { weaponId in
-                    solo.addToWeapons(GetWeapon(weaponId))
+                    solo.addToWeapons(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             raw.ruleIds.forEach { ruleId in
@@ -304,12 +316,13 @@ class WarcasterStore: ObservableObject {
         return NSSet(array: solos)
     }
 
-    private func GetHeros(for factionId: String) -> NSSet {
+    private func GetHeros(for factionId: String, withSymbol symbol: String) -> NSSet {
         var heros: [Hero] = []
         let faction = rawFactions.first{$0.id == factionId}!
         faction.heroIds.forEach { heroId in
             let raw: ULUnit = rawHeros.first{$0.id == heroId}!
             let hero: Hero = Hero(context: self.context)
+            hero.symbol = symbol
             hero.id = raw.id
             hero.name = raw.name
             hero.title = raw.title
@@ -323,7 +336,7 @@ class WarcasterStore: ObservableObject {
             hero.dmg = Int16(raw.damage)
             if let weaponIds = raw.weaponIds {
                 weaponIds.forEach { weaponId in
-                    hero.addToWeapons(GetWeapon(weaponId))
+                    hero.addToWeapons(GetWeapon(weaponId, withSymbol: symbol))
                 }
             }
             raw.ruleIds.forEach { ruleId in
@@ -336,10 +349,11 @@ class WarcasterStore: ObservableObject {
         return NSSet(array: heros)
     }
 
-    private func GetRack() -> Rack{
+    private func GetRack(withSymbol symbol: String) -> Rack{
         let rack: Rack = Rack(context: self.context)
         self.rawCyphers.forEach { raw in
             let cypher = Cypher(context: context)
+            cypher.symbol = symbol
             cypher.id = raw.id
             cypher.name = raw.name
             cypher.pow = Int16(raw.power ?? -1)
@@ -358,9 +372,10 @@ class WarcasterStore: ObservableObject {
         return rack
     }
 
-    private func GetCortex(_ id: String) -> Cortex {
+    private func GetCortex(_ id: String, withSymbol symbol: String) -> Cortex {
         let raw = self.rawCortex.first{$0.id == id}!
         let cortex = Cortex(context: self.context)
+        cortex.symbol = symbol
         cortex.id = raw.id
         cortex.name = raw.name
         raw.ruleIds.forEach { id in
@@ -370,9 +385,10 @@ class WarcasterStore: ObservableObject {
         return cortex
     }
 
-    private func GetWeapon(_ id: String) -> Weapon {
+    private func GetWeapon(_ id: String, withSymbol symbol: String) -> Weapon {
         let raw = self.rawWeapons.first{$0.id == id}!
         let weapon = Weapon(context: self.context)
+        weapon.symbol = symbol
         weapon.uuid = UUID().uuidString
         weapon.id = raw.id
         weapon.name = raw.name
@@ -393,7 +409,7 @@ class WarcasterStore: ObservableObject {
 
         if let multiWeaponIds = raw.multiWeaponIds {
             multiWeaponIds.forEach { weaponId in
-                weapon.addToAttachments(GetWeapon(weaponId))
+                weapon.addToAttachments(GetWeapon(weaponId, withSymbol: symbol))
             }
         }
 

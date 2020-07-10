@@ -48,7 +48,7 @@ struct CustomSquadList: View {
                     refresh.toggle()
                 }
             }
-            .listRowBackground(Color.gray.opacity(0))
+            .listRowBackground(Color("BackgroundColor"))
         }
     }
 }

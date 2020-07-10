@@ -35,6 +35,7 @@ struct CustomJackList: View {
 
     var body: some View {
         let jacks = customJacks.sorted{$0.lastModified! > $1.lastModified!}
+
         return List {
             ForEach(jacks, id:\.uuid) { jack in
                 UnitCell(unit: jack)
@@ -48,7 +49,7 @@ struct CustomJackList: View {
                     refresh.toggle()
                 }
             }
-            .listRowBackground(Color.gray.opacity(0))
+            .listRowBackground(Color("BackgroundColor"))
         }
     }
 }

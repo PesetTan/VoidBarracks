@@ -53,7 +53,7 @@ struct CypherToggle: View {
             }
 
             if army.user != nil {
-                army.user!.armies = army.user!.armies
+                army.user = army.user
             }
 
         }

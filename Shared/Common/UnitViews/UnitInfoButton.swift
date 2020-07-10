@@ -9,11 +9,21 @@ import SwiftUI
 
 struct UnitInfoButton: View {
     var unit: Unit?
-    @Binding var isPresented: Bool
+    @State private var isPresented: Bool = false
 
     var body: some View {
+
+//        Image(systemName: "info.circle")
+//            .font(.system(size: 25))
+//            .onTapGesture(perform: {isPresented = true})
+//            .sheet(isPresented: $isPresented) {
+//                if unit != nil && unit!.uuid != nil {
+//                    UnitInfo(unit: unit!, isPresented: $isPresented)
+//                }
+//            }
+//
         Button {
-            isPresented.toggle()
+            isPresented = true
         } label: {
             Image(systemName: "info.circle")
                 .font(.system(size: 25))

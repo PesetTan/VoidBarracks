@@ -33,8 +33,6 @@ struct UnitCell: View {
                 UnitCounter(unit: unit, maxCount: 3)
             }
         }
-//        .buttonStyle(CustomButtonStyle())
-
     }
 
     var unitName: some View {

@@ -15,6 +15,11 @@ struct WeaponToggle: View {
 
     var body: some View {
         HStack {
+            Text("\(weapon.cost) points")
+                .font(.caption)
+                .foregroundColor(.gray)
+
+            
             if selected {
                 Image(systemName: "circle.fill").foregroundColor(.accentColor)
             } else {

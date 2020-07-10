@@ -63,23 +63,27 @@ struct BarracksCell: View {
 
     var body: some View {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        if army.id == nil {
+            return Text("").eraseToAnyView()
+        }
         return NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive)
                                 .accentColor(Color("color.\(army.shortName!)")),
                        isActive: $isActive) {
 
             if army.customName! == "" {
-                Label {
+                HStack {
+                    Image("logo.\(army.shortName!)")
+                        .resizable()
+                        .frame(width: 45, height: 45, alignment: .center)
+                        .padding(10)
+
                     VStack(alignment: .leading) {
                         Text("\(army.name!)")
                             .font(.title2)
                         Text("\(dateFormatter.string(from: army.lastModified!))")
                             .font(.caption)
                     }
-                } icon: {
-                    Image("logo.\(army.shortName!)")
-                        .resizable()
-                        .frame(width: 45, height: 45, alignment: .center)
-                        .padding(30)
+
                 }
             } else {
                 Label {
@@ -97,6 +101,7 @@ struct BarracksCell: View {
                         .padding(30)
                 }
             }
-        }
+        }.eraseToAnyView()
+        
     }
 }

@@ -79,25 +79,23 @@ struct Cell: View {
     var shortName: String
 
     var body: some View {
-        HStack {
-            Label {
-                Text("\(armyName)")
-                    .padding()
-                    .font(.title2)
-                    .foregroundColor(.white)
-            } icon: {
+            HStack {
                 Image("logo.\(shortName)")
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 45, height: 45, alignment: .center)
+                Text("\(armyName)")
+                    .padding()
+                    .font(.title2)
+                    .foregroundColor(.white)
+
+
             }
-        }
-        
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(Color.accentColor.opacity(0.7))
-        .cornerRadius(10)
-        .padding()
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.accentColor.opacity(0.7))
+            .cornerRadius(10)
+            .padding()
     }
 
 }

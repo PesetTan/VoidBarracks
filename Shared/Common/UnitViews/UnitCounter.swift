@@ -6,21 +6,34 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct UnitCounter: View {
     @ObservedObject var unit: Unit
     @EnvironmentObject var army: Army
     var maxCount: Int = 3
+//    @State private var engine: CHHapticEngine?
 
     var body: some View {
-        HStack {
-            ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
-                if index >= unit.count {
-                    Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
-                } else {
-                    Image(systemName: "circle.fill").foregroundColor(.accentColor)
+        return HStack {
+            if let symbol = unit.symbol {
+                ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
+                    if index >= unit.count {
+                        Image("\(symbol)").foregroundColor(.gray).opacity(0.5)
+                    } else {
+                        Image("\(symbol).fill").foregroundColor(.accentColor)
+                    }
+                }
+            } else {
+                ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
+                    if index >= unit.count {
+                        Image("circle").foregroundColor(.gray).opacity(0.5)
+                    } else {
+                        Image("circle.fill").foregroundColor(.accentColor)
+                    }
                 }
             }
+
         }
         .onTapGesture {
             unit.count += 1
@@ -56,7 +69,42 @@ struct UnitCounter: View {
             }
             army.unitCount = unitCount
 
+//            complexSuccess()
+            simpleSuccess()
         }
     }
 
+    func simpleSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+//
+//    func prepareHaptics() {
+//        guard CHHapticEngine.capabilitiesForHardware()
+//                .supportsHaptics else { return }
+//
+//        do {
+//            self.engine = try CHHapticEngine()
+//            try engine?.start()
+//        } catch {
+//            print("error")
+//        }
+//    }
+//
+//    func complexSuccess() {
+//        var events: [CHHapticEvent] = []
+//        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 3)
+//        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 3)
+//        let event = CHHapticEvent(eventType: .hapticTransient , parameters: [intensity, sharpness], relativeTime: 0)
+//
+//        events.append(event)
+//
+//        do {
+//            let pattern = try CHHapticPattern(events: events, parameters: [])
+//            let player = try engine?.makePlayer(with: pattern)
+//            try player?.start(atTime: 0)
+//        } catch {
+//            print("error")
+//        }
+//    }
 }

@@ -72,6 +72,7 @@ extension Army {
 extension Hero {
     public func copy() -> Hero {
         let newHero = Hero(context: managedObjectContext!)
+        newHero.symbol = self.symbol
         newHero.id = self.id
         newHero.name = self.name
         newHero.cost = self.cost
@@ -100,6 +101,7 @@ extension Hero {
 extension Solo {
     public func copy() -> Solo {
         let newSolo = Solo(context: managedObjectContext!)
+        newSolo.symbol = self.symbol
         newSolo.id = self.id
         newSolo.name = self.name
         newSolo.count = self.count
@@ -128,6 +130,7 @@ extension Solo {
 extension Squad {
     public func copy() -> Squad {
         let newSquad = Squad(context: managedObjectContext!)
+        newSquad.symbol = self.symbol
         newSquad.uuid = UUID().uuidString
         newSquad.customName = self.customName
         newSquad.lastModified = self.lastModified
@@ -167,6 +170,7 @@ extension Squad {
 extension Attachment {
     public func copy() -> Attachment {
         let newAttachment = Attachment(context: managedObjectContext!)
+        newAttachment.symbol = self.symbol
         newAttachment.id = self.id
         newAttachment.name = self.name
         newAttachment.count = self.count
@@ -195,6 +199,7 @@ extension Attachment {
 extension Jack {
     public func copy() -> Jack {
         let newJack = Jack(context: managedObjectContext!)
+        newJack.symbol = self.symbol
         newJack.uuid = UUID().uuidString
         newJack.customName = self.customName
         newJack.lastModified = self.lastModified
@@ -252,6 +257,7 @@ extension Jack {
 extension Cortex {
     public func copy() -> Cortex {
         let newCortex = Cortex(context: managedObjectContext!)
+        newCortex.symbol = self.symbol
         newCortex.id = self.id
         newCortex.name = self.name
         newCortex.selected = self.selected
@@ -266,6 +272,7 @@ extension Cortex {
 extension Weapon {
     public func copy() -> Weapon {
         let newWeapon = Weapon(context: managedObjectContext!)
+        newWeapon.symbol = self.symbol
         newWeapon.uuid = UUID().uuidString
         newWeapon.id = self.id
         newWeapon.name = self.name
@@ -308,6 +315,7 @@ extension Element {
 extension Cypher {
     public func copy() -> Cypher {
         let newCypher = Cypher(context: managedObjectContext!)
+        newCypher.symbol = self.symbol
         newCypher.name = self.name
         newCypher.id = self.id
         newCypher.pow = self.pow

@@ -110,7 +110,7 @@ struct ArmyBuilder: View {
                 .navigationBarTitle(Text("\(army.name!)"))
             }
         }
-        .background(Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all))
+        .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 
     var rackStats: some View {

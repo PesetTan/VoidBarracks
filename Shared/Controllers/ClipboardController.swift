@@ -35,25 +35,26 @@ struct ClipboardController {
         (army.jacks as! Set<Jack>).sorted{$0.id! < $1.id!}.forEach { jack in
             (jack.customJacks as! Set<Jack>).sorted{$0.id! < $1.id!}.forEach { configured in
                 if configured.count > 0 {
-                    let selectedCortex = (configured.optionsForCortex as! Set<Cortex>).first{$0.selected}!
-                    let selectedArm1 = (configured.optionsForArm1 as! Set<Weapon>).first{$0.selected}
-                    let selectedArm2 = (configured.optionsForArm2 as! Set<Weapon>).first{$0.selected}
-                    let selectedShoulder1 = (configured.optionsForShoulder1 as! Set<Weapon>).first{$0.selected}
-                    let selectedShoulder2 = (configured.optionsForShoulder2 as! Set<Weapon>).first{$0.selected}
-                    text.append("x\(configured.count) \(configured.name!)-\(selectedCortex.name!):\n")
-//                    text.append("\tChassis: \(jack.name)\n")
-//                    text.append("\tCortex: \(selectedCortex.name!)\n")
-                    if selectedArm1 != nil {
-                        text.append("\tArm 1: \(selectedArm1!.name!) \(selectedArm1!.cost) points\n")
+                    text.append("x\(configured.count) \(configured.name!)\n")
+                    if (configured.optionsForCortex as! Set<Cortex>).first(where: {$0.selected}) != nil {
+                        let selectedCortex = (configured.optionsForCortex as! Set<Cortex>).first{$0.selected}!
+                        text.append("\tCortex: \(selectedCortex.name!)\n")
                     }
-                    if selectedArm2 != nil {
-                        text.append("\tArm 2: \(selectedArm2!.name!)  \(selectedArm2!.cost) points\n")
+                    if (configured.optionsForArm1 as! Set<Weapon>).first(where: {$0.selected}) != nil {
+                        let selectedArm1 = (configured.optionsForArm1 as! Set<Weapon>).first{$0.selected}!
+                        text.append("\tArm 2: \(selectedArm1.name!)  \(selectedArm1.cost) points\n")
                     }
-                    if selectedShoulder1 != nil {
-                        text.append("\tShoulder 1: \(selectedShoulder1!.name!)  \(selectedShoulder1!.cost) points\n")
+                    if (configured.optionsForArm2 as! Set<Weapon>).first(where: {$0.selected}) != nil {
+                        let selectedArm2 = (configured.optionsForArm2 as! Set<Weapon>).first{$0.selected}!
+                        text.append("\tArm 1: \(selectedArm2.name!)  \(selectedArm2.cost) points\n")
                     }
-                    if selectedShoulder2 != nil {
-                        text.append("\tShoulder 2: \(selectedShoulder2!.name!) \(selectedShoulder2!.cost) points\n")
+                    if (configured.optionsForShoulder1 as! Set<Weapon>).first(where: {$0.selected}) != nil {
+                        let selectedShoulder1 = (configured.optionsForShoulder1 as! Set<Weapon>).first{$0.selected}!
+                        text.append("\tArm 1: \(selectedShoulder1.name!)  \(selectedShoulder1.cost) points\n")
+                    }
+                    if (configured.optionsForShoulder2 as! Set<Weapon>).first(where: {$0.selected}) != nil {
+                        let selectedShoulder2 = (configured.optionsForShoulder2 as! Set<Weapon>).first{$0.selected}!
+                        text.append("\tArm 1: \(selectedShoulder2.name!)  \(selectedShoulder2.cost) points\n")
                     }
                 }
             }

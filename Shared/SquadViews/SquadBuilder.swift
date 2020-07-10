@@ -40,7 +40,7 @@ struct SquadBuilder: View {
             }
         }
         .navigationTitle(Text("\(squad.name ?? "Missing Name" )"))
-        .navigationBarItems(trailing: UnitInfoButton(unit: squad, isPresented: $isPresented))
+        .navigationBarItems(trailing: UnitInfoButton(unit: squad))
         .onAppear { refresh = false }
         .onDisappear { refresh = true }
     }

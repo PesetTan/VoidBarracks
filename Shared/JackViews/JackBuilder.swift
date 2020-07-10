@@ -11,7 +11,6 @@ struct JackBuilder: View {
     var jackId: String
     @Binding var isActive: Bool
     @Binding var refresh: Bool
-    @State var isPresented: Bool = false
     @Environment(\.managedObjectContext) var context
 
     @FetchRequest(
@@ -62,7 +61,7 @@ struct JackBuilder: View {
 
             }
             .navigationTitle(Text("\(jack.name ?? "Missing Name")"))
-            .navigationBarItems(trailing: UnitInfoButton(unit: jack, isPresented: $isPresented))
+            .navigationBarItems(trailing: UnitInfoButton(unit: jack))
             .onAppear { refresh = false }
             .onDisappear { refresh = true }
             .eraseToAnyView()
@@ -205,8 +204,7 @@ struct JackNameField: View{
 struct SaveJackButton: View {
     var jackId: String
     @Binding var isActive: Bool
-    @Environment(\.managedObjectContext) var context
-
+    
     @FetchRequest(
         entity: Jack.entity(),
         sortDescriptors: []

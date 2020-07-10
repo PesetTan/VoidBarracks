@@ -14,25 +14,24 @@ struct JackWeaponCell: View {
     @State private var isPresented: Bool = false
 
     var body: some View {
-        Button {
-            isPresented.toggle()
-        } label: {
-            HStack {
-                HStack{
-                    Text("\(weapon.name!)")
-                    Spacer()
-                    Text("\(weapon.cost) points")
-
-                    WeaponToggle(selected: Binding<Bool>(
-                        get: { weapon.selected },
-                        set: {weapon.selected = $0}
-                    ),
-                    weapon: weapon, group: weapons, jack: jack)
-                }
+        HStack {
+            Button {
+                isPresented.toggle()
+            } label: {
+                Text("\(weapon.name!)")
             }
+            .sheet(isPresented: $isPresented) {
+                JackWeaponInfo(weapon: weapon, isPresented: $isPresented)
+            }
+            Spacer()
+
+            WeaponToggle(selected: Binding<Bool>(
+                get: { weapon.selected },
+                set: {weapon.selected = $0}
+            ),
+            weapon: weapon, group: weapons, jack: jack)
+
         }
-        .sheet(isPresented: $isPresented) {
-            JackWeaponInfo(weapon: weapon, isPresented: $isPresented)
-        }
+
     }
 }
