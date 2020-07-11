@@ -32,7 +32,9 @@ class StoreController {
         let stores = try! context.fetch(fetchRequest)
         logger.notice("Stores Found: \(stores.count)")
         if let store = stores.first {
+            logger.notice("Accessing first store.")
             if store.lastSourceUpdate == nil {
+                logger.notice("LastUpdate is nil.")
                 store.updateAvailable = true
             } else {
                 updater.Check(store.lastSourceUpdate!)
@@ -66,12 +68,12 @@ class StoreController {
 
         let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
         fetchRequest.shouldRefreshRefetchedObjects = true
-//        let stores = try! context.fetch(fetchRequest)
+        let stores = try! context.fetch(fetchRequest)
 
-        warcasterStore.updateStore()
-        
-//        if stores.count == 0 {
-//            warcasterStore.updateStore()
-//        }
+        if stores.count == 0 {
+            warcasterStore.updateStore()
+        }
+
+
     }
 }

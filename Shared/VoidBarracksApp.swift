@@ -23,7 +23,7 @@ struct VoidBarracksApp: App {
 
         storeController.addStoreIfNeeded()
 
-        _ = Timer.scheduledTimer(withTimeInterval: 1800, repeats: true) { timer in
+        _ = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { timer in
             storeController.checkForUpdates()
         }
 

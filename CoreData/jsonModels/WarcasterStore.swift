@@ -41,12 +41,10 @@ class WarcasterStore: ObservableObject {
             .filter { (factions, rules, weapons) in
                 !factions.isEmpty && !rules.isEmpty && !weapons.isEmpty
             }
-            .sink { [self] (factions, rules, weapons) in
+            .sink { (factions, rules, weapons) in
                 self.rawFactions = factions
                 self.rawRules = rules
                 self.rawWeapons = weapons
-
-//                populateRules(rules)
 
                 Publishers.CombineLatest3(self.json.$heros, self.json.$jacks, self.json.$weapons)
                     .filter { (heros, jacks, weapons) in
@@ -74,19 +72,11 @@ class WarcasterStore: ObservableObject {
                                         self.rawCortex = cortex
                                         self.rawCyphers = cyphers
 
-                                        PersistentCloudKitContainer.deleteContext()
-//
-//                                        PersistentCloudKitContainer.deleteArmies()
-//                                        PersistentCloudKitContainer.deleteFactions()
-//                                        PersistentCloudKitContainer.deleteWeapons()
-//                                        PersistentCloudKitContainer.deleteCortex()
-
-                                        sleep(4)
                                         let store = self.GetStore()
                                         self.context.insert(store)
                                         self.context.refresh(store, mergeChanges: true)
-                                        sleep(1)
                                         try! self.context.save()
+
                                         self.storeUpdated = true
                                     }
                                     .store(in: &self.cancellables)

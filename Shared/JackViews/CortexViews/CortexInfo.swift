@@ -15,10 +15,8 @@ struct CortexInfo: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("")
-                    if let rules = (cortex.rules as! Set<Rule>) {
-                        RulesView(rules: rules)
-                    }
+                    RulesView(rules: cortex.rulesArray)
+                        .padding(.top, 10)
                 }
             }
             .navigationBarTitle(Text("\(cortex.name!)"))

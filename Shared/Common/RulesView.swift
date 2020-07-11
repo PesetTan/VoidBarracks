@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct RulesView: View {
-    var rules: Set<Rule>
+    var rules: [Rule]
 
     var body: some View {
 
-        ForEach(rules.sorted{$0.id! < $1.id!}, id:\.id) { rule in
+        ForEach(rules, id:\.id) { rule in
             VStack(alignment: .leading) {
                 HStack {
                     Text("\(rule.name!)").font(.subheadline).foregroundColor(.gray)

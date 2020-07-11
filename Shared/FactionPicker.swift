@@ -20,6 +20,8 @@ struct FactionPicker: View {
                     if let store = stores.first {
                         if store.updateAvailable {
                             Button(action: {
+                                PersistentCloudKitContainer.deleteContext()
+                                sleep(4)
                                 let warcasterStore = WarcasterStore(context)
                                 warcasterStore.updateStore()
                                 logger.notice("UPDATING")

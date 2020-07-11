@@ -18,10 +18,9 @@ struct SquadList: View {
                     .customCell()
                     .foregroundColor(.primary)
 
-                if let customSquads = (squad.customSquads as! Set<Squad>) {
-                    CustomSquadList(customSquads: customSquads, refresh: $refresh)
-                        .frame(height: 70 * CGFloat(customSquads.count)).animation(.default)
-                }
+                CustomSquadList(customSquads: squad.customSquadsArray, refresh: $refresh)
+                    .frame(height: 70 * CGFloat(squad.customSquadsArray.count)).animation(.default)
+
             }
         }
     }
@@ -29,21 +28,20 @@ struct SquadList: View {
 
 
 struct CustomSquadList: View {
-    var customSquads: Set<Squad>
+    var customSquads: [Squad]
     @Binding var refresh: Bool
     @Environment(\.managedObjectContext) private var context
 
     var body: some View {
-        let squads = customSquads.sorted{$0.lastModified! < $1.lastModified!}
-        return List {
-            ForEach(squads, id:\.uuid) { squad in
+        List {
+            ForEach(customSquads, id:\.uuid) { squad in
                 UnitCell(unit: squad)
                     .customCell()
                     .foregroundColor(.accentColor)
             }
             .onDelete { indexSet in
                 indexSet.forEach { index in
-                    let squad = squads[index]
+                    let squad = customSquads[index]
                     context.delete(squad)
                     refresh.toggle()
                 }

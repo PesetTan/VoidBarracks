@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct WeaponsView: View {
-    var weapons: Set<Weapon>
+    var weapons: [Weapon]
 
     var body: some View {
         VStack {
-            ForEach(weapons.sorted{$0.id! < $1.id!}, id:\.id) { weapon in
+            ForEach(weapons, id:\.id) { weapon in
                 Divider()
                 WeaponView(weapon: weapon).padding()
             }
@@ -46,21 +46,15 @@ struct WeaponView: View {
 
                 VStack {
                     Text("ELEMENTS").font(.subheadline).foregroundColor(.gray)
-                    if let elements = (weapon.elements as! Set<Element>) {
-                        ForEach(elements.sorted{$0.name! < $1.name!}, id:\.self) { element in
-                            Text("\(element.name!)")
-                        }
+                    ForEach(weapon.elementsArray, id:\.self) { element in
+                        Text("\(element.name!)")
                     }
                 }
             }
 
-            if let rules = (weapon.rules as! Set<Rule>) {
-                RulesView(rules: rules)
-            }
+            RulesView(rules: weapon.rulesArray)
 
-            if let attachments = (weapon.attachments as! Set<Weapon>) {
-                WeaponsView(weapons: attachments)
-            }
+            WeaponsView(weapons: weapon.attachmentsArray)
 
         }
     }

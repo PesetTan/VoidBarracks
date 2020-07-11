@@ -24,13 +24,9 @@ struct AttachmentView: View {
 
             UnitStats(unit: attachment)
 
-            if let rules = (attachment.rules as! Set<Rule>) {
-                RulesView(rules: rules)
-            }
+            RulesView(rules: attachment.rulesArray)
 
-            if let weapons = (attachment.weapons as! Set<Weapon>) {
-                WeaponsView(weapons: weapons)
-            }
+            WeaponsView(weapons: attachment.weaponsArray)
         }
     }
 }
