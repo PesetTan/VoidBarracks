@@ -17,7 +17,6 @@ struct CustomCell: ViewModifier {
             .padding(.leading, 10)
             .padding(.trailing, 10)
             .shadow(color: Color("ShadowColor").opacity(0.5), radius: 7, x: 3, y: 3)
-            .contentShape(Rectangle())
     }
 }
 

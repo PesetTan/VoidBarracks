@@ -41,10 +41,13 @@ class WarcasterStore: ObservableObject {
             .filter { (factions, rules, weapons) in
                 !factions.isEmpty && !rules.isEmpty && !weapons.isEmpty
             }
-            .sink { (factions, rules, weapons) in
+            .sink { [self] (factions, rules, weapons) in
                 self.rawFactions = factions
                 self.rawRules = rules
                 self.rawWeapons = weapons
+
+//                populateRules(rules)
+
                 Publishers.CombineLatest3(self.json.$heros, self.json.$jacks, self.json.$weapons)
                     .filter { (heros, jacks, weapons) in
                         !heros.isEmpty && !jacks.isEmpty && !weapons.isEmpty
@@ -72,11 +75,11 @@ class WarcasterStore: ObservableObject {
                                         self.rawCyphers = cyphers
 
                                         PersistentCloudKitContainer.deleteContext()
-                                        //                                        PersistentCloudKitContainer.deleteRules()
-                                        //                                        PersistentCloudKitContainer.deleteArmies()
-                                        //                                        PersistentCloudKitContainer.deleteFactions()
-                                        //                                        PersistentCloudKitContainer.deleteWeapons()
-                                        //                                        PersistentCloudKitContainer.deleteCortex()
+//
+//                                        PersistentCloudKitContainer.deleteArmies()
+//                                        PersistentCloudKitContainer.deleteFactions()
+//                                        PersistentCloudKitContainer.deleteWeapons()
+//                                        PersistentCloudKitContainer.deleteCortex()
 
                                         sleep(4)
                                         let store = self.GetStore()
@@ -431,17 +434,6 @@ class WarcasterStore: ObservableObject {
     }
 
     private func GetRule(_ id: String) -> Rule {
-//        let fetchRequest: NSFetchRequest<Rule> = Rule.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
-//        let rules = try! context.fetch(fetchRequest)
-//
-//        if rules.count == 0 {
-//            print("MISSING \(id)")
-//        }
-//
-//        context.refreshAllObjects()
-//        return rules.first!
-
         let raw = self.rawRules.first{$0.id == id}!
         let rule = Rule(context: self.context)
         rule.id = raw.id
@@ -449,20 +441,6 @@ class WarcasterStore: ObservableObject {
         rule.text = raw.rule
 
         return rule
-    }
-
-    private func populateRules(_ rawRules: [ULRule]) {
-        rawRules.forEach { raw in
-            let rule = Rule(context: self.context)
-            rule.id = raw.id
-            rule.name = raw.name
-            rule.text = raw.rule
-
-            context.insert(rule)
-        }
-
-        try! context.save()
-
     }
     
 }

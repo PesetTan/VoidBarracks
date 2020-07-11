@@ -22,7 +22,7 @@ struct UnitCell: View {
                 }
             }
             .sheet(isPresented: $isPresented) {
-                UnitInfo(unit: unit, isPresented: $isPresented)
+                LazyLoad(UnitInfo(unit: unit, isPresented: $isPresented))
             }
 
             Spacer()

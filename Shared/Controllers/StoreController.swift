@@ -66,9 +66,12 @@ class StoreController {
 
         let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
         fetchRequest.shouldRefreshRefetchedObjects = true
-        let stores = try! context.fetch(fetchRequest)
-        if stores.count == 0 {
-            warcasterStore.updateStore()
-        }
+//        let stores = try! context.fetch(fetchRequest)
+
+        warcasterStore.updateStore()
+        
+//        if stores.count == 0 {
+//            warcasterStore.updateStore()
+//        }
     }
 }

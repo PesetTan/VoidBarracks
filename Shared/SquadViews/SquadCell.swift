@@ -15,7 +15,7 @@ struct SquadCell: View {
     var body: some View {
         if let army = squad.army {
             return NavigationLink(
-                destination: SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh)
+                destination: LazyLoad(SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh))
                     .accentColor(Color("color.\(army.shortName!)")),
                 isActive: $isPresented) {
                 Text("\(squad.name!)")

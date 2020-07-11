@@ -11,125 +11,72 @@
 		BA10D19724AE4F1C007FBCDD /* JackWeaponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19624AE4F1C007FBCDD /* JackWeaponCell.swift */; };
 		BA10D19924AE4F79007FBCDD /* JackWeaponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10D19824AE4F79007FBCDD /* JackWeaponInfo.swift */; };
 		BA11D8AE24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */; };
-		BA11D8AF24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8AD24B1AB1500E6E8AE /* ViewExtensions.swift */; };
 		BA11D8B124B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
-		BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B024B1CA4800E6E8AE /* UnitSwitch.swift */; };
 		BA11D8B424B3DE1500E6E8AE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B324B3DE1500E6E8AE /* Updater.swift */; };
-		BA11D8B524B3DE1500E6E8AE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B324B3DE1500E6E8AE /* Updater.swift */; };
 		BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
-		BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B624B400DD00E6E8AE /* StoreController.swift */; };
 		BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
-		BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8B924B4074900E6E8AE /* ClipboardController.swift */; };
 		BA11D8BF24B4341300E6E8AE /* GamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8BE24B4341300E6E8AE /* GamePicker.swift */; };
-		BA11D8C024B4341300E6E8AE /* GamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8BE24B4341300E6E8AE /* GamePicker.swift */; };
 		BA11D8C224B439A800E6E8AE /* SaveArmyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */; };
-		BA11D8C324B439A800E6E8AE /* SaveArmyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */; };
 		BA11D8C524B43ABA00E6E8AE /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */; };
-		BA11D8C624B43ABA00E6E8AE /* HeroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */; };
+		BA1D7B9A24B9404600E7780D /* Army.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7B9924B9404600E7780D /* Army.swift */; };
+		BA1D7B9C24B943FB00E7780D /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7B9B24B943FB00E7780D /* Unit.swift */; };
+		BA1D7B9E24B9451500E7780D /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7B9D24B9451500E7780D /* Weapon.swift */; };
+		BA1D7BA024B9454500E7780D /* Jack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7B9F24B9454500E7780D /* Jack.swift */; };
+		BA1D7BA224B945ED00E7780D /* Squad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7BA124B945ED00E7780D /* Squad.swift */; };
+		BA1D7BA424B9483100E7780D /* Cortex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D7BA324B9483100E7780D /* Cortex.swift */; };
 		BA2034F424AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
-		BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F324AE786E00E252A3 /* CortexView.swift */; };
 		BA2034F724AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
-		BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F624AE889A00E252A3 /* JackWeaponView.swift */; };
 		BA2034FA24AE929100E252A3 /* SquadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F924AE929100E252A3 /* SquadBuilder.swift */; };
-		BA2034FB24AE929100E252A3 /* SquadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034F924AE929100E252A3 /* SquadBuilder.swift */; };
 		BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
-		BA2034FE24AE971E00E252A3 /* AttachmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2034FC24AE971E00E252A3 /* AttachmentList.swift */; };
 		BA20351524AEE34200E252A3 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351424AEE34200E252A3 /* DoneButton.swift */; };
-		BA20351624AEE34200E252A3 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20351424AEE34200E252A3 /* DoneButton.swift */; };
 		BA20352424AF031E00E252A3 /* UnitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352324AF031E00E252A3 /* UnitInfo.swift */; };
-		BA20352524AF031E00E252A3 /* UnitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352324AF031E00E252A3 /* UnitInfo.swift */; };
 		BA20352724AF05A100E252A3 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352624AF05A100E252A3 /* UnitCell.swift */; };
-		BA20352824AF05A100E252A3 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352624AF05A100E252A3 /* UnitCell.swift */; };
 		BA20352B24AF063B00E252A3 /* UnitCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352A24AF063B00E252A3 /* UnitCounter.swift */; };
-		BA20352C24AF063B00E252A3 /* UnitCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352A24AF063B00E252A3 /* UnitCounter.swift */; };
 		BA20352E24AF081A00E252A3 /* UnitInfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352D24AF081A00E252A3 /* UnitInfoButton.swift */; };
-		BA20352F24AF081A00E252A3 /* UnitInfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352D24AF081A00E252A3 /* UnitInfoButton.swift */; };
 		BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353024AF0A7200E252A3 /* AttachmentCell.swift */; };
-		BA20353224AF0A7200E252A3 /* AttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353024AF0A7200E252A3 /* AttachmentCell.swift */; };
 		BA20353424AF0B5F00E252A3 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353324AF0B5F00E252A3 /* AttachmentView.swift */; };
-		BA20353524AF0B5F00E252A3 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353324AF0B5F00E252A3 /* AttachmentView.swift */; };
 		BA20353724AFFDF200E252A3 /* WeaponToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353624AFFDF200E252A3 /* WeaponToggle.swift */; };
-		BA20353824AFFDF200E252A3 /* WeaponToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353624AFFDF200E252A3 /* WeaponToggle.swift */; };
 		BA20353A24B0028500E252A3 /* CortexToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353924B0028500E252A3 /* CortexToggle.swift */; };
-		BA20353B24B0028500E252A3 /* CortexToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353924B0028500E252A3 /* CortexToggle.swift */; };
 		BA20353D24B0073E00E252A3 /* CypherToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353C24B0073E00E252A3 /* CypherToggle.swift */; };
-		BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353C24B0073E00E252A3 /* CypherToggle.swift */; };
 		BA20354024B12C1B00E252A3 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */; };
-		BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353F24B12C1B00E252A3 /* ViewModifiers.swift */; };
 		BA4F969224AAA5C100AB9F4C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969124AAA5C100AB9F4C /* Tests_iOS.swift */; };
 		BA4F969D24AAA5C100AB9F4C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F969C24AAA5C100AB9F4C /* Tests_macOS.swift */; };
 		BA4F969F24AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */; };
-		BA4F96A024AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967624AAA5C000AB9F4C /* VoidBarracksApp.swift */; };
 		BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967724AAA5C000AB9F4C /* ContentView.swift */; };
-		BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F967724AAA5C000AB9F4C /* ContentView.swift */; };
 		BA4F96B424AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */; };
-		BA4F96B524AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */; };
 		BA4F96B924AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
-		BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */; };
 		BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
-		BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4F96BF24AABB4E00AB9F4C /* Assets.xcassets */; };
 		BA4F987824AAD8B300AB9F4C /* WarcasterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */; };
-		BA4F987924AAD8B300AB9F4C /* WarcasterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986C24AAD8B200AB9F4C /* WarcasterStore.swift */; };
 		BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
-		BA4F987F24AAD8B300AB9F4C /* ULRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F986F24AAD8B200AB9F4C /* ULRule.swift */; };
 		BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987024AAD8B200AB9F4C /* ULweapon.swift */; };
-		BA4F988124AAD8B300AB9F4C /* ULweapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987024AAD8B200AB9F4C /* ULweapon.swift */; };
 		BA4F988424AAD8B300AB9F4C /* ULunit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987224AAD8B200AB9F4C /* ULunit.swift */; };
-		BA4F988524AAD8B300AB9F4C /* ULunit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987224AAD8B200AB9F4C /* ULunit.swift */; };
 		BA4F988624AAD8B300AB9F4C /* ULCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987324AAD8B200AB9F4C /* ULCypher.swift */; };
-		BA4F988724AAD8B300AB9F4C /* ULCypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987324AAD8B200AB9F4C /* ULCypher.swift */; };
 		BA4F988824AAD8B300AB9F4C /* ULCortex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987424AAD8B200AB9F4C /* ULCortex.swift */; };
-		BA4F988924AAD8B300AB9F4C /* ULCortex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987424AAD8B200AB9F4C /* ULCortex.swift */; };
 		BA4F988A24AAD8B300AB9F4C /* ULfaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987524AAD8B300AB9F4C /* ULfaction.swift */; };
-		BA4F988B24AAD8B300AB9F4C /* ULfaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987524AAD8B300AB9F4C /* ULfaction.swift */; };
 		BA4F988C24AAD8B300AB9F4C /* ULjacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987624AAD8B300AB9F4C /* ULjacks.swift */; };
-		BA4F988D24AAD8B300AB9F4C /* ULjacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F987624AAD8B300AB9F4C /* ULjacks.swift */; };
 		BA4F989124AADC9F00AB9F4C /* GetJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989024AADC9F00AB9F4C /* GetJson.swift */; };
-		BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989024AADC9F00AB9F4C /* GetJson.swift */; };
 		BA4F989A24AC163100AB9F4C /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989924AC163100AB9F4C /* FactionPicker.swift */; };
-		BA4F989B24AC163100AB9F4C /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F989924AC163100AB9F4C /* FactionPicker.swift */; };
 		BA4F98A724AC402B00AB9F4C /* HeroList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A624AC402B00AB9F4C /* HeroList.swift */; };
-		BA4F98A824AC402B00AB9F4C /* HeroList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A624AC402B00AB9F4C /* HeroList.swift */; };
 		BA4F98AA24AC474D00AB9F4C /* SoloList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A924AC474D00AB9F4C /* SoloList.swift */; };
-		BA4F98AB24AC474D00AB9F4C /* SoloList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98A924AC474D00AB9F4C /* SoloList.swift */; };
 		BA4F98B024AC482700AB9F4C /* JackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AF24AC482700AB9F4C /* JackCell.swift */; };
-		BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98AF24AC482700AB9F4C /* JackCell.swift */; };
 		BA4F98B324AC483400AB9F4C /* JackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B224AC483400AB9F4C /* JackList.swift */; };
-		BA4F98B424AC483400AB9F4C /* JackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B224AC483400AB9F4C /* JackList.swift */; };
 		BA4F98B624AC48D900AB9F4C /* SquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B524AC48D900AB9F4C /* SquadList.swift */; };
-		BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B524AC48D900AB9F4C /* SquadList.swift */; };
 		BA4F98B924AC48E600AB9F4C /* SquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B824AC48E600AB9F4C /* SquadCell.swift */; };
-		BA4F98BA24AC48E600AB9F4C /* SquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98B824AC48E600AB9F4C /* SquadCell.swift */; };
 		BA4F98C024AC4D0E00AB9F4C /* UnitStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BF24AC4D0E00AB9F4C /* UnitStats.swift */; };
-		BA4F98C124AC4D0E00AB9F4C /* UnitStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98BF24AC4D0E00AB9F4C /* UnitStats.swift */; };
 		BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C224AC543000AB9F4C /* WeaponsView.swift */; };
-		BA4F98C424AC543000AB9F4C /* WeaponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C224AC543000AB9F4C /* WeaponsView.swift */; };
 		BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
-		BA4F98C724AC585900AB9F4C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98C524AC585900AB9F4C /* RulesView.swift */; };
 		BA4F98D524AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
-		BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4F98D424AD0AC900AB9F4C /* Barracks.swift */; };
 		BA61D5A924AD21A0002F047A /* LazyLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5A824AD21A0002F047A /* LazyLoad.swift */; };
-		BA61D5AA24AD21A0002F047A /* LazyLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5A824AD21A0002F047A /* LazyLoad.swift */; };
 		BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5AE24AD2D4E002F047A /* DataController.swift */; };
-		BA61D5B024AD2D4E002F047A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA61D5AE24AD2D4E002F047A /* DataController.swift */; };
 		BAC227DD24AD982200080E97 /* ArmyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227DC24AD982200080E97 /* ArmyBuilder.swift */; };
-		BAC227DE24AD982200080E97 /* ArmyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227DC24AD982200080E97 /* ArmyBuilder.swift */; };
 		BAC227E124ADA2FC00080E97 /* CypherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E024ADA2FC00080E97 /* CypherList.swift */; };
-		BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E024ADA2FC00080E97 /* CypherList.swift */; };
 		BAC227E424ADA30900080E97 /* CypherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E324ADA30900080E97 /* CypherCell.swift */; };
-		BAC227E524ADA30900080E97 /* CypherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E324ADA30900080E97 /* CypherCell.swift */; };
 		BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E624ADA31300080E97 /* CypherInfo.swift */; };
-		BAC227E824ADA31300080E97 /* CypherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E624ADA31300080E97 /* CypherInfo.swift */; };
 		BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E924ADA3D900080E97 /* RackBuilder.swift */; };
-		BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227E924ADA3D900080E97 /* RackBuilder.swift */; };
 		BAC227F024ADB23000080E97 /* JackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227EF24ADB23000080E97 /* JackBuilder.swift */; };
-		BAC227F124ADB23000080E97 /* JackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227EF24ADB23000080E97 /* JackBuilder.swift */; };
 		BAC227F724ADB63C00080E97 /* CortexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F624ADB63C00080E97 /* CortexList.swift */; };
-		BAC227F824ADB63C00080E97 /* CortexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227F624ADB63C00080E97 /* CortexList.swift */; };
 		BAC227FB24ADB6C200080E97 /* CortexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FA24ADB6C200080E97 /* CortexCell.swift */; };
-		BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FA24ADB6C200080E97 /* CortexCell.swift */; };
 		BAC227FE24ADB6FB00080E97 /* CortexInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */; };
-		BAC227FF24ADB6FB00080E97 /* CortexInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,13 +86,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BA4F967C24AAA5C100AB9F4C;
 			remoteInfo = iOS;
-		};
-		BA4F969924AAA5C100AB9F4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA4F967124AAA5C000AB9F4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA4F968424AAA5C100AB9F4C;
-			remoteInfo = macOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -161,6 +101,12 @@
 		BA11D8BE24B4341300E6E8AE /* GamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePicker.swift; sourceTree = "<group>"; };
 		BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArmyButton.swift; sourceTree = "<group>"; };
 		BA11D8C424B43ABA00E6E8AE /* HeroSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSection.swift; sourceTree = "<group>"; };
+		BA1D7B9924B9404600E7780D /* Army.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Army.swift; sourceTree = "<group>"; };
+		BA1D7B9B24B943FB00E7780D /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		BA1D7B9D24B9451500E7780D /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		BA1D7B9F24B9454500E7780D /* Jack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jack.swift; sourceTree = "<group>"; };
+		BA1D7BA124B945ED00E7780D /* Squad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squad.swift; sourceTree = "<group>"; };
+		BA1D7BA324B9483100E7780D /* Cortex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cortex.swift; sourceTree = "<group>"; };
 		BA2034F324AE786E00E252A3 /* CortexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexView.swift; sourceTree = "<group>"; };
 		BA2034F624AE889A00E252A3 /* JackWeaponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackWeaponView.swift; sourceTree = "<group>"; };
 		BA2034F924AE929100E252A3 /* SquadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadBuilder.swift; sourceTree = "<group>"; };
@@ -180,7 +126,6 @@
 		BA4F967724AAA5C000AB9F4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA4F967D24AAA5C100AB9F4C /* VoidBarracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoidBarracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4F968024AAA5C100AB9F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA4F968524AAA5C100AB9F4C /* VoidBarracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoidBarracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4F968724AAA5C100AB9F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4F968824AAA5C100AB9F4C /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		BA4F968D24AAA5C100AB9F4C /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,13 +178,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA4F968224AAA5C100AB9F4C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA4F968A24AAA5C100AB9F4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +224,19 @@
 				BA11D8C124B439A800E6E8AE /* SaveArmyButton.swift */,
 			);
 			path = ArmyViews;
+			sourceTree = "<group>";
+		};
+		BA1D7B9824B9400D00E7780D /* ModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA1D7B9924B9404600E7780D /* Army.swift */,
+				BA1D7B9B24B943FB00E7780D /* Unit.swift */,
+				BA1D7B9D24B9451500E7780D /* Weapon.swift */,
+				BA1D7B9F24B9454500E7780D /* Jack.swift */,
+				BA1D7BA124B945ED00E7780D /* Squad.swift */,
+				BA1D7BA324B9483100E7780D /* Cortex.swift */,
+			);
+			path = ModelExtensions;
 			sourceTree = "<group>";
 		};
 		BA2034FF24AE999700E252A3 /* AttachmentViews */ = {
@@ -350,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				BA4F967D24AAA5C100AB9F4C /* VoidBarracks.app */,
-				BA4F968524AAA5C100AB9F4C /* VoidBarracks.app */,
 				BA4F968D24AAA5C100AB9F4C /* Tests iOS.xctest */,
 				BA4F969824AAA5C100AB9F4C /* Tests macOS.xctest */,
 			);
@@ -395,6 +345,7 @@
 		BA4F96B624AAA6BC00AB9F4C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BA1D7B9824B9400D00E7780D /* ModelExtensions */,
 				BA4F986B24AAD88200AB9F4C /* jsonModels */,
 				BA4F96B724AAA78A00AB9F4C /* AppModel.xcdatamodeld */,
 				BA4F96B324AAA67500AB9F4C /* PersistentCloudKitContainer.swift */,
@@ -516,23 +467,6 @@
 			productReference = BA4F967D24AAA5C100AB9F4C /* VoidBarracks.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA4F968424AAA5C100AB9F4C /* macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA4F96AA24AAA5C100AB9F4C /* Build configuration list for PBXNativeTarget "macOS" */;
-			buildPhases = (
-				BA4F968124AAA5C100AB9F4C /* Sources */,
-				BA4F968224AAA5C100AB9F4C /* Frameworks */,
-				BA4F968324AAA5C100AB9F4C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = macOS;
-			productName = macOS;
-			productReference = BA4F968524AAA5C100AB9F4C /* VoidBarracks.app */;
-			productType = "com.apple.product-type.application";
-		};
 		BA4F968C24AAA5C100AB9F4C /* Tests iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA4F96AD24AAA5C100AB9F4C /* Build configuration list for PBXNativeTarget "Tests iOS" */;
@@ -562,7 +496,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BA4F969A24AAA5C100AB9F4C /* PBXTargetDependency */,
 			);
 			name = "Tests macOS";
 			productName = "Tests macOS";
@@ -579,9 +512,6 @@
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					BA4F967C24AAA5C100AB9F4C = {
-						CreatedOnToolsVersion = 12.0;
-					};
-					BA4F968424AAA5C100AB9F4C = {
 						CreatedOnToolsVersion = 12.0;
 					};
 					BA4F968C24AAA5C100AB9F4C = {
@@ -608,7 +538,6 @@
 			projectRoot = "";
 			targets = (
 				BA4F967C24AAA5C100AB9F4C /* iOS */,
-				BA4F968424AAA5C100AB9F4C /* macOS */,
 				BA4F968C24AAA5C100AB9F4C /* Tests iOS */,
 				BA4F969724AAA5C100AB9F4C /* Tests macOS */,
 			);
@@ -621,14 +550,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4F96C024AABB4E00AB9F4C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA4F968324AAA5C100AB9F4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA4F96C124AABB4E00AB9F4C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +576,7 @@
 			files = (
 				BA4F987E24AAD8B300AB9F4C /* ULRule.swift in Sources */,
 				BA4F98B324AC483400AB9F4C /* JackList.swift in Sources */,
+				BA1D7B9A24B9404600E7780D /* Army.swift in Sources */,
 				BAC227F024ADB23000080E97 /* JackBuilder.swift in Sources */,
 				BA20351524AEE34200E252A3 /* DoneButton.swift in Sources */,
 				BA20352724AF05A100E252A3 /* UnitCell.swift in Sources */,
@@ -663,11 +585,14 @@
 				BA4F988624AAD8B300AB9F4C /* ULCypher.swift in Sources */,
 				BA11D8B124B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
 				BA4F96B924AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */,
+				BA1D7B9C24B943FB00E7780D /* Unit.swift in Sources */,
 				BA61D5AF24AD2D4E002F047A /* DataController.swift in Sources */,
 				BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */,
 				BA20353424AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
 				BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */,
+				BA1D7BA024B9454500E7780D /* Jack.swift in Sources */,
 				BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */,
+				BA1D7B9E24B9451500E7780D /* Weapon.swift in Sources */,
 				BA4F98AA24AC474D00AB9F4C /* SoloList.swift in Sources */,
 				BA4F988024AAD8B300AB9F4C /* ULweapon.swift in Sources */,
 				BA4F988A24AAD8B300AB9F4C /* ULfaction.swift in Sources */,
@@ -684,6 +609,7 @@
 				BA4F96A124AAA5C100AB9F4C /* ContentView.swift in Sources */,
 				BA11D8C524B43ABA00E6E8AE /* HeroSection.swift in Sources */,
 				BA4F987824AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
+				BA1D7BA424B9483100E7780D /* Cortex.swift in Sources */,
 				BA4F98C024AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
 				BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
 				BAC227EA24ADA3D900080E97 /* RackBuilder.swift in Sources */,
@@ -705,6 +631,7 @@
 				BA4F98C624AC585900AB9F4C /* RulesView.swift in Sources */,
 				BA2034FD24AE971E00E252A3 /* AttachmentList.swift in Sources */,
 				BA11D8BF24B4341300E6E8AE /* GamePicker.swift in Sources */,
+				BA1D7BA224B945ED00E7780D /* Squad.swift in Sources */,
 				BA11D8BA24B4074900E6E8AE /* ClipboardController.swift in Sources */,
 				BA20353724AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
 				BA20352B24AF063B00E252A3 /* UnitCounter.swift in Sources */,
@@ -714,71 +641,6 @@
 				BAC227E424ADA30900080E97 /* CypherCell.swift in Sources */,
 				BA4F988C24AAD8B300AB9F4C /* ULjacks.swift in Sources */,
 				BA11D8C224B439A800E6E8AE /* SaveArmyButton.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA4F968124AAA5C100AB9F4C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA4F987F24AAD8B300AB9F4C /* ULRule.swift in Sources */,
-				BA2034FB24AE929100E252A3 /* SquadBuilder.swift in Sources */,
-				BA4F98B424AC483400AB9F4C /* JackList.swift in Sources */,
-				BAC227F124ADB23000080E97 /* JackBuilder.swift in Sources */,
-				BA4F988924AAD8B300AB9F4C /* ULCortex.swift in Sources */,
-				BA2034FE24AE971E00E252A3 /* AttachmentList.swift in Sources */,
-				BA4F988724AAD8B300AB9F4C /* ULCypher.swift in Sources */,
-				BA4F96BA24AAA78A00AB9F4C /* AppModel.xcdatamodeld in Sources */,
-				BA61D5B024AD2D4E002F047A /* DataController.swift in Sources */,
-				BA4F98C424AC543000AB9F4C /* WeaponsView.swift in Sources */,
-				BAC227E824ADA31300080E97 /* CypherInfo.swift in Sources */,
-				BA4F98AB24AC474D00AB9F4C /* SoloList.swift in Sources */,
-				BA4F988124AAD8B300AB9F4C /* ULweapon.swift in Sources */,
-				BA4F988B24AAD8B300AB9F4C /* ULfaction.swift in Sources */,
-				BA61D5AA24AD21A0002F047A /* LazyLoad.swift in Sources */,
-				BAC227DE24AD982200080E97 /* ArmyBuilder.swift in Sources */,
-				BA4F989224AADC9F00AB9F4C /* GetJson.swift in Sources */,
-				BA11D8C624B43ABA00E6E8AE /* HeroSection.swift in Sources */,
-				BA20353524AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
-				BA4F98B124AC482700AB9F4C /* JackCell.swift in Sources */,
-				BA4F98B724AC48D900AB9F4C /* SquadList.swift in Sources */,
-				BA4F98D624AD0AC900AB9F4C /* Barracks.swift in Sources */,
-				BA11D8B524B3DE1500E6E8AE /* Updater.swift in Sources */,
-				BA20353224AF0A7200E252A3 /* AttachmentCell.swift in Sources */,
-				BA20354124B12C1B00E252A3 /* ViewModifiers.swift in Sources */,
-				BA4F96A224AAA5C100AB9F4C /* ContentView.swift in Sources */,
-				BA20352824AF05A100E252A3 /* UnitCell.swift in Sources */,
-				BA11D8B224B1CA4900E6E8AE /* UnitSwitch.swift in Sources */,
-				BA11D8C024B4341300E6E8AE /* GamePicker.swift in Sources */,
-				BA20353E24B0073E00E252A3 /* CypherToggle.swift in Sources */,
-				BA2034F524AE786E00E252A3 /* CortexView.swift in Sources */,
-				BA4F987924AAD8B300AB9F4C /* WarcasterStore.swift in Sources */,
-				BA4F98C124AC4D0E00AB9F4C /* UnitStats.swift in Sources */,
-				BA11D8B824B400DD00E6E8AE /* StoreController.swift in Sources */,
-				BAC227EB24ADA3D900080E97 /* RackBuilder.swift in Sources */,
-				BAC227E224ADA2FC00080E97 /* CypherList.swift in Sources */,
-				BAC227FC24ADB6C200080E97 /* CortexCell.swift in Sources */,
-				BA2034F824AE889A00E252A3 /* JackWeaponView.swift in Sources */,
-				BA4F98A824AC402B00AB9F4C /* HeroList.swift in Sources */,
-				BA11D8BB24B4074900E6E8AE /* ClipboardController.swift in Sources */,
-				BA20352C24AF063B00E252A3 /* UnitCounter.swift in Sources */,
-				BA20353824AFFDF200E252A3 /* WeaponToggle.swift in Sources */,
-				BA11D8C324B439A800E6E8AE /* SaveArmyButton.swift in Sources */,
-				BA20353B24B0028500E252A3 /* CortexToggle.swift in Sources */,
-				BA4F96A024AAA5C100AB9F4C /* VoidBarracksApp.swift in Sources */,
-				BAC227F824ADB63C00080E97 /* CortexList.swift in Sources */,
-				BA20352524AF031E00E252A3 /* UnitInfo.swift in Sources */,
-				BAC227FF24ADB6FB00080E97 /* CortexInfo.swift in Sources */,
-				BA4F96B524AAA67500AB9F4C /* PersistentCloudKitContainer.swift in Sources */,
-				BA20352F24AF081A00E252A3 /* UnitInfoButton.swift in Sources */,
-				BA4F988524AAD8B300AB9F4C /* ULunit.swift in Sources */,
-				BA4F98C724AC585900AB9F4C /* RulesView.swift in Sources */,
-				BA11D8AF24B1AB1500E6E8AE /* ViewExtensions.swift in Sources */,
-				BA4F989B24AC163100AB9F4C /* FactionPicker.swift in Sources */,
-				BA4F98BA24AC48E600AB9F4C /* SquadCell.swift in Sources */,
-				BA20351624AEE34200E252A3 /* DoneButton.swift in Sources */,
-				BAC227E524ADA30900080E97 /* CypherCell.swift in Sources */,
-				BA4F988D24AAD8B300AB9F4C /* ULjacks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,11 +667,6 @@
 			isa = PBXTargetDependency;
 			target = BA4F967C24AAA5C100AB9F4C /* iOS */;
 			targetProxy = BA4F968E24AAA5C100AB9F4C /* PBXContainerItemProxy */;
-		};
-		BA4F969A24AAA5C100AB9F4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA4F968424AAA5C100AB9F4C /* macOS */;
-			targetProxy = BA4F969924AAA5C100AB9F4C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -872,6 +729,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -926,6 +784,7 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -971,54 +830,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BA4F96AB24AAA5C100AB9F4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AXA7K5CJZ2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = tan.VoidBarracks;
-				PRODUCT_NAME = VoidBarracks;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		BA4F96AC24AAA5C100AB9F4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AXA7K5CJZ2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = tan.VoidBarracks;
-				PRODUCT_NAME = VoidBarracks;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1128,15 +939,6 @@
 			buildConfigurations = (
 				BA4F96A824AAA5C100AB9F4C /* Debug */,
 				BA4F96A924AAA5C100AB9F4C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA4F96AA24AAA5C100AB9F4C /* Build configuration list for PBXNativeTarget "macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA4F96AB24AAA5C100AB9F4C /* Debug */,
-				BA4F96AC24AAA5C100AB9F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

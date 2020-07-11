@@ -15,7 +15,7 @@ struct JackCell: View {
     var body: some View {
         if let army = jack.army {
             return NavigationLink(
-                destination: JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh)
+                destination: LazyLoad(JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh))
                     .accentColor(Color("color.\(army.shortName!)")),
                 isActive: $isPresented) {
                 Text("\(jack.name!)")
