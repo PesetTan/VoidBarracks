@@ -62,7 +62,7 @@ struct BarracksCell: View {
     @State private var isActive: Bool = false
 
     var body: some View {
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         if army.id == nil {
             return Text("").eraseToAnyView()
         }
@@ -82,6 +82,7 @@ struct BarracksCell: View {
                             .font(.title2)
                         Text("\(dateFormatter.string(from: army.lastModified!))")
                             .font(.caption)
+                            .foregroundColor(.gray)
                     }
 
                 }
