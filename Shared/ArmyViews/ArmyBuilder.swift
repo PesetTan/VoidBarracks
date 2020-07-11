@@ -9,17 +9,21 @@ import SwiftUI
 import CoreData
 
 struct ArmyBuilder: View {
-    var armyId: String
+    var fetchRequest: FetchRequest<Army>
+    var army: Army {
+        fetchRequest.wrappedValue.first ?? Army()
+    }
     @Binding var isActive: Bool
     @State var refresh: Bool = true
 
-    @FetchRequest(
-        entity: Army.entity(),
-        sortDescriptors: []
-    ) var armies: FetchedResults<Army>
+    init(armyId: String, isActive: Binding<Bool>) {
+        let predicate = NSPredicate(format: "id == %@", armyId)
+        self.fetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: predicate)
+        self._isActive = isActive
+    }
 
     var body: some View {
-        let army = (armies.first{$0.id == armyId})
+
         return ScrollView {
             if refresh {
                 EmptyView()
@@ -51,11 +55,9 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: soloHeader) {
-                        if let solos = (army.solos as! Set<Solo>) {
-                            SoloList(solos: solos.sorted{$0.name! < $1.name!})
-                                .environmentObject(army)
-                                .customCell()
-                        }
+                        SoloList(solos: army.solosArray)
+                            .environmentObject(army)
+                            .customCell()
                     }
                 }
                 .padding(.leading, 10)
@@ -65,10 +67,8 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: jackHeader) {
-                        if let jacks = (army.jacks as! Set<Jack>) {
-                            JackList(jacks: jacks.sorted{$0.name! < $1.name!}, refresh: $refresh)
-                                .environmentObject(army)
-                        }
+                        JackList(jacks: army.jacksArray, refresh: $refresh)
+                            .environmentObject(army)
                     }
                 }
                 .padding(.leading, 10)
@@ -78,10 +78,8 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: squadHeader) {
-                        if let squads = (army.squads as! Set<Squad>) {
-                            SquadList(squads: squads.sorted{$0.name! < $1.name!}, refresh: $refresh)
-                                .environmentObject(army)
-                        }
+                        SquadList(squads: army.squadsArray, refresh: $refresh)
+                            .environmentObject(army)
                     }
                 }
                 .padding(.leading, 10)
@@ -114,7 +112,7 @@ struct ArmyBuilder: View {
     }
 
     var rackStats: some View {
-        let rack = armies.first{$0.id == armyId}!.rack!
+        let rack = army.rack!
         return HStack {
             Spacer()
             Text("F:\(rack.furyCount)  G:\(rack.geometricCount)  H:\(rack.harmonicCount)  O:\(rack.overdriveCount)")
@@ -124,7 +122,7 @@ struct ArmyBuilder: View {
     }
 
     var rackHeader: some View {
-        let rack = armies.first{$0.id == armyId}!.rack!
+        let rack = army.rack!
         return HStack{
             Image(systemName: "book")
             Text("Rack")
@@ -144,7 +142,6 @@ struct ArmyBuilder: View {
 
 
     var soloHeader: some View {
-        let army = armies.first{$0.id == armyId}!
         return HStack{
             Image(systemName: "person")
             Text("Solos")
@@ -165,7 +162,6 @@ struct ArmyBuilder: View {
     }
 
     var jackHeader: some View {
-        let army = armies.first{$0.id == armyId}!
         return HStack{
             Image(systemName: "wrench")
             Text("'Jacks")
@@ -186,7 +182,6 @@ struct ArmyBuilder: View {
     }
 
     var squadHeader: some View {
-        let army = armies.first{$0.id == armyId}!
         return HStack{
             Image(systemName: "person.3")
             Text("Squads")
@@ -207,11 +202,9 @@ struct ArmyBuilder: View {
     }
 
     var nameField: some View {
-        let army = (armies.first{$0.id == armyId})
-
         return TextField("Custom Army Name", text: Binding<String>(
-                    get: { army!.customName ?? "" },
-                    set: { army!.customName = $0 }
+                    get: { army.customName ?? "" },
+                    set: { army.customName = $0 }
                     )) { changed in
             if changed {
                 print("chenged")
