@@ -8,36 +8,41 @@
 import SwiftUI
 
 struct HeroSection: View {
-    var army: Army
+    var viewModel: ArmyViewModel
     
     var body: some View {
         Section(header: heroHeader) {
-            if let heros = (army.heros as! Set<Hero>) {
-                HeroList(heros: heros.sorted{$0.name! < $1.name!})
-                    .environmentObject(army)
-                    .customCell()
-            }
+            heroList
+                .environmentObject(viewModel)
+                .customCell()
+
             Spacer()
         }
         .padding(.leading, 10)
         .padding(.trailing, 10)
     }
 
+    var heroList: some View {
+        ForEach(viewModel.herosViewModelsArray, id:\.id) { hero in
+            UnitCell(viewModel: hero)
+        }
+    }
+
     var heroHeader: some View {
-        return HStack{
+        HStack{
             Image(systemName: "star")
             Text("Heros")
             Spacer()
-            if army.heroCount > army.heroMax {
-                if army.heroCount - army.heroMax == 1 {
-                    Text("\(army.heroCount - army.heroMax) Hero Point Over")
+            if viewModel.heroCount > viewModel.heroMax {
+                if viewModel.heroCount - viewModel.heroMax == 1 {
+                    Text("1 Hero Point Over")
                         .font(.caption)
                 } else {
-                    Text("\(army.heroCount - army.heroMax) Hero Points Over")
+                    Text("\(viewModel.heroCount - viewModel.heroMax) Hero Points Over")
                         .font(.caption)
                 }
             } else {
-                Text("\(army.heroCount)/\(army.heroMax) Heros")
+                Text("\(viewModel.heroCount)/\(viewModel.heroMax) Heros")
                     .font(.caption)
             }
 

@@ -8,34 +8,33 @@
 import SwiftUI
 
 struct JackList: View {
-    var jacks: [Jack]
+    var jacks: [JackViewModel]
     @Binding var refresh: Bool
     
     var body: some View {
-        ForEach(jacks, id:\.id) { jack in
+        ForEach(jacks, id:\.id) { viewModel in
 
-            if jack.uuid != nil {
-                JackCell(jack: jack, refresh: $refresh)
+            if viewModel.uuid != nil {
+                JackCell(viewModel: viewModel, refresh: $refresh)
                     .customCell()
                     .foregroundColor(.primary)
 
-                CustomJackList(customJacks: jack.customJacksArray, refresh: $refresh)
-                    .frame(height: 70 * CGFloat(jack.customJacksArray.count)).animation(.default)
-
+                CustomJackList(customJacks: viewModel.customJackViewModelsArray, refresh: $refresh)
+                    .frame(height: 70 * CGFloat(viewModel.customJackViewModelsArray.count)).animation(.default)
             }
         }
     }
 }
 
 struct CustomJackList: View {
-    var customJacks: [Jack]
+    var customJacks: [JackViewModel]
     @Binding var refresh: Bool
     @Environment(\.managedObjectContext) private var context
 
     var body: some View {
         List {
             ForEach(customJacks, id:\.uuid) { jack in
-                UnitCell(unit: jack)
+                UnitCell(viewModel: jack)
                     .customCell()
                     .foregroundColor(.accentColor)
             }

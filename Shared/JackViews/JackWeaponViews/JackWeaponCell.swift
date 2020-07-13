@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct JackWeaponCell: View {
-    @ObservedObject var weapon: Weapon
-    var weapons: Set<Weapon>
-    @ObservedObject var jack: Jack
+    @ObservedObject var weaponViewModel: WeaponViewModel
+    var weaponViewModels: [WeaponViewModel]
+    @ObservedObject var jackViewModel: JackViewModel
     @State private var isPresented: Bool = false
-
+    @Environment(\.managedObjectContext) var context
+    
     var body: some View {
         HStack {
             Button {
                 isPresented.toggle()
             } label: {
-                Text("\(weapon.name!)")
+                Text("\(weaponViewModel.name!)")
             }
             .sheet(isPresented: $isPresented) {
-                JackWeaponInfo(weapon: weapon, isPresented: $isPresented)
+                JackWeaponInfo(weaponViewModel: weaponViewModel, isPresented: $isPresented)
+                    .environment(\.managedObjectContext, context)
             }
             Spacer()
 
-            WeaponToggle(selected: Binding<Bool>(
-                get: { weapon.selected },
-                set: {weapon.selected = $0}
+            WeaponToggle(count: Binding<Int16>(
+                get: { weaponViewModel.count },
+                set: {weaponViewModel.count = $0}
             ),
-            weapon: weapon, group: weapons, jack: jack)
+            weaponViewModel: weaponViewModel,
+            groupViewModel: weaponViewModels,
+            jackViewModel: jackViewModel)
 
         }
 

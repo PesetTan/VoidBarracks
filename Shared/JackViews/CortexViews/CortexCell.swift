@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct CortexCell: View {
-    @ObservedObject var cortex: Cortex
-    @ObservedObject var jack: Jack
+    @ObservedObject var cortexViewModel: CortexViewModel
+    @ObservedObject var jackViewModel: JackViewModel
     @State private var isPresented: Bool = false
-
+    @Environment(\.managedObjectContext) var context
+    
     var body: some View {
         Button {
             isPresented.toggle()
         } label: {
             HStack{
-                Text("\(cortex.name!)")
+                Text("\(cortexViewModel.name!)")
                 Spacer()
-                CortexToggle(selected: Binding<Bool>(
-                    get: { cortex.selected },
-                    set: { cortex.selected = $0 }
-                ),
-                jack: jack)
+                CortexToggle(count: Binding<Int16>(
+                    get: { cortexViewModel.count },
+                    set: { cortexViewModel.count = $0 }
+                ), jackViewModel: jackViewModel)
             }
         }
         .sheet(isPresented: $isPresented) {
-            CortexInfo(cortex: cortex, isPresented: $isPresented)
+            CortexInfo(cortexId: cortexViewModel.id!, isPresented: $isPresented).environment(\.managedObjectContext, context)
         }
     }
 }

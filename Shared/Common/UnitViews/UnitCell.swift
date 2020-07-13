@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct UnitCell: View {
-    @ObservedObject var unit: Unit
+    @ObservedObject var viewModel: UnitViewModel
     @State private var isPresented: Bool = false
+    @Environment(\.managedObjectContext) var context
 
     var body: some View {
         HStack {
@@ -22,40 +23,40 @@ struct UnitCell: View {
                 }
             }
             .sheet(isPresented: $isPresented) {
-                LazyLoad(UnitInfo(unit: unit, isPresented: $isPresented))
+                LazyLoad(UnitInfo(unitId: viewModel.id!, viewModelId: viewModel.uuid!, isPresented: $isPresented)
+                            .environment(\.managedObjectContext, context)
+                )
             }
 
             Spacer()
 
-            if unit is Hero {
-                UnitCounter(unit: unit, maxCount: 1)
+            if viewModel is HeroViewModel {
+                UnitCounter(viewModel: viewModel, maxCount: 1)
             } else {
-                UnitCounter(unit: unit, maxCount: 3)
+                UnitCounter(viewModel: viewModel, maxCount: 3)
             }
         }
     }
 
     var unitName: some View {
-        if let jack = unit as? Jack {
+        if let jack = viewModel as? JackViewModel {
             if jack.customName! == "" {
                 return Text(jack.name!)
             } else {
                 return Text(jack.customName!)
             }
-        } else if let squad = unit as? Squad {
-            if squad.customName! == "" {
-                return Text(squad.name!)
-            } else {
-                return Text(squad.customName!)
-            }
         } else {
-            return Text("\(unit.name ?? "No Name")")
+            if viewModel.customName! == "" {
+                return Text(viewModel.name!)
+            } else {
+                return Text(viewModel.customName!)
+            }
         }
     }
 
     var cortexName: some View {
-        if let jack = unit as? Jack, let cortexes = (jack.optionsForCortex as! Set<Cortex>?) {
-            if let cortex = cortexes.first(where: {$0.selected}) {
+        if let jack = viewModel as? JackViewModel {
+            if let cortex = jack.cortexOptionsArray.first(where: {$0.count > 0}) {
                 return Text(cortex.name!).font(.caption)
             } else {
                 return Text("")

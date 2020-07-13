@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RackBuilder: View {
     @State private var isActive: Bool = false
-    @EnvironmentObject var army: Army
+    @EnvironmentObject var viewModel: ArmyViewModel
 
     var body: some View {
-        if let shortName = army.shortName {
-            return NavigationLink(destination: LazyLoad(CypherList().environmentObject(army))
+        if let shortName = viewModel.shortName {
+            return NavigationLink(destination: LazyLoad(CypherList().environmentObject(viewModel.rackViewModel!))
                                     .accentColor(Color("color.\(shortName)")),
                                   isActive: $isActive) {
                 Text("Configure Your Rack")

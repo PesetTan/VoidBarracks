@@ -14,14 +14,22 @@ struct WeaponsView: View {
         VStack {
             ForEach(weapons, id:\.id) { weapon in
                 Divider()
-                WeaponView(weapon: weapon).padding()
+                WeaponView(weaponId: weapon.id!).padding()
             }
         }
     }
 }
 
 struct WeaponView: View {
-    var weapon: Weapon
+    var fetchRequest: FetchRequest<Weapon>
+    var weapon: Weapon {
+        fetchRequest.wrappedValue.first ?? Weapon()
+    }
+
+    init(weaponId: String) {
+        let predicate = NSPredicate(format: "id == %@", weaponId)
+        self.fetchRequest = FetchRequest(entity: Weapon.entity(), sortDescriptors: [], predicate: predicate)
+    }
 
     var body: some View {
         VStack {

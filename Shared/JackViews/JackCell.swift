@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct JackCell: View {
-    @ObservedObject var jack: Jack
+    @ObservedObject var viewModel: JackViewModel
     @State private var isPresented: Bool = false
     @Binding var refresh: Bool
     
     var body: some View {
-        if let army = jack.army {
+//        if let armyViewModel = viewModel.armyViewModel {
             return NavigationLink(
-                destination: LazyLoad(JackBuilder(jackId: jack.uuid!, isActive: $isPresented, refresh: $refresh))
-                    .accentColor(Color("color.\(army.shortName!)")),
+                destination: LazyLoad(JackBuilder(jackId: viewModel.uuid!, isActive: $isPresented, refresh: $refresh))
+//                    .accentColor(Color("color.\(armyViewModel.shortName!)"))
+                ,
                 isActive: $isPresented) {
-                Text("\(jack.name!)")
+                Text("\(viewModel.name!)")
                     .fixedSize(horizontal: true, vertical: false)
 
                 Spacer(minLength: 5)
 
-                Text("Configure \(jack.title!)")
+                Text("Configure \(self.viewModel.title!)")
                     .font(.caption)
                     .foregroundColor(.gray)
                     .fixedSize(horizontal: true, vertical: false)
 
-            }.eraseToAnyView()
-        } else {
-            return Text("").eraseToAnyView()
-        }
+            }
+//            .eraseToAnyView()
+//        } else {
+//            return Text("").eraseToAnyView()
+//        }
     }
 }

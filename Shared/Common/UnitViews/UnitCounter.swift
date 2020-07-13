@@ -9,16 +9,16 @@ import SwiftUI
 import CoreHaptics
 
 struct UnitCounter: View {
-    @ObservedObject var unit: Unit
-    @EnvironmentObject var army: Army
+    @ObservedObject var viewModel: UnitViewModel
+    @EnvironmentObject var armyViewModel: ArmyViewModel
     var maxCount: Int = 3
 //    @State private var engine: CHHapticEngine?
 
     var body: some View {
         return HStack {
-            if let symbol = unit.symbol {
+            if let symbol = armyViewModel.symbol {
                 ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
-                    if index >= unit.count {
+                    if index >= viewModel.count {
                         Image("\(symbol)").foregroundColor(.gray).opacity(0.5)
                     } else {
                         Image("\(symbol).fill").foregroundColor(.accentColor)
@@ -26,7 +26,7 @@ struct UnitCounter: View {
                 }
             } else {
                 ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
-                    if index >= unit.count {
+                    if index >= viewModel.count {
                         Image("circle").foregroundColor(.gray).opacity(0.5)
                     } else {
                         Image("circle.fill").foregroundColor(.accentColor)
@@ -36,38 +36,38 @@ struct UnitCounter: View {
 
         }
         .onTapGesture {
-            unit.count += 1
-            if unit.count > maxCount {
-                unit.count = 0
+            viewModel.count += 1
+            if viewModel.count > maxCount {
+                viewModel.count = 0
             }
 
-            if unit is Hero {
+            if viewModel is HeroViewModel {
                 var heroCount: Int16 = 0
-                (army.heros as! Set<Hero>).forEach { hero in
+                armyViewModel.herosViewModelsArray.forEach { hero in
                     heroCount += hero.count
                 }
-                army.heroCount = heroCount
+                armyViewModel.heroCount = heroCount
                 return
             }
 
             var unitCount: Int16 = 0
 
-            (army.solos as! Set<Solo>).forEach { solo in
+            armyViewModel.solosViewModelsArray.forEach { solo in
                 unitCount += solo.count
             }
 
-            (army.jacks as! Set<Jack>).forEach { jack in
-                (jack.customJacks as! Set<Jack>).forEach { custom in
+            armyViewModel.jacksViewModelsArray.forEach { jack in
+                jack.customJackViewModelsArray.forEach { custom in
                     unitCount += custom.count
                 }
             }
 
-            (army.squads as! Set<Squad>).forEach { squad in
-                (squad.customSquads as! Set<Squad>).forEach { custom in
+            armyViewModel.squadsViewModelsArray.forEach { squad in
+                squad.customSquadViewModelsArray.forEach { custom in
                     unitCount += custom.count
                 }
             }
-            army.unitCount = unitCount
+            armyViewModel.unitCount = unitCount
 
 //            complexSuccess()
             simpleSuccess()

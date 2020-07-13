@@ -8,39 +8,31 @@
 import SwiftUI
 
 struct CypherList: View {
-    @EnvironmentObject var army: Army
+    @EnvironmentObject var viewModel: CypherViewModel
 
     var body: some View {
         Form {
             Section(header: furyHeader) {
-                if let cyphers = (army.rack!.furies as! Set<Cypher>) {
-                    ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher)
-                    }
+                ForEach(viewModel.furiesArray, id:\.id) { cypher in
+                    CypherCell(viewModel: cypher)
                 }
             }
 
             Section(header: geometricsHeader) {
-                if let cyphers = (army.rack!.geometrics as! Set<Cypher>) {
-                    ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher)
-                    }
+                ForEach(viewModel.geometricsArray, id:\.id) { cypher in
+                    CypherCell(viewModel: cypher)
                 }
             }
 
             Section(header: harmonicsHeader) {
-                if let cyphers = (army.rack!.harmonics as! Set<Cypher>) {
-                    ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher)
-                    }
+                ForEach(viewModel.harmonicsArray, id:\.id) { cypher in
+                    CypherCell(viewModel: cypher)
                 }
             }
 
             Section(header: overdrivesHeader) {
-                if let cyphers = (army.rack!.overdrives as! Set<Cypher>) {
-                    ForEach(cyphers.sorted{$0.id! < $1.id!}, id:\.id) { cypher in
-                        CypherCell(cypher: cypher)
-                    }
+                ForEach(viewModel.overdrivesArray, id:\.id) { cypher in
+                    CypherCell(viewModel: cypher)
                 }
             }
         }
@@ -54,7 +46,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack {
+            if let rack = viewModel {
                 let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
 
                 if rack.furyCount < 3 {
@@ -81,7 +73,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack {
+            if let rack = viewModel {
                 let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
 
                 if rack.geometricCount < 3 {
@@ -105,7 +97,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack {
+            if let rack = viewModel {
                 let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
 
                 if rack.harmonicCount < 3 {
@@ -129,7 +121,7 @@ struct CypherList: View {
 
             Spacer()
 
-            if let rack = army.rack {
+            if let rack = viewModel {
                 let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
 
                 if rack.overdriveCount < 3 {

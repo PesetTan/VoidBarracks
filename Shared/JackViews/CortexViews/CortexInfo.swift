@@ -8,19 +8,28 @@
 import SwiftUI
 
 struct CortexInfo: View {
-    var cortex: Cortex
     @Binding var isPresented: Bool
+    var fetchRequest: FetchRequest<Cortex>
+    var cortex: Cortex {
+        fetchRequest.wrappedValue.first ?? Cortex()
+    }
+
+    init(cortexId: String, isPresented: Binding<Bool>) {
+        let predicate = NSPredicate(format: "id == %@", cortexId)
+        self.fetchRequest = FetchRequest(entity: Cortex.entity(), sortDescriptors: [], predicate: predicate)
+        self._isPresented = isPresented
+    }
+
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    RulesView(rules: cortex.rulesArray)
-                        .padding(.top, 10)
-                }
+        ScrollView {
+            DoneButton(isPresented: $isPresented)
+            Text("\(cortex.name!)")
+
+            VStack {
+                RulesView(rules: cortex.rulesArray)
+                    .padding(.top, 10)
             }
-            .navigationBarTitle(Text("\(cortex.name!)"))
-            .navigationBarItems(trailing: DoneButton(isPresented: $isPresented))
         }
     }
 }

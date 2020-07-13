@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SoloList: View {
-    var solos: [Solo]
+    var viewModels: [SoloViewModel]
 
     var body: some View {
-        ForEach(solos, id:\.id) { solo in
-            UnitCell(unit: solo)
+        ForEach(viewModels, id:\.id) { viewModel in
+            UnitCell(viewModel: viewModel)
         }
     }
 }

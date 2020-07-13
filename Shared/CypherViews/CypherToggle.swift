@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CypherToggle: View {
-    @ObservedObject var cypher: Cypher
+    @ObservedObject var viewModel: CypherViewModel
     var maxCount: Int = 1
-    @EnvironmentObject var army: Army
+    @EnvironmentObject var army: ArmyViewModel
 
     var body: some View {
         HStack {
             ForEach(0 ..< maxCount) { index in
-                if index >= cypher.count {
+                if index >= viewModel.count {
                     Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
                 } else {
                     Image(systemName: "circle.fill").foregroundColor(.accentColor)
@@ -23,15 +23,15 @@ struct CypherToggle: View {
             }
         }
         .onTapGesture {
-            let rack = army.rack!
+            let rack = army.rackViewModel!
 
-            cypher.count += 1
-            if cypher.count > maxCount {
-                cypher.count = 0
+            viewModel.count += 1
+            if viewModel.count > maxCount {
+                viewModel.count = 0
             }
 
-            if cypher.count == 1 {
-                switch cypher.type {
+            if viewModel.count == 1 {
+                switch viewModel.type {
                     case "FURY": rack.furyCount += 1
                     case "GEOMETRIC": rack.geometricCount += 1
                     case "HARMONIC": rack.harmonicCount += 1
@@ -39,7 +39,7 @@ struct CypherToggle: View {
                     default: rack.overdriveCount += 1
                 }
             } else {
-                switch cypher.type {
+                switch viewModel.type {
                     case "FURY": rack.furyCount -= 1
                     case "GEOMETRIC": rack.geometricCount -= 1
                     case "HARMONIC": rack.harmonicCount -= 1
@@ -50,10 +50,6 @@ struct CypherToggle: View {
 
             if army.store != nil {
                 army.store = army.store
-            }
-
-            if army.user != nil {
-                army.user = army.user
             }
 
         }

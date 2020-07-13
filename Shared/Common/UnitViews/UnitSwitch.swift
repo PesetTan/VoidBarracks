@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct UnitSwitch: View {
-    @ObservedObject var unit: Unit
+    @ObservedObject var viewModel: UnitViewModel
     var maxCount: Int = 1
 
     var body: some View {
         HStack {
             ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
-                if index >= unit.count {
+                if index >= viewModel.count {
                     Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
                 } else {
                     Image(systemName: "circle.fill").foregroundColor(.accentColor)
@@ -22,9 +22,9 @@ struct UnitSwitch: View {
             }
         }
         .onTapGesture {
-            unit.count += 1
-            if unit.count > maxCount {
-                unit.count = 0
+            viewModel.count += 1
+            if viewModel.count > maxCount {
+                viewModel.count = 0
             }
         }
     }

@@ -8,6 +8,7 @@
 import Foundation
 
 extension Army {
+
     public var herosArray: [Hero] {
         let heros = self.heros as? Set<Hero> ?? []
         return heros.sorted{$0.name! < $1.name!}
@@ -26,5 +27,9 @@ extension Army {
     public var squadsArray: [Squad] {
         let squads = self.squads as? Set<Squad> ?? []
         return squads.sorted{$0.name! < $1.name!}
+    }
+
+    public var rackUnwrapped: Rack {
+        return self.rack ?? Rack()
     }
 }

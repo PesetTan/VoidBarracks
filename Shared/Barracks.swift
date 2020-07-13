@@ -24,23 +24,28 @@ struct BarrackArmies: View {
 
     var body: some View {
         List {
-            if let user = users.first, let armies = (user.armies as! Set<Army>).sorted{$0.lastModified! > $1.lastModified!} {
-                if (armies.isEmpty) {
+            if let user = users.first, let viewModels = user.viewModelsArray {
+                if (viewModels.isEmpty) {
                     HStack {
                         Spacer()
                         Text("No Armies Found")
                         Spacer()
                     }
                 } else {
-                    ForEach(armies, id:\.self) { army in
-                        LazyLoad(BarracksCell(army: army))
+                    ForEach(viewModels, id:\.self) { viewModel in
+                        LazyLoad(BarracksCell(viewModel: viewModel))
                     }
                     .onDelete { indexSet in
                         indexSet.forEach { index in
-                            let army = armies[index]
-                            context.delete(army)
+                            let vm = viewModels[index]
+                            context.delete(vm)
                         }
-                        try! context.save()
+//                        do {
+//                            try context.save()
+//                        } catch {
+//                            print("error when saving")
+//                        }
+
                     }
                 }
 
@@ -57,30 +62,30 @@ struct BarrackArmies: View {
 }
 
 struct BarracksCell: View {
-    @ObservedObject var army: Army
+    @ObservedObject var viewModel: ArmyViewModel
     private let dateFormatter = DateFormatter()
     @State private var isActive: Bool = false
 
     var body: some View {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        if army.id == nil {
+        if viewModel.id == nil {
             return Text("").eraseToAnyView()
         }
-        return NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive)
-                                .accentColor(Color("color.\(army.shortName!)")),
+        return NavigationLink(destination: ArmyBuilder(viewModelId: viewModel.id!, factionId: viewModel.factionId!, isActive: $isActive)
+                                .accentColor(Color("color.\(viewModel.shortName!)")),
                        isActive: $isActive) {
 
-            if army.customName! == "" {
+            if viewModel.customName! == "" {
                 HStack {
-                    Image("logo.\(army.shortName!)")
+                    Image("logo.\(viewModel.shortName!)")
                         .resizable()
                         .frame(width: 45, height: 45, alignment: .center)
                         .padding(10)
 
                     VStack(alignment: .leading) {
-                        Text("\(army.name!)")
+                        Text("\(viewModel.fullName!)")
                             .font(.title2)
-                        Text("\(dateFormatter.string(from: army.lastModified!))")
+                        Text("\(dateFormatter.string(from: viewModel.lastModified!))")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }
@@ -89,14 +94,14 @@ struct BarracksCell: View {
             } else {
                 Label {
                     VStack(alignment: .leading) {
-                        Text("\(army.customName!)")
+                        Text("\(viewModel.customName!)")
                             .font(.title2)
-                        Text("\(dateFormatter.string(from: army.lastModified!))")
+                        Text("\(dateFormatter.string(from: viewModel.lastModified!))")
                             .font(.caption)
                     }
 
                 } icon: {
-                    Image("logo.\(army.shortName!)")
+                    Image("logo.\(viewModel.shortName!)")
                         .resizable()
                         .frame(width: 45, height: 45, alignment: .center)
                         .padding(30)

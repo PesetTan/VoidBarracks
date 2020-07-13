@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct AttachmentList: View {
-    var attachments: Set<Attachment>
+    var attachments: [AttachmentViewModel]
 
     var body: some View {
         List {
-            if let sortedAttachments = attachments.sorted{$0.id! < $1.id!} {
-                if sortedAttachments.isEmpty {
-                    Text("NONE")
-                } else {
-                    ForEach(sortedAttachments, id:\.id) { attachment in
-                        AttachmentCell(attachment: attachment)
-                    }
+
+            if attachments.isEmpty {
+                Text("NONE")
+            } else {
+                ForEach(attachments, id:\.id) { attachment in
+                    AttachmentCell(viewModel: attachment)
                 }
             }
+
         }
     }
 }

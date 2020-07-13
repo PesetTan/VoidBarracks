@@ -8,23 +8,22 @@
 import SwiftUI
 
 struct CortexToggle: View {
-    @Binding var selected: Bool
-    @ObservedObject var jack: Jack
+    @Binding var count: Int16
+    @ObservedObject var jackViewModel: JackViewModel
 
     var body: some View {
         HStack {
-            if selected {
+            if count > 0 {
                 Image(systemName: "circle.fill").foregroundColor(.accentColor)
             } else {
                 Image(systemName: "circle.fill").foregroundColor(.gray).opacity(0.2)
             }
         }
         .onTapGesture {
-            jack.optionsForCortex = jack.optionsForCortex
-            (jack.optionsForCortex as! Set<Cortex>).forEach { item in
-                item.selected = false
+            jackViewModel.cortexOptionsArray.forEach { item in
+                item.count = 0
             }
-            selected = true
+            count = 1
         }
     }
 }

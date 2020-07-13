@@ -41,7 +41,7 @@ public class PersistentCloudKitContainer {
     }
 
     // MARK: - Core Data Deleting support
-    public static func deleteContext () {
+    public static func deleteStore () {
         let context = persistentContainer.viewContext
         let request = NSFetchRequest<Store>(entityName: "Store")
         let results = try! context.fetch(request)

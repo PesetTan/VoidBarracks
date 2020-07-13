@@ -19,26 +19,13 @@ struct FactionPicker: View {
                 if let stores = stores {
                     if let store = stores.first {
                         if store.updateAvailable {
-                            Button(action: {
-                                PersistentCloudKitContainer.deleteContext()
-                                sleep(4)
-                                let warcasterStore = WarcasterStore(context)
-                                warcasterStore.updateStore()
-                                logger.notice("UPDATING")
-                            }, label: {
-                                HStack {
-                                    Image(systemName: "arrow.2.circlepath")
-                                    Text("Update Available")
-                                }.padding()
-                            })
-
+                            updateButton
                         }
-                        if let army = (store.armies as! Set<Army>) {
-                            ForEach(army.sorted{$0.name! < $1.name!}, id:\.id) { army in
-                                if let army = army {
-                                    LazyLoad(FactionCell(army: army).accentColor(Color("color.\(army.shortName!)")))
-                                }
-
+                        if let viewModels = store.viewModelsArray {
+                            ForEach(viewModels, id:\.id) { viewModel in
+//                                if let viewModel = viewModel {
+                                    LazyLoad(FactionCell(viewModel: viewModel).accentColor(Color("color.\(viewModel.shortName!)")))
+//                                }
                             }
                         }
                     }
@@ -57,18 +44,33 @@ struct FactionPicker: View {
         }
 
     }
+
+    var updateButton: some View {
+        Button(action: {
+            PersistentCloudKitContainer.deleteStore()
+            sleep(4)
+            let warcasterStore = WarcasterStore(context)
+            warcasterStore.updateStore()
+            logger.notice("UPDATING")
+        }, label: {
+            HStack {
+                Image(systemName: "arrow.2.circlepath")
+                Text("Update Available")
+            }.padding()
+        })
+    }
 }
 
 struct FactionCell: View {
-    var army: Army
+    var viewModel: ArmyViewModel
     @State private var isActive = false
 
     var body: some View {
-        NavigationLink(destination: ArmyBuilder(armyId: army.id!, isActive: $isActive)
-                        .accentColor(Color("color.\(army.shortName!)")),
+        NavigationLink(destination: ArmyBuilder(viewModelId: viewModel.id!, factionId: viewModel.factionId!, isActive: $isActive)
+                        .accentColor(Color("color.\(viewModel.shortName!)")),
                        isActive: $isActive) {
 
-            Cell(armyName: army.name!, shortName: army.shortName!)
+            Cell(armyName: viewModel.fullName!, shortName: viewModel.shortName!)
         }
         .navigationBarTitle(Text("Recruit"))
         .shadow(color: Color.gray.opacity(0.2), radius: 10, x: -5, y: -5)

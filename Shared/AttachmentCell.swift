@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct AttachmentCell: View {
-    @ObservedObject var attachment: Attachment
+    @ObservedObject var viewModel: AttachmentViewModel
     @State private var isPresented: Bool = false
 
     var body: some View {
-        if attachment.name != nil {
+        if viewModel.name != nil {
             return Button {
                 isPresented.toggle()
             } label: {
                 HStack {
-                    Text("\(attachment.name!)")
+                    Text("\(viewModel.name!)")
                     Spacer()
-                    UnitSwitch(unit: attachment)
+                    UnitSwitch(viewModel: viewModel)
                 }
             }
             .sheet(isPresented: $isPresented) {
-                UnitInfo(unit: attachment, isPresented: $isPresented)
+                UnitInfo(unitId: viewModel.id!, viewModelId: viewModel.uuid!, isPresented: $isPresented)
             }
             .eraseToAnyView()
         } else {

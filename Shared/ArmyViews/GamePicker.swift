@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GamePicker: View {
-    @ObservedObject var army: Army
+    @ObservedObject var viewModel: ArmyViewModel
     @State private var isActive: Bool = false
 
     var body: some View {
@@ -16,7 +16,7 @@ struct GamePicker: View {
             HStack {
                 Text("Game Type")
                 Spacer()
-                if let gameType = army.gameType {
+                if let gameType = viewModel.gameType {
                     Text("\(gameType)").font(.caption).foregroundColor(.gray)
                 }
 
@@ -28,16 +28,16 @@ struct GamePicker: View {
         Form {
             ForEach(["Normal Game", "Skirmish Game"], id:\.self) { type in
                 Button {
-                    army.gameType = type
+                    viewModel.gameType = type
                     if type == "Skirmish Game" {
-                        army.heroMax = 0
-                        army.unitMax = 8
-                        (army.heros as! Set<Hero>).forEach { hero in
+                        viewModel.heroMax = 0
+                        viewModel.unitMax = 8
+                        viewModel.herosViewModelsArray.forEach { hero in
                             hero.count = 0
                         }
                     } else {
-                        army.heroMax = 3
-                        army.unitMax = 15
+                        viewModel.heroMax = 3
+                        viewModel.unitMax = 15
                     }
                     isActive = false
                 } label: {

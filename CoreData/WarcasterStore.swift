@@ -75,6 +75,9 @@ class WarcasterStore: ObservableObject {
                                         let store = self.GetStore()
                                         self.context.insert(store)
                                         self.context.refresh(store, mergeChanges: true)
+
+                                        sleep(3)
+
                                         try! self.context.save()
 
                                         self.storeUpdated = true
@@ -98,7 +101,39 @@ class WarcasterStore: ObservableObject {
         store.addToArmies(GetArmy(for: "IRON_STAR_ALLIANCE"))
         store.addToArmies(GetArmy(for: "AETERNUS_CONTINUUM"))
         store.addToArmies(GetArmy(for: "MARCHER_WORLDS"))
+        store.addToViewModels(GetArmyViewModel(for: "IRON_STAR_ALLIANCE"))
+        store.addToViewModels(GetArmyViewModel(for: "AETERNUS_CONTINUUM"))
+        store.addToViewModels(GetArmyViewModel(for: "MARCHER_WORLDS"))
         return store
+    }
+
+    private func GetArmyViewModel(for factionId: String) -> ArmyViewModel {
+        let viewModel = ArmyViewModel(context: self.context)
+        let rawFaction: ULFaction = rawFactions.first{$0.id == factionId}!
+        viewModel.id = UUID().uuidString
+        viewModel.customName = ""
+        viewModel.factionId = factionId
+        viewModel.shortName = rawFaction.shortName
+        viewModel.fullName = rawFaction.name
+        viewModel.gameType = "Normal Game"
+
+        var symbol: String
+        switch factionId {
+            case "IRON_STAR_ALLIANCE": symbol = "circle"
+            case "AETERNUS_CONTINUUM": symbol = "triangle"
+            case "MARCHER_WORLDS": symbol = "square"
+            default: symbol = "circle"
+        }
+
+        viewModel.symbol = symbol
+        viewModel.addToHerosViewModels(GetHerosViewModels(for: factionId))
+        viewModel.addToSolosViewModels(GetSolosViewModels(for: factionId))
+        viewModel.addToJacksViewModels(GetJacksViewModels(for: factionId))
+        viewModel.addToSquadsViewModels(GetSquadsViewModels(for: factionId))
+
+        viewModel.rackViewModel = GetRackViewModel()
+
+        return viewModel
     }
 
     private func GetArmy(for factionId: String) -> Army {
@@ -107,6 +142,7 @@ class WarcasterStore: ObservableObject {
         army.id = UUID().uuidString
         army.name = raw.name
         army.shortName = raw.shortName
+        army.factionId = factionId
 
         var symbol = "circle"
         switch factionId {
@@ -124,6 +160,46 @@ class WarcasterStore: ObservableObject {
         return army
     }
 
+    private func GetSquadsViewModels(for factionId: String) -> NSSet {
+        var rawUnits: [ULUnit]
+        switch factionId {
+            case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
+            case "IRON_STAR_ALLIANCE": rawUnits = rawAlliance
+            case "MARCHER_WORLDS": rawUnits = rawMarchers
+            default: rawUnits = rawContinuum
+        }
+
+        var units: [SquadViewModel] = []
+        let faction = rawFactions.first{$0.id == factionId}!
+        faction.unitIds.forEach { unitId in
+            let raw: ULUnit = rawUnits.first{$0.id == unitId}!
+            let unit = SquadViewModel(context: self.context)
+            unit.uuid = UUID().uuidString
+            unit.id = raw.id
+            unit.name = raw.name
+            unit.customName = ""
+            unit.count = 0
+
+            if let attachmentIds = raw.attachmentIds {
+                attachmentIds.forEach { id in
+                    let rawAttachment = rawUnits.first{$0.id == id}!
+                    let attachment = SquadViewModel(context: self.context)
+                    attachment.id = rawAttachment.id
+                    attachment.name = rawAttachment.name
+                    attachment.uuid = UUID().uuidString
+                    attachment.count = 0
+                    unit.addToAttachments(attachment)
+                }
+            }
+
+            units.append(unit)
+
+
+        }
+
+        return NSSet(array: units)
+    }
+
     private func GetSquads(for factionId: String, withSymbol symbol: String) -> NSSet {
         var rawUnits: [ULUnit]
         switch factionId {
@@ -139,7 +215,6 @@ class WarcasterStore: ObservableObject {
             let raw: ULUnit = rawUnits.first{$0.id == squadId}!
             let squad: Squad = Squad(context: self.context)
             squad.symbol = symbol
-            squad.uuid = UUID().uuidString
             squad.id = raw.id
             squad.name = raw.name
             squad.customName = ""
@@ -207,6 +282,80 @@ class WarcasterStore: ObservableObject {
         return squad
     }
 
+    private func GetJacksViewModels(for factionId: String) -> NSSet {
+        var jacks: [JackViewModel] = []
+        let faction = rawFactions.first{$0.id == factionId}!
+        faction.jackIds.forEach { jackId in
+            let raw: ULJack = rawJacks.first{$0.id == jackId}!
+            let jack = JackViewModel(context: self.context)
+            jack.uuid = UUID().uuidString
+            jack.id = raw.id
+            jack.name = raw.name
+            jack.title = raw.title
+            jack.customName = ""
+            jack.weaponPoints = Int16(raw.weaponPoints)
+            jack.count = 0
+
+            raw.cortexOptionIds.forEach { id in
+                let rawCortex = self.rawCortex.first{$0.id == id}!
+                let cortex = CortexViewModel(context: self.context)
+                cortex.id = rawCortex.id
+                cortex.name = rawCortex.name
+                cortex.uuid = UUID().uuidString
+                cortex.count = 0
+                jack.addToCortexOptions(cortex)
+            }
+
+            raw.armOptionIds.forEach { id in
+                let rawWeapons = self.rawWeapons.first{$0.id == id}!
+                let weapon = WeaponViewModel(context: self.context)
+                weapon.id = rawWeapons.id
+                weapon.name = rawWeapons.name
+                weapon.uuid = UUID().uuidString
+                weapon.count = 0
+                weapon.cost = Int16(rawWeapons.cost!)
+                jack.addToArm1Options(weapon)
+            }
+
+            raw.armOptionIds.forEach { id in
+                let rawWeapons = self.rawWeapons.first{$0.id == id}!
+                let weapon = WeaponViewModel(context: self.context)
+                weapon.id = rawWeapons.id
+                weapon.name = rawWeapons.name
+                weapon.uuid = UUID().uuidString
+                weapon.count = 0
+                weapon.cost = Int16(rawWeapons.cost!)
+                jack.addToArm2Options(weapon)
+            }
+
+            raw.shoulderOptionIds.forEach { id in
+                let rawWeapons = self.rawWeapons.first{$0.id == id}!
+                let weapon = WeaponViewModel(context: self.context)
+                weapon.id = rawWeapons.id
+                weapon.name = rawWeapons.name
+                weapon.uuid = UUID().uuidString
+                weapon.count = 0
+                weapon.cost = Int16(rawWeapons.cost!)
+                jack.addToShoulder1Options(weapon)
+            }
+
+            raw.shoulderOptionIds.forEach { id in
+                let rawWeapons = self.rawWeapons.first{$0.id == id}!
+                let weapon = WeaponViewModel(context: self.context)
+                weapon.id = rawWeapons.id
+                weapon.name = rawWeapons.name
+                weapon.uuid = UUID().uuidString
+                weapon.count = 0
+                weapon.cost = Int16(rawWeapons.cost!)
+                jack.addToShoulder2Options(weapon)
+            }
+
+            jacks.append(jack)
+        }
+
+        return NSSet(array: jacks)
+    }
+
     private func GetJacks(for factionId: String, withSymbol symbol: String) -> NSSet {
         var jacks: [Jack] = []
         let faction = rawFactions.first{$0.id == factionId}!
@@ -214,7 +363,6 @@ class WarcasterStore: ObservableObject {
             let raw: ULJack = rawJacks.first{$0.id == jackId}!
             let jack: Jack = Jack(context: self.context)
             jack.symbol = symbol
-            jack.uuid = UUID().uuidString
             jack.id = raw.id
             jack.name = raw.name
             jack.customName = ""
@@ -266,6 +414,29 @@ class WarcasterStore: ObservableObject {
         }
 
         return NSSet(array: jacks)
+    }
+
+    private func GetSolosViewModels(for factionId: String) -> NSSet {
+        var solos: [SoloViewModel] = []
+        var rawUnits: [ULUnit]
+        switch factionId {
+            case "AETERNUS_CONTINUUM": rawUnits = rawContinuum
+            case "IRON_STAR_ALLIANCE": rawUnits = rawAlliance
+            case "MARCHER_WORLDS": rawUnits = rawMarchers
+            default: rawUnits = rawContinuum
+        }
+        let faction = rawFactions.first{$0.id == factionId}!
+        faction.soloIds.forEach { soloId in
+            let raw: ULUnit = rawUnits.first{$0.id == soloId}!
+            let solo = SoloViewModel(context: self.context)
+            solo.uuid = UUID().uuidString
+            solo.id = raw.id
+            solo.name = raw.name
+            solo.count = 0
+            solos.append(solo)
+        }
+
+        return NSSet(array: solos)
     }
 
     private func GetSolos(for factionId: String, withSymbol symbol: String) -> NSSet {
@@ -342,7 +513,23 @@ class WarcasterStore: ObservableObject {
         return NSSet(array: heros)
     }
 
-    private func GetRack(withSymbol symbol: String) -> Rack{
+    private func GetHerosViewModels(for factionId: String) -> NSSet {
+        var heros: [HeroViewModel] = []
+        let faction = rawFactions.first{$0.id == factionId}!
+        faction.heroIds.forEach { heroId in
+            let raw: ULUnit = rawHeros.first{$0.id == heroId}!
+            let hero = HeroViewModel(context: self.context)
+            hero.uuid = UUID().uuidString
+            hero.id = raw.id
+            hero.name = raw.name
+            hero.count = 0
+            heros.append(hero)
+        }
+
+        return NSSet(array: heros)
+    }
+
+    private func GetRack(withSymbol symbol: String) -> Rack {
         let rack: Rack = Rack(context: self.context)
         self.rawCyphers.forEach { raw in
             let cypher = Cypher(context: context)
@@ -354,6 +541,28 @@ class WarcasterStore: ObservableObject {
             cypher.rule = raw.rule
 
             switch cypher.type! {
+                case "FURY": rack.addToFuries(cypher)
+                case "GEOMETRIC": rack.addToGeometrics(cypher)
+                case "HARMONIC": rack.addToHarmonics(cypher)
+                case "OVERDRIVE": rack.addToOverdrives(cypher)
+                default: rack.addToOverdrives(cypher)
+            }
+        }
+
+        return rack
+    }
+
+    private func GetRackViewModel() -> CypherViewModel {
+        let rack: CypherViewModel = CypherViewModel(context: self.context)
+        self.rawCyphers.forEach { raw in
+            let cypher = CypherViewModel(context: context)
+            cypher.uuid = UUID().uuidString
+            cypher.id = raw.id
+            cypher.name = raw.name
+            cypher.count = 0
+            cypher.type = raw.type
+
+            switch raw.type {
                 case "FURY": rack.addToFuries(cypher)
                 case "GEOMETRIC": rack.addToGeometrics(cypher)
                 case "HARMONIC": rack.addToHarmonics(cypher)

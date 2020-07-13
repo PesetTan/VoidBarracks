@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct CortexView: View {
-    var cortex: Cortex
+    var fetchRequest: FetchRequest<Cortex>
+    var cortex: Cortex {
+        fetchRequest.wrappedValue.first ?? Cortex()
+    }
+
+    init(cortexId: String) {
+        let predicate = NSPredicate(format: "id == %@", cortexId)
+        self.fetchRequest = FetchRequest(entity: Cortex.entity(), sortDescriptors: [], predicate: predicate)
+    }
 
     var body: some View {
         VStack {

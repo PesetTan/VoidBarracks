@@ -9,45 +9,84 @@ import SwiftUI
 import CoreData
 
 struct ArmyBuilder: View {
-    var fetchRequest: FetchRequest<Army>
-    var army: Army {
-        fetchRequest.wrappedValue.first ?? Army()
+    var armyFetchRequest: FetchRequest<Army>
+    var army: Army? {
+        armyFetchRequest.wrappedValue.first ?? nil
     }
+
+    var viewModelFetchRequest: FetchRequest<ArmyViewModel>
+    var viewModel: ArmyViewModel? {
+        viewModelFetchRequest.wrappedValue.first ?? nil
+    }
+
     @Binding var isActive: Bool
     @State var refresh: Bool = true
 
-    init(armyId: String, isActive: Binding<Bool>) {
-        let predicate = NSPredicate(format: "id == %@", armyId)
-        self.fetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: predicate)
+    init(viewModelId: String, factionId: String, isActive: Binding<Bool>) {
+        let viewModelPredicate = NSPredicate(format: "id == %@", viewModelId)
+        self.viewModelFetchRequest = FetchRequest(entity: ArmyViewModel.entity(), sortDescriptors: [], predicate: viewModelPredicate)
+
+        let armyPredicate = NSPredicate(format: "factionId == %@", factionId)
+        self.armyFetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: armyPredicate)
+        
         self._isActive = isActive
     }
 
     var body: some View {
-
-        return ScrollView {
+        ScrollView {
             if refresh {
                 EmptyView()
             } else {
                 EmptyView()
             }
 
-            if let army = army {
+            if let viewModel = viewModel {
                 Section {
-                    nameField .customCell()
+                    nameField
+                        .customCell()
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 20)
 
-                GamePicker(army: army)
+                GamePicker(viewModel: viewModel)
                     .customCell()
                     .padding(.leading, 10)
                     .padding(.trailing, 10)
                     .padding(.bottom, 20)
 
+                unitsView
+
                 VStack {
-                    if army.gameType == "Normal Game" {
-                        HeroSection(army: army)
+                    Section (header: rackHeader, footer: rackStats) {
+                        RackBuilder()
+                            .environmentObject(viewModel)
+                            .customCell()
+                    }
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 20)
+
+                Section(footer: Text("Recruit will also save to clipboard.").font(.caption))  {
+                    SaveArmyButton(viewModel: viewModel, isActive: $isActive)
+                        .customCell()
+                }
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+                .padding(.bottom, 5)
+                .navigationBarTitle(Text("\(viewModel.fullName!)"))
+            }
+        }
+        .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
+    }
+
+    var unitsView: some View {
+        if let viewModel = viewModel {
+            return VStack {
+                VStack {
+                    if viewModel.gameType == "Normal Game" {
+                        HeroSection(viewModel: viewModel)
                     }
                 }
                 .padding(.bottom, 20)
@@ -55,8 +94,8 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: soloHeader) {
-                        SoloList(solos: army.solosArray)
-                            .environmentObject(army)
+                        SoloList(viewModels: viewModel.solosViewModelsArray)
+                            .environmentObject(viewModel)
                             .customCell()
                     }
                 }
@@ -67,8 +106,8 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: jackHeader) {
-                        JackList(jacks: army.jacksArray, refresh: $refresh)
-                            .environmentObject(army)
+                        JackList(jacks: viewModel.jacksViewModelsArray, refresh: $refresh)
+                            .environmentObject(viewModel)
                     }
                 }
                 .padding(.leading, 10)
@@ -78,62 +117,45 @@ struct ArmyBuilder: View {
 
                 VStack {
                     Section(header: squadHeader) {
-                        SquadList(squads: army.squadsArray, refresh: $refresh)
-                            .environmentObject(army)
+                        SquadList(squadsViewModels: viewModel.squadsViewModelsArray, refresh: $refresh)
+                            .environmentObject(viewModel)
                     }
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 20)
-
-
-                VStack {
-                    Section (header: rackHeader, footer: rackStats) {
-                        RackBuilder()
-                            .environmentObject(army)
-                            .customCell()
-                    }
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-                .padding(.bottom, 20)
-
-                Section(footer: Text("Recruit will also save to clipboard.").font(.caption))  {
-                    SaveArmyButton(army: army, isActive: $isActive)
-                        .customCell()
-                }
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-                .padding(.bottom, 5)
-                .navigationBarTitle(Text("\(army.name!)"))
             }
+            .eraseToAnyView()
+        } else {
+            return Text("ERROR").eraseToAnyView()
         }
-        .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 
     var rackStats: some View {
-        let rack = army.rack!
-        return HStack {
-            Spacer()
-            Text("F:\(rack.furyCount)  G:\(rack.geometricCount)  H:\(rack.harmonicCount)  O:\(rack.overdriveCount)")
-                .font(.footnote)
-            Spacer()
+        HStack {
+            if let army = army, let rack = army.rack {
+                Spacer()
+                Text("F:\(rack.furyCount)  G:\(rack.geometricCount)  H:\(rack.harmonicCount)  O:\(rack.overdriveCount)")
+                    .font(.footnote)
+                Spacer()
+            }
         }.padding()
     }
 
     var rackHeader: some View {
-        let rack = army.rack!
-        return HStack{
-            Image(systemName: "book")
-            Text("Rack")
-            Spacer()
-            let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
-            if totalCypherCount > 15 {
-                Text("\(totalCypherCount - 15) Cyphers Over")
-                    .font(.caption)
-            } else {
-                Text("\(totalCypherCount)/\(15) Cyphers")
-                    .font(.caption)
+        HStack{
+            if let army = army, let rack = army.rack {
+                Image(systemName: "book")
+                Text("Rack")
+                Spacer()
+                let totalCypherCount = rack.furyCount + rack.geometricCount + rack.harmonicCount + rack.overdriveCount
+                if totalCypherCount > 15 {
+                    Text("\(totalCypherCount - 15) Cyphers Over")
+                        .font(.caption)
+                } else {
+                    Text("\(totalCypherCount)/\(15) Cyphers")
+                        .font(.caption)
+                }
             }
 
         }
@@ -142,75 +164,85 @@ struct ArmyBuilder: View {
 
 
     var soloHeader: some View {
-        return HStack{
-            Image(systemName: "person")
-            Text("Solos")
-            Spacer()
-            if army.unitCount > army.unitMax {
-                if army.unitCount - army.unitMax == 1 {
-                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
-                        .font(.caption)
+        HStack{
+            if let army = army {
+                Image(systemName: "person")
+                Text("Solos")
+                Spacer()
+                if army.unitCount > army.unitMax {
+                    if army.unitCount - army.unitMax == 1 {
+                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                            .font(.caption)
+                    } else {
+                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                            .font(.caption)
+                    }
                 } else {
-                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    Text("\(army.unitCount)/\(army.unitMax) Units")
                         .font(.caption)
                 }
-            } else {
-                Text("\(army.unitCount)/\(army.unitMax) Units")
-                    .font(.caption)
             }
         }
     }
 
     var jackHeader: some View {
-        return HStack{
-            Image(systemName: "wrench")
-            Text("'Jacks")
-            Spacer()
-            if army.unitCount > army.unitMax {
-                if army.unitCount - army.unitMax == 1 {
-                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
-                        .font(.caption)
+         HStack{
+            if let army = army {
+                Image(systemName: "wrench")
+                Text("'Jacks")
+                Spacer()
+                if army.unitCount > army.unitMax {
+                    if army.unitCount - army.unitMax == 1 {
+                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                            .font(.caption)
+                    } else {
+                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                            .font(.caption)
+                    }
                 } else {
-                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    Text("\(army.unitCount)/\(army.unitMax) Units")
                         .font(.caption)
                 }
-            } else {
-                Text("\(army.unitCount)/\(army.unitMax) Units")
-                    .font(.caption)
             }
         }
     }
 
     var squadHeader: some View {
-        return HStack{
-            Image(systemName: "person.3")
-            Text("Squads")
-            Spacer()
-            if army.unitCount > army.unitMax {
-                if army.unitCount - army.unitMax == 1 {
-                    Text("\(army.unitCount - army.unitMax) Unit Point Over")
-                        .font(.caption)
+        HStack{
+            if let army = army {
+                Image(systemName: "person.3")
+                Text("Squads")
+                Spacer()
+                if army.unitCount > army.unitMax {
+                    if army.unitCount - army.unitMax == 1 {
+                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                            .font(.caption)
+                    } else {
+                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                            .font(.caption)
+                    }
                 } else {
-                    Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                    Text("\(army.unitCount)/\(army.unitMax) Units")
                         .font(.caption)
                 }
-            } else {
-                Text("\(army.unitCount)/\(army.unitMax) Units")
-                    .font(.caption)
             }
         }
     }
 
     var nameField: some View {
-        return TextField("Custom Army Name", text: Binding<String>(
-                    get: { army.customName ?? "" },
-                    set: { army.customName = $0 }
-                    )) { changed in
-            if changed {
-                print("chenged")
+        VStack {
+            if let viewModel = viewModel {
+                TextField("Custom Army Name", text: Binding<String>(
+                    get: { viewModel.customName ?? "" },
+                    set: { viewModel.customName = $0 }
+                )) { changed in
+                    if changed {
+                        print("chenged")
+                    }
+                } onCommit: {
+                    print("committed")
+                }
             }
-        } onCommit: {
-            print("committed")
         }
     }
 }

@@ -6,11 +6,34 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct UnitInfo: View {
-    @ObservedObject var unit: Unit
+    var unitFetchRequest: FetchRequest<Unit>
+    var unit: Unit {
+        print(unitFetchRequest.wrappedValue.count)
+        return unitFetchRequest.wrappedValue.first ?? Unit()
+    }
+
+    var viewModelFetchRequest: FetchRequest<UnitViewModel>
+    var viewModel: UnitViewModel {
+        print(viewModelFetchRequest.wrappedValue.count)
+        return viewModelFetchRequest.wrappedValue.first ?? UnitViewModel()
+    }
+
+
+
     @Binding var isPresented: Bool
 
+    init(unitId: String, viewModelId: String, isPresented: Binding<Bool>) {
+        let predicate = NSPredicate(format: "id == %@", unitId)
+        self.unitFetchRequest = FetchRequest(entity: Unit.entity(), sortDescriptors: [], predicate: predicate)
+
+        let viewModelPredicate = NSPredicate(format: "uuid == %@", viewModelId)
+        self.viewModelFetchRequest = FetchRequest(entity: UnitViewModel.entity(), sortDescriptors: [], predicate: viewModelPredicate)
+        self._isPresented = isPresented
+    }
+    
     var body: some View {
 
         ScrollView {
@@ -43,35 +66,51 @@ struct UnitInfo: View {
                     }
                 }
 
-                if let jack = unit as? Jack {
+                if let jack = viewModel as? JackViewModel {
 
-                    ForEach(jack.optionsForCortexArray, id:\.id) { cortex in
-                        if cortex.selected {
-                            CortexView(cortex: cortex)
+                    ForEach(jack.cortexOptionsArray, id:\.id) { cortex in
+                        if cortex.count > 0 {
+                            CortexView(cortexId: cortex.id!)
                         }
                     }
 
-                    ForEach(jack.optionsForArm1Array, id:\.id) { weapon in
-                        if weapon.selected {
-                            JackWeaponView(weapon: weapon, headline: "Arm 1")
+                    ForEach(jack.arm1OptionsArray, id:\.id) { weapon in
+                        if weapon.count > 0 {
+                            VStack {
+                                Divider()
+                                Text("Arm 1").font(.headline).foregroundColor(.gray)
+                                WeaponView(weaponId: weapon.id!)
+                            }
                         }
                     }
 
-                    ForEach(jack.optionsForArm2Array, id:\.id) { weapon in
-                        if weapon.selected {
-                            JackWeaponView(weapon: weapon, headline: "Arm 2")
+                    ForEach(jack.arm2OptionsArray, id:\.id) { weapon in
+                        if weapon.count > 0 {
+                            VStack {
+                                Divider()
+                                Text("Arm 2").font(.headline).foregroundColor(.gray)
+                                WeaponView(weaponId: weapon.id!)
+                            }
                         }
                     }
 
-                    ForEach(jack.optionsForShoulder1Array, id:\.id) { weapon in
-                        if weapon.selected {
-                            JackWeaponView(weapon: weapon, headline: "Shoulder 1")
+                    ForEach(jack.shoulder1OptionsArray, id:\.id) { weapon in
+                        if weapon.count > 0 {
+                            VStack {
+                                Divider()
+                                Text("Shoulder 1").font(.headline).foregroundColor(.gray)
+                                WeaponView(weaponId: weapon.id!)
+                            }
                         }
                     }
 
-                    ForEach(jack.optionsForShoulder2Array, id:\.id) { weapon in
-                        if weapon.selected {
-                            JackWeaponView(weapon: weapon, headline: "Shoudler 2")
+                    ForEach(jack.shoulder2OptionsArray, id:\.id) { weapon in
+                        if weapon.count > 0 {
+                            VStack {
+                                Divider()
+                                Text("Shoulder 2").font(.headline).foregroundColor(.gray)
+                                WeaponView(weaponId: weapon.id!)
+                            }
                         }
                     }
 

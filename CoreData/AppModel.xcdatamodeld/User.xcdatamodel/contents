@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17162" systemVersion="20A4300b" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Army" representedClassName="Army" syncable="YES" codeGenerationType="class">
         <attribute name="customName" attributeType="String" defaultValueString=""/>
+        <attribute name="factionId" optional="YES" attributeType="String"/>
         <attribute name="gameType" attributeType="String" defaultValueString="Normal Game"/>
         <attribute name="heroCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="heroMax" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
@@ -11,7 +12,6 @@
         <attribute name="shortName" attributeType="String" defaultValueString=""/>
         <attribute name="unitCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="unitMax" attributeType="Integer 16" defaultValueString="15" usesScalarValueType="YES"/>
-        <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="faction" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Faction" inverseName="armies" inverseEntity="Faction"/>
         <relationship name="heros" optional="YES" toMany="YES" minCount="3" deletionRule="Nullify" destinationEntity="Hero" inverseName="army" inverseEntity="Hero"/>
         <relationship name="jacks" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Jack" inverseName="army" inverseEntity="Jack"/>
@@ -19,10 +19,33 @@
         <relationship name="solos" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Solo" inverseName="army" inverseEntity="Solo"/>
         <relationship name="squads" optional="YES" toMany="YES" minCount="2" deletionRule="Nullify" destinationEntity="Squad" inverseName="army" inverseEntity="Squad"/>
         <relationship name="store" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="armies" inverseEntity="Store"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="armies" inverseEntity="User"/>
+    </entity>
+    <entity name="ArmyViewModel" representedClassName="ArmyViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="customName" optional="YES" attributeType="String"/>
+        <attribute name="factionId" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="gameType" optional="YES" attributeType="String"/>
+        <attribute name="heroCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="heroMax" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+        <attribute name="unitCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unitMax" optional="YES" attributeType="Integer 16" defaultValueString="15" usesScalarValueType="YES"/>
+        <relationship name="herosViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HeroViewModel" inverseName="armyViewModel" inverseEntity="HeroViewModel"/>
+        <relationship name="jacksViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="armyViewModel" inverseEntity="JackViewModel"/>
+        <relationship name="rackViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="rackViewModel" inverseEntity="CypherViewModel"/>
+        <relationship name="solosViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SoloViewModel" inverseName="armyViewModel" inverseEntity="SoloViewModel"/>
+        <relationship name="squadsViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SquadViewModel" inverseName="armyViewModel" inverseEntity="SquadViewModel"/>
+        <relationship name="store" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="viewModels" inverseEntity="Store"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="viewModels" inverseEntity="User"/>
     </entity>
     <entity name="Attachment" representedClassName="Attachment" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="squad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="attachments" inverseEntity="Squad"/>
+    </entity>
+    <entity name="AttachmentViewModel" representedClassName="AttachmentViewModel" parentEntity="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <relationship name="squadViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SquadViewModel" inverseName="attachmentViewModels" inverseEntity="SquadViewModel"/>
     </entity>
     <entity name="Cortex" representedClassName="Cortex" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -31,6 +54,14 @@
         <attribute name="symbol" optional="YES" attributeType="String"/>
         <relationship name="cortexOptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Jack" inverseName="optionsForCortex" inverseEntity="Jack"/>
         <relationship name="rules" optional="YES" toMany="YES" maxCount="10" deletionRule="Nullify" destinationEntity="Rule" inverseName="cortex" inverseEntity="Rule"/>
+    </entity>
+    <entity name="CortexViewModel" representedClassName="CortexViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <relationship name="cortexOption" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="cortexOptions" inverseEntity="JackViewModel"/>
     </entity>
     <entity name="Cypher" representedClassName="Cypher" syncable="YES" codeGenerationType="class">
         <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -44,6 +75,26 @@
         <relationship name="geometric" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rack" inverseName="geometrics" inverseEntity="Rack"/>
         <relationship name="harmonic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rack" inverseName="harmonics" inverseEntity="Rack"/>
         <relationship name="overdrive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rack" inverseName="overdrives" inverseEntity="Rack"/>
+    </entity>
+    <entity name="CypherViewModel" representedClassName="CypherViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="furyCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="geometricCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="harmonicCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="overdriveCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <relationship name="furies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="fury" inverseEntity="CypherViewModel"/>
+        <relationship name="fury" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="furies" inverseEntity="CypherViewModel"/>
+        <relationship name="geometric" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="geometrics" inverseEntity="CypherViewModel"/>
+        <relationship name="geometrics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="geometric" inverseEntity="CypherViewModel"/>
+        <relationship name="harmonic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="harmonics" inverseEntity="CypherViewModel"/>
+        <relationship name="harmonics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="harmonic" inverseEntity="CypherViewModel"/>
+        <relationship name="overdrive" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="overdrives" inverseEntity="CypherViewModel"/>
+        <relationship name="overdrives" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CypherViewModel" inverseName="overdrive" inverseEntity="CypherViewModel"/>
+        <relationship name="rackViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArmyViewModel" inverseName="rackViewModel" inverseEntity="ArmyViewModel"/>
     </entity>
     <entity name="Element" representedClassName="Element" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -59,6 +110,9 @@
     <entity name="Hero" representedClassName="Hero" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="heros" inverseEntity="Army"/>
     </entity>
+    <entity name="HeroViewModel" representedClassName="HeroViewModel" parentEntity="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <relationship name="armyViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArmyViewModel" inverseName="herosViewModels" inverseEntity="ArmyViewModel"/>
+    </entity>
     <entity name="Jack" representedClassName="Jack" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615367860" usesScalarValueType="NO"/>
@@ -73,6 +127,19 @@
         <relationship name="optionsForCortex" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cortex" inverseName="cortexOptions" inverseEntity="Cortex"/>
         <relationship name="optionsForShoulder1" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="optionsForShoulder1" inverseEntity="Weapon"/>
         <relationship name="optionsForShoulder2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="optionsForShoulder2" inverseEntity="Weapon"/>
+    </entity>
+    <entity name="JackViewModel" representedClassName="JackViewModel" parentEntity="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="remainingPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="weaponPoints" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="arm1Options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeaponViewModel" inverseName="arm1Option" inverseEntity="WeaponViewModel"/>
+        <relationship name="arm2Options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeaponViewModel" inverseName="arm2Option" inverseEntity="WeaponViewModel"/>
+        <relationship name="armyViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArmyViewModel" inverseName="jacksViewModels" inverseEntity="ArmyViewModel"/>
+        <relationship name="cortexOptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CortexViewModel" inverseName="cortexOption" inverseEntity="CortexViewModel"/>
+        <relationship name="customJackViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="customJackViewModels" inverseEntity="JackViewModel"/>
+        <relationship name="customJackViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="customJackViewModel" inverseEntity="JackViewModel"/>
+        <relationship name="shoulder1Options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeaponViewModel" inverseName="shoulder1Option" inverseEntity="WeaponViewModel"/>
+        <relationship name="shoulder2Options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeaponViewModel" inverseName="shoulder2Option" inverseEntity="WeaponViewModel"/>
     </entity>
     <entity name="Rack" representedClassName="Rack" syncable="YES" codeGenerationType="class">
         <attribute name="furyCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -96,6 +163,9 @@
     <entity name="Solo" representedClassName="Solo" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Army" inverseName="solos" inverseEntity="Army"/>
     </entity>
+    <entity name="SoloViewModel" representedClassName="SoloViewModel" parentEntity="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <relationship name="armyViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArmyViewModel" inverseName="solosViewModels" inverseEntity="ArmyViewModel"/>
+    </entity>
     <entity name="Squad" representedClassName="Squad" parentEntity="Unit" syncable="YES" codeGenerationType="class">
         <attribute name="customName" optional="YES" attributeType="String"/>
         <attribute name="lastModified" attributeType="Date" defaultDateTimeInterval="615368100" usesScalarValueType="NO"/>
@@ -104,11 +174,18 @@
         <relationship name="customSquad" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquads" inverseEntity="Squad"/>
         <relationship name="customSquads" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Squad" inverseName="customSquad" inverseEntity="Squad"/>
     </entity>
+    <entity name="SquadViewModel" representedClassName="SquadViewModel" parentEntity="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <relationship name="armyViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArmyViewModel" inverseName="squadsViewModels" inverseEntity="ArmyViewModel"/>
+        <relationship name="attachmentViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AttachmentViewModel" inverseName="squadViewModel" inverseEntity="AttachmentViewModel"/>
+        <relationship name="customSquadViewModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SquadViewModel" inverseName="customSquadViewModels" inverseEntity="SquadViewModel"/>
+        <relationship name="customSquadViewModels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SquadViewModel" inverseName="customSquadViewModel" inverseEntity="SquadViewModel"/>
+    </entity>
     <entity name="Store" representedClassName="Store" syncable="YES" codeGenerationType="class">
         <attribute name="lastSourceUpdate" optional="YES" attributeType="Date" defaultDateTimeInterval="599616360" usesScalarValueType="NO"/>
         <attribute name="updateAvailable" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="armies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="store" inverseEntity="Army"/>
+        <relationship name="viewModels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArmyViewModel" inverseName="store" inverseEntity="ArmyViewModel"/>
     </entity>
     <entity name="Unit" representedClassName="Unit" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="arm" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -124,15 +201,24 @@
         <attribute name="spd" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="symbol" optional="YES" attributeType="String" defaultValueString=""/>
         <attribute name="title" attributeType="String" defaultValueString=""/>
-        <attribute name="uuid" attributeType="String" defaultValueString=""/>
         <relationship name="rules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rule" inverseName="unit" inverseEntity="Rule"/>
         <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="unit" inverseEntity="Weapon"/>
+    </entity>
+    <entity name="UnitViewModel" representedClassName="UnitViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="customName" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <relationship name="attachment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UnitViewModel" inverseName="attachments" inverseEntity="UnitViewModel"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UnitViewModel" inverseName="attachment" inverseEntity="UnitViewModel"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="armies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Army" inverseName="user" inverseEntity="Army"/>
+        <relationship name="viewModels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArmyViewModel" inverseName="user" inverseEntity="ArmyViewModel"/>
     </entity>
     <entity name="Weapon" representedClassName="Weapon" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -154,22 +240,43 @@
         <relationship name="rules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rule" inverseName="weapon" inverseEntity="Rule"/>
         <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="weapons" inverseEntity="Unit"/>
     </entity>
+    <entity name="WeaponViewModel" representedClassName="WeaponViewModel" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <relationship name="arm1Option" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="arm1Options" inverseEntity="JackViewModel"/>
+        <relationship name="arm2Option" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="arm2Options" inverseEntity="JackViewModel"/>
+        <relationship name="shoulder1Option" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="shoulder1Options" inverseEntity="JackViewModel"/>
+        <relationship name="shoulder2Option" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="JackViewModel" inverseName="shoulder2Options" inverseEntity="JackViewModel"/>
+    </entity>
     <elements>
-        <element name="Army" positionX="506.821533203125" positionY="-32.55368041992188" width="128" height="314"/>
+        <element name="Army" positionX="506.821533203125" positionY="-32.55368041992188" width="128" height="299"/>
+        <element name="ArmyViewModel" positionX="-306" positionY="0" width="128" height="314"/>
         <element name="Attachment" positionX="-279" positionY="135" width="128" height="44"/>
+        <element name="AttachmentViewModel" positionX="-288" positionY="18" width="128" height="14"/>
         <element name="Cortex" positionX="-288" positionY="126" width="128" height="119"/>
+        <element name="CortexViewModel" positionX="-270" positionY="36" width="128" height="119"/>
         <element name="Cypher" positionX="-127.8965454101562" positionY="-161.9575042724609" width="128" height="194"/>
+        <element name="CypherViewModel" positionX="-306" positionY="0" width="128" height="299"/>
         <element name="Element" positionX="-261" positionY="153" width="128" height="59"/>
         <element name="Faction" positionX="-284.452880859375" positionY="-60.30088806152344" width="128" height="118"/>
         <element name="Hero" positionX="-293.7706298828125" positionY="143.8809509277344" width="128" height="44"/>
+        <element name="HeroViewModel" positionX="-306" positionY="0" width="128" height="44"/>
         <element name="Jack" positionX="-253.1884155273438" positionY="273.330078125" width="128" height="224"/>
+        <element name="JackViewModel" positionX="-297" positionY="9" width="128" height="194"/>
         <element name="Rack" positionX="-288" positionY="27" width="128" height="164"/>
         <element name="Rule" positionX="-270" positionY="144" width="128" height="119"/>
         <element name="Solo" positionX="-201.84228515625" positionY="397.7810363769531" width="128" height="44"/>
+        <element name="SoloViewModel" positionX="-306" positionY="0" width="128" height="44"/>
         <element name="Squad" positionX="-279" positionY="36" width="128" height="119"/>
+        <element name="SquadViewModel" positionX="-297" positionY="9" width="128" height="14"/>
         <element name="Store" positionX="-297" positionY="117" width="128" height="14"/>
-        <element name="Unit" positionX="-510.518310546875" positionY="322.3273010253906" width="128" height="269"/>
+        <element name="Unit" positionX="-510.518310546875" positionY="322.3273010253906" width="128" height="254"/>
+        <element name="UnitViewModel" positionX="-297" positionY="9" width="128" height="149"/>
         <element name="User" positionX="-261" positionY="45" width="128" height="89"/>
         <element name="Weapon" positionX="-363.0523681640625" positionY="766.0430297851562" width="128" height="299"/>
+        <element name="WeaponViewModel" positionX="-279" positionY="27" width="128" height="164"/>
     </elements>
 </model>

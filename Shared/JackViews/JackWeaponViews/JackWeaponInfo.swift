@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JackWeaponInfo: View {
-    var weapon: Weapon
+    var weaponViewModel: WeaponViewModel
     @Binding var isPresented: Bool
 
     var body: some View {
@@ -19,11 +19,11 @@ struct JackWeaponInfo: View {
                         DoneButton(isPresented: $isPresented)
                             .padding()
                     }
-                    Text("\(weapon.name!)")
+                    Text("\(weaponViewModel.name!)")
                         .font(.system(size: 25, weight: .bold, design: .default))
                         .padding()
 
-                    WeaponView(weapon: weapon)
+                    WeaponView(weaponId: weaponViewModel.id!)
                 }
             }
         }

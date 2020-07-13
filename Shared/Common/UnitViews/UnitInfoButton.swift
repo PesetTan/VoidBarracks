@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct UnitInfoButton: View {
-    var unit: Unit?
+    var unit: UnitViewModel
     @State private var isPresented: Bool = false
-
+    @Environment(\.managedObjectContext) var context
+    
     var body: some View {
-
-//        Image(systemName: "info.circle")
-//            .font(.system(size: 25))
-//            .onTapGesture(perform: {isPresented = true})
-//            .sheet(isPresented: $isPresented) {
-//                if unit != nil && unit!.uuid != nil {
-//                    UnitInfo(unit: unit!, isPresented: $isPresented)
-//                }
-//            }
-//
         Button {
             isPresented = true
         } label: {
@@ -29,9 +20,8 @@ struct UnitInfoButton: View {
                 .font(.system(size: 25))
         }
         .sheet(isPresented: $isPresented) {
-            if unit != nil && unit!.uuid != nil {
-                UnitInfo(unit: unit!, isPresented: $isPresented)
-            }
+            UnitInfo(unitId: unit.id!, viewModelId: unit.uuid!, isPresented: $isPresented)
+                .environment(\.managedObjectContext, context)
         }
     }
 }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct SquadList: View {
-    var squads: [Squad]
+    var squadsViewModels: [SquadViewModel]
     @Binding var refresh: Bool
     
     var body: some View {
-        ForEach(squads, id:\.id) { squad in
-            if squad.uuid != nil {
-                SquadCell(squad: squad, refresh: $refresh)
+        ForEach(squadsViewModels, id:\.id) { viewModel in
+            if viewModel.uuid != nil {
+                SquadCell(viewModel: viewModel, refresh: $refresh)
                     .customCell()
                     .foregroundColor(.primary)
 
-                CustomSquadList(customSquads: squad.customSquadsArray, refresh: $refresh)
-                    .frame(height: 70 * CGFloat(squad.customSquadsArray.count)).animation(.default)
+                CustomSquadList(customSquads: viewModel.customSquadViewModelsArray, refresh: $refresh)
+                    .frame(height: 70 * CGFloat(viewModel.customSquadViewModelsArray.count)).animation(.default)
 
             }
         }
@@ -28,14 +28,14 @@ struct SquadList: View {
 
 
 struct CustomSquadList: View {
-    var customSquads: [Squad]
+    var customSquads: [UnitViewModel]
     @Binding var refresh: Bool
     @Environment(\.managedObjectContext) private var context
 
     var body: some View {
         List {
             ForEach(customSquads, id:\.uuid) { squad in
-                UnitCell(unit: squad)
+                UnitCell(viewModel: squad)
                     .customCell()
                     .foregroundColor(.accentColor)
             }

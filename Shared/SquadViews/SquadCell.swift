@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct SquadCell: View {
-    @ObservedObject var squad: Squad
+    @ObservedObject var viewModel: UnitViewModel
     @State var isPresented: Bool = false
     @Binding var refresh: Bool
 
     var body: some View {
-        if let army = squad.army {
+//        if let army = viewModel {
             return NavigationLink(
-                destination: LazyLoad(SquadBuilder(squadId: squad.uuid!, isActive: $isPresented, refresh: $refresh))
-                    .accentColor(Color("color.\(army.shortName!)")),
+                destination: LazyLoad(SquadBuilder(squadId: viewModel.uuid!, isActive: $isPresented, refresh: $refresh)),
+//                    .accentColor(Color("color.\(army.shortName!)")),
                 isActive: $isPresented) {
-                Text("\(squad.name!)")
+                Text("\(viewModel.name!)")
                     .fixedSize(horizontal: true, vertical: false)
 
                 Spacer(minLength: 5)
@@ -28,10 +28,11 @@ struct SquadCell: View {
                     .foregroundColor(.gray)
                     .fixedSize(horizontal: true, vertical: false)
 
+//            }
+//            .eraseToAnyView()
+//        } else {
+//            return Text("").eraseToAnyView()
+//        }
             }
-            .eraseToAnyView()
-        } else {
-            return Text("").eraseToAnyView()
-        }
     }
 }

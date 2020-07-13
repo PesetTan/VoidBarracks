@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct CypherCell: View {
-    @ObservedObject var cypher: Cypher
+    @ObservedObject var viewModel: CypherViewModel
     @State private var isPresented: Bool = false
+    @Environment(\.managedObjectContext) var context
 
     var body: some View {
         Button {
             isPresented.toggle()
         } label: {
             HStack {
-                Text("\(cypher.name!)")
+                Text("\(viewModel.name!)")
                 Spacer()
-                CypherToggle(cypher: cypher)
+                CypherToggle(viewModel: viewModel)
             }
         }
         .sheet(isPresented: $isPresented) {
-            CypherInfo(cypher: cypher, isPresented: $isPresented)
+            CypherInfo(cypherId: viewModel.id!, isPresented: $isPresented).environment(\.managedObjectContext, context)
         }
     }
 }
