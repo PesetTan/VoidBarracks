@@ -7,11 +7,17 @@
 
 import SwiftUI
 
-struct AttachmentView: View {
-    var attachment: Attachment
-    var headline: String
-    @State var isPresented: Bool = false
+struct AttachmentInfo: View {
+    var fetchRequest: FetchRequest<Attachment>
+    var attachment: Attachment {
+        fetchRequest.wrappedValue.first ?? Attachment()
+    }
 
+    init(attachmentId: String) {
+        let predicate = NSPredicate(format: "id == %@", attachmentId)
+        self.fetchRequest = FetchRequest(entity: Attachment.entity(), sortDescriptors: [], predicate: predicate)
+    }
+    
     var body: some View {
         VStack {
             Divider()

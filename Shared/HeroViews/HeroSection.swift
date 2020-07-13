@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeroSection: View {
-    var viewModel: ArmyViewModel
+    @ObservedObject var viewModel: ArmyViewModel
     
     var body: some View {
         Section(header: heroHeader) {

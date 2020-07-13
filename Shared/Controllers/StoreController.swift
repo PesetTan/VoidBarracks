@@ -67,7 +67,8 @@ class StoreController {
     func addStoreIfNeeded() {
 
 //        PersistentCloudKitContainer.deleteStore()
-
+//        sleep(3)
+        
         let fetchRequest: NSFetchRequest<Store> = Store.fetchRequest()
         fetchRequest.shouldRefreshRefetchedObjects = true
         let stores = try! context.fetch(fetchRequest)

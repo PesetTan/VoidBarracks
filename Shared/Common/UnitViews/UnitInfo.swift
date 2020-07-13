@@ -58,10 +58,10 @@ struct UnitInfo: View {
 
                 WeaponsView(weapons: unit.weaponsArray)
 
-                if let squad = unit as? Squad {
-                    ForEach(squad.attachmentsArray, id:\.id) { attachment in
+                if let squad = viewModel as? SquadViewModel {
+                    ForEach(squad.attachmentViewModelsArray, id:\.id) { attachment in
                         if attachment.count > 0 {
-                            AttachmentView(attachment: attachment, headline: "Attachment:")
+                            AttachmentInfo(attachmentId: attachment.id!)
                         }
                     }
                 }

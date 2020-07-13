@@ -7,30 +7,13 @@
 
 import Foundation
 import CoreData
-//
-//extension ArmyViewModel {
-//    public func copy() -> ArmyViewModel {
-//        let newViewModel = ArmyViewModel(context: managedObjectContext!)
-//        newViewModel.id = UUID().uuidString
-//        newViewModel.customName = self.customName
-//        newViewModel.fullName = self.fullName
-//        newViewModel.shortName = self.shortName
-//        newViewModel.lastModified = Date()
-//        newViewModel.heroCount = self.heroCount
-//        newViewModel.heroMax = self.heroMax
-//        newViewModel.unitCount = self.unitCount
-//        newViewModel.unitMax = self.unitMax
-//        newViewModel.gameType = self.gameType
-//
-//        return newViewModel
-//    }
-//}
 
 extension ArmyViewModel {
     public func copy() -> ArmyViewModel {
         let newArmy = ArmyViewModel(context: managedObjectContext!)
         newArmy.id = UUID().uuidString
         newArmy.fullName = self.fullName
+        newArmy.factionId = self.factionId
         newArmy.customName = self.customName
         newArmy.shortName = self.shortName
         newArmy.lastModified = Date()
@@ -112,8 +95,8 @@ extension SquadViewModel {
         newSquad.name = self.name
         newSquad.count = self.count
 
-        self.attachmentsViewModelsArray.forEach { attachment in
-            newSquad.addToAttachments(attachment.copy())
+        self.attachmentViewModelsArray.forEach { attachment in
+            newSquad.addToAttachmentViewModels(attachment.copy())
         }
         self.customSquadViewModelsArray.forEach { squad in
             newSquad.addToCustomSquadViewModels(squad.copy())
@@ -142,6 +125,8 @@ extension JackViewModel {
         newJack.name = self.name
         newJack.count = self.count
         newJack.title = self.title
+        newJack.armCount = self.armCount
+        newJack.shoulderCount = self.shoulderCount
         newJack.weaponPoints = self.weaponPoints
         self.cortexOptionsArray.forEach { cortex in
             newJack.addToCortexOptions(cortex.copy())

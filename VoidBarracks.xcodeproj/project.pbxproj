@@ -32,7 +32,7 @@
 		BA20352B24AF063B00E252A3 /* UnitCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352A24AF063B00E252A3 /* UnitCounter.swift */; };
 		BA20352E24AF081A00E252A3 /* UnitInfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20352D24AF081A00E252A3 /* UnitInfoButton.swift */; };
 		BA20353124AF0A7200E252A3 /* AttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353024AF0A7200E252A3 /* AttachmentCell.swift */; };
-		BA20353424AF0B5F00E252A3 /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353324AF0B5F00E252A3 /* AttachmentView.swift */; };
+		BA20353424AF0B5F00E252A3 /* AttachmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353324AF0B5F00E252A3 /* AttachmentInfo.swift */; };
 		BA20353724AFFDF200E252A3 /* WeaponToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353624AFFDF200E252A3 /* WeaponToggle.swift */; };
 		BA20353A24B0028500E252A3 /* CortexToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353924B0028500E252A3 /* CortexToggle.swift */; };
 		BA20353D24B0073E00E252A3 /* CypherToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20353C24B0073E00E252A3 /* CypherToggle.swift */; };
@@ -118,7 +118,7 @@
 		BA20352A24AF063B00E252A3 /* UnitCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCounter.swift; sourceTree = "<group>"; };
 		BA20352D24AF081A00E252A3 /* UnitInfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitInfoButton.swift; sourceTree = "<group>"; };
 		BA20353024AF0A7200E252A3 /* AttachmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentCell.swift; path = Shared/AttachmentCell.swift; sourceTree = SOURCE_ROOT; };
-		BA20353324AF0B5F00E252A3 /* AttachmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
+		BA20353324AF0B5F00E252A3 /* AttachmentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentInfo.swift; sourceTree = "<group>"; };
 		BA20353624AFFDF200E252A3 /* WeaponToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponToggle.swift; sourceTree = "<group>"; };
 		BA20353924B0028500E252A3 /* CortexToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CortexToggle.swift; sourceTree = "<group>"; };
 		BA20353C24B0073E00E252A3 /* CypherToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CypherToggle.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		BA2034FF24AE999700E252A3 /* AttachmentViews */ = {
 			isa = PBXGroup;
 			children = (
-				BA20353324AF0B5F00E252A3 /* AttachmentView.swift */,
+				BA20353324AF0B5F00E252A3 /* AttachmentInfo.swift */,
 				BA20353024AF0A7200E252A3 /* AttachmentCell.swift */,
 				BA2034FC24AE971E00E252A3 /* AttachmentList.swift */,
 			);
@@ -437,8 +437,8 @@
 			isa = PBXGroup;
 			children = (
 				BAC227E624ADA31300080E97 /* CypherInfo.swift */,
-				BAC227E324ADA30900080E97 /* CypherCell.swift */,
 				BAC227E024ADA2FC00080E97 /* CypherList.swift */,
+				BAC227E324ADA30900080E97 /* CypherCell.swift */,
 				BA20353C24B0073E00E252A3 /* CypherToggle.swift */,
 				BAC227E924ADA3D900080E97 /* RackBuilder.swift */,
 			);
@@ -597,7 +597,7 @@
 				BA1D7B9C24B943FB00E7780D /* Unit.swift in Sources */,
 				BA61D5AF24AD2D4E002F047A /* DataCopyController.swift in Sources */,
 				BA4F98C324AC543000AB9F4C /* WeaponsView.swift in Sources */,
-				BA20353424AF0B5F00E252A3 /* AttachmentView.swift in Sources */,
+				BA20353424AF0B5F00E252A3 /* AttachmentInfo.swift in Sources */,
 				BA11D8B724B400DD00E6E8AE /* StoreController.swift in Sources */,
 				BA1D7BA024B9454500E7780D /* Jack.swift in Sources */,
 				BAC227E724ADA31300080E97 /* CypherInfo.swift in Sources */,

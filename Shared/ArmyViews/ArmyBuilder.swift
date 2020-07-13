@@ -9,10 +9,10 @@ import SwiftUI
 import CoreData
 
 struct ArmyBuilder: View {
-    var armyFetchRequest: FetchRequest<Army>
-    var army: Army? {
-        armyFetchRequest.wrappedValue.first ?? nil
-    }
+//    var armyFetchRequest: FetchRequest<Army>
+//    var army: Army? {
+//        armyFetchRequest.wrappedValue.first ?? nil
+//    }
 
     var viewModelFetchRequest: FetchRequest<ArmyViewModel>
     var viewModel: ArmyViewModel? {
@@ -26,8 +26,8 @@ struct ArmyBuilder: View {
         let viewModelPredicate = NSPredicate(format: "id == %@", viewModelId)
         self.viewModelFetchRequest = FetchRequest(entity: ArmyViewModel.entity(), sortDescriptors: [], predicate: viewModelPredicate)
 
-        let armyPredicate = NSPredicate(format: "factionId == %@", factionId)
-        self.armyFetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: armyPredicate)
+//        let armyPredicate = NSPredicate(format: "factionId == %@", factionId)
+//        self.armyFetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: armyPredicate)
         
         self._isActive = isActive
     }
@@ -84,6 +84,7 @@ struct ArmyBuilder: View {
     var unitsView: some View {
         if let viewModel = viewModel {
             return VStack {
+
                 VStack {
                     if viewModel.gameType == "Normal Game" {
                         HeroSection(viewModel: viewModel)
@@ -133,7 +134,7 @@ struct ArmyBuilder: View {
 
     var rackStats: some View {
         HStack {
-            if let army = army, let rack = army.rack {
+            if let viewModel = viewModel, let rack = viewModel.rackViewModel {
                 Spacer()
                 Text("F:\(rack.furyCount)  G:\(rack.geometricCount)  H:\(rack.harmonicCount)  O:\(rack.overdriveCount)")
                     .font(.footnote)
@@ -144,7 +145,7 @@ struct ArmyBuilder: View {
 
     var rackHeader: some View {
         HStack{
-            if let army = army, let rack = army.rack {
+            if let viewModel = viewModel, let rack = viewModel.rackViewModel {
                 Image(systemName: "book")
                 Text("Rack")
                 Spacer()
@@ -165,20 +166,20 @@ struct ArmyBuilder: View {
 
     var soloHeader: some View {
         HStack{
-            if let army = army {
+            if let viewModel = viewModel {
                 Image(systemName: "person")
                 Text("Solos")
                 Spacer()
-                if army.unitCount > army.unitMax {
-                    if army.unitCount - army.unitMax == 1 {
-                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                if viewModel.unitCount > viewModel.unitMax {
+                    if viewModel.unitCount - viewModel.unitMax == 1 {
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Point Over")
                             .font(.caption)
                     } else {
-                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Points Over")
                             .font(.caption)
                     }
                 } else {
-                    Text("\(army.unitCount)/\(army.unitMax) Units")
+                    Text("\(viewModel.unitCount)/\(viewModel.unitMax) Units")
                         .font(.caption)
                 }
             }
@@ -187,20 +188,20 @@ struct ArmyBuilder: View {
 
     var jackHeader: some View {
          HStack{
-            if let army = army {
+            if let viewModel = viewModel {
                 Image(systemName: "wrench")
                 Text("'Jacks")
                 Spacer()
-                if army.unitCount > army.unitMax {
-                    if army.unitCount - army.unitMax == 1 {
-                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                if viewModel.unitCount > viewModel.unitMax {
+                    if viewModel.unitCount - viewModel.unitMax == 1 {
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Point Over")
                             .font(.caption)
                     } else {
-                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Points Over")
                             .font(.caption)
                     }
                 } else {
-                    Text("\(army.unitCount)/\(army.unitMax) Units")
+                    Text("\(viewModel.unitCount)/\(viewModel.unitMax) Units")
                         .font(.caption)
                 }
             }
@@ -209,20 +210,20 @@ struct ArmyBuilder: View {
 
     var squadHeader: some View {
         HStack{
-            if let army = army {
+            if let viewModel = viewModel  {
                 Image(systemName: "person.3")
                 Text("Squads")
                 Spacer()
-                if army.unitCount > army.unitMax {
-                    if army.unitCount - army.unitMax == 1 {
-                        Text("\(army.unitCount - army.unitMax) Unit Point Over")
+                if viewModel.unitCount > viewModel.unitMax {
+                    if viewModel.unitCount - viewModel.unitMax == 1 {
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Point Over")
                             .font(.caption)
                     } else {
-                        Text("\(army.unitCount - army.unitMax) Unit Points Over")
+                        Text("\(viewModel.unitCount - viewModel.unitMax) Unit Points Over")
                             .font(.caption)
                     }
                 } else {
-                    Text("\(army.unitCount)/\(army.unitMax) Units")
+                    Text("\(viewModel.unitCount)/\(viewModel.unitMax) Units")
                         .font(.caption)
                 }
             }

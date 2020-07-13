@@ -22,13 +22,13 @@ struct SaveArmyButton: View {
                 print("Save Clicked")
                 if let user = users.first, let viewModel = viewModel {
                     if user.viewModelsArray.first(where: {$0.id == viewModel.id}) == nil {
-//                        user.addToViewModels(viewModel.copy())
+                        user.addToViewModels(viewModel.copy())
                     }
 
                     context.refresh(user, mergeChanges: true)
                     try! context.save()
 
-//                    ClipboardController.copyToClipboard(viewModel)
+                    ClipboardController.copyToClipboard(viewModel)
                     isActive.toggle()
                 }
             } label: {

@@ -13,7 +13,9 @@ struct RackBuilder: View {
 
     var body: some View {
         if let shortName = viewModel.shortName {
-            return NavigationLink(destination: LazyLoad(CypherList().environmentObject(viewModel.rackViewModel!))
+            return NavigationLink(destination: LazyLoad(CypherList()
+                                                            .environmentObject(viewModel.rackViewModel!)
+                                                            .environmentObject(viewModel))
                                     .accentColor(Color("color.\(shortName)")),
                                   isActive: $isActive) {
                 Text("Configure Your Rack")

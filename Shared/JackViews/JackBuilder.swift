@@ -25,7 +25,6 @@ struct JackBuilder: View {
     }
 
     var body: some View {
-//        if try! context.count(for: JackViewModel.fetchRequest()) > 0 {
             VStack {
 
                 Form {
@@ -37,7 +36,7 @@ struct JackBuilder: View {
                         }
                     }
 
-                    if let weapons = jackViewModel.arm1OptionsArray, !weapons.isEmpty {
+                    if jackViewModel.armCount > 0, let weapons = jackViewModel.arm1OptionsArray, !weapons.isEmpty {
                         Section(header:arm1Header) {
                             ForEach(weapons, id:\.uuid) { weapon in
                                 JackWeaponCell(weaponViewModel: weapon,
@@ -47,7 +46,7 @@ struct JackBuilder: View {
                         }
                     }
 
-                    if let weapons = jackViewModel.arm2OptionsArray, !weapons.isEmpty {
+                    if jackViewModel.armCount > 1, let weapons = jackViewModel.arm2OptionsArray, !weapons.isEmpty {
                         Section(header: arm2Header) {
                             ForEach(weapons, id:\.uuid) { weapon in
                                 JackWeaponCell(weaponViewModel: weapon,
@@ -57,7 +56,7 @@ struct JackBuilder: View {
                         }
                     }
 
-                    if let weapons = jackViewModel.shoulder1OptionsArray, !weapons.isEmpty {
+                    if jackViewModel.shoulderCount > 0, let weapons = jackViewModel.shoulder1OptionsArray, !weapons.isEmpty {
                         Section(header: shoulder1Header) {
                             ForEach(weapons, id:\.uuid) { weapon in
                                 JackWeaponCell(weaponViewModel: weapon,
@@ -67,7 +66,7 @@ struct JackBuilder: View {
                         }
                     }
 
-                    if let weapons = jackViewModel.shoulder2OptionsArray, !weapons.isEmpty {
+                    if jackViewModel.shoulderCount > 1, let weapons = jackViewModel.shoulder2OptionsArray, !weapons.isEmpty {
                         Section(header: shoulder2Header) {
                             ForEach(weapons, id:\.uuid) { weapon in
                                 JackWeaponCell(weaponViewModel: weapon,
@@ -87,24 +86,14 @@ struct JackBuilder: View {
             .navigationBarItems(trailing: UnitInfoButton(unit: jackViewModel))
             .onAppear { refresh = false }
             .onDisappear { refresh = true }
-//            .eraseToAnyView()
-//        }
-//
-//         else {
-//            return Text("Missing Data").eraseToAnyView()
-//        }
+
     }
 
     var cortexHeader: some View {
-//        let jack = jacks.first{$0.uuid == jackId} ?? Jack()
-
-        return HStack {
+        HStack {
             Text("Cortex")
             Spacer()
 
-//            if jack != nil && jack.optionsForCortex != nil && jack.optionsForCortex?.count ?? -1 > 0 && (jack.optionsForCortex as! Set<Cortex>).filter{$0.selected}.count == 0 {
-//                Text("Select a cortex")
-//            }
         }
     }
 
@@ -113,9 +102,7 @@ struct JackBuilder: View {
             Text("Arm 1")
             Spacer()
 
-            if jackViewModel.arm1OptionsArray.count == 0 {
-                Text("Equip Arm 1")
-            } else if (jackViewModel.remainingPoints > 0) {
+            if (jackViewModel.remainingPoints > 0) {
                 Text("\(jackViewModel.remainingPoints)/\(jackViewModel.weaponPoints) points available")
             } else if (jackViewModel.remainingPoints < 0) {
                 if jackViewModel.remainingPoints * -1 == 1{
@@ -133,9 +120,7 @@ struct JackBuilder: View {
             Text("Arm 2")
             Spacer()
 
-            if jackViewModel.arm2OptionsArray.count == 0 {
-                Text("Equip Arm 2")
-            } else if (jackViewModel.remainingPoints > 0) {
+            if (jackViewModel.remainingPoints > 0) {
                 Text("\(jackViewModel.remainingPoints)/\(jackViewModel.weaponPoints) points available")
             } else if (jackViewModel.remainingPoints < 0) {
                 if jackViewModel.remainingPoints * -1 == 1{
@@ -153,9 +138,7 @@ struct JackBuilder: View {
             Text("Shoulder 1")
             Spacer()
 
-            if jackViewModel.shoulder1OptionsArray.count == 0 {
-                Text("Equip Shoulder 1")
-            } else if (jackViewModel.remainingPoints > 0) {
+            if (jackViewModel.remainingPoints > 0) {
                 Text("\(jackViewModel.remainingPoints)/\(jackViewModel.weaponPoints) points available")
             } else if (jackViewModel.remainingPoints < 0) {
                 if jackViewModel.remainingPoints * -1 == 1{
@@ -172,9 +155,7 @@ struct JackBuilder: View {
             Text("Shoulder 2")
             Spacer()
 
-            if jackViewModel.shoulder2OptionsArray.count == 0 {
-                Text("Equip Shoulder 2")
-            } else if (jackViewModel.remainingPoints > 0) {
+            if (jackViewModel.remainingPoints > 0) {
                 Text("\(jackViewModel.remainingPoints)/\(jackViewModel.weaponPoints) points available")
             } else if (jackViewModel.remainingPoints < 0) {
                 if jackViewModel.remainingPoints * -1 == 1{
@@ -189,14 +170,14 @@ struct JackBuilder: View {
     var saveHeader: some View {
         VStack{
             HStack {
-                if (jackViewModel.remainingPoints < 0) {
+                if jackViewModel.remainingPoints < 0 {
                     Spacer()
                     Text("Weapon Points Exceed Limit").foregroundColor(.red)
                     Spacer()
                 }
             }
             HStack {
-                if (jackViewModel.cortexOptionsArray.count == 0) {
+                if jackViewModel.cortexOptionsArray.first{$0.count > 0} == nil {
                     Spacer()
                     Text("A cortex is missing").foregroundColor(.red)
                     Spacer()

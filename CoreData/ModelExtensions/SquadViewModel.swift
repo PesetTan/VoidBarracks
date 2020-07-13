@@ -8,7 +8,7 @@
 import Foundation
 
 extension SquadViewModel {
-    public var attachmentsViewModelsArray: [AttachmentViewModel] {
+    public var attachmentViewModelsArray: [AttachmentViewModel] {
         let viewModel = self.attachmentViewModels as? Set<AttachmentViewModel> ?? []
         return viewModel.sorted{$0.name! < $1.name!}
     }

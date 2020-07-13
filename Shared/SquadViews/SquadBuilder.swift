@@ -33,7 +33,7 @@ struct SquadBuilder: View {
                 }
 
                 Section(header: Text("Attachments")) {
-                    AttachmentList(attachments: squadViewModel.attachmentsViewModelsArray)
+                    AttachmentList(attachments: squadViewModel.attachmentViewModelsArray)
                 }
 
                 Section {

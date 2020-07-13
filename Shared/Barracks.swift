@@ -40,12 +40,11 @@ struct BarrackArmies: View {
                             let vm = viewModels[index]
                             context.delete(vm)
                         }
-//                        do {
-//                            try context.save()
-//                        } catch {
-//                            print("error when saving")
-//                        }
-
+                        do {
+                            try context.save()
+                        } catch {
+                            print("error when saving")
+                        }
                     }
                 }
 
@@ -62,7 +61,7 @@ struct BarrackArmies: View {
 }
 
 struct BarracksCell: View {
-    @ObservedObject var viewModel: ArmyViewModel
+    var viewModel: ArmyViewModel
     private let dateFormatter = DateFormatter()
     @State private var isActive: Bool = false
 

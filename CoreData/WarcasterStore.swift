@@ -78,7 +78,12 @@ class WarcasterStore: ObservableObject {
 
                                         sleep(3)
 
-                                        try! self.context.save()
+                                        do {
+                                            try self.context.save()
+                                        } catch {
+                                            self.logger.error("Unable to save data store.")
+                                        }
+
 
                                         self.storeUpdated = true
                                     }
@@ -183,12 +188,12 @@ class WarcasterStore: ObservableObject {
             if let attachmentIds = raw.attachmentIds {
                 attachmentIds.forEach { id in
                     let rawAttachment = rawUnits.first{$0.id == id}!
-                    let attachment = SquadViewModel(context: self.context)
+                    let attachment = AttachmentViewModel(context: self.context)
                     attachment.id = rawAttachment.id
                     attachment.name = rawAttachment.name
                     attachment.uuid = UUID().uuidString
                     attachment.count = 0
-                    unit.addToAttachments(attachment)
+                    unit.addToAttachmentViewModels(attachment)
                 }
             }
 
@@ -294,6 +299,8 @@ class WarcasterStore: ObservableObject {
             jack.title = raw.title
             jack.customName = ""
             jack.weaponPoints = Int16(raw.weaponPoints)
+            jack.armCount = Int16(raw.armCount)
+            jack.shoulderCount = Int16(raw.shoulderCount)
             jack.count = 0
 
             raw.cortexOptionIds.forEach { id in
