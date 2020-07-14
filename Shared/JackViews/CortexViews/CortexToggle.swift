@@ -10,20 +10,35 @@ import SwiftUI
 struct CortexToggle: View {
     @Binding var count: Int16
     @ObservedObject var jackViewModel: JackViewModel
+    @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
         HStack {
-            if count > 0 {
-                Image(systemName: "circle.fill").foregroundColor(.accentColor)
+            if let symbol = armyViewModel.symbol {
+
+                if count > 0 {
+                    Image("\(symbol).fill").foregroundColor(.accentColor)
+                } else {
+                    Image("\(symbol).fill").foregroundColor(.gray).opacity(0.2)
+                }
+
             } else {
-                Image(systemName: "circle.fill").foregroundColor(.gray).opacity(0.2)
+
+                if count > 0 {
+                    Image("circle.fill").foregroundColor(.accentColor)
+                } else {
+                    Image("circle.fill").foregroundColor(.gray).opacity(0.2)
+                }
             }
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             jackViewModel.cortexOptionsArray.forEach { item in
                 item.count = 0
             }
             count = 1
+
+            jackViewModel.cortexOptions = jackViewModel.cortexOptions
         }
     }
 }

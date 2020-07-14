@@ -15,8 +15,8 @@ struct CypherInfo: View {
     @Binding var isPresented: Bool
 
     init(cypherId: String, isPresented: Binding<Bool>) {
-//        let predicate = NSPredicate(format: "id == %@", cypherId)
-        self.fetchRequest = FetchRequest(entity: Cypher.entity(), sortDescriptors: [], predicate: nil)
+        let predicate = NSPredicate(format: "id == %@", cypherId)
+        self.fetchRequest = FetchRequest(entity: Cypher.entity(), sortDescriptors: [], predicate: predicate)
         self._isPresented = isPresented
     }
 

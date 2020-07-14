@@ -12,6 +12,7 @@ struct WeaponToggle: View {
     @ObservedObject var weaponViewModel: WeaponViewModel
     var groupViewModel: [WeaponViewModel]
     @ObservedObject var jackViewModel: JackViewModel
+    @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
         HStack {
@@ -19,12 +20,25 @@ struct WeaponToggle: View {
                 .font(.caption)
                 .foregroundColor(.gray)
 
-            if count > 0 {
-                Image(systemName: "circle.fill").foregroundColor(.accentColor)
+            if let symbol = armyViewModel.symbol {
+
+                    if count > 0 {
+                        Image("\(symbol).fill").foregroundColor(.accentColor)
+                    } else {
+                        Image("\(symbol).fill").foregroundColor(.gray).opacity(0.2)
+                    }
+
             } else {
-                Image(systemName: "circle.fill").foregroundColor(.gray).opacity(0.2)
+
+                    if count > 0 {
+                        Image("circle.fill").foregroundColor(.accentColor)
+                    } else {
+                        Image("circle.fill").foregroundColor(.gray).opacity(0.2)
+                    }
+
             }
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             let initialCount = count
             groupViewModel.forEach { item in

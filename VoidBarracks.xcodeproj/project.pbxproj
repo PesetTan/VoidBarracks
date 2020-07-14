@@ -448,9 +448,9 @@
 		BAC227F524ADB62000080E97 /* CortexViews */ = {
 			isa = PBXGroup;
 			children = (
-				BAC227FA24ADB6C200080E97 /* CortexCell.swift */,
 				BAC227FD24ADB6FB00080E97 /* CortexInfo.swift */,
 				BA2034F324AE786E00E252A3 /* CortexView.swift */,
+				BAC227FA24ADB6C200080E97 /* CortexCell.swift */,
 				BA20353924B0028500E252A3 /* CortexToggle.swift */,
 			);
 			path = CortexViews;

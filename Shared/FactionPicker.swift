@@ -97,7 +97,7 @@ struct Cell: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.accentColor.opacity(0.7))
+            .background(Color.accentColor.opacity(1.0))
             .cornerRadius(10)
             .padding()
     }

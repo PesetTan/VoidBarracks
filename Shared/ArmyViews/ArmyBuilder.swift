@@ -9,11 +9,6 @@ import SwiftUI
 import CoreData
 
 struct ArmyBuilder: View {
-//    var armyFetchRequest: FetchRequest<Army>
-//    var army: Army? {
-//        armyFetchRequest.wrappedValue.first ?? nil
-//    }
-
     var viewModelFetchRequest: FetchRequest<ArmyViewModel>
     var viewModel: ArmyViewModel? {
         viewModelFetchRequest.wrappedValue.first ?? nil
@@ -26,9 +21,6 @@ struct ArmyBuilder: View {
         let viewModelPredicate = NSPredicate(format: "id == %@", viewModelId)
         self.viewModelFetchRequest = FetchRequest(entity: ArmyViewModel.entity(), sortDescriptors: [], predicate: viewModelPredicate)
 
-//        let armyPredicate = NSPredicate(format: "factionId == %@", factionId)
-//        self.armyFetchRequest = FetchRequest(entity: Army.entity(), sortDescriptors: [], predicate: armyPredicate)
-        
         self._isActive = isActive
     }
 

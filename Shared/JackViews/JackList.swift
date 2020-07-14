@@ -30,6 +30,7 @@ struct CustomJackList: View {
     var customJacks: [JackViewModel]
     @Binding var refresh: Bool
     @Environment(\.managedObjectContext) private var context
+    @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
         List {
@@ -41,6 +42,11 @@ struct CustomJackList: View {
             .onDelete { indexSet in
                 indexSet.forEach { index in
                     let jack = customJacks[index]
+
+                    armyViewModel.unitCount -= jack.count
+
+                    jack.count = 0
+
                     context.delete(jack)
                     refresh.toggle()
                 }

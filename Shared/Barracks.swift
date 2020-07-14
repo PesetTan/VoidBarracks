@@ -91,19 +91,18 @@ struct BarracksCell: View {
 
                 }
             } else {
-                Label {
+                HStack {
+                    Image("logo.\(viewModel.shortName!)")
+                        .resizable()
+                        .frame(width: 45, height: 45, alignment: .center)
+                        .padding(10)
+
                     VStack(alignment: .leading) {
                         Text("\(viewModel.customName!)")
                             .font(.title2)
                         Text("\(dateFormatter.string(from: viewModel.lastModified!))")
                             .font(.caption)
                     }
-
-                } icon: {
-                    Image("logo.\(viewModel.shortName!)")
-                        .resizable()
-                        .frame(width: 45, height: 45, alignment: .center)
-                        .padding(30)
                 }
             }
         }.eraseToAnyView()

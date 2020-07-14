@@ -22,6 +22,7 @@ extension ArmyViewModel {
         newArmy.unitCount = self.unitCount
         newArmy.unitMax = self.unitMax
         newArmy.gameType = self.gameType
+        newArmy.symbol = self.symbol
         self.herosViewModelsArray.forEach { hero in
             newArmy.addToHerosViewModels(hero.copy())
         }

@@ -23,8 +23,15 @@ struct CortexInfo: View {
 
     var body: some View {
         ScrollView {
-            DoneButton(isPresented: $isPresented)
-            Text("\(cortex.name!)")
+            HStack {
+                Spacer()
+                DoneButton(isPresented: $isPresented)
+                    .font(.headline).foregroundColor(.gray)
+                    .padding()
+            }
+            .padding(.bottom, 10)
+
+            Text("\(cortex.name!)").font(.system(size: 25, weight: .bold, design: .default))
 
             VStack {
                 RulesView(rules: cortex.rulesArray)

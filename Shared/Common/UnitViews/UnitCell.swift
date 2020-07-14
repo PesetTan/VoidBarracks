@@ -39,18 +39,14 @@ struct UnitCell: View {
     }
 
     var unitName: some View {
-        if let jack = viewModel as? JackViewModel {
-            if jack.customName! == "" {
-                return Text(jack.name!)
-            } else {
-                return Text(jack.customName!)
-            }
+        if viewModel.name == nil {
+            return Text("Missing Unit Name")
+        }
+        
+        if viewModel.customName == nil || viewModel.customName! == "" {
+            return Text(viewModel.name!)
         } else {
-            if viewModel.customName! == "" {
-                return Text(viewModel.name!)
-            } else {
-                return Text(viewModel.customName!)
-            }
+            return Text(viewModel.customName!)
         }
     }
 

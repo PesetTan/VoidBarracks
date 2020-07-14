@@ -20,6 +20,7 @@ struct JackWeaponCell: View {
                 isPresented.toggle()
             } label: {
                 Text("\(weaponViewModel.name!)")
+                    .foregroundColor(.accentColor)
             }
             .sheet(isPresented: $isPresented) {
                 JackWeaponInfo(weaponViewModel: weaponViewModel, isPresented: $isPresented)

@@ -14,7 +14,7 @@ struct SquadList: View {
     var body: some View {
         ForEach(squadsViewModels, id:\.id) { viewModel in
             if viewModel.uuid != nil {
-                SquadCell(viewModel: viewModel, refresh: $refresh)
+                SquadCell(squadViewModel: viewModel, refresh: $refresh)
                     .customCell()
                     .foregroundColor(.primary)
 
@@ -31,6 +31,7 @@ struct CustomSquadList: View {
     var customSquads: [UnitViewModel]
     @Binding var refresh: Bool
     @Environment(\.managedObjectContext) private var context
+    @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
         List {
@@ -42,6 +43,11 @@ struct CustomSquadList: View {
             .onDelete { indexSet in
                 indexSet.forEach { index in
                     let squad = customSquads[index]
+
+                    armyViewModel.unitCount -= squad.count
+
+                    squad.count = 0
+                    
                     context.delete(squad)
                     refresh.toggle()
                 }

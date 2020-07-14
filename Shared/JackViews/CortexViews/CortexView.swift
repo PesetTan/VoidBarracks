@@ -21,7 +21,7 @@ struct CortexView: View {
     var body: some View {
         VStack {
             Divider()
-            Text("Cortex: \(cortex.name!)").font(.headline).foregroundColor(.gray)
+            Text("Cortex: \(cortex.name!)")
             RulesView(rules: cortex.rulesArray)
         }
     }

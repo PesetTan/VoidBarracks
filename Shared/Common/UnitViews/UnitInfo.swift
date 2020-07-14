@@ -11,13 +11,11 @@ import CoreData
 struct UnitInfo: View {
     var unitFetchRequest: FetchRequest<Unit>
     var unit: Unit {
-        print(unitFetchRequest.wrappedValue.count)
         return unitFetchRequest.wrappedValue.first ?? Unit()
     }
 
     var viewModelFetchRequest: FetchRequest<UnitViewModel>
     var viewModel: UnitViewModel {
-        print(viewModelFetchRequest.wrappedValue.count)
         return viewModelFetchRequest.wrappedValue.first ?? UnitViewModel()
     }
 

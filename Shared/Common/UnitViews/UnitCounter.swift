@@ -35,6 +35,7 @@ struct UnitCounter: View {
             }
 
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             viewModel.count += 1
             if viewModel.count > maxCount {

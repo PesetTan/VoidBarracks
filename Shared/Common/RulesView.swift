@@ -20,6 +20,7 @@ struct RulesView: View {
                 }
 
                 Text("\(rule.text!)")
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding()
         }

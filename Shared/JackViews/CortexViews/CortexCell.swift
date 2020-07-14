@@ -27,7 +27,8 @@ struct CortexCell: View {
             }
         }
         .sheet(isPresented: $isPresented) {
-            CortexInfo(cortexId: cortexViewModel.id!, isPresented: $isPresented).environment(\.managedObjectContext, context)
+            CortexInfo(cortexId: cortexViewModel.id!, isPresented: $isPresented)
+                .environment(\.managedObjectContext, context)
         }
     }
 }

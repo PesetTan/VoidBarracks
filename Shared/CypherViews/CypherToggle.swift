@@ -10,20 +10,30 @@ import SwiftUI
 struct CypherToggle: View {
     @ObservedObject var viewModel: CypherViewModel
     var maxCount: Int = 1
-    @EnvironmentObject var army: ArmyViewModel
+    @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
         HStack {
-            ForEach(0 ..< maxCount) { index in
-                if index >= viewModel.count {
-                    Image(systemName: "circle").foregroundColor(.gray).opacity(0.5)
-                } else {
-                    Image(systemName: "circle.fill").foregroundColor(.accentColor)
+            if let symbol = armyViewModel.symbol {
+                ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
+                    if index >= viewModel.count {
+                        Image("\(symbol)").foregroundColor(.gray).opacity(0.5)
+                    } else {
+                        Image("\(symbol).fill").foregroundColor(.accentColor)
+                    }
+                }
+            } else {
+                ForEach((0 ..< maxCount).reversed(), id:\.self) { index in
+                    if index >= viewModel.count {
+                        Image("circle").foregroundColor(.gray).opacity(0.5)
+                    } else {
+                        Image("circle.fill").foregroundColor(.accentColor)
+                    }
                 }
             }
         }
         .onTapGesture {
-            let rack = army.rackViewModel!
+            let rack = armyViewModel.rackViewModel!
 
             viewModel.count += 1
             if viewModel.count > maxCount {
@@ -48,8 +58,8 @@ struct CypherToggle: View {
                 }
             }
 
-            if army.store != nil {
-                army.store = army.store
+            if armyViewModel.store != nil {
+                armyViewModel.store = armyViewModel.store
             }
 
         }

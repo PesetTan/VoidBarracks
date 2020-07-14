@@ -52,20 +52,25 @@ class ClipboardController {
                 if configured.count > 0 {
                     text.append("x\(configured.count) \(configured.name!)\n")
 
-                    let selectedCortex = configured.cortexOptionsArray.first{$0.count > 0}!
-                    text.append("\tCortex: \(selectedCortex.name!)\n")
+                    if let selectedCortex = configured.cortexOptionsArray.first(where: {$0.count > 0}) {
+                        text.append("\tCortex: \(selectedCortex.name!)\n")
+                    }
 
-                    let selectedArm1 = configured.arm1OptionsArray.first{$0.count > 0}!
-                    text.append("\tArm 2: \(selectedArm1.name!)  \(selectedArm1.cost) points\n")
+                    if let selectedArm1 = configured.arm1OptionsArray.first(where: {$0.count > 0}) {
+                        text.append("\tArm 2: \(selectedArm1.name!)  \(selectedArm1.cost) points\n")
+                    }
 
-                    let selectedArm2 = configured.arm2OptionsArray.first{$0.count > 0}!
-                    text.append("\tArm 1: \(selectedArm2.name!)  \(selectedArm2.cost) points\n")
+                    if let selectedArm2 = configured.arm2OptionsArray.first(where: {$0.count > 0}) {
+                        text.append("\tArm 1: \(selectedArm2.name!)  \(selectedArm2.cost) points\n")
+                    }
 
-                    let selectedShoulder1 = configured.shoulder1OptionsArray.first{$0.count > 0}!
-                    text.append("\tArm 1: \(selectedShoulder1.name!)  \(selectedShoulder1.cost) points\n")
+                    if let selectedShoulder1 = configured.shoulder1OptionsArray.first(where: {$0.count > 0}) {
+                        text.append("\tArm 1: \(selectedShoulder1.name!)  \(selectedShoulder1.cost) points\n")
+                    }
 
-                    let selectedShoulder2 = configured.shoulder2OptionsArray.first{$0.count > 0}!
-                    text.append("\tArm 1: \(selectedShoulder2.name!)  \(selectedShoulder2.cost) points\n")
+                    if let selectedShoulder2 = configured.shoulder2OptionsArray.first(where: {$0.count > 0}) {
+                        text.append("\tArm 1: \(selectedShoulder2.name!)  \(selectedShoulder2.cost) points\n")
+                    }
 
                 }
             }
