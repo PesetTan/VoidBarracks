@@ -20,6 +20,7 @@ struct UnitCell: View {
                 HStack {
                     unitName
                     cortexName
+                    squadAttachmentCount
                 }
             }
             .sheet(isPresented: $isPresented) {
@@ -57,6 +58,15 @@ struct UnitCell: View {
             } else {
                 return Text("")
             }
+        } else {
+            return Text("")
+        }
+    }
+
+    var squadAttachmentCount: some View {
+        if let squad = viewModel as? SquadViewModel {
+            let attachments = squad.attachmentViewModelsArray.filter({$0.count > 0})
+            return Text("+\(attachments.count)")
         } else {
             return Text("")
         }
