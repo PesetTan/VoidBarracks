@@ -66,7 +66,11 @@ struct UnitCell: View {
     var squadAttachmentCount: some View {
         if let squad = viewModel as? SquadViewModel {
             let attachments = squad.attachmentViewModelsArray.filter({$0.count > 0})
-            return Text("+\(attachments.count)")
+            if attachments.count > 0 {
+                return Text("+\(attachments.count)")
+            } else {
+                return Text("")
+            }
         } else {
             return Text("")
         }
