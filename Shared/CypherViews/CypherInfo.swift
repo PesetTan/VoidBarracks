@@ -22,7 +22,7 @@ struct CypherInfo: View {
 
     var body: some View {
         if let cypher = cypher {
-            ScrollView {
+            ScrollView (showsIndicators: false) {
                 VStack {
                     HStack {
                         Spacer()

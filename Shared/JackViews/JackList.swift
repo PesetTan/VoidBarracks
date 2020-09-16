@@ -18,10 +18,13 @@ struct JackList: View {
                 JackCell(viewModel: viewModel, refresh: $refresh)
                     .customCell()
                     .foregroundColor(.primary)
+                    .padding(.top, 15)
 
                 CustomJackList(customJacks: viewModel.customJackViewModelsArray, refresh: $refresh)
                     .frame(height: 70 * CGFloat(viewModel.customJackViewModelsArray.count)).animation(.default)
             }
+
+
         }
     }
 }

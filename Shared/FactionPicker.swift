@@ -23,9 +23,8 @@ struct FactionPicker: View {
                         }
                         if let viewModels = store.viewModelsArray {
                             ForEach(viewModels, id:\.id) { viewModel in
-//                                if let viewModel = viewModel {
-                                    LazyLoad(FactionCell(viewModel: viewModel).accentColor(Color("color.\(viewModel.shortName!)")))
-//                                }
+                                LazyLoad(FactionCell(viewModel: viewModel)
+                                            .accentColor(Color("color.\(viewModel.shortName!)")))
                             }
                         }
                     }
@@ -39,6 +38,7 @@ struct FactionPicker: View {
 
 
             }
+            .padding()
             .frame(maxHeight: .infinity)
             .background(Color.gray.opacity(0.2))
         }
@@ -48,6 +48,12 @@ struct FactionPicker: View {
     var updateButton: some View {
         Button(action: {
             PersistentCloudKitContainer.deleteStore()
+            PersistentCloudKitContainer.deleteRules()
+            PersistentCloudKitContainer.deleteFactions()
+            PersistentCloudKitContainer.deleteWeapons()
+            PersistentCloudKitContainer.deleteCortex()
+            PersistentCloudKitContainer.deleteUnit()
+            
             sleep(4)
             let warcasterStore = WarcasterStore(context)
             warcasterStore.updateStore()
@@ -88,10 +94,10 @@ struct Cell: View {
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 45, height: 45, alignment: .center)
-                Text("\(armyName)")
-                    .padding()
-                    .font(.title2)
-                    .foregroundColor(.white)
+//                Text("\(armyName)")
+//                    .padding()
+//                    .font(.system(size: 15))
+//                    .foregroundColor(.white)
 
 
             }

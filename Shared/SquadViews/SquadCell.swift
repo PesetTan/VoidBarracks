@@ -14,27 +14,21 @@ struct SquadCell: View {
     @Binding var refresh: Bool
 
     var body: some View {
-//        if let army = viewModel {
-            return NavigationLink(
-                destination: LazyLoad(
-                    SquadBuilder(squadId: squadViewModel.uuid!, isActive: $isPresented, refresh: $refresh)
-                    .accentColor(Color("color.\(armyViewModel.shortName!)"))),
-                isActive: $isPresented) {
-                Text("\(squadViewModel.name!)")
-                    .fixedSize(horizontal: true, vertical: false)
+        NavigationLink(
+            destination: LazyLoad(
+                SquadBuilder(squadId: squadViewModel.uuid!, isActive: $isPresented, refresh: $refresh)
+                .accentColor(Color("color.\(armyViewModel.shortName!)"))),
+            isActive: $isPresented) {
+            Text("\(squadViewModel.name!)")
+                .fixedSize(horizontal: true, vertical: false)
 
-                Spacer(minLength: 5)
+            Spacer(minLength: 5)
 
-                Text("Configure Squad")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .fixedSize(horizontal: true, vertical: false)
+            Text("Configure Squad")
+                .font(.caption)
+                .foregroundColor(.gray)
+                .fixedSize(horizontal: true, vertical: false)
 
-//            }
-//            .eraseToAnyView()
-//        } else {
-//            return Text("").eraseToAnyView()
-//        }
-            }
+        }
     }
 }

@@ -48,6 +48,7 @@ struct WeaponView: View {
                 if weapon.pow > 0 {
                     VStack {
                         Text("POW").font(.subheadline).foregroundColor(.gray)
+                            .fixedSize(horizontal: true, vertical: false)
                         Text("\(weapon.pow)")
                     }
                 }

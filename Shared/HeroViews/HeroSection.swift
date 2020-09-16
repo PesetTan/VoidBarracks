@@ -15,8 +15,6 @@ struct HeroSection: View {
             heroList
                 .environmentObject(viewModel)
                 .customCell()
-
-            Spacer()
         }
         .padding(.leading, 10)
         .padding(.trailing, 10)
@@ -35,17 +33,16 @@ struct HeroSection: View {
             Spacer()
             if viewModel.heroCount > viewModel.heroMax {
                 if viewModel.heroCount - viewModel.heroMax == 1 {
-                    Text("1 Hero Point Over")
+                    Text("1 Hero Over")
                         .font(.caption)
                 } else {
-                    Text("\(viewModel.heroCount - viewModel.heroMax) Hero Points Over")
+                    Text("\(viewModel.heroCount - viewModel.heroMax) Hero Over")
                         .font(.caption)
                 }
             } else {
                 Text("\(viewModel.heroCount)/\(viewModel.heroMax) Heros")
                     .font(.caption)
             }
-
         }
     }
 }

@@ -18,6 +18,7 @@ struct UnitInfoButton: View {
         } label: {
             Image(systemName: "info.circle")
                 .font(.system(size: 25))
+                .contentShape(Circle())
         }
         .sheet(isPresented: $isPresented) {
             UnitInfo(unitId: unit.id!, viewModelId: unit.uuid!, isPresented: $isPresented)

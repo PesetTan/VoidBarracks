@@ -14,28 +14,23 @@ struct JackCell: View {
     @EnvironmentObject var armyViewModel: ArmyViewModel
 
     var body: some View {
-//        if let armyViewModel = viewModel.armyViewModel {
-            return NavigationLink(
-                destination: LazyLoad(JackBuilder(jackId: viewModel.uuid!, isActive: $isPresented, refresh: $refresh)
-                    .environmentObject(armyViewModel)
-                    .accentColor(Color("color.\(armyViewModel.shortName!)")))
+        NavigationLink(
+            destination: LazyLoad(JackBuilder(jackId: viewModel.uuid!, isActive: $isPresented, refresh: $refresh)
+                .environmentObject(armyViewModel)
+                .accentColor(Color("color.\(armyViewModel.shortName!)")))
 
-                ,
-                isActive: $isPresented) {
-                Text("\(viewModel.name!)")
-                    .fixedSize(horizontal: true, vertical: false)
+            ,
+            isActive: $isPresented) {
+            Text("\(viewModel.name!)")
+                .fixedSize(horizontal: true, vertical: false)
 
-                Spacer(minLength: 5)
+            Spacer(minLength: 5)
 
-                Text("Configure \(self.viewModel.title!)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .fixedSize(horizontal: true, vertical: false)
+            Text("Configure \(self.viewModel.title!)")
+                .font(.caption)
+                .foregroundColor(.gray)
+                .fixedSize(horizontal: true, vertical: false)
 
-            }
-//            .eraseToAnyView()
-//        } else {
-//            return Text("").eraseToAnyView()
-//        }
+        }
     }
 }

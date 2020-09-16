@@ -16,6 +16,7 @@ struct DoneButton: View {
         } label: {
             Image(systemName: "multiply.circle")
                 .font(.system(size: 25))
+                .contentShape(Circle())
         }
 
     }

@@ -32,6 +32,7 @@ struct CypherToggle: View {
                 }
             }
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             let rack = armyViewModel.rackViewModel!
 

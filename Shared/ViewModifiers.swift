@@ -14,8 +14,10 @@ struct CustomCell: ViewModifier {
             .padding()
             .background(Color(UIColor.systemBackground))
             .cornerRadius(10)
-            .padding(.leading, 10)
-            .padding(.trailing, 10)
+            .padding(.leading, 2)
+            .padding(.trailing, 2)
+            .padding(.bottom, -3)
+            .padding(.top, -3)
             .shadow(color: Color("ShadowColor").opacity(0.5), radius: 7, x: 3, y: 3)
     }
 }

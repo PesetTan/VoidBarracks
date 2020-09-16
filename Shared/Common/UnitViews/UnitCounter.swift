@@ -11,7 +11,7 @@ import CoreHaptics
 struct UnitCounter: View {
     @ObservedObject var viewModel: UnitViewModel
     @EnvironmentObject var armyViewModel: ArmyViewModel
-    var maxCount: Int = 3
+    var maxCount: Int = 4
 //    @State private var engine: CHHapticEngine?
 
     var body: some View {
@@ -71,7 +71,7 @@ struct UnitCounter: View {
             armyViewModel.unitCount = unitCount
 
 //            complexSuccess()
-            simpleSuccess()
+//            simpleSuccess()
         }
     }
 

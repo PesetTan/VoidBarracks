@@ -25,12 +25,7 @@ struct ArmyBuilder: View {
     }
 
     var body: some View {
-        ScrollView {
-            if refresh {
-                EmptyView()
-            } else {
-                EmptyView()
-            }
+        ScrollView (showsIndicators: false) {
 
             if let viewModel = viewModel {
                 Section {
@@ -49,18 +44,16 @@ struct ArmyBuilder: View {
 
                 unitsView
 
-                VStack {
-                    Section (header: rackHeader, footer: rackStats) {
-                        RackBuilder()
-                            .environmentObject(viewModel)
-                            .customCell()
-                    }
+                Section (header: rackHeader, footer: rackStats) {
+                    RackBuilder()
+                        .environmentObject(viewModel)
+                        .customCell()
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 20)
 
-                Section(footer: Text("Recruit will also save to clipboard.").font(.caption))  {
+                Section(footer: Text("Save will also copy to clipboard.").font(.caption))  {
                     SaveArmyButton(viewModel: viewModel, isActive: $isActive)
                         .customCell()
                 }
@@ -68,6 +61,12 @@ struct ArmyBuilder: View {
                 .padding(.trailing, 10)
                 .padding(.bottom, 5)
                 .navigationBarTitle(Text("\(viewModel.fullName!)"))
+            }
+
+            if refresh {
+                EmptyView()
+            } else {
+                EmptyView()
             }
         }
         .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
@@ -77,46 +76,31 @@ struct ArmyBuilder: View {
         if let viewModel = viewModel {
             return VStack {
 
-                VStack {
-                    if viewModel.gameType == "Normal Game" {
-                        HeroSection(viewModel: viewModel)
-                    }
-                }
-                .padding(.bottom, 20)
+                HeroSection(viewModel: viewModel)
+                    .padding(.bottom, 20)
 
-
-                VStack {
-                    Section(header: soloHeader) {
-                        SoloList(viewModels: viewModel.solosViewModelsArray)
-                            .environmentObject(viewModel)
-                            .customCell()
-                    }
+                Section(header: soloHeader) {
+                    SoloList(viewModels: viewModel.solosViewModelsArray)
+                        .environmentObject(viewModel)
+                        .customCell()
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.bottom, 20)
 
-
-                VStack {
-                    Section(header: jackHeader) {
-                        JackList(jacks: viewModel.jacksViewModelsArray, refresh: $refresh)
-                            .environmentObject(viewModel)
-                    }
+                Section(header: jackHeader) {
+                    JackList(jacks: viewModel.jacksViewModelsArray, refresh: $refresh)
+                        .environmentObject(viewModel)
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
-                .padding(.bottom, 20)
 
-
-                VStack {
-                    Section(header: squadHeader) {
-                        SquadList(squadsViewModels: viewModel.squadsViewModelsArray, refresh: $refresh)
-                            .environmentObject(viewModel)
-                    }
+                Section(header: squadHeader) {
+                    SquadList(squadsViewModels: viewModel.squadsViewModelsArray, refresh: $refresh)
+                        .environmentObject(viewModel)
                 }
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
-                .padding(.bottom, 20)
             }
             .eraseToAnyView()
         } else {
@@ -132,7 +116,7 @@ struct ArmyBuilder: View {
                     .font(.footnote)
                 Spacer()
             }
-        }.padding()
+        }
     }
 
     var rackHeader: some View {
@@ -150,8 +134,8 @@ struct ArmyBuilder: View {
                         .font(.caption)
                 }
             }
-
         }
+        .padding(.top, 10)
     }
 
 
@@ -198,6 +182,7 @@ struct ArmyBuilder: View {
                 }
             }
         }
+        .padding(.bottom, 5)
     }
 
     var squadHeader: some View {
@@ -220,6 +205,8 @@ struct ArmyBuilder: View {
                 }
             }
         }
+        .padding(.bottom, 10)
+        .padding(.top, 10)
     }
 
     var nameField: some View {

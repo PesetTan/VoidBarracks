@@ -46,6 +46,7 @@ class WarcasterStore: ObservableObject {
                 self.rawRules = rules
                 self.rawWeapons = weapons
 
+                self.logger.info("Loaded phase 1")
                 Publishers.CombineLatest3(self.json.$heros, self.json.$jacks, self.json.$weapons)
                     .filter { (heros, jacks, weapons) in
                         !heros.isEmpty && !jacks.isEmpty && !weapons.isEmpty
@@ -55,6 +56,7 @@ class WarcasterStore: ObservableObject {
                         self.rawJacks = jacks
                         self.rawWeapons = weapons
 
+                        self.logger.info("Loaded phase 2")
                         Publishers.CombineLatest3(self.json.$allianceUnits, self.json.$continuumUnits, self.json.$marcherUnits)
                             .filter { (alliance, continuum, marchers) in
                                 !alliance.isEmpty && !continuum.isEmpty && !marchers.isEmpty
@@ -64,6 +66,7 @@ class WarcasterStore: ObservableObject {
                                 self.rawContinuum = continuum
                                 self.rawMarchers = marchers
 
+                                self.logger.info("Loaded phase 3")
                                 Publishers.CombineLatest(self.json.$cortex, self.json.$cyphers)
                                     .filter{ cortex, cyphers in
                                         !cortex.isEmpty && !cyphers.isEmpty
@@ -72,13 +75,18 @@ class WarcasterStore: ObservableObject {
                                         self.rawCortex = cortex
                                         self.rawCyphers = cyphers
 
-                                        let store = self.GetStore()
-                                        self.context.insert(store)
-                                        self.context.refresh(store, mergeChanges: true)
-
+                                        self.logger.info("Loaded phase 4")
                                         sleep(3)
 
+                                        let store = self.GetStore()
+                                        self.context.insert(store)
+                                        self.logger.info("Loaded phase 5")
+                                        self.context.refresh(store, mergeChanges: true)
+
+                                        sleep(5)
+
                                         do {
+                                            self.logger.info("Saving")
                                             try self.context.save()
                                         } catch {
                                             self.logger.error("Unable to save data store.")

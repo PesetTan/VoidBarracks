@@ -34,7 +34,7 @@ struct UnitInfo: View {
     
     var body: some View {
 
-        ScrollView {
+        ScrollView (showsIndicators: false) {
             HStack {
                 Spacer()
                 DoneButton(isPresented: $isPresented)

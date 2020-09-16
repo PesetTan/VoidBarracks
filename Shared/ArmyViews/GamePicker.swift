@@ -10,6 +10,7 @@ import SwiftUI
 struct GamePicker: View {
     @ObservedObject var viewModel: ArmyViewModel
     @State private var isActive: Bool = false
+    @Environment(\.managedObjectContext) var context
 
     var body: some View {
         NavigationLink(destination: picker, isActive: $isActive) {
@@ -30,16 +31,16 @@ struct GamePicker: View {
                 Button {
                     viewModel.gameType = type
                     if type == "Skirmish Game" {
-                        viewModel.heroMax = 0
+                        viewModel.heroMax = 1
                         viewModel.unitMax = 8
-                        viewModel.herosViewModelsArray.forEach { hero in
-                            hero.count = 0
-                        }
                     } else {
                         viewModel.heroMax = 3
                         viewModel.unitMax = 15
                     }
                     isActive = false
+
+                    try! context.save()
+                    
                 } label: {
                     Text(type)
                 }

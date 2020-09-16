@@ -12,7 +12,7 @@ struct JackWeaponInfo: View {
     @Binding var isPresented: Bool
 
     var body: some View {
-            ScrollView {
+            ScrollView (showsIndicators: false) {
                 VStack {
                     HStack {
                         Spacer()

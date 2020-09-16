@@ -105,4 +105,15 @@ public class PersistentCloudKitContainer {
             context.delete(result)
         }
     }
+
+    // MARK: - Core Data Deleting support
+    public static func deleteUnit () {
+        let context = persistentContainer.viewContext
+        let request = NSFetchRequest<Unit>(entityName: "Unit")
+        let results = try! context.fetch(request)
+
+        results.forEach { result in
+            context.delete(result)
+        }
+    }
 }

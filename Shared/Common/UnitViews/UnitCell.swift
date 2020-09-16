@@ -18,7 +18,7 @@ struct UnitCell: View {
                 isPresented.toggle()
             } label: {
                 HStack {
-                    unitName
+                    unitName.fixedSize(horizontal: true, vertical: false)
                     cortexName
                     squadAttachmentCount
                 }
@@ -34,7 +34,7 @@ struct UnitCell: View {
             if viewModel is HeroViewModel {
                 UnitCounter(viewModel: viewModel, maxCount: 1)
             } else {
-                UnitCounter(viewModel: viewModel, maxCount: 3)
+                UnitCounter(viewModel: viewModel, maxCount: 4)
             }
         }
     }

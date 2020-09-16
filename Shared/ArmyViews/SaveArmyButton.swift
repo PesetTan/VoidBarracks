@@ -32,7 +32,7 @@ struct SaveArmyButton: View {
                     isActive.toggle()
                 }
             } label: {
-                Text("Recruit")
+                Text("Save")
                     .frame(maxWidth: .infinity)
                     .contentShape(Rectangle())
             }

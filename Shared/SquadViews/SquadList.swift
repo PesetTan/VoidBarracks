@@ -17,6 +17,7 @@ struct SquadList: View {
                 SquadCell(squadViewModel: viewModel, refresh: $refresh)
                     .customCell()
                     .foregroundColor(.primary)
+                    .padding(.top, 15)
 
                 CustomSquadList(customSquads: viewModel.customSquadViewModelsArray, refresh: $refresh)
                     .frame(height: 70 * CGFloat(viewModel.customSquadViewModelsArray.count)).animation(.default)
